@@ -1,0 +1,273 @@
+{
+	"Core":{
+		"Clientcide": {
+			"deps":["Clientcide"],
+			"desc":"The Clientcide namespace. Includes a method that allows you to set the location of image files to your own server; <a href=\"http://code.google.com/p/cnetjavascript/downloads/list\">download the files @ google code</a>; see <a href=\"http://www.clientcide.com/docs/Core/Clientcide\">docs</a>."
+		}
+	},
+	"Browser":{
+		"FixPNG":{
+			"deps":["Element.Dimensions", "DomReady", "dbug", "Element.Shortcuts"],
+			"desc":"Fixes transparent png files and dom elements with transparent png backgrounds for IE6"
+		},
+		"Popup": {
+			"deps": ["Browser", "Class.Extras"],
+			"desc": "A Class wrapper for window.open that provides a more pleasant interface than the default window.open arguments."
+		}
+	},
+	"Utilities": {
+		"DollarE": {
+			"deps":["Element", "Clientcide"],
+			"desc":"Brings back $E from MooTools 1.11. Returns a single Element for a selector."
+		},
+		"DollarG": {
+			"deps":["Element", "Clientcide"],
+			"desc":"Returns a collection when given an element, a collection of elements, an element id, or a selector."
+		}
+	},
+	"Fx":{
+		"Fx.Marquee": {
+			"deps": ["Fx.Morph", "Element.Shortcuts"],
+			"desc": "A simple marquee effect for fading in and out messages."
+		}
+	},
+	"UI":{
+		"IconMenu":{
+			"deps":["Element.Event", "Selectors", "Element.Dimensions", "Fx.Tween", "Fx.Morph", "Fx.Elements", "Fx.Transitions", "dbug"],
+			"desc":"A simple icon (img) based menu."
+		},
+		"Modalizer":{
+			"deps":["DomReady", "Element.Dimensions", "Element.Style", "Selectors", "Class.Extras"],
+			"desc":"Provides functionality to overlay the window contents with a semi-transparent layer."
+		},
+		"ObjectBrowser":{
+			"deps":["Element.Event", "Class.Extras", "dbug", "Hash.Extras", "Element.Shortcuts"],
+			"desc":"Creates a tree view of any javascript object."
+		},
+		"PopupDetails":{
+			"deps":["Element.Event", "Request", "JSON", "dbug", "String.Extras", "StickyWin.Fx"],
+			"optional":["StickyWin.Modal", "StickyWin.Fx.Drag"],
+			"desc":"Handles popup detail templated elements."
+		},
+		"StyleWriter":{
+			"deps": ["Class", "DomReady", "Element", "dbug"],
+			"desc": "Provides a simple method for injecting a css style element into the DOM if it's not already present."
+		},
+		"StickyWin":{
+			"deps":["DomReady", "Selectors", "Element.Position", "Class.ToElement", "Element.Shortcuts", "Element.Pin", "IframeShim", "StyleWriter"],
+			"optional":["StickyWin.Ajax"],
+			"desc":"An in-page popup maker."
+		},
+		"StickyWin.Fx":{
+			"deps":["Fx.Tween", "StickyWin"],
+			"desc":"Extends StickyWin to create popups that fade in and out."
+		},
+		"StickyWin.Fx.Drag":{
+			"deps":["Drag.Move", "StickyWin.Fx"],
+			"desc":"Extends StickyWin to create popups that fade in and out and are draggable."
+		},
+		"StickyWin.Modal":{
+			"deps":["StickyWin", "Modalizer"],
+			"optional":["StickyWin.Fx"],
+			"desc":"This script extends StickyWin and (optionally) StickyWin.Fx classes to add Modalizer functionality."
+		},
+		"StickyWin.Ajax":{
+			"deps":["Request", "StickyWin", "StickyWin.ui"],
+			"optional":["StickyWin.Fx", "StickyWin.Fx.Drag", "StickyWin.Modal"],
+			"desc":"Adds ajax functionality to all the StickyWin classes."
+		},
+		"StickyWin.alert":{
+			"deps":["StickyWin.Modal", "StickyWin.ui"],
+			"desc":"The function in this script just makes a little alert box with a close button.",
+			"assets": {
+				"icon_problems_sm.gif": "http://www.cnet.com/html/rb/assets/global/simple.error.popup/icon_problems_sm.gif"
+			}
+		},
+		"StickyWin.ui":{
+			"deps":["Element.Style", "String.Extras", "StickyWin"],
+			"desc":"Creates an html holder for in-page popups using a default style.",
+			"assets":{
+				"full.png":"http://www.cnet.com/html/rb/assets/global/StickyWin.ui/full.png",
+				"body.png": "http://www.cnet.com/html/rb/assets/global/StickyWin.ui/body.png",
+				"big_button_over.gif": "http://www.cnet.com/html/rb/assets/global/StickyWin.ui/big_button_over.gif",
+				"big_button.gif": "http://www.cnet.com/html/rb/assets/global/StickyWin.ui/big_button.gif",
+				"closebtn.gif":"http://www.cnet.com/html/rb/assets/global/StickyWin.ui/closebtn.gif"
+			}
+		},
+		"StickyWin.ui.pointy":{
+			"deps":["Element.Shortcuts", "Element.Position", "StickyWin.ui"],
+			"desc":"Similar to StickyWin.ui, this is a wrapper for content, this time a tip with a pointer."
+		},
+		"StickyWin.PointyTip":{
+			"deps":["StickyWin.ui.pointy"],
+			"desc":"A convenience library to place a StickyWin.ui.pointy relative to an element on the page easily."
+		},
+		"Tips.Pointy":{
+			"deps":["Tips", "StickyWin.PointyTip"],
+			"desc":"Creates Tips using the StickyWin.PointyTip layout."
+		},
+		"Waiter":{
+			"deps": ["Fx.Elements", "Class.Refactor", "Element.Shortcuts", "Element.Position", "IframeShim"],
+			"optional": ["Request.HTML"],
+			"desc": "Adds a semi-transparent overlay over a dom element with a spinnin ajax icon.",
+			"assets": {
+				"spinner image": "http://www.cnet.com/html/rb/assets/global/waiter/waiter.gif"
+			}
+		}
+	},
+	"Layout":{
+		"Collapsable": {
+			"deps":["Element.Event", "Fx.Reveal"],
+			"desc":"Enables a dom element to, when clicked, hide or show (it toggles) another dom element. Kind of an Accordion for one item."
+		},
+		"HoverGroup": {
+			"deps":["Class.Extras", "Element.Event", "Class.Binds", "DollarG"],
+			"desc":"Manages mousing in and out of multiple objects (think drop-down menus)."
+		},
+		"HtmlTable":{
+			"deps":["Element", "Class.Extras", "Clientcide"],
+			"desc":"Builds table elements with methods to add rows quickly."
+		},
+		"MenuSlider": {
+			"deps":["Fx.Slide", "HoverGroup"],
+			"optional":["IframeShim"],
+			"desc":"A simple dropdown class; see the menu at the top of Clientcide.com."
+		},
+		"MooScroller":{
+			"deps":["Class.Extras", "Element.Dimensions", "Element.Event", "Element.Style", "Selectors", "Clientcide"],
+			"desc":"Recreates standard scrollbar behavior for elements with overflow using DOM elements styleable by css."
+		},
+		"MultipleOpenAccordion":{
+			"deps":["Element.Event", "Fx.Reveal"],
+			"desc":"Creates a Mootools Accordion that allows the user to open more than one element."
+		},
+		"SimpleCarousel":{
+			"deps":["Fx.Elements", "DomReady", "Element.Shortcuts"],
+			"desc":"Builds a carousel object that manages the basic functions of a generic carousel."
+		},
+		"SimpleSlideShow":{
+			"deps":["Class.Binds", "Element.Dimensions", "Fx.Tween", "Element.Event", "Element.Shortcuts", "Class.ToElement"],
+			"desc":"Makes a very, very simple slideshow gallery with a collection of dom elements and previous and next buttons."
+		},
+		"TabSwapper":{
+			"deps":["Element.Event", "Fx.Tween", "Fx.Morph", "Element.Shortcuts", "Element.Dimensions", "Element.Measure"],
+			"desc":"Handles the scripting for a common UI layout; the tabbed box."
+		}
+	},
+	"Forms":{
+		"Clipboard":{
+			"deps":["DomReady", "Clientcide"],
+			"desc":"Adds functionality to let javascript write to the OS clipboard.",
+			"assets": {
+				"Clipboard SWF": "http://www.cnet.com/html/rb/assets/global/clipboard/_clipboard.swf"
+			}
+		},
+		"Confirmer":{
+			"deps":["DomReady", "Fx.Tween", "Element.Shortcuts", "Element.Position"],
+			"desc":"Fades a message in and out for the user to tell them that some event (like an ajax save) has occurred."
+		},
+		"DatePicker":{
+			"deps":["Class.Extras", "Element.Event", "JSON", "Date", "dbug", "StickyWin.ui"],
+			"optional": ["Drag", "StickyWin.Fx"],
+			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
+		},
+		"DatePicker.Extras":{
+			"deps":["Class.Extras", "Element.Event", "dbug", "StickyWin"],
+			"optional": ["Drag", "StickyWin.Fx"],
+			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
+		},
+		"FormValidator.Tips":{
+			"deps":["FormValidator.Inline","StickyWin.PointyTip"],
+			"desc":"FormValidator using StickyWin.PointyTip."
+		},
+		"Fupdate":{
+			"deps":["Element.Event",  "Request.HTML", "Class.ToElement", "Class.Occlude", "URI", "Waiter"],
+			"desc":"Handles the basic functionality of submitting a form and updating a dom element with the result."
+		},
+		"Fupdate.Append":{
+			"deps": ["Fupdate", "Fx.Reveal"],
+			"desc":"Uses Fupdate to fetch and update a DOM element, but appends the result into the target instead of overwriting its contents."
+		},
+		"Fupdate.Prompt":{
+			"deps":["Fupdate.Append", "StickyWin.Fx", "StickyWin.Modal", "StickyWin.Ajax"],
+			"desc":"Extends Fupdate and Fupdate.Append to use a popup (StickyWin) for the form."
+		},
+		"InputFocus": {
+			"deps":["Class.Extras", "Element", "Class.Occlude", "Class.ToElement"],
+			"desc":"Adds a 'focused' class to inputs when they have focus."
+		},
+		"ProductPicker":{
+			"deps":["Element.Event", "Fx.Tween", "Fx.Elements", "Element.Dimensions", "Drag", "StickyWin.Fx", "Request.JSONP", "dbug", "Element.Shortcuts", "Tips", "StyleWriter"],
+			"desc":"Allows the user to pick a product from a data source."
+		},
+		"SimpleEditor":{
+			"deps":["Class.Extras", "Class.ToElement", "Class.Occlude", "Element.Forms", "Element.Shortcuts", "Clipboard", "String.Extras"],
+			"optional":["Trinket.Base", "Trinket.contexts", "Trinket.LinkBuilder", "StickyWin.Modal", "StickyWin.ui"],
+			"desc":"A simple html editor for wrapping text with links and whatnot."
+		},
+		"TagMaker":{
+			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator", "StickyWin.Fx", "StickyWin.ui", "HtmlTable", "Drag"],
+			"optional": ["Drag.Move", "product.picker", "StickyWin.Fx.Drag"],
+			"desc":"Prompts the user to fill in the gaps to create an html tag output."
+		}
+	},
+	"3rdParty": {
+		"Autocompleter": {
+			"deps":["Fx.Tween", "Element.Shortcuts", "Element.Forms", "IframeShim", "Autocompleter.Observer", "Clientcide"],
+			"desc":"An auto completer class from <a href=\"http://digitarald.de\">http://digitarald.de</a>."
+		},
+		"Autocompleter.Local": {
+			"deps":["Autocompleter"],
+			"desc":"Allows Autocompleter to use an object in memory for autocompletion (instead of retrieving via ajax)."
+		},
+		"Autocompleter.Remote": {
+			"deps":["Autocompleter", "Request.HTML", "Request.JSON"],
+			"desc":"Allows Autocompleter to get data from a remote server (using Request - a.k.a. Ajax)."
+		},
+		"Autocompleter.JSONP": {
+			"deps":["Autocompleter.Remote", "Request.JSONP"],
+			"desc":"Allows Autocompleter to get data from a remote server using Request.JSONP (script injection)."
+		},
+		"Autocompleter.Observer": {
+			"deps":["Class.Extras", "Element.Event", "JSON", "Clientcide"],
+			"desc":"Used by Autocompleter to monitor an input for changes."
+		},
+		"Autocompleter.Clientcide": {
+			"deps":["Autocompleter", "Clientcide"],
+			"desc":"Extends Autocompleter to automatically inject the css styles."
+		},
+		"Lightbox": {
+			"deps":["Element.Event", "Element.Dimensions", "Selectors", "Browser", "Fx.Tween", "Fx.Morph", "DomReady", "Clientcide", "Class.Binds", "Modalizer"],
+			"desc":"A <a href=\"http://www.huddletogether.com/projects/lightbox/\">Lightbox clone for MooTools.</a>"
+		}
+	},
+	"iPhone":{
+		"CiUI":{
+			"deps":["CiUI"],
+			"desc":"CNET's iPhone UI. No dependencies (see docs and svn for demos, css, and images that accompany this script). <b>Important:</b> Don't include this script for anything <i>except</i> a mobile app.",
+			"exclude": true
+		}
+	},
+	"Localization": {
+		"SimpleEditor.Dutch":{
+			"deps":["SimpleEditor"],
+			"desc":"SimpleEditor messages in Dutch (feel free to send in your own translations).",
+			"exclude": true
+		},
+		"SimpleEditor.French":{
+			"deps":["SimpleEditor"],
+			"desc":"SimpleEditor messages in French (feel free to send in your own translations).",
+			"exclude": true
+		},
+		"SimpleEditor.Portuguese":{
+			"deps":["SimpleEditor"],
+			"desc":"SimpleEditor messages in Portuguese (feel free to send in your own translations).",
+			"exclude": true
+		},
+		"SimpleEditor.Spanish":{
+			"deps":["SimpleEditor"],
+			"desc":"SimpleEditor messages in Spanish (feel free to send in your own translations).",
+			"exclude": true
+		}
+	}
+}

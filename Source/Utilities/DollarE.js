@@ -1,0 +1,1 @@
+$E = document.getElement.bind(document);

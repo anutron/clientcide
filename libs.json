@@ -1,0 +1,22 @@
+{
+	"name":"Clientcide Libraries",
+	"revision":"http://cnetjavascript.googlecode.com/svn/trunk/",
+	"description":"Plugins built for Mootools 1.2",
+	"copyright":"MooTools, My Object Oriented Javascript Tools. Copyright (c) 2006-2007 Valerio Proietti, <http://mad4milk.net>, MIT Style License.||Clientcide Copyright (c) 2006-2008, http://www.clientcide.com/wiki/cnet-libraries#license",
+	"dbugBaseHref": "http://www.clientcide.com/cnet.gf/svn/",
+	"mootools-core": {
+		"scripts": "http://www.clientcide.com/cnet.gf/svn/Mootools/mootools-core/",
+		"name": "Mootools 1.2",
+		"optional": "true"
+	},
+	"mootools-more": {
+		"scripts": "http://www.clientcide.com/cnet.gf/svn/Mootools/mootools-more/",
+		"name": "Mootools Official Plugins",
+		"optional": "true"
+	},
+	"Clientcide": {
+		"scripts": "http://www.clientcide.com/cnet.gf/svn/",
+		"name": "Clientcide Common Libraries",
+		"optional": "false"
+	}
+}

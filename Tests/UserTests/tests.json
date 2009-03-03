@@ -1,0 +1,61 @@
+{
+	"Core":{
+		"Clientcide":['all']
+	},
+	"Browser": {
+		"FixPNG": ['all'],
+		"Popup":['all']
+	},
+	"Element":{
+		"Element.MouseOvers":['all']
+	},
+	"Fx": {
+		"Fx.Marquee":['all']
+	},
+	"UI": {
+		"StickyWin.alert":['all'],
+		"IconMenu":['all'],
+		"Modalizer":['all'],
+		"ObjectBrowser":['all'],
+		"PopupDetails":['PopupDetail', 'PopupDetails', 'PopupDetails-ajax'],
+		"StyleWriter":['all'],
+		"StickyWin":['all'],
+		"StickyWin.Fx":['all'],
+		"StickyWin.Fx.Drag":['all'],
+		"StickyWin.Ajax":['all'],
+		"StickyWin.Modal":['all'],
+		"StickyWin.ui.pointy":['all'],
+		"StickyWin.PointyTip":['all'],
+		"StickyWin.ui":['all'],
+		"Tips.Pointy":['all'],
+		"Waiter":['all']
+	},
+	"Layout": {
+		"Collapsable":['all'],
+		"HtmlTable":['all'],
+		"MultipleOpenAccordion":['all'],
+		"MooScroller":['all'],
+		"SimpleCarousel":['all'],
+		"SimpleSlideShow":['all'],
+		"TabSwapper":['all']
+	},
+	"Forms":{
+		"FormValidator.Tips":['all'],
+		"Fupdate": ['all'],
+		"Fupdate.Append": ['all'],
+		"Fupdate.Prompt": ['all'],
+		"Clipboard": ['all'],
+		"Confirmer": ['all'],
+		"DatePicker": ['all'],
+		"SimpleEditor": ['all'],
+		"TagMaker": ['all']
+	},
+	"3rdParty":{
+		"Autocompleter.Local":['all'],
+		"Autocompleter.JSONP":['all'],
+		"Lightbox":['all']
+	},
+	"Beta":{
+		"PostEditor.Forum":['all']
+	}
+}

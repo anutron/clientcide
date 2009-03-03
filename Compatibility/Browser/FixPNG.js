@@ -1,0 +1,1 @@
+var fixPNG = Browser.fixPNG;

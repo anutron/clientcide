@@ -1,7 +1,7 @@
 Class: StickyWin.PointyTip {#StickyWin-PointyTip}
 =================================================
 
-This is an instance of [StickyWin][] that automatically wraps the values you pass in [StickyWin.ui.pointy][] to create a tool-tip that points at a specified DOM element from a specified direction.
+This is an instance of [StickyWin][] that automatically wraps the values you pass in [StickyWin.UI.Pointy][] to create a tool-tip that points at a specified DOM element from a specified direction.
 
 ### Tutorial/Demo
 
@@ -28,7 +28,7 @@ This is an instance of [StickyWin][] that automatically wraps the values you pas
 
 ### A Note on Arguments
 
-Note that like [StickyWin.ui][] each of the arguments is optional. Thus, all of these would work:
+Note that like [StickyWin.UI][] each of the arguments is optional. Thus, all of these would work:
 
 		new StickyWin.Pointy(caption, body, options);
 		new StickyWin.Pointy(caption, body);
@@ -39,8 +39,8 @@ Note that like [StickyWin.ui][] each of the arguments is optional. Thus, all of 
 ### Options
 
 * All the options for [StickyWin][] in addition to:
-* point - (*mixed*) A *string* or *integer* for the direction of the pointer (see [StickyWin.ui.pointy][]). This direction will be used not only to position the pointer on the tip but also to position the tip. So, if the pointer points up, the tip will be below the *relativeTo* element. If the tip points left, the tip will be to the right. etc.
-* pointyOptions - (*object*) A set of key/value options passed on to [StickyWin.ui.pointy][].
+* point - (*mixed*) A *string* or *integer* for the direction of the pointer (see [StickyWin.UI.Pointy][]). This direction will be used not only to position the pointer on the tip but also to position the tip. So, if the pointer points up, the tip will be below the *relativeTo* element. If the tip points left, the tip will be to the right. etc.
+* pointyOptions - (*object*) A set of key/value options passed on to [StickyWin.UI.Pointy][].
 
 StickyWin.PointyTip Method: setContent {#StickyWin-PointyTip:setContent}
 ========================================================================
@@ -67,7 +67,7 @@ See the note on arguments in the section above.
 * *object* - This instance of StickyWin.PointyTip
 
 [StickyWin]: /docs/UI/StickyWin
-[StickyWin.ui.pointy]: /docs/UI/StickyWin.ui.pointy
+[StickyWin.UI.Pointy]: /docs/UI/StickyWin.UI.Pointy
 [Options]: http://www.mootools.net/docs/Class/Class.Extras
-[Class.ToElement]: http://www.mootools.net/more/docs/Class.Extras/ToElement
+[Class.ToElement]: /docs/Class/Class.ToElement
 [StyleWriter]: /docs/UI/StyleWriter

@@ -21,10 +21,10 @@ Each class here is identical to its extended form with the additional options li
 
 * url - (*string*) the default url for the instance to hit for its content.
 * requestOptions - (*object*) options passed to the ajax Request; defaults to *{method:'get'}*.
-* wrapWithUi - (*boolean*) *true*: wraps the response in [StickyWin.ui][]; *false*: does not; defaults to *false*.
-* caption - (*string*) if wrapping with [StickyWin.ui][], this caption will be used; defaults to an *empty string*.
-* uiOptions - (*object*) if wrapping with [StickyWin.ui][], these options will be passed along as the options to [StickyWin.ui][]; defaults to *{}* (empty object)
-* handleResponse - (*function*) handles the response from the server. By default it will wrap the response html with [StickyWin.ui][] if that option is enabled (which it isn't by default), then calls [StickyWin:setContent][] and then [StickyWin:show][]. This method is meant to be replaced with custom handlers if you want a different behavior (which is why it's an option).
+* wrapWithUi - (*boolean*) *true*: wraps the response in [StickyWin.UI][]; *false*: does not; defaults to *false*.
+* caption - (*string*) if wrapping with [StickyWin.UI][], this caption will be used; defaults to an *empty string*.
+* uiOptions - (*object*) if wrapping with [StickyWin.UI][], these options will be passed along as the options to [StickyWin.UI][]; defaults to *{}* (empty object)
+* handleResponse - (*function*) handles the response from the server. By default it will wrap the response html with [StickyWin.UI][] if that option is enabled (which it isn't by default), then calls [StickyWin:setContent][] and then [StickyWin:show][]. This method is meant to be replaced with custom handlers if you want a different behavior (which is why it's an option).
 
 StickyWin.Ajax Method: update {#StickyWin-Ajax:update}
 ------------------------------------------------------
@@ -62,7 +62,7 @@ Sends a request for new content.
 * this file only depends on [StickyWin][]; if you also include [StickyWin.Fx][], [StickyWin.Fx.Drag][], [StickyWin.Modal][] they will also be extended with *.Ajax versions.
 
 [StickyWin.Ajax]: #StickyWin-Ajax
-[StickyWin.ui]: /docs/UI/StickyWin.ui
+[StickyWin.UI]: /docs/UI/StickyWin.UI
 [StickyWin]: /docs/UI/StickyWin
 [StickyWin:setContent]: /docs/UI/StickyWin#StickyWin:setContent
 [StickyWin:show]: /docs/UI/StickyWin#StickyWin:show

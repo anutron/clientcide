@@ -89,7 +89,7 @@ License:
 					handleResponse: function(response) {
 						var responseScript = "";
 						this.swin.Request.response.text.stripScripts(function(script){	responseScript += script; });
-						var content = StickyWin.ui('Update Info', response, this.options.stickyWinUiOptions);
+						var content = this.options.useUi?StickyWin.ui('Update Info', response, this.options.stickyWinUiOptions):response;
 						this.swin.setContent(content);
 						this.element = this.swin.win.getElement('form');
 						this.initAfterUpdate();

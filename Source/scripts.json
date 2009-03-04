@@ -3,6 +3,16 @@
 		"Clientcide": {
 			"deps":["Clientcide"],
 			"desc":"The Clientcide namespace. Includes a method that allows you to set the location of image files to your own server; <a href=\"http://code.google.com/p/cnetjavascript/downloads/list\">download the files @ google code</a>; see <a href=\"http://www.clientcide.com/docs/Core/Clientcide\">docs</a>."
+		},
+		"dbug":{
+			"deps":["dbug", "Clientcide"],
+			"desc":"Wrapper for the firebug console.log() function."
+		}
+	},
+	"Class":{
+		"Class.ToElement": {
+			"deps":["Class", "Clientcide"],
+			"desc":"Mixin class that returns *this.element*. Allows you to do $(myInstance)."
 		}
 	},
 	"Browser":{
@@ -72,18 +82,18 @@
 			"desc":"This script extends StickyWin and (optionally) StickyWin.Fx classes to add Modalizer functionality."
 		},
 		"StickyWin.Ajax":{
-			"deps":["Request", "StickyWin", "StickyWin.ui"],
+			"deps":["Request", "StickyWin", "StickyWin.UI"],
 			"optional":["StickyWin.Fx", "StickyWin.Fx.Drag", "StickyWin.Modal"],
 			"desc":"Adds ajax functionality to all the StickyWin classes."
 		},
 		"StickyWin.alert":{
-			"deps":["StickyWin.Modal", "StickyWin.ui"],
+			"deps":["StickyWin.Modal", "StickyWin.UI"],
 			"desc":"The function in this script just makes a little alert box with a close button.",
 			"assets": {
 				"icon_problems_sm.gif": "http://www.cnet.com/html/rb/assets/global/simple.error.popup/icon_problems_sm.gif"
 			}
 		},
-		"StickyWin.ui":{
+		"StickyWin.UI":{
 			"deps":["Element.Style", "String.Extras", "StickyWin"],
 			"desc":"Creates an html holder for in-page popups using a default style.",
 			"assets":{
@@ -94,13 +104,13 @@
 				"closebtn.gif":"http://www.cnet.com/html/rb/assets/global/StickyWin.ui/closebtn.gif"
 			}
 		},
-		"StickyWin.ui.pointy":{
-			"deps":["Element.Shortcuts", "Element.Position", "StickyWin.ui"],
+		"StickyWin.UI.Pointy":{
+			"deps":["Element.Shortcuts", "Element.Position", "StickyWin.UI"],
 			"desc":"Similar to StickyWin.ui, this is a wrapper for content, this time a tip with a pointer."
 		},
 		"StickyWin.PointyTip":{
-			"deps":["StickyWin.ui.pointy"],
-			"desc":"A convenience library to place a StickyWin.ui.pointy relative to an element on the page easily."
+			"deps":["StickyWin.UI.Pointy"],
+			"desc":"A convenience library to place a StickyWin.UI.Pointy relative to an element on the page easily."
 		},
 		"Tips.Pointy":{
 			"deps":["Tips", "StickyWin.PointyTip"],
@@ -167,7 +177,7 @@
 			"desc":"Fades a message in and out for the user to tell them that some event (like an ajax save) has occurred."
 		},
 		"DatePicker":{
-			"deps":["Class.Extras", "Element.Event", "JSON", "Date", "dbug", "StickyWin.ui"],
+			"deps":["Class.Extras", "Element.Event", "JSON", "Date", "dbug", "StickyWin.UI"],
 			"optional": ["Drag", "StickyWin.Fx"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
@@ -202,11 +212,11 @@
 		},
 		"SimpleEditor":{
 			"deps":["Class.Extras", "Class.ToElement", "Class.Occlude", "Element.Forms", "Element.Shortcuts", "Clipboard", "String.Extras"],
-			"optional":["Trinket.Base", "Trinket.contexts", "Trinket.LinkBuilder", "StickyWin.Modal", "StickyWin.ui"],
+			"optional":["Trinket.Base", "Trinket.contexts", "Trinket.LinkBuilder", "StickyWin.Modal", "StickyWin.UI"],
 			"desc":"A simple html editor for wrapping text with links and whatnot."
 		},
 		"TagMaker":{
-			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator", "StickyWin.Fx", "StickyWin.ui", "HtmlTable", "Drag"],
+			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator", "StickyWin.Fx", "StickyWin.UI", "HtmlTable", "Drag"],
 			"optional": ["Drag.Move", "product.picker", "StickyWin.Fx.Drag"],
 			"desc":"Prompts the user to fill in the gaps to create an html tag output."
 		}

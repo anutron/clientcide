@@ -154,7 +154,7 @@ Default Commands {#Commands}
 * bullets - shortcut key: 8 (a.k.a. asterisk)
 * numberList - shortcut key: =
 * clean - removes non-asci MS Word style characters with [Element.tidy][]
-* preview - uses [StickyWin.Modal][]	and [StickyWin.ui][] to display a preview
+* preview - uses [StickyWin.Modal][]	and [StickyWin.UI][] to display a preview
 
 Localization {#Localizaion}
 ===========================
@@ -187,8 +187,8 @@ Element property: SimpleEditor {#Element:SimpleEditor}
 [Clipboard.js]: /docs/Forms/Clipboard
 [Element.tidy]: /docs/Element/Element.Forms
 [StickyWin.Modal]: /docs/UI/StickyWin.Modal
-[StickyWin.ui]: /docs/UI/StickyWin.ui
+[StickyWin.UI]: /docs/UI/StickyWin.UI
 [Clientcide's Download Page]: http://www.clientcide.com/js
 [send it in]: http://code.google.com/p/cnetjavascript/issues/list
-[Class.ToElement]: http://mootools.net/more/docs/Class.Extras/Class.ToElement
-[Class.Occlude]: http://mootools.net/more/docs/Class.Extras/Class.Occlude
+[Class.ToElement]: /docs/Class/Class.ToElement
+[Class.Occlude]: http://mootools.net/more/docs/Class/Class.Occlude

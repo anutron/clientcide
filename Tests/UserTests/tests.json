@@ -24,9 +24,9 @@
 		"StickyWin.Fx.Drag":['all'],
 		"StickyWin.Ajax":['all'],
 		"StickyWin.Modal":['all'],
-		"StickyWin.ui.pointy":['all'],
+		"StickyWin.UI.Pointy":['all'],
 		"StickyWin.PointyTip":['all'],
-		"StickyWin.ui":['all'],
+		"StickyWin.UI":['all'],
 		"Tips.Pointy":['all'],
 		"Waiter":['all']
 	},

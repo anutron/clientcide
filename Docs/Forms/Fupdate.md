@@ -48,5 +48,5 @@ Fupdate and FormValidator {#Fupdate:FormValidator}
 [Chain]: http://docs.mootools.net/Class/Class.Extras#Chain
 [Events]: http://docs.mootools.net/Class/Class.Extras#Events
 [Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Class.Occlude]: http://mootools.net/more/docs/Class.Extras/Class.Occlude
-[Class.ToElement]: http://mootools.net/more/docs/Class.Extras/Class.ToElement
+[Class.Occlude]: http://mootools.net/more/docs/Class/Class.Occlude
+[Class.ToElement]: /docs/Class/Class.ToElement

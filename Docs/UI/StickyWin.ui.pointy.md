@@ -1,7 +1,7 @@
 Class: StickyWin.UI.Pointy {#StickyWin-UI-Pointy}
 =================================================
 
-Extends the [StickyWin.UI][] class to create a layout with a pointer that can point in the specified direction. Note that this class is only defined for extensibility. The intended use is the static method [StickyWin.ui.pointy][]. See [StickyWin.UI][] for usage details.
+Extends the [StickyWin.UI][] class to create a layout with a pointer that can point in the specified direction. Note that this class is only defined for extensibility. The intended use is the static method [StickyWin.UI.pointy][]. See [StickyWin.UI][] for usage details.
 
 ### Tutorial/Demo
 
@@ -12,22 +12,22 @@ Extends the [StickyWin.UI][] class to create a layout with a pointer that can po
 
 * [StickyWin.UI][]
 
-Static Method: StickyWin.ui.pointy {#StickyWin-ui-pointy}
+Static Method: StickyWin.UI.pointy {#StickyWin-UI-pointy}
 =========================================================
 
 Creates an html holder for in-page [StickyWin][] popups using a default style - this one using a pointer that can point in a specified direction. **This is not a class**; it is a stand-alone method. This is the intended use for this interface. You can use the class ([StickyWin.UI.Pointy][] above) but there's really no need.
 	
 ### Syntax
 
-	StickyWin.ui.pointy([caption, body, options]); //returns a DOM element
+	StickyWin.UI.pointy([caption, body, options]); //returns a DOM element
 
 ### Arguments
 
-The same as [StickyWin.ui][]
+The same as [StickyWin.UI][]
 
 ### Options
 
-* The same options as [StickyWin.ui][] in addition to:
+* The same options as [StickyWin.UI][] in addition to:
 * theme - (*string*) Which theme to use for the popup. See below for information on themes.
 * themes - (*object*) A collection of styling information. See below for information on themes.
 * css - (*string*) You may use your own custom CSS for the instance. This will be injected into the document for you.
@@ -66,7 +66,7 @@ The pointy ui has a pointer that points up, down, left, or right. The *direction
 
 ### Example
 
-	var myUI = new StickyWin.ui.pointy('A caption', 'A body', {
+	var myUI = new StickyWin.UI.Pointy('A caption', 'A body', {
 		width: 150,
 		direction: 11,
 		theme: 'light'
@@ -77,7 +77,6 @@ The pointy ui has a pointer that points up, down, left, or right. The *direction
 See also [StickyWin.PointyTip][] which is a version of [StickyWin][] that automatically positions itself using this tip layout and the direction you specify.
 
 [StickyWin.UI]: /docs/UI/StickyWin.UI
-[StickyWin.ui.pointy]: /docs/UI/StickyWin.ui.pointy
-[StickyWin.UI.Pointy]: /docs/UI/StickyWin.ui.pointy#StickyWin-UI-Pointy
+[StickyWin.UI.pointy]: #StickyWin-UI-pointy
 [StickyWin.PointyTip]: /docs/UI/StickyWin.PointyTip
 [StickyWin]: /docs/UI/StickyWin

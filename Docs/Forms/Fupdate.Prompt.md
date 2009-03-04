@@ -20,7 +20,7 @@ Fupdate.Prompt Method: constructor {#Fupdate-Prompt:constructor}
 
 ### Arguments
 
-1. form - (*mixed*) A form Element or the string id of a form Element or the HTML (a *string*) of a form Element used to manage submissions. This form will be injected into a [StickyWin][] specified in the options and optionally wrapped with [StickyWin.ui].
+1. form - (*mixed*) A form Element or the string id of a form Element or the HTML (a *string*) of a form Element used to manage submissions. This form will be injected into a [StickyWin][] specified in the options and optionally wrapped with [StickyWin.UI].
 2. update - (*mixed*) An Element or the string id of an Element to update with the response.
 3. options - (*object*, optional) The options object described below:
 
@@ -136,7 +136,7 @@ Fupdate.Append.AjaxPrompt Method: constructor {#Fupdate-Append-AjaxPrompt:constr
 [Fupdate.AjaxPrompt]: #Fupdate-AjaxPrompt
 [StickyWin]: /docs/UI/StickyWin
 [StickyWin.Fx.Modal]: /docs/UI/StickyWin.Fx.Modal
-[StickyWin.ui]: /docs/UI/StickyWin.ui
+[StickyWin.UI]: /docs/UI/StickyWin.UI
 [StickyWin.Fx.Modal.Ajax]: /docs/UI/StickyWin.Fx.Modal.Ajax
 [Waiter]: /docs/UI/Waiter
 [Fupdate]: /docs/Forms/Fupdate

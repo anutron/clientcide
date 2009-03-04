@@ -1,5 +1,5 @@
 /*
-Script: StickyWin.ui.pointy.js
+Script: StickyWin.UI.Pointy.js
 
 Creates an html holder for in-page popups using a default style - this one including a pointer in the specified direction.
 
@@ -213,6 +213,7 @@ StickyWin.UI.Pointy = new Class({
 	}
 });
 
-StickyWin.ui.pointy = function(caption, body, options){
+StickyWin.UI.pointy = function(caption, body, options){
 	return $(new StickyWin.UI.Pointy(caption, body, options));
 };
+StickyWin.ui.pointy = StickyWin.UI.pointy;

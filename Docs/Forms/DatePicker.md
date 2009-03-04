@@ -30,7 +30,7 @@ Allows the user to enter a date in any popuplar format or choose from a calendar
 
 * format - (*string*) see [Date][]; defaults to *"%x"* which renders 12/31/1999
 * stickyWinOptions - (*object*) key/value settings to pass along to the [StickyWin][] popup object; defaults to *{position: 'bottomLeft', offset: {x:10, y:10}}*
-* stickyWinUiOptions - (*object*) options passed to [StickyWin.ui][]; note that the option for *width* is set automatically.
+* stickyWinUiOptions - (*object*) options passed to [StickyWin.UI][]; note that the option for *width* is set automatically.
 * stickyWinToUse - (*Class*) which [StickyWin][] class to use ([StickyWin][], [StickyWin.Fx][], etc.)
 * draggable - (*boolean*) whether or not the popup is draggable; requires [Drag][]; defaults to *true* (if [Drag][] is not present, the element won't be draggable, but it won't throw an error).
 * dragOptions - (*object*) key/value settings to pass on to [Drag][]
@@ -187,7 +187,7 @@ This method on the DatePicker namespace hides all instances of DatePickers.
 [Date]: /docs/Native/Date
 [Date.Extras]: /docs/Native/Date.Extras
 [StickyWin]: /docs/UI/StickyWin
-[StickyWin.ui]: /docs/UI/StickyWin.ui
+[StickyWin.UI]: /docs/UI/StickyWin.UI
 [StickyWin.Fx]: /docs/UI/StickyWin.Fx
 [FormValidator]: /docs/Forms/FormValidator
 [Options]: http://docs.mootools.net/Class/Class.Extras#Options

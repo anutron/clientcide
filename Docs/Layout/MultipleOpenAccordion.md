@@ -51,13 +51,12 @@ Adds a section to the accordion.
 
 ### Syntax
 
-	myMultipleOpenAccordion.addSection(toggler, element[, pos]);
+	myMultipleOpenAccordion.addSection(toggler, element);
 
 ### Arguments
 
 1. toggler - (*mixed*) A string of the id for an Element or an Element reference that, when clicked, will reveal the associated element.
 2. element - (*mixed*) A string of the id for an Element or an Element reference that is exposed with its corresponding toggler is clicked.
-3. pos - (*integer*, optional) the index location for the section; if specified the toggler and element will be injected into the accordion at that location, otherwise the item is added to the end.
 
 ### Returns
 

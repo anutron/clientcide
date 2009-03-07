@@ -24,16 +24,15 @@ Fupdate.Append = new Class({
 		}, this.options.requestOptions)).addEvents({
 			success: function(tree, elements, html, javascript){
 				var container = new Element('div').set('html', html).hide();
+				var kids = container.getChildren();
+				if (kids.length == 1) container = kids[0];
 				container.inject(this.update, this.options.inject);
-				if (this.options.useReveal) {
-					this.fireEvent('beforeEffect', container);
-					container.set('reveal', this.options.revealOptions).reveal().get('reveal').chain(function(){
-						this.fireEvent('success', [container, this.update, tree, elements, html, javascript]);
-					}.bind(this));
-				} else {
-					container.show();
-					this.fireEvent('success', [container, this.update, tree, elements, html]);
-				}
+				this.fireEvent('beforeEffect', container);
+				var finish = function(){
+					this.fireEvent('success', [container, this.update, tree, elements, html, javascript]);
+				}.bind(this);
+				if (this.options.useReveal) container.set('reveal', this.options.revealOptions).reveal().get('reveal').chain(finish);
+				else finish();
 			}.bind(this),
 			failure: function(xhr){
 				this.fireEvent('failure', xhr);

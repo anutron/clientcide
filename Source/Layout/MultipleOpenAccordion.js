@@ -37,21 +37,13 @@ var MultipleOpenAccordion = new Class({
 		this.openSections = this.showSections.bind(this);
 		this.closeSections = this.hideSections.bind(this);
 	},
-	addSection: function(toggler, element, pos){
+	addSection: function(toggler, element){
 		toggler = $(toggler);
 		element = $(element);
 		var test = this.togglers.contains(toggler);
 		var len = this.togglers.length;
 		this.togglers.include(toggler);
 		this.elements.include(element);
-		if (len && (!test || pos)){
-			pos = $pick(pos - 1, len - 1);
-			toggler.inject(this.elements[pos], 'after');
-			element.inject(toggler, 'after');
-		} else if (this.container && !test){
-			toggler.inject(this.container);
-			element.inject(this.container);
-		}
 		var idx = this.togglers.indexOf(toggler);
 		toggler.addEvent('click', this.toggleSection.bind(this, idx));
 		var mode;

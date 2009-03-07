@@ -127,9 +127,9 @@ var Fupdate;
 
 	});
 
-	var dedupeQs = function(){
+	var dedupeQs = function(str){
 		var result = $H({});
-		this.split("&").each(function(pair){
+		str.split("&").each(function(pair){
 			var n = pair.indexOf("=");
 			result.include(unescape(pair.substring(0, n)), unescape(pair.substring(n+1, pair.length)));
 		});

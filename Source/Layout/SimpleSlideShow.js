@@ -18,10 +18,10 @@ var SimpleSlideShow = new Class({
 		prevLink: false,
 		wrap: true,
 		disabledLinkClass: 'disabled',
-//	onNext: $empty,
-//	onPrev: $empty,
-//	onSlideClick: $empty,
-//	onSlideDisplay: $empty,
+//		onNext: $empty,
+//		onPrev: $empty,
+//		onSlideClick: $empty,
+//		onSlideDisplay: $empty,
 		crossFadeOptions: {}
 	},
 	initialize: function(options){

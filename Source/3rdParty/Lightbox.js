@@ -62,15 +62,16 @@ var Lightbox = new Class({
 		this.container = new Element('div', {
 			'class':'lbContainer'
 		}).inject(document.body);
-		this.setModalOptions({
-			elementsToHide: ''
-		});
+		this.setModalOptions();
 		this.overlay = this.layer().addClass('lbOverlay');
-		this.setModalStyle(this.options.overlayStyles);
+		this.setModalStyle($merge(this.options.overlayStyles, {
+				opacity: 0
+			})
+		);
 		this.popup = new Element('div', {
 			'class':'lbPopup'
 		}).inject(this.container);
-		this.overlay.inject(this.popup).setStyles(this.options.overlayStyles);
+		this.overlay.inject(this.popup);
 		this.center = new Element('div', {
 			styles: {	
 				width: this.options.initialWidth, 
@@ -167,7 +168,8 @@ var Lightbox = new Class({
 			top: this.top,
 			display: ''
 		});
-		this.fx.overlay.start(this.options.overlayStyles.opacity);
+		this.modalShow();
+		this.fx.overlay.start(0, this.options.overlayStyles.opacity);
 		return this.changeImage(imageNum);
 	},
 

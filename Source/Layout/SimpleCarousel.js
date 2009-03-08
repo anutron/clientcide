@@ -86,8 +86,8 @@ var SimpleCarousel = new Class({
 		return this;
 	},
 	rotate: function(){
-		current = this.currentSlide;
-		next = (current+1 >= this.slides.length) ? 0 : current+1;
+		var current = this.currentSlide;
+		var next = (current+1 >= this.slides.length) ? 0 : current+1;
 		this.showSlide(next);
 		this.fireEvent('onRotate', next);
 		return this;

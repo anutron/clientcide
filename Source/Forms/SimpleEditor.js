@@ -76,13 +76,13 @@ SimpleEditor.addCommands({
 	bold: {
 		shortcut: 'b',
 		command: function(input){
-			input.insertAroundCursor({before:'<b>',after:'</b>'});
+			input.insertAroundCursor({before:'<strong>',after:'</strong>'});
 		}
 	},
 	underline: {
 		shortcut: 'u',
 		command: function(input){
-			input.insertAroundCursor({before:'<u>',after:'</u>'});
+			input.insertAroundCursor({before:'<span style="text-decoration:underline">',after:'</span>'});
 		}
 	},
 	anchor: {
@@ -157,7 +157,7 @@ SimpleEditor.addCommands({
 	italics: {
 		shortcut: 'i',
 		command: function(input){
-			input.insertAroundCursor({before:'<i>',after:'</i>'});
+			input.insertAroundCursor({before:'<em>',after:'</em>'});
 		}
 	},
 	bullets: {

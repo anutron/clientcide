@@ -27,20 +27,22 @@ var dbug = {
 		} else dbug.log('no such timer: %s', name);
 	},
 	enable: function(silent) { 
-		if(dbug.firebug) {
+		var con = window.firebug ? firebug.d.console.cmd : window.console;
+
+		if((!!window.console && !!window.console.warn) || window.firebug) {
 			try {
 				dbug.enabled = true;
 				dbug.log = function(){
-						(console.debug || console.log).apply(console, arguments);
+						(con.debug || con.log).apply(con, arguments);
 				};
 				dbug.time = function(){
-					console.time.apply(console, arguments);
+					con.time.apply(con, arguments);
 				};
 				dbug.timeEnd = function(){
-					console.timeEnd.apply(console, arguments);
+					con.timeEnd.apply(con, arguments);
 				};
 				if(!silent) dbug.log('enabling dbug');
-				for(var i=0;i<dbug.logged.length;i++){ dbug.log.apply(console, dbug.logged[i]); }
+				for(var i=0;i<dbug.logged.length;i++){ dbug.log.apply(con, dbug.logged[i]); }
 				dbug.logged=[];
 			} catch(e) {
 				dbug.enable.delay(400);
@@ -71,18 +73,19 @@ var dbug = {
 };
 
 (function(){
-	var fb = typeof console != "undefined";
+	var fb = !!window.console || !!window.firebug;
+	var con = window.firebug ? window.firebug.d.console.cmd : window.console;
 	var debugMethods = ['debug','info','warn','error','assert','dir','dirxml'];
 	var otherMethods = ['trace','group','groupEnd','profile','profileEnd','count'];
 	function set(methodList, defaultFunction) {
 		for(var i = 0; i < methodList.length; i++){
-			dbug[methodList[i]] = (fb && console[methodList[i]])?console[methodList[i]]:defaultFunction;
+			dbug[methodList[i]] = (fb && con[methodList[i]])?con[methodList[i]]:defaultFunction;
 		}
 	};
 	set(debugMethods, dbug.log);
 	set(otherMethods, function(){});
 })();
-if (typeof console != "undefined" && console.warn){
+if ((!!window.console && !!window.console.warn) || window.firebug){
 	dbug.firebug = true;
 	var value = document.cookie.match('(?:^|;)\\s*jsdebug=([^;]*)');
 	var debugCookie = value ? unescape(value[1]) : false;

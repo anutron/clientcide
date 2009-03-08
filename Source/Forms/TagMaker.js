@@ -41,14 +41,6 @@ var TagMaker = new Class({
 		this.setOptions(options);
 		this.buttons = [
 			{
-				text: 'Copy',
-				onClick: this.copyToClipboard.bind(this),
-				properties: {
-					'class': 'closeSticky tip',
-					title: 'Copy::Copy the html to your OS clipboard (like hitting Ctrl+C)'
-				}
-			},
-			{
 				text: 'Paste',
 				onClick: function(){
 					if (this.validator.validate()) this.insert();
@@ -209,15 +201,6 @@ var TagMaker = new Class({
 			}
 		});
 		return this.resultInput.value = html;
-	},
-	copyToClipboard: function(){
-		var inputs = this.form.getElements('input');
-		var result = inputs[inputs.length-1];
-		result.select();
-		Clipboard.copyFromElement(result);
-		$$('.tagMaker-tip').hide();
-		this.win.hide();
-		this.fireEvent('onChoose');
 	},
 	insert: function(){
 		if (!this.target) {

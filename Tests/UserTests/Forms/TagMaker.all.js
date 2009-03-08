@@ -9,6 +9,5 @@
 			},
 			body: ""
 		}
-	],
-	otherScripts: ["Clipboard"]
+	]
 }

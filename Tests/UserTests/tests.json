@@ -44,7 +44,6 @@
 		"Fupdate": ['all'],
 		"Fupdate.Append": ['all'],
 		"Fupdate.Prompt": ['all'],
-		"Clipboard": ['all'],
 		"Confirmer": ['all'],
 		"DatePicker": ['all'],
 		"SimpleEditor": ['all'],

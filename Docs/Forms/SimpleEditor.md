@@ -141,8 +141,6 @@ Default Commands {#Commands}
 * bold - shortcut key: b
 * underline - shortcut key: u
 * anchor - shortcut key: l
-* copy - no shortcut; requires [Clipboard.js][]
-* cut - no shortcut; requires [Clipboard.js][]
 * hr - shortcut key: - (dash)
 * img - shortcut key: g
 * stripTags - shortcut key: \
@@ -184,7 +182,6 @@ Element property: SimpleEditor {#Element:SimpleEditor}
 [SimpleEditor]: #SimpleEditor
 [SimpleEditor:addCommands]: #SimpleEditor:addCommands
 [SimpleEditor:addCommand]: #SimpleEditor:addCommand
-[Clipboard.js]: /docs/Forms/Clipboard
 [Element.tidy]: /docs/Element/Element.Forms
 [StickyWin.Modal]: /docs/UI/StickyWin.Modal
 [StickyWin.UI]: /docs/UI/StickyWin.UI

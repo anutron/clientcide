@@ -99,23 +99,6 @@ SimpleEditor.addCommands({
 			}
 		}
 	},
-	copy: {
-		shortcut: false,
-		command: function(input){
-			if (Clipboard) Clipboard.copyFromElement(input);
-			else simpleErrorPopup(SimpleEditor.getMsg('woops'), SimpleEditor.getMsg('nopeCtrlC'));
-			input.focus();
-		}
-	},
-	cut: {
-		shortcut: false,
-		command: function(input){
-			if (Clipboard) {
-				Clipboard.copyFromElement(input);
-				input.insertAtCursor('');
-			} else simpleErrorPopup(SimpleEditor.getMsg('woops'), SimpleEditor.getMsg('nopeCtrlX'));
-		}
-	},
 	hr: {
 		shortcut: '-',
 		command: function(input){

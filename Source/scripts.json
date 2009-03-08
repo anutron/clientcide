@@ -165,13 +165,6 @@
 		}
 	},
 	"Forms":{
-		"Clipboard":{
-			"deps":["DomReady", "Clientcide"],
-			"desc":"Adds functionality to let javascript write to the OS clipboard.",
-			"assets": {
-				"Clipboard SWF": "http://www.cnet.com/html/rb/assets/global/clipboard/_clipboard.swf"
-			}
-		},
 		"Confirmer":{
 			"deps":["DomReady", "Fx.Tween", "Element.Shortcuts", "Element.Position"],
 			"desc":"Fades a message in and out for the user to tell them that some event (like an ajax save) has occurred."

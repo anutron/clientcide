@@ -28,7 +28,7 @@ var modalWinBase = function(extend){
 		},
 		hide: function(hideModal){
 			if ($pick(hideModal, true)) this.modalHide();
-			this.parent();
+			else this.parent();
 		}
 	}
 };

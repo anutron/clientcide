@@ -17,9 +17,9 @@ var Modalizer = new Class({
 	},
 	setModalOptions: function(options){
 		this.modalOptions = $merge({
-			width:(window.getScrollSize().x+300),
-			height:(window.getScrollSize().y+300),
-			elementsToHide: 'select',
+			width:(window.getScrollSize().x),
+			height:(window.getScrollSize().y),
+			elementsToHide: 'select, embed, object',
 			hideOnClick: true,
 			modalStyle: {},
 			updateOnResize: true,
@@ -36,8 +36,8 @@ var Modalizer = new Class({
 	resize: function(){
 		if (this.layer()) {
 			this.layer().setStyles({
-				width:(window.getScrollSize().x+300),
-				height:(window.getScrollSize().y+300)
+				width:(window.getScrollSize().x),
+				height:(window.getScrollSize().y)
 			});
 		}
 	},

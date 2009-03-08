@@ -59,5 +59,5 @@ If the input value has changed between calling *pause* and *resume*, the *onFire
 
 [Observer]: #Observer
 [Autocompleter]: /docs/3rdParty/Autocompleter
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

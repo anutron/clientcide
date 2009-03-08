@@ -37,4 +37,4 @@ Fupdate.Append Method: constructor {#Fupdate-Append:constructor}
 
 [Fupdate]: /docs/Forms/Fupdate
 [Fx.Reveal]: /docs/Fx/Fx.Reveal
-[Element.inject]: http://docs.mootools.net/Element/Element#Element:inject
+[Element.inject]: http://www.mootools.net/docs/core/Element/Element#Element:inject

@@ -68,6 +68,6 @@ See the note on arguments in the section above.
 
 [StickyWin]: /docs/UI/StickyWin
 [StickyWin.UI.Pointy]: /docs/UI/StickyWin.UI.Pointy
-[Options]: http://www.mootools.net/docs/Class/Class.Extras
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras
 [Class.ToElement]: /docs/Class/Class.ToElement
 [StyleWriter]: /docs/UI/StyleWriter

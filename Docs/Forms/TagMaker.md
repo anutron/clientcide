@@ -149,5 +149,5 @@ The default anchor tag maker.
 [ProductPicker]: /docs/Forms/ProductPicker#ProductPicker
 [FormValidator]: /docs/Forms/FormValidator
 [StyleWriter]: /docs/UI/StyleWriter
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

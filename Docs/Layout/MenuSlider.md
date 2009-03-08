@@ -75,6 +75,6 @@ Immediately hides the submenu.
 * *object* - This instance of [MenuSlider][].
 
 [IframeShim]: /Browser/IframeShim
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
 [MenuSlider]: /Layout/MenuSlider

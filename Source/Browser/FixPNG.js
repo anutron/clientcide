@@ -12,7 +12,7 @@ $extend(Browser, {
 				el = $(el);
 				if (!el) return el;
 				if (el.get('tag') == "img" && el.get('src').test(".png")) {
-					var vis = el.isVisible();
+					var vis = el.isDisplayed();
 					try { //safari sometimes crashes here, so catch it
 						dim = el.getSize();
 					}catch(e){}

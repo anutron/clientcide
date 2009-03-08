@@ -45,8 +45,8 @@ Fupdate and FormValidator {#Fupdate:FormValidator}
 
 *Fupdate* integrates with [FormValidator][] to prevent the ajax being sent if the validation fails. It retrieves the *FormValidator* instance from the form, so all that is required is that you instantiate the *FormValidator* before you instantiate the instance of *Fudpate*. If the instance of *FormValidator* has the *stopOnFailure* option set to *true* (the default) then *Fupdate* will not send the ajax request if the validator fails.
 
-[Chain]: http://docs.mootools.net/Class/Class.Extras#Chain
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Class.Occlude]: http://mootools.net/more/docs/Class/Class.Occlude
+[Chain]: http://www.mootools.net/docs/core/Class/Class.Extras#Chain
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Class.Occlude]: http://mootools.net/docs/more/Class/Class.Occlude
 [Class.ToElement]: /docs/Class/Class.ToElement

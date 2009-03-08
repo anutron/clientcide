@@ -191,4 +191,4 @@ Element property: SimpleEditor {#Element:SimpleEditor}
 [Clientcide's Download Page]: http://www.clientcide.com/js
 [send it in]: http://code.google.com/p/cnetjavascript/issues/list
 [Class.ToElement]: /docs/Class/Class.ToElement
-[Class.Occlude]: http://mootools.net/more/docs/Class/Class.Occlude
+[Class.Occlude]: http://mootools.net/docs/more/Class/Class.Occlude

@@ -50,6 +50,6 @@ These options depend on [StickyWin.Fx.Drag][] and [Drag][]; so they don't do any
 
 [StickyWin]: /docs/UI/StickyWin
 [StickyWin.Fx.Drag]: /docs/UI/StickyWin.Fx.Drag
-[Drag]: http://docs.mootools.net/Drag/Drag
-[Fx.Transitions]: http://docs.mootools.net/Fx/Fx.Transitions
-[sine:in:out]: http://docs.mootools.net/Fx/Fx.Transitions#Fx-Transitions:sine
+[Drag]: http://www.mootools.net/docs/more/Drag/Drag
+[Fx.Transitions]: http://www.mootools.net/docs/core/Fx/Fx.Transitions
+[sine:in:out]: http://www.mootools.net/docs/core/Fx/Fx.Transitions#Fx-Transitions:sine

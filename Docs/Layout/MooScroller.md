@@ -87,5 +87,5 @@ Updates the size of the scroll knob; execute this method when the content change
 
 	myMooScroller.update();
 
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

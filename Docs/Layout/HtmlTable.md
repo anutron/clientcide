@@ -152,4 +152,4 @@ Element property: HtmlTable {#Element:HtmlTable}
 
 [HtmlTable]: #HtmlTable
 [HtmlTable:push]: #HtmlTable:push
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options

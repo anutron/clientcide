@@ -31,6 +31,6 @@ Simply adds the css class 'focused' to an input that currently has focus.
 		focusedClass: 'highlight'
 	});
 
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Class.Occlude]: http://www.mootools.net/more/docs/Class/Class.Occlude
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Class.Occlude]: http://www.mootools.net/docs/more/Class/Class.Occlude
 [Class.ToElement]: /docs/Class/ToElement

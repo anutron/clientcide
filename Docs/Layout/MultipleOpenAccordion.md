@@ -234,6 +234,6 @@ Hides specific sections open or closed.
 * (*object*) This instance of [MultipleOpenAccordion][]
 
 [MultipleOpenAccordion]: #MultipleOpenAccordion
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
-[Chain]: http://docs.mootools.net/Class/Class.Extras#Chain
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
+[Chain]: http://www.mootools.net/docs/core/Class/Class.Extras#Chain

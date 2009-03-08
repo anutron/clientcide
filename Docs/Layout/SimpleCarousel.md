@@ -135,5 +135,5 @@ Rotates one slide forward.
 * (*object*) This instance of [SimpleCarousel][]
 
 [SimpleCarousel]: #SimpleCarousel
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

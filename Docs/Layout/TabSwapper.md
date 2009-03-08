@@ -147,6 +147,6 @@ Shows a given section (as if the user clicked the tab).
 
 [TabSwapper]: #TabSwapper
 [addTab]: #TabSwapper:addTab
-[$$]: http://docs.mootools.net/Element/Element#dollars
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[$$]: http://www.mootools.net/docs/core/Element/Element#dollars
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

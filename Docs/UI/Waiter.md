@@ -293,7 +293,7 @@ Retrieves the "build-in"  instance of [Waiter][] and calls its *release* method.
 [Waiter]: #Waiter
 [IframeShim]: /docs/Browser/IframeShim
 [Element:position]: /docs/Element/Element.Position#Element:position
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
-[Chain]: http://docs.mootools.net/Class/Class.Extras#Chain
-[Request.HTML]: http://docs.mootools.net/Request/Request.HTML
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
+[Chain]: http://www.mootools.net/docs/core/Class/Class.Extras#Chain
+[Request.HTML]: http://www.mootools.net/docs/core/Request/Request.HTML

@@ -66,10 +66,10 @@ A new Lightbox is created on [DomReady][], so it is not required that you write 
 
 [LightBox]: #LightBox
 [Clientcide.setAssetLocation]: /docs/Core/Clientcide#Clientcide:setAssetLocation
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
-[Fx.Transitions]: http://docs.mootools.net/Fx/Fx.Transitions
-[Element:setStyle]: http://docs.mootools.net/Element/Element.Style#Element:setStyle
-[DomReady]: http://docs.mootools.net/Utilities/DomReady
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
+[Fx.Transitions]: http://www.mootools.net/docs/core/Fx/Fx.Transitions
+[Element:setStyle]: http://www.mootools.net/docs/core/Element/Element.Style#Element:setStyle
+[DomReady]: http://www.mootools.net/docs/core/Utilities/DomReady
 [http://www.digitalia.be]: http://www.digitalia.be
 [the original Lightbox v2 by Lokesh Dhakar]: http://www.huddletogether.com/projects/lightbox2/

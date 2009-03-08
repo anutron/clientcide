@@ -75,4 +75,4 @@ Shows the message, hiding the old one.
 * (*object*) This [Fx.Marquee][] instance.
 
 [Fx.Marquee]: #Fx-Marquee
-[Fx.Morph]: http://docs.mootools.net/Fx/Fx.Morph
+[Fx.Morph]: http://www.mootools.net/docs/core/Fx/Fx.Morph

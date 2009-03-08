@@ -193,5 +193,5 @@ In the example *myElement.retrieve('StickyWin')*, *myElement* is the containing 
 [Element:position]: /docs/Element/Element.Position#Element:position
 [Element:pin]: /docs/Element/Element.Pin#Element:pin
 [Element:unpin]: /docs/Element/Element.Pin#Element:unpin
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

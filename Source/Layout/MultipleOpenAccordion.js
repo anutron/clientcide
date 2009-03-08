@@ -58,7 +58,7 @@ var MultipleOpenAccordion = new Class({
 		return this;
 	},
 	onComplete: function(idx, callChain){
-		this.fireEvent(this.elements[idx].isVisible()?'onActive':'onBackground', [this.togglers[idx], this.elements[idx]]);
+		this.fireEvent(this.elements[idx].isDisplayed()?'onActive':'onBackground', [this.togglers[idx], this.elements[idx]]);
 		this.callChain();
 		return this;
 	},

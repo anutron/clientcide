@@ -111,4 +111,4 @@ This actually represents a way to keep refering to the same window that's alread
 The result is you just refreshed the already open window with the same url. There are ways to do this	without refreshing, but not with this class (yet).
 
 [Popup]: #Browser-Popup
-[Browser]: http://docs.mootools.net/Core/Browser
+[Browser]: http://www.mootools.net/docs/Core/Browser

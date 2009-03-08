@@ -80,9 +80,9 @@ This method removes the instance.
 	myAutocompleter.destroy();
 
 [IframeShim]: /docs/Browser/IframeShim
-[Element:getOffsetParent]: /docs/Element/Element.Position#Element:getOffsetParent
-[Element.Position]: /docs/Element/Element.Position
+[Element:getOffsetParent]: http://www.mootools.net/docs/more/Element/Element.Position#Element:getOffsetParent
+[Element.Position]: http://www.mootools.net/docs/more/docs/Element/Element.Position
 [Observer]: /docs/3rdParty/Autocompleter.Observer
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
-[Fx.Tween]: http://docs.mootools.net/Fx/Fx.Tween
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
+[Fx.Tween]: http://www.mootools.net/docs/core/Fx/Fx.Tween

@@ -162,4 +162,4 @@ After invocation you can retrieve the instance of [StickyWin.UI][] and set conte
 [StickyWin]: /docs/UI/StickyWin
 [StickyWin.ui]: #StickyWin-ui
 [StickyWin.UI.Pointy]: /docs/UI/StickyWin.UI.Pointy
-[Element:setProperties]: http://docs.mootools.net/Element/Element#Element:setProperties
+[Element:setProperties]: http://www.mootools.net/docs/core/Element/Element#Element:setProperties

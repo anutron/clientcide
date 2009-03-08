@@ -49,6 +49,6 @@ Attaches and detaches elements to the group. By default, the elements specified 
 * (*object*) - This instance of [HoverGroup][]
 
 [HoverGroup]: #HoverGroup
-[Options]: http://docs.mootools.net/Class/Class.Extras#Options
-[Events]: http://docs.mootools.net/Class/Class.Extras#Events
+[Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
+[Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
 

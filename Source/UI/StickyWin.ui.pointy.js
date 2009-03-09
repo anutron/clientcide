@@ -27,7 +27,7 @@ StickyWin.UI.Pointy = new Class({
 		"div.DefaultPointyTip div.top {position: relative;height: 25px; overflow: visible}"+
 		"div.DefaultPointyTip div.top_ul{background: url({%baseHref%}{%imgset%}_back.png) top left no-repeat;width: 8px;height: 25px; position: absolute; left: 0px;}"+
 		"div.DefaultPointyTip div.top_ur{background: url({%baseHref%}{%imgset%}_back.png) top right !important;margin: 0 0 0 8px !important;height: 25px;position: relative;left: 0px !important;padding: 0;}"+
-		"div.DefaultPointyTip h1.caption{color: {%fgColor%};left: 0px !important;top: 4px !important;clear: none !important;overflow: hidden;font-weight: 700;font-size: 12px !important;position: relative;float: left;height: 22px !important;margin: 0 22px 0 0 !important;padding: 0 !important;}"+
+		"div.DefaultPointyTip h1.caption{color: {%fgColor%};left: 0px !important;top: 4px !important;clear: none !important;overflow: hidden;font-weight: 700;font-size: 12px !important;position: relative;float: left;height: 22px !important;margin: 0 !important;padding: 0 !important;}"+
 		"div.DefaultPointyTip div.middle,div.DefaultPointyTip div.closeBody{background:  {%bgColor%};margin: 0 0px 0 0 !important;position: relative;top: 0 !important;}"+
 		"div.DefaultPointyTip div.bottom {clear: both;} "+
 		"div.DefaultPointyTip div.bottom_ll{font-size:1; background: url({%baseHref%}{%imgset%}_back.png) bottom left no-repeat;width: 6px;height: 6px;position: absolute; left: 0px;}"+
@@ -210,6 +210,10 @@ StickyWin.UI.Pointy = new Class({
 		if (Browser.Engine.trident4) $(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
 		this.positionPointer();
 		return this;
+	},
+	makeCaption: function(){
+		this.parent.apply(this, arguments);
+		if (this.options.width && this.h1) this.h1.setStyle('width', (this.options.width-(this.options.closeButton?25:15)));
 	}
 });
 

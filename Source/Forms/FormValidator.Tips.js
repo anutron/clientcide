@@ -66,7 +66,7 @@ FormValidator.Tips = new Class({
 		if (msgs) msgs.getChildren().hide();
 		if (field.hasClass('validation-failed') || field.hasClass('warning')) if (advice) advice.show();
 		if (this.options.serial) {
-			var fields = this.form.getElements('.validation-failed, .warning');
+			var fields = this.element.getElements('.validation-failed, .warning');
 			if (fields.length) {
 				fields.each(function(f, i) {
 					var adv = this.getAdvice(f);

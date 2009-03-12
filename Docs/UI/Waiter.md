@@ -270,7 +270,11 @@ Retrieves the "build-in" instance of [Waiter][] and calls its *start* method.
 
 ### Syntax
 
-	$('myElement').wait();
+	$('myElement').wait([options]);
+
+### Arguments
+
+1. options - (*object* - optional) the options for the default waiter.
 
 ### Returns
 

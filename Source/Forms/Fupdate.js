@@ -67,7 +67,7 @@ var Fupdate;
 			if (fv) {
 				fv.addEvent('onFormValidate', function(valid, form, e) {
 					if (valid || !fv.options.stopOnFailure) {
-						e.stop();
+						if (e && e.stop) e.stop();
 						this.send();
 					}
 				}.bind(this));

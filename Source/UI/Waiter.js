@@ -193,7 +193,7 @@ Element.Properties.waiter = {
 
 	set: function(options){
 		var waiter = this.retrieve('waiter');
-		return this.eliminate('wait').store('waiter:options');
+		return this.eliminate('waiter').store('waiter:options', options);
 	},
 
 	get: function(options){

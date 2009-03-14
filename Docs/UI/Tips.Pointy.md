@@ -30,6 +30,11 @@ Extends the [Tips][] class to use [StickyWin.PointyTip][].
 			}
 		}
 
+### Events
+
+ * show: fires when the tip is shown; passed the tip dom element and the instance of [StickyWin.PointyTip][]
+ * hide: fires when the tip is being hidden; passed the tip dom element and the instance of [StickyWin.PointyTip][]
+
 ### Example
 
 	new Tips.Pointy($$('a'));

@@ -272,5 +272,12 @@
 			"desc":"SimpleEditor messages in Spanish (feel free to send in your own translations).",
 			"exclude": true
 		}
+	},
+	"Beta": {
+		"Element.Delegation": {
+			"deps":["Element.Event"],
+			"desc":"Delegates events for child elements to their parents for greater efficiency.",
+			"exclude": true
+		}
 	}
 }

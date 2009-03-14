@@ -9,11 +9,11 @@ License:
 Tips.Pointy = new Class({
 	Extends: Tips,
 	options: {
-		onShow: function(tip){
-			this.tip.show();
+		onShow: function(tip, stickyWin){
+			stickyWin.show();
 		},
-		onHide: function(tip){
-			this.tip.hide();
+		onHide: function(tip, stickyWin){
+			stickyWin.hide();
 		},
 		pointyTipOptions: {
 			point: 11,
@@ -62,13 +62,11 @@ Tips.Pointy = new Class({
 	},
 
 	show: function(){
-		this.fireEvent('show', $(this.tip));
-		this.tip.show();
+		this.fireEvent('show', [$(this.tip), this.tip]);
 	},
 
 	hide: function(){
-		this.fireEvent('hide', $(this.tip));
-		this.tip.hide();
+		this.fireEvent('hide', [$(this.tip), this.tip]);
 	}
 
 });

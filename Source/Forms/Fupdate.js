@@ -20,7 +20,8 @@ var Fupdate;
 			//onSend: $empty
 			requestOptions: {
 				evalScripts: true,
-				useWaiter: true
+				useWaiter: true,
+				link: 'ignore'
 			},
 			extraData: {},
 			resetForm: true
@@ -84,6 +85,7 @@ var Fupdate;
 			var data = $H(this.options.extraData).combine(formData);
 			this.fireEvent('send', [$(this), data]);
 			this.request.send(unescape(data.toQueryString()));
+			return this;
 		}
 
 	});

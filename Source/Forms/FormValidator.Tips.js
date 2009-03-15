@@ -2,7 +2,8 @@ FormValidator.Tips = new Class({
 	Extends: FormValidator.Inline,
 	options: {
 		pointyTipOptions: {
-			point: "left"
+			point: "left",
+			width: 250
 		}
 //		tipCaption: ''
 	},

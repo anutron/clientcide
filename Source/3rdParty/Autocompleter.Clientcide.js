@@ -29,12 +29,12 @@ License:
 			}
 		};
 	};
-	Autocompleter.Base.refactor(AcClientcide());
+	Autocompleter.Base = Class.refactor(Autocompleter.Base, AcClientcide());
 	if (Autocompleter.Ajax) {
 		["Base", "Xhtml", "Json"].each(function(c){
-			if (Autocompleter.Ajax[c]) Autocompleter.Ajax[c] = Autocompleter.Ajax[c].refactor(AcClientcide());
+			if (Autocompleter.Ajax[c]) Autocompleter.Ajax[c] = Class.refactor(Autocompleter.Ajax[c], AcClientcide());
 		});
 	}
-	if (Autocompleter.Local) Autocompleter.Local.refactor(AcClientcide());
-	if (Autocompleter.JSONP) Autocompleter.JSONP.refactor(AcClientcide());
+	if (Autocompleter.Local) Class.refactor(Autocompleter.Local, AcClientcide());
+	if (Autocompleter.JSONP) Class.refactor(Autocompleter.JSONP, AcClientcide());
 })();

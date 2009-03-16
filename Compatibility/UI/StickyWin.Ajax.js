@@ -1,6 +1,6 @@
 (function(){
 	var SWA = function(extend) {
-		extend.refactor({
+		return Class.refactor(extend, {
 			options: {
 				XHRoptions: {
 					method: 'get'

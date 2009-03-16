@@ -1,4 +1,4 @@
-IframeShim = IframeShim.refactor({
+IframeShim = Class.refactor(IframeShim, {
 	initialize: function(element, options){
 		if (options.element) {
 			this.parent(options.element, element);

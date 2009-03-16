@@ -1,4 +1,4 @@
-TabSwapper = TabSwapper.refactor({
+TabSwapper = Class.refactor(TabSwapper, {
 	initialize: function(options){
 		options = this.compatability(options);
 		this.parent(options);

@@ -1,4 +1,4 @@
-var MultipleOpenAccordion = MultipleOpenAccordion.refactor({
+var MultipleOpenAccordion = Class.refactor(MultipleOpenAccordion, {
 	options: {
 		allowMultipleOpen: true,
 		firstElementsOpen: [0]

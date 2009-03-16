@@ -5,7 +5,7 @@ Script: DatePicker.Extras.js
 License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
-DatePicker.refactor({
+DatePicker = Class.refactor(DatePicker, {
 	options:{
 		extraCSS: 'a.finish {position: relative;height: 13px !important;top: -31px !important;left: 85px !important;top: -34px;left: 77px;height: 16px;display:block;float: left;padding: 1px 12px 3px !important;}'+
 			'div.calendarHolder div.time {border: #999 1px solid;width: 55px;position: relative;left: 3px;height: 17px;}'+

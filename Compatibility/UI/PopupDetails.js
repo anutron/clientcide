@@ -1,4 +1,4 @@
-PopupDetail = PopupDetail.refactor({
+PopupDetail = Class.refactor(PopupDetail, {
 	initialize: function(html, options){
 		this.parent(html, options.observer, options);
 	},

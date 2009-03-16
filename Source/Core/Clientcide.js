@@ -9,7 +9,7 @@ var Clientcide = {
 	version: '%build%',
 	setAssetLocation: function(baseHref) {
 		if (window.StickyWin && StickyWin.ui) {
-			StickyWin.UI.refactor({
+			StickyWin.UI = Class.refactor(StickyWin.UI, {
 				options: {
 					baseHref: baseHref + '/stickyWinHTML/'
 				}
@@ -22,14 +22,14 @@ var Clientcide = {
 			}
 		}
 		if (window.TagMaker) {
-			TagMaker = TagMaker.refactor({
+			TagMaker = Class.refactor(TagMaker, {
 			    options: {
 			        baseHref: baseHref + '/tips/'
 			    }
 			});
 		}
 		if (window.ProductPicker) {
-			ProductPicker.refactor({
+			ProductPicker = Class.refactor(ProductPicker, {
 			    options:{
 			        baseHref: baseHref + '/Picker'
 			    }
@@ -42,21 +42,21 @@ var Clientcide = {
 						baseHref: baseHref + '/autocompleter/'
 					}
 			};
-			Autocompleter.Base.refactor(AcClientcide);
+			Autocompleter.Base = Class.refactor(Autocompleter.Base, AcClientcide);
 			if (Autocompleter.Ajax) {
 				["Base", "Xhtml", "Json"].each(function(c){
-					if (Autocompleter.Ajax[c]) Autocompleter.Ajax[c].refactor(AcClientcide);
+					if (Autocompleter.Ajax[c]) Autocompleter.Ajax[c] = Class.refactor(Autocompleter.Ajax[c], AcClientcide);
 				});
 			}
-			if (Autocompleter.Local) Autocompleter.Local.refactor(AcClientcide);
+			if (Autocompleter.Local) Autocompleter.Local = Class.refactor(Autocompleter.Local, AcClientcide);
 			if (Autocompleter.JSONP) {
-				Autocompleter.JSONP.refactor(AcClientcide);
+				Autocompleter.JSONP = Class.refactor(Autocompleter.JSONP, AcClientcide);
 				Autocompleter.JsonP = Autocompleter.JsonP;
 			}
 		}
 
 		if (window.Lightbox) {
-			Lightbox.refactor({
+			Lightbox = Class.refactor(Lightbox, {
 			    options: {
 			        assetBaseUrl: baseHref + '/slimbox/'
 			    }
@@ -64,7 +64,7 @@ var Clientcide = {
 		}
 
 		if (window.Waiter) {
-			Waiter.refactor({
+			Waiter = Class.refactor(Waiter, {
 				options: {
 					baseHref: baseHref + '/waiter/'
 				}

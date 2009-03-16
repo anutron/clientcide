@@ -95,11 +95,11 @@ StickyWin.PointyTip = new Class({
 		return this;
 	},
 	showWin: function(){
-		this.parent.apply(this, arguments);
+		this.parent();
 		this.pointy.positionPointer();
 	},
-	position: function(){
-		this.parent.apply(this, arguments);
+	position: function(options){
+		this.parent(options);
 		this.pointy.positionPointer();
 	},
 	attachHandlers: function(content) {

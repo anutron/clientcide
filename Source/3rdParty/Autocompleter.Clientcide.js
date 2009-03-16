@@ -11,8 +11,8 @@ License:
 			options: {
 				baseHref: 'http://www.cnet.com/html/rb/assets/global/autocompleter/'
 			},
-			initialize: function() {
-				this.parent.apply(this,arguments);
+			initialize: function(a1,a2,a3) {
+				this.parent(a1,a2,a3);
 				this.writeStyle();
 			},
 			writeStyle: function(){

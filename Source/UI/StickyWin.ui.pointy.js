@@ -205,15 +205,15 @@ StickyWin.UI.Pointy = new Class({
 		putItBack();
 	},
 	setContent: function(){
-		this.parent.apply(this, arguments);
+		this.parent();
 		this.top[this.h1?'removeClass':'addClass']('noCaption');
 		if (Browser.Engine.trident4) $(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
 		if (this.options.closeButton) this.body.setStyle('margin-right', 6);
 		this.positionPointer();
 		return this;
 	},
-	makeCaption: function(){
-		this.parent.apply(this, arguments);
+	makeCaption: function(caption){
+		this.parent(caption);
 		if (this.options.width && this.h1) this.h1.setStyle('width', (this.options.width-(this.options.closeButton?25:15)));
 	}
 });

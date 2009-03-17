@@ -204,8 +204,8 @@ StickyWin.UI.Pointy = new Class({
 		}, pos, options));
 		putItBack();
 	},
-	setContent: function(){
-		this.parent();
+	setContent: function(a1, a2){
+		this.parent(a1, a2);
 		this.top[this.h1?'removeClass':'addClass']('noCaption');
 		if (Browser.Engine.trident4) $(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
 		if (this.options.closeButton) this.body.setStyle('margin-right', 6);

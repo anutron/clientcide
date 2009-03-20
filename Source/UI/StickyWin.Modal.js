@@ -10,6 +10,7 @@ License:
 var modalWinBase = function(extend){
 	return {
 		Extends: extend,
+		Implements: Modalizer,
 		initialize: function(options){
 			options = options||{};
 			this.setModalOptions($merge(options.modalOptions||{}, {
@@ -34,9 +35,7 @@ var modalWinBase = function(extend){
 };
 
 StickyWin.Modal = new Class(modalWinBase(StickyWin));
-StickyWin.Modal.implement(new Modalizer());
 if (StickyWin.Fx) StickyWin.Fx.Modal = new Class(modalWinBase(StickyWin.Fx));
-try { StickyWin.Fx.Modal.implement(new Modalizer()); }catch(e){}
 })();
 //legacy
 var StickyWinModal = StickyWin.Modal;

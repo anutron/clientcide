@@ -9,7 +9,8 @@ var InputFocus = new Class({
 	Implements: [Options, Class.Occlude, Class.ToElement],
 	Binds: ['focus', 'blur'],
 	options: {
-		focusedClass: 'focused'
+		focusedClass: 'focused',
+		hideOutline: false
 	},
 	initialize: function(input, options) {
 		this.element = $(input);
@@ -21,6 +22,12 @@ var InputFocus = new Class({
 		});
 	},
 	focus: function(){
+		if (this.options.hideOutline) {
+			(function(){
+				if (Browser.Engine.trident) $(this).set('hideFocus', true);
+				else $(this).setStyle('outline', '0');
+			}).delay(500, this);
+		}
 		$(this).addClass(this.options.focusedClass);
 	},
 	blur: function(){

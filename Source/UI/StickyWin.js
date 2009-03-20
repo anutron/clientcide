@@ -38,12 +38,11 @@ var StickyWin = new Class({
 			 '* html .SWclearfix {height: 1%;}'+
 			 '.SWclearfix {display: block;}',
 	initialize: function(options){
-		this.options.inject = {
+		this.options.inject = this.options.inject || {
 			target: document.body,
 			where: 'bottom' 
 		};
 		this.setOptions(options);
-		
 		this.id = this.options.id || 'StickyWin_'+new Date().getTime();
 		this.makeWindow();
 

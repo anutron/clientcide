@@ -21,12 +21,16 @@ Fupdate.Append = new Class({
 		this.request = new Request.HTML($merge({
 				url: $(this).get('action'),
 				waiterTarget: $(this)
-		}, this.options.requestOptions)).addEvents({
+			}, this.options.requestOptions, {
+				evalScripts: false
+			})
+		).addEvents({
 			success: function(tree, elements, html, javascript){
 				var container = new Element('div').set('html', html).hide();
 				var kids = container.getChildren();
 				if (kids.length == 1) container = kids[0];
 				container.inject(this.update, this.options.inject);
+				if (this.options.requestOptions.evalScripts) $exec(javascript);
 				this.fireEvent('beforeEffect', container);
 				var finish = function(){
 					this.fireEvent('success', [container, this.update, tree, elements, html, javascript]);

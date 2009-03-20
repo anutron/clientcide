@@ -36,7 +36,6 @@ Tips.Pointy = new Class({
 
 		var title = element.retrieve('tip:title');
 		var text = element.retrieve('tip:text');
-		
 		this.tip.setContent(title, text);
 
 		this.timer = $clear(this.timer);

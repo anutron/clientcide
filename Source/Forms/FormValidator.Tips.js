@@ -41,7 +41,10 @@ FormValidator.Tips = new Class({
 			field.store('validationMsgs', msg);
 			advice = new StickyWin.PointyTip(this.options.tipCaption, msg, $merge(this.options.pointyTipOptions, {
 				showNow: false,
-				relativeTo: field
+				relativeTo: field,
+				inject: {
+					target: this.element
+				}
 			}));
 			this.advices.push(advice);
 			advice.msgs = {};

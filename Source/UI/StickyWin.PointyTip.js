@@ -30,12 +30,11 @@ StickyWin.PointyTip = new Class({
 		if (!popts.width) popts.width = this.options.width;
 		this.pointy = new StickyWin.UI.Pointy(args.caption, args.body, popts);
 		this.options.content = null;
-		
 		this.setOptions(args.options, this.getPositionSettings());
 		this.parent(this.options);
 		this.win.empty().adopt(this.pointy);
 		this.attachHandlers(this.win);
-		this.position();
+		if (this.options.showNow) this.position();
 	},
 	getArgs: function(){
 		return StickyWin.UI.getArgs.apply(this, arguments);
@@ -83,7 +82,10 @@ StickyWin.PointyTip = new Class({
 						y: 'bottom'
 					},
 					position: {x: 'center', y: 'top'},
-					offset: {y: -s}
+					offset: {
+						y: -s,
+						x: d==7?-s:d==5?s:0
+					}
 				};
 		};
 	},

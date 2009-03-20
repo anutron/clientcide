@@ -66,7 +66,6 @@ StickyWin.UI.Pointy = new Class({
 			};
 			this.options.direction = map[this.options.direction];
 		}
-		
 		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
 		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		
@@ -117,7 +116,6 @@ StickyWin.UI.Pointy = new Class({
 			}, orient()),
 			'class': 'pointyDivot pointy_'+opt.direction
 		}).inject(this.pointyWrapper);
-		this.positionPointer();
 	},
 	expose: function(){
 		if ($(this).getStyle('display') != 'none' && $(document.body).hasChild($(this))) return $empty;
@@ -140,8 +138,7 @@ StickyWin.UI.Pointy = new Class({
 	},
 	positionPointer: function(options){
 		if (!this.pointer) return;
-
-		var opt = this.options;
+		var opt = options || this.options;
 		var pos;
 		var d = opt.direction;
 		switch (d){

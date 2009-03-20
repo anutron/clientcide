@@ -45,7 +45,7 @@ StickyWin.UI = new Class({
 		if (Browser.Engine.trident4) css = css.replace(/png/g, 'gif');
 		this.createStyle(css, this.options.cssId);
 		this.build();
-		this.setContent(args.caption, args.body);
+		if (args.caption || args.body) this.setContent(args.caption, args.body);
 	},
 	getArgs: function(){
 		return StickyWin.UI.getArgs.apply(this, arguments);
@@ -91,9 +91,8 @@ StickyWin.UI = new Class({
 					delete button.properties.className;
 				}
 				var properties = $merge({'class': 'closeSticky'}, button.properties);
-				new Element('a').addEvent('click',
-					button.onClick || $empty).appendText(
-					button.text).inject(closeButtons).setProperties(properties).addClass('button');
+				new Element('a').addEvent('click', button.onClick || $empty)
+					.appendText(button.text).inject(closeButtons).set(properties).addClass('button');
 			});
 			container.adopt(new Element('div').addClass('closeBody').adopt(closeButtons));
 		}
@@ -135,7 +134,7 @@ StickyWin.UI = new Class({
 		if (this.h1) this.destroyCaption();
 		this.makeCaption(caption);
 		if ($(body)) this.body.empty().adopt(body);
-		else this.body.set('html', body);	
+		else this.body.set('html', body);
 		return this;
 	}
 });

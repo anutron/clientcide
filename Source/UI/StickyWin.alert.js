@@ -20,6 +20,9 @@ StickyWin.alert = function(msghdr, msg, baseHref) {
 		},
 		zIndex: 110001,
 		content: body,
-		position: 'center' //center, corner
+		position: 'center', //center, corner
+		onClose: function(){
+			this.destroy();
+		}
 	});
 };

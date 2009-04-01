@@ -56,7 +56,8 @@ var DatePicker;
 			useDefaultCss: true,
 			hideCalendarOnPick: true,
 			weekStartOffset: 0,
-			showMoreThanOne: true
+			showMoreThanOne: true,
+			stickyWinToUse: StickyWin
 /*		onPick: $empty,
 			onShow: $empty,
 			onHide: $empty */
@@ -66,10 +67,7 @@ var DatePicker;
 			DPglobal(); //make sure controller is setup
 			if ($(input)) this.inputs = $H({start: $(input)});
 	    	this.today = new Date();
-			var StickyWinToUse = (typeof StickyWin.Fx == "undefined")?StickyWin:StickyWin.Fx;
-			this.setOptions({
-				stickyWinToUse: StickyWinToUse
-			}, options);
+			this.setOptions(options);
 			if (this.options.useDefaultCss) this.createStyle(this.options.defaultCss, 'datePickerStyle');
 			if (!this.inputs) return;
 			this.whens = this.whens || ['start'];
@@ -202,7 +200,9 @@ var DatePicker;
 					showNow: false,
 					relativeTo: this.inputs.get('start')
 				});
+				dbug.log('make ', StickyWin)
 				this.stickyWin = new this.options.stickyWinToUse(opts);
+				dbug.log(this.stickyWin)
 				this.stickyWin.addEvent('onDisplay', this.positionClose.bind(this));
 				this.container.setStyle('z-index', this.stickyWin.win.getStyle('z-index').toInt()+1);
 			}

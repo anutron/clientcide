@@ -14,7 +14,8 @@ License:
 				url: '',
 				showNow: false,
 				requestOptions: {
-					method: 'get'
+					method: 'get',
+					evalScripts: true
 				},
 				wrapWithUi: false, 
 				caption: '',
@@ -29,10 +30,16 @@ License:
 				}
 			},
 			initialize: function(options){
+				var showNow;
+				if (options && options.showNow) {
+					showNow = true;
+					options.showNow = false;
+				}
 				this.parent(options);
 				this.evalScripts = this.options.requestOptions.evalScripts;
 				this.options.requestOptions.evalScripts = false;
 				this.createRequest();
+				if (showNow) this.update();
 			},
 			createRequest: function(){
 				this.Request = new Request(this.options.requestOptions).addEvent('onSuccess',
@@ -45,13 +52,5 @@ License:
 		};
 	};
 	try {	StickyWin.Ajax = new Class(SWA(StickyWin)); } catch(e){}
-	try {	StickyWin.Fx.Ajax = new Class(SWA(StickyWin.Fx)); } catch(e){}
 	try {	StickyWin.Modal.Ajax = new Class(SWA(StickyWin.Modal)); } catch(e){}
-	try {	StickyWin.Fx.Modal.Ajax = new Class(SWA(StickyWin.Fx.Modal)); } catch(e){}
 })();
-//legacy
-if (window.StickyWinModal) StickyWinModal.Ajax = StickyWin.Modal.Ajax;
-if (StickyWin.Fx) {
-	StickyWinFx.Ajax = StickyWin.Fx.Ajax;
-	StickyWinFxModal.Ajax = StickyWin.Fx.Modal.Ajax;
-}

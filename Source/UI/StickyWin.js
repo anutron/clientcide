@@ -8,6 +8,7 @@ License:
 */
 
 var StickyWin = new Class({
+	Binds: ['destroy', 'hide', 'togglepin'],
 	Implements: [Options, Events, StyleWriter, Class.ToElement],
 	options: {
 //		onDisplay: $empty,
@@ -31,12 +32,9 @@ var StickyWin = new Class({
 		allowMultiple: true,
 		showNow: true,
 		useIframeShim: true,
-		iframeShimSelector: ''
+		iframeShimSelector: '',
+		destroyOnClose: false
 	},
-	css: '.SWclearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}'+
-			 '.SWclearfix {display: inline-table;}'+
-			 '* html .SWclearfix {height: 1%;}'+
-			 '.SWclearfix {display: block;}',
 	initialize: function(options){
 		this.options.inject = this.options.inject || {
 			target: document.body,
@@ -55,6 +53,7 @@ var StickyWin = new Class({
 		if (this.options.showNow) this.show();
 		//add css for clearfix
 		this.createStyle(this.css, 'StickyWinClearFix');
+		if (this.options.destroyOnClose) this.addEvent('close', this.destroy)
 	},
 	makeWindow: function(){
 		this.destroyOthers();
@@ -106,10 +105,10 @@ var StickyWin = new Class({
 		if ($type(html) == "string") this.win.set('html', html);
 		else if ($(html)) this.win.adopt(html);
 		this.win.getElements('.'+this.options.closeClassName).each(function(el){
-			el.addEvent('click', this.hide.bind(this));
+			el.addEvent('click', this.hide);
 		}, this);
 		this.win.getElements('.'+this.options.pinClassName).each(function(el){
-			el.addEvent('click', this.togglepin.bind(this));
+			el.addEvent('click', this.togglepin);
 		}, this);
 		return this;
 	},	
@@ -160,8 +159,8 @@ var StickyWin = new Class({
 		if (this.shim) this.shim.hide();
 	},
 	destroy: function(){
-		if (this.win) this.win.dispose();
-		if (this.options.useIframeShim && this.shim) this.shim.dispose();
-		if ($('modalOverlay'))$('modalOverlay').dispose();
+		if (this.win) this.win.destroy();
+		if (this.options.useIframeShim && this.shim) this.shim.destroy();
+		if ($('modalOverlay'))$('modalOverlay').destroy();
 	}
 });

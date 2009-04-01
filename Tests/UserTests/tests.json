@@ -21,7 +21,7 @@
 		"StyleWriter":['all'],
 		"StickyWin":['all'],
 		"StickyWin.Fx":['all'],
-		"StickyWin.Fx.Drag":['all'],
+		"StickyWin.Drag":['all'],
 		"StickyWin.Ajax":['all'],
 		"StickyWin.Modal":['all'],
 		"StickyWin.UI.Pointy":['all'],

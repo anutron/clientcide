@@ -36,16 +36,16 @@ var MenuSlider = new Class({
 		if (this.options.useIframeShim && window.IframeShim) this.shim = new IframeShim(this.subMenu);
 	},
 	slideIn: function(){
-		this.fireEvent('onInStart');
+		this.fireEvent('inStart');
 		this.slider.slideIn().chain(function(){
 			if (this.shim) this.shim.show();
-			this.fireEvent('onIn');
+			this.fireEvent('in');
 		}.bind(this));
 		return this;
 	},
 	slideOut: function(){
 		this.hide();
-		this.fireEvent('onOut');
+		this.fireEvent('out');
 		if (this.shim) this.shim.hide();
 		return this;
 	},

@@ -9,7 +9,7 @@ var Clientcide = {
 	version: '%build%',
 	setAssetLocation: function(baseHref) {
 		if (window.StickyWin && StickyWin.ui) {
-			StickyWin.UI = Class.refactor(StickyWin.UI, {
+			StickyWin.UI.implement({
 				options: {
 					baseHref: baseHref + '/stickyWinHTML/'
 				}
@@ -22,14 +22,14 @@ var Clientcide = {
 			}
 		}
 		if (window.TagMaker) {
-			TagMaker = Class.refactor(TagMaker, {
+			TagMaker.implement({
 			    options: {
 			        baseHref: baseHref + '/tips/'
 			    }
 			});
 		}
 		if (window.ProductPicker) {
-			ProductPicker = Class.refactor(ProductPicker, {
+			ProductPicker.implement({
 			    options:{
 			        baseHref: baseHref + '/Picker'
 			    }
@@ -37,26 +37,15 @@ var Clientcide = {
 		}
 
 		if (window.Autocompleter) {
-			var AcClientcide = {
+			Autocompleter.Base.implement({
 					options: {
 						baseHref: baseHref + '/autocompleter/'
 					}
-			};
-			Autocompleter.Base = Class.refactor(Autocompleter.Base, AcClientcide);
-			if (Autocompleter.Ajax) {
-				["Base", "Xhtml", "Json"].each(function(c){
-					if (Autocompleter.Ajax[c]) Autocompleter.Ajax[c] = Class.refactor(Autocompleter.Ajax[c], AcClientcide);
-				});
-			}
-			if (Autocompleter.Local) Autocompleter.Local = Class.refactor(Autocompleter.Local, AcClientcide);
-			if (Autocompleter.JSONP) {
-				Autocompleter.JSONP = Class.refactor(Autocompleter.JSONP, AcClientcide);
-				Autocompleter.JsonP = Autocompleter.JsonP;
-			}
+			});
 		}
 
 		if (window.Lightbox) {
-			Lightbox = Class.refactor(Lightbox, {
+			Lightbox.implement({
 			    options: {
 			        assetBaseUrl: baseHref + '/slimbox/'
 			    }
@@ -64,7 +53,7 @@ var Clientcide = {
 		}
 
 		if (window.Waiter) {
-			Waiter = Class.refactor(Waiter, {
+			Waiter.implement({
 				options: {
 					baseHref: baseHref + '/waiter/'
 				}
@@ -72,9 +61,6 @@ var Clientcide = {
 		}
 	},
 	preLoadCss: function(){
-		if (window.DatePicker) new DatePicker();
-		if (window.ProductPicker) new ProductPicker();
-		if (window.TagMaker) new TagMaker();
 		if (window.StickyWin && StickyWin.ui) StickyWin.ui();
 		if (window.StickyWin && StickyWin.pointy) StickyWin.pointy();
 		Clientcide.preloaded = true;

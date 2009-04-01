@@ -1,7 +1,7 @@
 {
 	tests: [
 		{
-			title: "StickyWin.Fx.Drag",
+			title: "StickyWin.Drag",
 			description: "Displays a draggable 'popup' in the page, fading in the transition.",
 			verify: "Did the 'popup' fade in when it appeared and fade out when you closed it? Can you drag it around?",
 			before: function(){

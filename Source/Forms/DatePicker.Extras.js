@@ -47,7 +47,7 @@ DatePicker = Class.refactor(DatePicker, {
 			}, this);
 		}
 		if (this.options.time) this.calWidth = 460;
-		this.parent(inputs, this.options);
+		this.previous(inputs, this.options);
 		this.createStyle(this.options.extraCSS, 'datePickerPlusStyle');
 		this.addEvent('rowDateEvaluated', function(atDate, td){
 			if (this.options.range && this.selectedDates.start.diff(atDate, 'minute') > 0 
@@ -58,7 +58,7 @@ DatePicker = Class.refactor(DatePicker, {
 		}.bind(this));
 	},
 	updateInput: function(){
-		this.parent();
+		this.previous();
 		if (this.options.time) this.updateView();
 	},
 	updateView: function() {
@@ -157,7 +157,7 @@ DatePicker = Class.refactor(DatePicker, {
 		}).set('html', 'Ok')));
 	},
 	show: function(){
-		this.parent();
+		this.previous();
 		if (this.options.time) {
 			if (!this.stamps.table) this.setupWideView();
 			this.updateView();
@@ -166,7 +166,7 @@ DatePicker = Class.refactor(DatePicker, {
 	startSet: false,
 	onPick: function(){
 		if ((this.options.range && this.selectedDates.start && this.selectedDates.end) || !this.options.range) {
-			this.parent();
+			this.previous();
 		}
 	},
 	setSelectedDates: function(e, newDate) {
@@ -186,7 +186,7 @@ DatePicker = Class.refactor(DatePicker, {
 				this.startSet = true;
 			}
 		} else {
-			this.parent(e, newDate);
+			this.previous(e, newDate);
 		}
 		if (this.options.time) {
 			this.whens.each(function(when){

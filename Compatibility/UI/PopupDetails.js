@@ -1,6 +1,6 @@
 PopupDetail = Class.refactor(PopupDetail, {
 	initialize: function(html, options){
-		this.parent(html, options.observer, options);
+		this.previous(html, options.observer, options);
 	},
 	parseTemplate: function(string, values){
 		return string.substitute(values, new RegExp(/\\?%([^%]+)%/g));
@@ -9,7 +9,7 @@ PopupDetail = Class.refactor(PopupDetail, {
 PopupDetailCollection = new Class({
 	Extends: PopupDetailCollection,
 	initialize: function(options){
-		this.parent(options.observers, options.details, options);
+		this.previous(options.observers, options.details, options);
 	}
 });
 var popupDetails = new Class({

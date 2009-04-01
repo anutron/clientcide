@@ -175,7 +175,7 @@ Handles the UI for picking products; requires at least one [Picklet][].
 * title - (*string*) caption for the [StickyWin][] popup; defaults to *"Product picker"*
 * showOnFocus - (*boolean*) whether the product picker shoule show when the user focuses the input; default to *true*
 * additionalShowLinks - (*array*) array of DOM elements or ids that show the picker when clicked
-* stickyWinToUse - (*class*) a reference to a [StickyWin][] class to use for the popup; default is *[StickyWin.Fx][]*
+* stickyWinToUse - (*class*) a reference to a [StickyWin][] class to use for the popup; default is *[StickyWin][]*
 * stickyWinOptions - (*object*) a key/value set of options to pass along to the [StickyWin][]; defaults to *{fadeDuration: 200, draggable: true}*
 * moveIntoView - (*boolean*) moves the picker to be on screen if it is partially obscured; defaults to *true*
 
@@ -293,7 +293,6 @@ Adds the appropriate [ProductPicker][]s to all the inputs in a form as defined i
 [ProductPicker]: #ProductPicker
 [Request.JSONP]: http://www.mootools.net/docs/more/Request/Request.JSONP
 [StickyWin]: /docs/UI/StickyWin
-[StickyWin.Fx]: /docs/UI/StickyWin.Fx
 [StyleWriter]: /docs/UI/StyleWriter
 [CNETProductPicker]: http://cnetjavascript.googlecode.com/svn/trunk/implementations/picklets/
 [NewsStoryPicker]: http://cnetjavascript.googlecode.com/svn/trunk/implementations/picklets/

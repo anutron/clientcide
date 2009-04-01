@@ -31,7 +31,7 @@ StickyWin.UI = new Class({
 		cssId: 'defaultStickyWinStyle',
 		cssClassName: 'DefaultStickyWin',
 		closeButton: true
-/*	These options are deprecated:		
+/*	These options are deprecated:
 		closeTxt: false,
 		onClose: $empty,
 		confirmTxt: false,

@@ -1,44 +1,41 @@
 /*
 Script: StickyWin.Fx.js
 
-Extends StickyWin to create popups that fade in and out and can be dragged and resized (requires StickyWin.Fx.Drag.js).
+	Extends StickyWin to create popups that fade in and out.
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+	License:
+		MIT-style license.
+
+	Authors:
+		Aaron Newton
 */
-StickyWin.Fx = new Class({
-	Extends: StickyWin,
+
+StickyWin.implement({
+
 	options: {
+		//fadeTransition: 'sine:in:out',
 		fade: true,
-		fadeDuration: 150,
-//	fadeTransition: 'sine:in:out',
-		draggable: false,
-		dragOptions: {},
-		dragHandleSelector: '.dragHandle',
-		resizable: false,
-		resizeOptions: {},
-		resizeHandleSelector: ''
+		fadeDuration: 150
 	},
-	setContent: function(html){
-		this.parent(html);
-		if (this.options.draggable) this.makeDraggable();
-		if (this.options.resizable) this.makeResizable();
-		return this;
-	},	
+
+	initialize: function(){
+		this.parentShow = this.show;
+		this.show = this.showWin;
+		this.parentHide = this.hide;
+		this.hide = this.hideWin;
+		this.previous.apply(this, arguments);
+	},
+
 	hideWin: function(){
 		if (this.options.fade) this.fade(0);
-		else this.parent();
+		else this.parentHide();
 	},
+
 	showWin: function(){
 		if (this.options.fade) this.fade(1);
-		else this.parent();
+		else this.parentShow();
 	},
-	hide: function(){
-		this.parent(this.options.fade);
-	},
-	show: function(){
-		this.parent(this.options.fade);
-	},
+
 	fade: function(to){
 		if (!this.fadeFx) {
 			this.win.setStyles({
@@ -58,21 +55,10 @@ StickyWin.Fx = new Class({
 		}
 		this.fadeFx.clearChain();
 		this.fadeFx.start(to).chain(function (){
-			if (to == 0) {
-				this.win.setStyle('display', 'none');
-				this.fireEvent('onClose');
-			} else {
-				this.fireEvent('onDisplay');
-			}
+			if (to == 0) this.parentHide();
+			else this.parentShow();
 		}.bind(this));
 		return this;
-	},
-	makeDraggable: function(){
-		dbug.log('you must include Drag.js, cannot make draggable');
-	},
-	makeResizable: function(){
-		dbug.log('you must include Drag.js, cannot make resizable');
 	}
+
 });
-//legacy
-var StickyWinFx = StickyWin.Fx;

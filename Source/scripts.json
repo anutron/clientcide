@@ -55,8 +55,7 @@
 			"desc":"Creates a tree view of any javascript object."
 		},
 		"PopupDetails":{
-			"deps":["Element.Event", "Request", "JSON", "dbug", "String.Extras", "StickyWin.Fx"],
-			"optional":["StickyWin.Modal", "StickyWin.Fx.Drag"],
+			"deps":["Element.Event", "Request", "JSON", "dbug", "String.Extras", "StickyWin"],
 			"desc":"Handles popup detail templated elements."
 		},
 		"StyleWriter":{
@@ -65,25 +64,22 @@
 		},
 		"StickyWin":{
 			"deps":["DomReady", "Selectors", "Element.Position", "Class.ToElement", "Element.Shortcuts", "Element.Pin", "IframeShim", "StyleWriter"],
-			"optional":["StickyWin.Ajax"],
 			"desc":"An in-page popup maker."
 		},
 		"StickyWin.Fx":{
 			"deps":["Fx.Tween", "StickyWin"],
 			"desc":"Extends StickyWin to create popups that fade in and out."
 		},
-		"StickyWin.Fx.Drag":{
-			"deps":["Drag.Move", "StickyWin.Fx"],
+		"StickyWin.Drag":{
+			"deps":["Drag.Move", "StickyWin"],
 			"desc":"Extends StickyWin to create popups that fade in and out and are draggable."
 		},
 		"StickyWin.Modal":{
 			"deps":["StickyWin", "Modalizer"],
-			"optional":["StickyWin.Fx"],
-			"desc":"This script extends StickyWin and (optionally) StickyWin.Fx classes to add Modalizer functionality."
+			"desc":"This script extends StickyWin class to add Modalizer functionality."
 		},
 		"StickyWin.Ajax":{
 			"deps":["Request", "StickyWin", "StickyWin.UI"],
-			"optional":["StickyWin.Fx", "StickyWin.Fx.Drag", "StickyWin.Modal"],
 			"desc":"Adds ajax functionality to all the StickyWin classes."
 		},
 		"StickyWin.alert":{
@@ -171,12 +167,10 @@
 		},
 		"DatePicker":{
 			"deps":["Class.Extras", "Element.Event", "JSON", "Date", "dbug", "StickyWin.UI"],
-			"optional": ["Drag", "StickyWin.Fx"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
 		"DatePicker.Extras":{
 			"deps":["Class.Extras", "Element.Event", "dbug", "StickyWin"],
-			"optional": ["Drag", "StickyWin.Fx"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
 		"FormValidator.Tips":{
@@ -184,7 +178,7 @@
 			"desc":"FormValidator using StickyWin.PointyTip."
 		},
 		"Fupdate":{
-			"deps":["Element.Event",  "Request.HTML", "Class.ToElement", "Class.Occlude", "URI", "Waiter"],
+			"deps":["Element.Event",  "Request.HTML", "Class.ToElement", "Class.Occlude", "Waiter", "URI"],
 			"desc":"Handles the basic functionality of submitting a form and updating a dom element with the result."
 		},
 		"Fupdate.Append":{
@@ -192,7 +186,7 @@
 			"desc":"Uses Fupdate to fetch and update a DOM element, but appends the result into the target instead of overwriting its contents."
 		},
 		"Fupdate.Prompt":{
-			"deps":["Fupdate.Append", "StickyWin.Fx", "StickyWin.Modal", "StickyWin.Ajax"],
+			"deps":["Fupdate.Append", "StickyWin.Modal", "StickyWin.Ajax"],
 			"desc":"Extends Fupdate and Fupdate.Append to use a popup (StickyWin) for the form."
 		},
 		"InputFocus": {
@@ -200,17 +194,15 @@
 			"desc":"Adds a 'focused' class to inputs when they have focus."
 		},
 		"ProductPicker":{
-			"deps":["Element.Event", "Fx.Tween", "Fx.Elements", "Element.Dimensions", "Drag", "StickyWin.Fx", "Request.JSONP", "dbug", "Element.Shortcuts", "Tips", "StyleWriter"],
+			"deps":["Element.Event", "Fx.Tween", "Fx.Elements", "Element.Dimensions", "Drag", "StickyWin", "Request.JSONP", "dbug", "Element.Shortcuts", "Tips", "StyleWriter"],
 			"desc":"Allows the user to pick a product from a data source."
 		},
 		"SimpleEditor":{
-			"deps":["Class.Extras", "Class.ToElement", "Class.Occlude", "Element.Forms", "Element.Shortcuts", "Clipboard", "String.Extras"],
-			"optional":["Trinket.Base", "Trinket.contexts", "Trinket.LinkBuilder", "StickyWin.Modal", "StickyWin.UI"],
+			"deps":["Class.Extras", "Class.ToElement", "Class.Occlude", "Element.Forms", "Element.Shortcuts", "String.Extras"],
 			"desc":"A simple html editor for wrapping text with links and whatnot."
 		},
 		"TagMaker":{
-			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator", "StickyWin.Fx", "StickyWin.UI", "HtmlTable", "Drag"],
-			"optional": ["Drag.Move", "product.picker", "StickyWin.Fx.Drag"],
+			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator", "StickyWin.UI", "HtmlTable", "Drag"],
 			"desc":"Prompts the user to fill in the gaps to create an html tag output."
 		}
 	},

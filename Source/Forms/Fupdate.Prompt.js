@@ -12,7 +12,7 @@ License:
 			Extends: ext,
 			options: {
 				//onUpdate: $empty,
-				stickyWinToUse: StickyWin.Fx.Modal,
+				stickyWinToUse: StickyWin.Modal,
 				stickyWinOptions: {},
 				useUi: true,
 				stickyWinUiOptions: {
@@ -75,7 +75,7 @@ License:
 		return {
 			Extends: ext,
 			options: {
-				stickyWinToUse: StickyWin.Fx.Modal.Ajax
+				stickyWinToUse: StickyWin.Modal.Ajax
 			},
 			makeStickyWin: function(formUrl){
 				if (this.swin) return this.swin;

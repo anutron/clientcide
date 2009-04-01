@@ -13,7 +13,7 @@
 				this.options.RequestOptions = this.options.XHRoptions;
 				this.wrapWithUi = this.options.wrapWithStickyWinDefaultHTML;
 				this.uiOptions = this.options.stickyWinHTMLOptions;
-				this.parent(options);
+				this.previous(options);
 			}
 		}
 	};

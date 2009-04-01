@@ -27,7 +27,7 @@ Fupdate.Prompt Method: constructor {#Fupdate-Prompt:constructor}
 ### Options
 
 * The same as [Fupdate][] in addition to:
-* stickyWinToUse - (*class*) Which [StickyWin][] to use, defaults to [StickyWin.Fx.Modal][].
+* stickyWinToUse - (*class*) Which [StickyWin][] to use, defaults to [StickyWin.Modal][].
 * stickyWinOptions - (*object*) Options to pass along to the specified [StickyWin][].
 * useUi - (*boolean*) If *true* (the default), the form will be wrapped in [StickyWin.ui][].
 * stickyWinUiOptions - (*object*) Options passed along to [StickyWin.ui][]; defaults to *{ width: 500}*.
@@ -88,7 +88,7 @@ Fupdate.AjaxPrompt Method: constructor {#Fupdate-AjaxPrompt:constructor}
 ### Options
 
 * The same as [Fupdate][]
-* Note: the default for the *stickyWinToUse* for this class is [StickyWin.Fx.Modal.Ajax][]
+* Note: the default for the *stickyWinToUse* for this class is [StickyWin.Modal.Ajax][]
 
 
 
@@ -135,8 +135,8 @@ Fupdate.Append.AjaxPrompt Method: constructor {#Fupdate-Append-AjaxPrompt:constr
 [Fupdate.Append]: /docs/Forms/Fupdate.Append
 [Fupdate.AjaxPrompt]: #Fupdate-AjaxPrompt
 [StickyWin]: /docs/UI/StickyWin
-[StickyWin.Fx.Modal]: /docs/UI/StickyWin.Fx.Modal
+[StickyWin.Modal]: /docs/UI/StickyWin.Modal
 [StickyWin.UI]: /docs/UI/StickyWin.UI
-[StickyWin.Fx.Modal.Ajax]: /docs/UI/StickyWin.Fx.Modal.Ajax
+[StickyWin.Modal.Ajax]: /docs/UI/StickyWin.Modal.Ajax
 [Waiter]: /docs/UI/Waiter
 [Fupdate]: /docs/Forms/Fupdate

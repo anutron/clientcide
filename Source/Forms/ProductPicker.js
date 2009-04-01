@@ -25,7 +25,7 @@ var ProductPicker = new Class({
 		title: 'Product picker',
 		showOnFocus: true,
 		additionalShowLinks: [],
-		stickyWinToUse: StickyWin.Fx,
+		stickyWinToUse: StickyWin,
 		stickyWinOptions: {
 			fadeDuration: 200,
 			draggable: true,

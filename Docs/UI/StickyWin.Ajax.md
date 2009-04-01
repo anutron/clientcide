@@ -11,9 +11,7 @@ Adds ajax functionality to **all** the StickyWin classes.
 ### The following classes are created
 
 * StickyWin.Ajax - extended form of [StickyWin][]
-* StickyWin.Fx.Ajax - extended form of [StickyWin.Fx][]
 * StickyWin.Modal.Ajax - extended form of [StickyWin.Modal][]
-* StickyWin.Fx.Modal.Ajax - extended form of [StickyWin.Fx.Modal][]
 
 Each class here is identical to its extended form with the additional options listed below.
 
@@ -59,14 +57,11 @@ Sends a request for new content.
 * you can specify a different url at any time
 * data specified in the requestOptions will be sent with each request
 * the data is not requested from the server on initialize but instead only when you execute *.update*
-* this file only depends on [StickyWin][]; if you also include [StickyWin.Fx][], [StickyWin.Fx.Drag][], [StickyWin.Modal][] they will also be extended with *.Ajax versions.
+* this file only depends on [StickyWin][]; if you also include [StickyWin.Modal][] it will also be extended with *.Ajax versions.
 
 [StickyWin.Ajax]: #StickyWin-Ajax
 [StickyWin.UI]: /docs/UI/StickyWin.UI
 [StickyWin]: /docs/UI/StickyWin
 [StickyWin:setContent]: /docs/UI/StickyWin#StickyWin:setContent
 [StickyWin:show]: /docs/UI/StickyWin#StickyWin:show
-[StickyWin.Fx]: /docs/UI/StickyWin.Fx
 [StickyWin.Modal]: /docs/UI/StickyWin.Modal
-[StickyWin.Fx.Modal]: /docs/UI/StickyWin.Modal#StickyWin.Fx.Modal
-[StickyWin.Fx.Drag]: /docs/UI/StickyWin.Fx.Drag

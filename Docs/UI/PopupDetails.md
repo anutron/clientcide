@@ -38,7 +38,7 @@ A [PopupDetail][] instance is a [StickyWin][] that uses [String.substitute][] to
 * delayOn - (*integer*) time to wait after the user interacts with the observer before showing the popup; defaults to *0* (zero)
 * delayOff - (*integer*) time to wait after the user mouses out (if that is in effect) of the observer before hiding the popup; defaults to *0* (zero)
 * stickyWinOptions - (*object*) the options object to pass to the instance of [StickyWin][]
-* stickyWinToUse: - (*Class*) a reference to a StickyWin class to use for the popup; either [StickyWin][], [StickyWin.Fx][], [StickyWin.Modal][] or [StickyWin.Fx.Modal][]; note: this value is **not** in quotes. It is not a string, it is a variable pointing to the class.
+* stickyWinToUse: - (*Class*) a reference to a StickyWin class to use for the popup; either [StickyWin][] or [StickyWin.Modal][]; note: this value is **not** in quotes. It is not a string, it is a variable pointing to the class.
 * showNow - (*boolean*) show the [PopupDetail][] on instantiation; defaults to *false*
 
 ### Events

@@ -178,7 +178,7 @@ if (typeof Request != "undefined" && Request.HTML) {
 				else this._send(options);
 				return this;
 			};
-			this.parent(options);
+			this.previous(options);
 			if (this.options.useWaiter && ($(this.options.update) || $(this.options.waiterTarget))) {
 				this.waiter = new Waiter(this.options.waiterTarget || this.options.update, this.options.waiterOptions);
 				['onComplete', 'onException', 'onCancel'].each(function(event){

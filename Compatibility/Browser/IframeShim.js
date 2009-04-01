@@ -1,9 +1,9 @@
 IframeShim = Class.refactor(IframeShim, {
 	initialize: function(element, options){
 		if (options.element) {
-			this.parent(options.element, element);
+			this.previous(options.element, element);
 		} else {
-			this.parent(element, options);
+			this.previous(element, options);
 		}
 	},
 	remove: function(){

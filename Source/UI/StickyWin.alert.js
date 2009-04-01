@@ -13,6 +13,7 @@ StickyWin.alert = function(msghdr, msg, baseHref) {
 						 + msg + '</p>';
 	var body = StickyWin.ui(msghdr, msg, {width: 250});
 	return new StickyWin.Modal({
+		destroyOnClose: true,
 		modalOptions: {
 			modalStyle: {
 				zIndex: 11000

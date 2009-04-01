@@ -67,7 +67,7 @@ var TagMaker = new Class({
 		if (content) {
 				var relativeTo = (document.compatMode == "BackCompat" && this.target)?this.target:document.body;
 				if (!this.win) {
-					this.win = new StickyWin.Fx({
+					this.win = new StickyWin({
 						content: content,
 						draggable: true,
 						relativeTo: relativeTo,

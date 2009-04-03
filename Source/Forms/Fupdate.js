@@ -55,9 +55,12 @@ var Fupdate;
 				success: function(text, xml){
 					['success', 'complete'].each(function(evt){
 						this.fireEvent(evt, [this.update, text, xml]);
-					}, this);				
+					}, this);
 				}.bind(this),
 				failure: function(xhr){
+					this.fireEvent('failure', xhr);
+				}.bind(this),
+				exception: function(){
 					this.fireEvent('failure', xhr);
 				}.bind(this)
 			});

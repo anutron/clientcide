@@ -3,8 +3,8 @@ UnitTester.title = 'Unit Tests';
 
 window.addEvent('load', function(){
 	var sources = {
-		mootoolsCore: '../../mootools-core',
-		mootoolsMore: '../../mootools-more',
+		mootoolsCore: '../../core',
+		mootoolsMore: '../../more',
 		clientside: '..'
 	};
 	if (window.location.href.contains("http://www.clientcide.com/tests")) {

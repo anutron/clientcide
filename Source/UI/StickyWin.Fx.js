@@ -10,32 +10,34 @@ Script: StickyWin.Fx.js
 		Aaron Newton
 */
 
-StickyWin.implement({
+/*
+Script: StickyWin.Fx.js
 
+Extends StickyWin to create popups that fade in and out and can be dragged and resized (requires StickyWin.Fx.Drag.js).
+
+License:
+	http://www.clientcide.com/wiki/cnet-libraries#license
+*/
+StickyWin = Class.refactor(StickyWin, {
 	options: {
 		//fadeTransition: 'sine:in:out',
 		fade: true,
 		fadeDuration: 150
 	},
-
-	initialize: function(){
-		this.parentShow = this.show;
-		this.show = this.showWin;
-		this.parentHide = this.hide;
-		this.hide = this.hideWin;
-		this.previous.apply(this, arguments);
-	},
-
 	hideWin: function(){
 		if (this.options.fade) this.fade(0);
-		else this.parentHide();
+		else this.previous();
 	},
-
 	showWin: function(){
 		if (this.options.fade) this.fade(1);
-		else this.parentShow();
+		else this.previous();
 	},
-
+	hide: function(){
+		this.previous(this.options.fade);
+	},
+	show: function(){
+		this.previous(this.options.fade);
+	},
 	fade: function(to){
 		if (!this.fadeFx) {
 			this.win.setStyles({
@@ -55,10 +57,14 @@ StickyWin.implement({
 		}
 		this.fadeFx.clearChain();
 		this.fadeFx.start(to).chain(function (){
-			if (to == 0) this.parentHide();
-			else this.parentShow();
+			if (to == 0) {
+				dbug.log('hiding!')
+				this.win.setStyle('display', 'none');
+				this.fireEvent('onClose');
+			} else {
+				this.fireEvent('onDisplay');
+			}
 		}.bind(this));
 		return this;
 	}
-
 });

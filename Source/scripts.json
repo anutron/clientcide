@@ -63,15 +63,15 @@
 			"desc": "Provides a simple method for injecting a css style element into the DOM if it's not already present."
 		},
 		"StickyWin":{
-			"deps":["DomReady", "Selectors", "Element.Position", "Class.ToElement", "Element.Shortcuts", "Element.Pin", "IframeShim", "StyleWriter"],
+			"deps":["DomReady", "Selectors", "Element.Position", "Class.Binds", "Class.ToElement", "Element.Shortcuts", "Element.Pin", "IframeShim", "StyleWriter"],
 			"desc":"An in-page popup maker."
 		},
 		"StickyWin.Fx":{
-			"deps":["Fx.Tween", "StickyWin"],
+			"deps":["Class.Refactor", "Fx.Tween", "StickyWin"],
 			"desc":"Extends StickyWin to create popups that fade in and out."
 		},
 		"StickyWin.Drag":{
-			"deps":["Drag.Move", "StickyWin"],
+			"deps":["Class.Refactor", "Drag.Move", "StickyWin"],
 			"desc":"Extends StickyWin to create popups that fade in and out and are draggable."
 		},
 		"StickyWin.Modal":{

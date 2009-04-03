@@ -83,7 +83,7 @@ var StickyWin = new Class({
 		this.win.show();
 	},
 	hide: function(suppressEvent){
-		if (!suppressEvent) this.fireEvent('onClose');
+		if ($type(suppressEvent) == "event" || !suppressEvent) this.fireEvent('onClose');
 		this.hideWin();
 		if (this.options.useIframeShim) this.hideIframeShim();
 		this.visible = false;

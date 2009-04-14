@@ -178,7 +178,7 @@
 			"desc":"FormValidator using StickyWin.PointyTip."
 		},
 		"Fupdate":{
-			"deps":["Element.Event",  "Request.HTML", "Class.ToElement", "Class.Occlude", "Waiter", "URI"],
+			"deps":["Element.Event",  "Request.HTML", "Class.ToElement", "Class.Occlude", "Waiter", "String.QueryString"],
 			"desc":"Handles the basic functionality of submitting a form and updating a dom element with the result."
 		},
 		"Fupdate.Append":{

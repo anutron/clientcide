@@ -11,8 +11,15 @@ Links
 * [Tutorials/Examples](http://www.clientcide.com/wiki)
 * [Bugs](http://clientcide.lighthouseapp.com)
 
-### Todo
+Todo
+====
 
 * Update Localization
 * Migrate bugs to lighthouse
 * Write compatibility layer for the new MooTools More
+
+Changes
+=======
+* MultipleOpenAccordion 
+	* now only takes options
+	* openAll defaults to false

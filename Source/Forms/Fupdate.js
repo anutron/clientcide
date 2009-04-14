@@ -133,6 +133,7 @@ var Fupdate;
 	});
 
 	var dedupeQs = function(str){
+		if (!str.trim()) return "";
 		var result = $H({});
 		str.split("&").each(function(pair){
 			var n = pair.indexOf("=");

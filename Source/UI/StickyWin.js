@@ -35,6 +35,10 @@ var StickyWin = new Class({
 		iframeShimSelector: '',
 		destroyOnClose: false
 	},
+
+	css: '.SWclearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}'+
+		 '.SWclearfix {display: inline-table;} * html .SWclearfix {height: 1%;} .SWclearfix {display: block;}',
+	
 	initialize: function(options){
 		this.options.inject = this.options.inject || {
 			target: document.body,
@@ -111,12 +115,12 @@ var StickyWin = new Class({
 			el.addEvent('click', this.togglepin);
 		}, this);
 		return this;
-	},	
+	},
 	position: function(options){
 		this.positioned = true;
 		this.setOptions(options);
 		this.win.position({
-			allowNegative: true,
+			allowNegative: $pick(this.options.allowNegative, this.options.relativeTo != document.body),
 			relativeTo: this.options.relativeTo,
 			position: this.options.position,
 			offset: this.options.offset,

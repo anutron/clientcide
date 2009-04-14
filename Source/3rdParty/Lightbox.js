@@ -174,8 +174,8 @@ var Lightbox = new Class({
 	},
 
 	setup: function(open){
-		var elements = $$('object, iframe');
-		elements.extend($$(Browser.Engine.trident ? 'select' : 'embed'));
+		var elements = $$('iframe');
+		elements.extend($$(Browser.Engine.trident ? 'select' : 'embed, object'));
 		elements.reverse().each(function(el){
 			if (open) el.store('lbBackupStyle', el.getStyle('visibility') || 'visible');
 			var vis = (open ? 'hidden' : el.retrieve('lbBackupStyle') || 'visible');

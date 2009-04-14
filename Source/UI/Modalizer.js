@@ -19,7 +19,7 @@ var Modalizer = new Class({
 		this.modalOptions = $merge({
 			width:(window.getScrollSize().x),
 			height:(window.getScrollSize().y),
-			elementsToHide: 'select, embed, object',
+			elementsToHide: 'select, embed' + (Browser.Engine.trident ? '': ', object'),
 			hideOnClick: true,
 			modalStyle: {},
 			updateOnResize: true,

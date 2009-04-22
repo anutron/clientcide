@@ -236,13 +236,6 @@
 			"desc":"A <a href=\"http://www.huddletogether.com/projects/lightbox/\">Lightbox clone for MooTools.</a>"
 		}
 	},
-	"iPhone":{
-		"CiUI":{
-			"deps":["CiUI"],
-			"desc":"CNET's iPhone UI. No dependencies (see docs and svn for demos, css, and images that accompany this script). <b>Important:</b> Don't include this script for anything <i>except</i> a mobile app.",
-			"exclude": true
-		}
-	},
 	"Localization": {
 		"SimpleEditor.Dutch":{
 			"deps":["SimpleEditor"],

@@ -21,5 +21,45 @@ Todo
 Changes
 =======
 * MultipleOpenAccordion 
-	* now only takes options
-	* openAll defaults to false
+	- now only takes options
+	- openAll defaults to false
+* CiUI (iPhone code)
+	- removed from library; download at [google code](http://code.google.com/p/ciui-dev/)
+* Browser.Extras
+	- methods now either part of URI class or stand alone string methods
+	- Browser.qs deprecated entirely; use *new URI().getData()*
+* Class.Binds
+	- mutator is now upper case (*Binds* instead of *binds*)
+* Class.Refactor
+	- no longer an instance method (you can'd to *Foo.refactor({props})* - you must do *Foo = Class.refactor(Foo, props)*)
+* Element.Forms
+	- deprecated Element property *inputValue*; too confusing!
+* Element.Position
+	- *Element.setPosition* is now *Element.position* and vice versa. I.e. *Element.position* (which in MooTools 1.2.1 took an object with x/y coords for top/left) is now *Element.setPosition*. *Element.setPosition* (which in the previous Clientcide libs took options for relative positioning) is now *Element.position*.
+* Element.Shortcuts
+	- *Element.isVisible* is *Element.isDisplayed*
+* IframeShim
+ 	- options:zindex renamed to zIndex
+* OverText
+	- no longer takes a collection of inputs.
+	- .*showTxt* > .*show*, .*hideTxt* > .*hide*
+	- .*hide* and .*show* no longer take the element and 'focus' arguments.
+	- .*repositionAll* is gone; .*repositionOverTxt* is now just .*reposition*; it does not take an argument
+* String.Extras
+	- findAllEmails gone, too specific
+* Date
+	- deprecated String.zeroise
+* JsonP
+	- renamed to Request.JSONP
+	- constructor/send/prepareUrl take options hash, no longer an url directly (like Request)
+	- user can change options on the fly when calling send() with a new hash, reusing the object
+	- added check method. support for link: ignore, cancel, chain (like Request)
+	- added success, request and cancel events
+	- data can be a hash or string now (like Request)
+	- queryString option gone
+	- makeUrl logic now moved to new getScript(), which directly returns the script
+	- changed how it essentially works. instead of storing the object reference, we store a new function every time a request is made, that keeps a reference of the script element and the object instance.
+	- abortAfter and timeout gone. there's now a single timeout for retries and for when retries run out.
+	- globalFunction gone, deemed useless
+* Request.Queue
+	- event names all renamed; *onRequestStart* >> *onRequest*, *onRequestSuccess* >> *onSuccess*, etc

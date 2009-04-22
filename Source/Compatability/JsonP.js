@@ -2,6 +2,7 @@ var JsonP = Class.refactor(Request.JSONP, {
 	initialize: function(url, options) {
 		options = (options || {});
 		options.url = url;
+		if (options.callBackKey) options.callbackKey = options.callBackKey;
 		this.previous(options);
 	},
 	getScript: function(options) {

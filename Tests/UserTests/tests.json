@@ -6,9 +6,6 @@
 		"FixPNG": ['all'],
 		"Popup":['all']
 	},
-	"Element":{
-		"Element.MouseOvers":['all']
-	},
 	"Fx": {
 		"Fx.Marquee":['all']
 	},

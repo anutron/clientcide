@@ -25,6 +25,8 @@ Browser.Popup = new Class({
 	initialize: function(url, options){
 		this.url = url || false;
 		this.setOptions(options);
+		if (this.options.x == 'center') this.options.x = Math.floor((screen.availWidth - this.options.width)/2);
+		if (this.options.y == 'center') this.options.y = Math.floor((screen.availHeight - this.options.height)/2);
 		if (this.url) this.openWin();
 	},
 	openWin: function(url){

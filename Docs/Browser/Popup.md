@@ -26,8 +26,8 @@ This class opens a popup window with the passed in values.
 
 * width - (*integer*) the width of the window; defaults to *500*
 * height - (*integer*) the height of the window; defaults to *300*
-* x - (*integer*) the offest from the left of the screen; defaults to *50*
-* y - (*integer*) the offset from the top of the screen; defaults to *50*
+* x - (*integer* or *string*) the offest from the left of the screen; defaults to *50* but can also be "center" to center the window horizontally
+* y - (*integer* or *string*) the offset from the top of the screen; defaults to *50* but can also be "center" to center the window vertically
 * toolbar - (*integer*) show the browser toolbar in the window; *0* (zero) does not show it, *1* (one) does; defaults to *0* (zero)
 * location - (*integer*) show the location in the browser; *0* (zero) does not show it; defaults to *0* (zero)
 * directories - (*integer*) show the directories in the browser; *0* (zero) does not show it; defaults to *0* (zero)

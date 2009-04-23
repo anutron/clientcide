@@ -14,9 +14,7 @@ Links
 Todo
 ====
 
-* Update Localization
 * Migrate bugs to lighthouse
-* Write compatibility layer for the new MooTools More
 
 Changes
 =======

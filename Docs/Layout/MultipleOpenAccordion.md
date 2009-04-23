@@ -14,17 +14,17 @@ A Mootools Accordion-like class that allows the user to open more than one eleme
 
 ### Syntax
 
-	new MultipleOpenAccordion(container[,options]);
+	new MultipleOpenAccordion([options]);
 
 ###	Arguments
 
-1. container - (*mixed*) A string of the id for an Element or an Element reference that contains the accordion
-2. options - (*object*) a key/value set of options
+1. options - (*object*) a key/value set of options
+
 ### Options
 
 * togglers - (*mixed*) an array of elements or a selector representing all the elements that toggle elements in the accordion open and closed.
 * elements - (*mixed*) an array of elements in the accordion that are toggled open and closed.
-* openAll - (*boolean*) whether to open all elements on startup; defaults to *true*.
+* openAll - (*boolean*) whether to open all elements on startup; defaults to *false*.
 * firstElementsOpen - (*array*) an array of integers representing the indexes of the elements to open on startup; only used if *openAll = false*; defaults to *[0]*; can be *[]* (empty array) to signifiy that all should be closed.
 * fixedHeight - (*integer*) if you want your accordion to have a fixed height; defaults to *false*.
 * fixedWidth - (*integer*), if you want your accordion to have a fixed width; defaults to *false*.

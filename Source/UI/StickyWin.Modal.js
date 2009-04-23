@@ -36,3 +36,4 @@ StickyWin.Modal = new Class({
 	}
 
 });
+if (StickyWin.Fx) StickyWin.Fx.Modal = StickyWin.Modal;

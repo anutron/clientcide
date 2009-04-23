@@ -5,7 +5,7 @@ Script: SimpleEditor.Dutch.js
 License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
-SimpleEditor.resources.NL = {
+MooTools.lang.set('nl-NL', 'SimpleEditor', {
 	woops:'Oeps',
 	nopeCtrlC:'Sorry, deze functie werkt niet; gebruik ctrl+c.',
 	nopeCtrlX:'Sorry, deze functie werkt niet; gebruik ctrl+x.',
@@ -13,4 +13,4 @@ SimpleEditor.resources.NL = {
 	linkText:'De tekst van de snelkoppeling',
 	imgURL:'De URL van de afbeelding',
 	imgAlt:'De titel (alt) voor de afbeelding'
-};
+});

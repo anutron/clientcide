@@ -42,5 +42,5 @@
 			}
 		}
 	],
-	otherScripts: ['Autocompleter.CNET']
+	otherScripts: ['Autocompleter.Clientcide']
 }

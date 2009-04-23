@@ -58,7 +58,6 @@ StickyWin = Class.refactor(StickyWin, {
 		this.fadeFx.clearChain();
 		this.fadeFx.start(to).chain(function (){
 			if (to == 0) {
-				dbug.log('hiding!')
 				this.win.setStyle('display', 'none');
 				this.fireEvent('onClose');
 			} else {
@@ -68,3 +67,4 @@ StickyWin = Class.refactor(StickyWin, {
 		return this;
 	}
 });
+StickyWin.Fx = StickyWin;

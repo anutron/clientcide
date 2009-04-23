@@ -25,7 +25,7 @@ var PopupDetail = new Class({
 		delayOn: 100,
 		delayOff: 100,
 		stickyWinOptions:{},
-//	stickyWinToUse: null,
+		stickyWinToUse: StickyWin,
 		showNow: false,
 		htmlResponse: false,
 		regExp: /\\?%([^%]+)%/g
@@ -34,11 +34,6 @@ var PopupDetail = new Class({
 	},
 	initialize: function(html, observer, options){
 		this.setOptions(options);
-		try {
-			this.options.stickyWinToUse = this.options.stickyWinToUse || StickyWin.Fx;
-		} catch(e) {
-			this.options.stickyWinToUse = StickyWin;
-		}
 		this.observer = $(observer);
 		this.html = ($(html))?$(html).get('html'):html||'';
 		if (this.options.showNow) this.show.delay(this.options.delayOn, this);

@@ -20,7 +20,7 @@ var PostEditor = new Class({
 
 	tab: "\t",
 
-	options = {
+	options: {
 		snippets : {},
 		smartTypingPairs : {},
 		selections : {}

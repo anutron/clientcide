@@ -11,9 +11,9 @@ var Lightbox = new Class({
 	Implements: [Options, Events, Modalizer],
 	Binds: ['click', 'keyboardListener', 'addHtmlElements'],
 	options: {
-//	anchors: null,
+//		anchors: null,
 		resizeDuration: 400,
-//	resizeTransition: false,	// default transition
+//		resizeTransition: false,	// default transition
 		initialWidth: 250,
 		initialHeight: 250,
 		zIndex: 5000,
@@ -26,9 +26,9 @@ var Lightbox = new Class({
 		overlayStyles: {
 			opacity: 0.8
 		}
-//	onImageShow: $empty,
-//	onDisplay: $empty,
-//	onHide: $empty
+//		onImageShow: $empty,
+//		onDisplay: $empty,
+//		onHide: $empty
 	},
 
 	initialize: function(){
@@ -62,7 +62,9 @@ var Lightbox = new Class({
 		this.container = new Element('div', {
 			'class':'lbContainer'
 		}).inject(document.body);
-		this.setModalOptions();
+		this.setModalOptions({
+			onModalHide: this.close.bind(this)
+		});
 		this.overlay = this.layer().addClass('lbOverlay');
 		this.setModalStyle($merge(this.options.overlayStyles, {
 				opacity: 0

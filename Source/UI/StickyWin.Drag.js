@@ -75,3 +75,4 @@ StickyWin = Class.refactor(StickyWin, {
 		return false;
 	}
 });
+StickyWin.Fx = StickyWin;

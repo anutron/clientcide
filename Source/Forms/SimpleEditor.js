@@ -14,6 +14,7 @@ var SimpleEditor = new Class({
 		this.commands = new Hash($extend(SimpleEditor.commands, commands||{}));
 		this.buttons = $$(buttons);
 		this.buttons.each(function(button){
+			dbug.log(button, button.addEvent);
 			button.addEvent('click', function() {
 				this.exec(button.get('rel'));
 			}.bind(this));
@@ -210,19 +211,6 @@ SimpleEditor.addCommands({
 		}
 	}
 });
-
-SimpleEditor.resources = {
-	enUS: {
-		woops:'Woops',
-		nopeCtrlC:'Sorry, this function doesn\'t work here; use ctrl+c.',
-		nopeCtrlX:'Sorry, this function doesn\'t work here; use ctrl+x.',
-		linkURL:'The URL for the link',
-		linkText:'The link text',
-		imgURL:'The URL to the image',
-		imgAlt:'The title (alt) for the image'
-	}
-};
-SimpleEditor.language = "enUS";
 SimpleEditor.getMsg = function(key, language){
-	return SimpleEditor.resources[language||SimpleEditor.language][key];
+	return MooTools.lang.get('SimpleEditor', key, args);
 };

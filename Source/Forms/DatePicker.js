@@ -80,18 +80,14 @@ var DatePicker;
 		formValidatorInterface: function(){
 			this.inputs.each(function(input){
 				var props;
-				if (input.get('validatorProps')){
-					try {
-						props = JSON.decode(input.get('validatorProps'));
-					}catch(e){}
-				}
+				if (input.get('validatorProps')) props = input.get('validatorProps');
 				if (props && props.dateFormat) {
 					dbug.log('using date format specified in validatorProps property of element to play nice with FormValidator');
 					this.setOptions({ format: props.dateFormat });
 				} else {
 					if (!props) props = {};
 					props.dateFormat = this.options.format;
-					input.set('validatorProps', JSON.encode(props));
+					input.set('validatorProps', props);
 				}
 			}, this);
 		},
@@ -177,7 +173,7 @@ var DatePicker;
 				this.rows = rows;
 				var dayCells = rows[1].getElements('td');
 				dayCells.each(function(cell, i){
-					cell.firstChild.data = Date.$days[(i + this.options.weekStartOffset) % 7].substring(0,3);
+					cell.firstChild.data = Date.getMsg('days')[(i + this.options.weekStartOffset) % 7].substring(0,3);
 				}, this);
 				[6,5,4,3].each(function(i){ rows[0].getElements('td')[i].dispose() });
 				this.prevLnk = rows[0].getElement('td').setStyle('text-align', 'right');
@@ -200,9 +196,7 @@ var DatePicker;
 					showNow: false,
 					relativeTo: this.inputs.get('start')
 				});
-				dbug.log('make ', StickyWin)
 				this.stickyWin = new this.options.stickyWinToUse(opts);
-				dbug.log(this.stickyWin)
 				this.stickyWin.addEvent('onDisplay', this.positionClose.bind(this));
 				this.container.setStyle('z-index', this.stickyWin.win.getStyle('z-index').toInt()+1);
 			}
@@ -250,8 +244,8 @@ var DatePicker;
 		handleScroll: function(e){
 			if (e.target.hasClass('rightScroll')||e.target.hasClass('leftScroll')) {
 				var newRef = e.target.hasClass('rightScroll')
-					?this.rows[2].getElement('td').refDate - Date.$units.day()
-					:this.rows[7].getElements('td')[6].refDate + Date.$units.day();
+					?this.rows[2].getElement('td').refDate - Date.units.day()
+					:this.rows[7].getElements('td')[6].refDate + Date.units.day();
 				this.fillCalendar(new Date(newRef));
 				return true;
 			}
@@ -270,7 +264,6 @@ var DatePicker;
 			if (this.options.hideCalendarOnPick) this.hide();
 		},
 		clickCalendar: function(e) {
-			if (this.options.format == "%d/%m/%Y") Date.$culture = "GB";
 			if (this.handleScroll(e)) return;
 			if (!e.target.firstChild || !e.target.firstChild.data) return;
 			var val = e.target.firstChild.data;
@@ -286,10 +279,10 @@ var DatePicker;
 			var startDate = (date)?new Date(date.getTime()):new Date();
 			var hours = startDate.get('hours');
 			startDate.setDate(1);
-			startDate.setTime((startDate.getTime() - (Date.$units.day() * (startDate.getDay()))) + 
-			                  (Date.$units.day() * this.options.weekStartOffset));
+			startDate.setTime((startDate.getTime() - (Date.units.day() * (startDate.getDay()))) + 
+			                  (Date.units.day() * this.options.weekStartOffset));
 			var monthyr = new Element('span', {
-				html: Date.$months[date.getMonth()] + " " + date.getFullYear()
+				html: Date.getMsg('months')[date.getMonth()] + " " + date.getFullYear()
 			});
 			$(this.rows[0].getElements('td')[1]).empty().adopt(monthyr);
 			var atDate = startDate.clone();
@@ -299,7 +292,7 @@ var DatePicker;
 					atDate.set('hours', hours);
 					td.firstChild.data = atDate.getDate();
 					td.refDate = atDate.getTime();
-					atDate.setTime(atDate.getTime() + Date.$units.day());
+					atDate.setTime(atDate.getTime() + Date.units.day());
 				}, this);
 			}, this);
 			this.updateSelectors();
@@ -322,7 +315,7 @@ var DatePicker;
 					}, this);
 					this.fireEvent('rowDateEvaluated', [atDate, td]);
 					if (atDate.getMonth() != month) td.addClass('otherMonthDate');
-					atDate.setTime(atDate.getTime() + Date.$units.day());
+					atDate.setTime(atDate.getTime() + Date.units.day());
 				}, this);
 			}, this);
 		}

@@ -24,9 +24,10 @@ var MultipleOpenAccordion = new Class({
 	togglers: [],
 	elements: [],
 	initialize: function(options){
-		this.setOptions(options);
-		elements = $$(options.elements);
-		$$(options.togglers).each(function(toggler, idx){
+		var args = Array.link(arguments, {options: Object.type, elements: Array.type});
+		this.setOptions(args.options);
+		elements = $$(this.options.elements);
+		$$(this.options.togglers).each(function(toggler, idx){
 			this.addSection(toggler, elements[idx], idx);
 		}, this);
 		if (this.togglers.length) {

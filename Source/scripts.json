@@ -84,21 +84,11 @@
 		},
 		"StickyWin.alert":{
 			"deps":["StickyWin.Modal", "StickyWin.UI"],
-			"desc":"The function in this script just makes a little alert box with a close button.",
-			"assets": {
-				"icon_problems_sm.gif": "http://www.cnet.com/html/rb/assets/global/simple.error.popup/icon_problems_sm.gif"
-			}
+			"desc":"The function in this script just makes a little alert box with a close button."
 		},
 		"StickyWin.UI":{
 			"deps":["Element.Style", "String.Extras", "StickyWin"],
-			"desc":"Creates an html holder for in-page popups using a default style.",
-			"assets":{
-				"full.png":"http://www.cnet.com/html/rb/assets/global/StickyWin.ui/full.png",
-				"body.png": "http://www.cnet.com/html/rb/assets/global/StickyWin.ui/body.png",
-				"big_button_over.gif": "http://www.cnet.com/html/rb/assets/global/StickyWin.ui/big_button_over.gif",
-				"big_button.gif": "http://www.cnet.com/html/rb/assets/global/StickyWin.ui/big_button.gif",
-				"closebtn.gif":"http://www.cnet.com/html/rb/assets/global/StickyWin.ui/closebtn.gif"
-			}
+			"desc":"Creates an html holder for in-page popups using a default style."
 		},
 		"StickyWin.UI.Pointy":{
 			"deps":["Element.Shortcuts", "Element.Position", "StickyWin.UI"],
@@ -115,10 +105,7 @@
 		"Waiter":{
 			"deps": ["Fx.Elements", "Class.Refactor", "Element.Shortcuts", "Element.Position", "IframeShim"],
 			"optional": ["Request.HTML"],
-			"desc": "Adds a semi-transparent overlay over a dom element with a spinnin ajax icon.",
-			"assets": {
-				"spinner image": "http://www.cnet.com/html/rb/assets/global/waiter/waiter.gif"
-			}
+			"desc": "Adds a semi-transparent overlay over a dom element with a spinnin ajax icon."
 		}
 	},
 	"Layout":{
@@ -166,7 +153,7 @@
 			"desc":"Fades a message in and out for the user to tell them that some event (like an ajax save) has occurred."
 		},
 		"DatePicker":{
-			"deps":["Class.Extras", "Element.Event", "JSON", "Date", "dbug", "StickyWin.UI"],
+			"deps":["Class.Extras", "Element.Event", "Date", "dbug", "StickyWin.UI"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
 		"DatePicker.Extras":{
@@ -198,7 +185,7 @@
 			"desc":"Allows the user to pick a product from a data source."
 		},
 		"SimpleEditor":{
-			"deps":["Class.Extras", "Class.ToElement", "Class.Occlude", "Element.Forms", "Element.Shortcuts", "String.Extras"],
+			"deps":["Class.Extras", "Class.ToElement", "Class.Occlude", "Element.Forms", "Element.Shortcuts", "Element.Event", "String.Extras", "SimpleEditor.English.US"],
 			"desc":"A simple html editor for wrapping text with links and whatnot."
 		},
 		"TagMaker":{
@@ -228,7 +215,7 @@
 			"desc":"Used by Autocompleter to monitor an input for changes."
 		},
 		"Autocompleter.Clientcide": {
-			"deps":["Autocompleter", "Clientcide"],
+			"deps":["Autocompleter", "Clientcide", "Class.Refactor"],
 			"desc":"Extends Autocompleter to automatically inject the css styles."
 		},
 		"Lightbox": {
@@ -237,23 +224,27 @@
 		}
 	},
 	"Localization": {
+		"SimpleEditor.English.US":{
+			"deps":["Lang"],
+			"desc":"SimpleEditor messages in US English (feel free to send in your own translations)."
+		},
 		"SimpleEditor.Dutch":{
-			"deps":["SimpleEditor"],
+			"deps":["Lang"],
 			"desc":"SimpleEditor messages in Dutch (feel free to send in your own translations).",
 			"exclude": true
 		},
 		"SimpleEditor.French":{
-			"deps":["SimpleEditor"],
+			"deps":["Lang"],
 			"desc":"SimpleEditor messages in French (feel free to send in your own translations).",
 			"exclude": true
 		},
 		"SimpleEditor.Portuguese":{
-			"deps":["SimpleEditor"],
+			"deps":["Lang"],
 			"desc":"SimpleEditor messages in Portuguese (feel free to send in your own translations).",
 			"exclude": true
 		},
 		"SimpleEditor.Spanish":{
-			"deps":["SimpleEditor"],
+			"deps":["Lang"],
 			"desc":"SimpleEditor messages in Spanish (feel free to send in your own translations).",
 			"exclude": true
 		}
@@ -263,6 +254,14 @@
 			"deps":["Element.Event"],
 			"desc":"Delegates events for child elements to their parents for greater efficiency.",
 			"exclude": true
+		},
+		"PostEditor": {
+			"deps": ["Class.Extras", "Element.Style", "Element.Event"],
+			"desc": "A MooTools 1.2.2 version of <a href=\"http://icebeat.bitacoras.com/mootools/posteditor/\">PostEditor</a>."
+		},
+		"PostEditor.Forum": {
+			"deps": ["PostEditor"],
+			"desc": "Extends Posted editor to implement default rules used by the (old) MooTools forums."
 		}
 	}
 }

@@ -5,7 +5,7 @@ Script: SimpleEditor.French.js
 License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
-SimpleEditor.resources.FR = {
+MooTools.lang.set('fr-FR', 'SimpleEditor', {
 	woops:'Oops',
 	nopeCtrlC:'Désolé, cette fonction ne fonctionne pas ici. Utilisez ctrl+c.',
 	nopeCtrlX:'Désolé, cette fonction ne fonctionne pas ici. Utilisez ctrl+x.',
@@ -13,4 +13,4 @@ SimpleEditor.resources.FR = {
 	linkText:'Texte du lien',
 	imgURL:'L\'URL de l\'image',
 	imgAlt:'Le titre (alt) de l\'image'
-};
+});

@@ -35,8 +35,12 @@ Fupdate.Append = new Class({
 				var finish = function(){
 					this.fireEvent('success', [container, this.update, tree, elements, html, javascript]);
 				}.bind(this);
-				if (this.options.useReveal) container.set('reveal', this.options.revealOptions).reveal().get('reveal').chain(finish);
-				else finish();
+				if (this.options.useReveal) {
+					container.set('reveal', this.options.revealOptions).get('reveal').chain(finish);
+					container.reveal();
+				} else {
+					finish();
+				}
 			}.bind(this),
 			failure: function(xhr){
 				this.fireEvent('failure', xhr);

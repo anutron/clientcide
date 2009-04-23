@@ -63,3 +63,7 @@ Changes
 	- globalFunction gone, deemed useless
 * Request.Queue
 	- event names all renamed; *onRequestStart* >> *onRequest*, *onRequestSuccess* >> *onSuccess*, etc
+* StickyWin
+	- *StickyWin.Fx* is now just *StickyWin*.
+* MultipleOpenAccordion
+	- Now only takes an options argument; container argument is deprecated.

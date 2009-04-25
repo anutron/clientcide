@@ -32,8 +32,8 @@ var SimpleEditor = new Class({
 	shortCutToKey: function(shortcut, shift){
 		var returnKey = false;
 		this.commands.each(function(value, key){
-			var char = (value.shortcut ? value.shortcut.toLowerCase() : value.shortcut);
-			if (value.shortcut == shortcut || (shift && char == shortcut)) returnKey = key;
+			var ch = (value.shortcut ? value.shortcut.toLowerCase() : value.shortcut);
+			if (value.shortcut == shortcut || (shift && ch == shortcut)) returnKey = key;
 		});
 		return returnKey;
 	},

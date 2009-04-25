@@ -6,7 +6,7 @@ License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
 var Clientcide = {
-	version: '%build%',
+	version: '2.0.0',
 	setAssetLocation: function(baseHref) {
 		if (window.StickyWin && StickyWin.ui) {
 			StickyWin.UI.implement({

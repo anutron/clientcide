@@ -16,11 +16,6 @@ Script: Element.Delegation.js
 */
 (function(){
 
-	var getType = function(type){
-		var custom = Element.Events.get(type);
-		return custom ? custom.base : type;
-	};
-
 	var checkOverOut = function(el, e){
 		if (el == e.target || el.hasChild(e.target)){
 			var related = e.relatedTarget;
@@ -55,9 +50,7 @@ Script: Element.Delegation.js
 	};
 
 	var oldAddEvent = Element.prototype.addEvent,
-		oldAddEvents = Element.prototype.addEvents,
-		oldRemoveEvent = Element.prototype.removeEvent,
-		oldRemoveEvents = Element.prototype.removeEvents;
+		oldRemoveEvent = Element.prototype.removeEvent;
 	Element.implement({
 		//use as usual (this.addEvent('click', fn))
 		//or for delegation

@@ -1,6 +1,6 @@
 OverText = Class.refactor(OverText, {
 	initialize: function(inputs, options){
-		if ($$(inputs).length) {
+		if ($type(inputs) == 'array') {
 			this.instances = [];
 			this.setOptions(options);
 			$$(inputs).each(this.addElement, this);

@@ -9,7 +9,6 @@ License:
 
 Element.implement({
 	autoMouseOvers: function(options){
-		
 		options = $extend({
 			outString: '_out',
 			overString: '_over',
@@ -19,8 +18,12 @@ Element.implement({
 			applyToBoth: false
 		}, options);
 		el = this;
-		if (options.subSelector) el = this.getElements(options.subSelector);
-		if (el.retrieve('autoMouseOverSetup')) return this;
+		if (options.subSelector) {
+			el = this.getElements(options.subSelector);
+			if (el.every(function(kid){
+				return kid.retrieve('autoMouseOverSetup');
+			})) return this;
+		}
 		el.store('autoMouseOverSetup', true);
 		return el.addEvents({
 			mouseenter: function(){

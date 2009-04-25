@@ -65,3 +65,12 @@ Changes
 	- *StickyWin.Fx* is now just *StickyWin*.
 * MultipleOpenAccordion
 	- Now only takes an options argument; container argument is deprecated.
+	
+Breaking Changes in MooTools More 1.2.2.1
+=====================================
+* FormValidator
+	- The base *FormValidator* class no longer injects advice into the document. You must use *FormValidator.Inline* for this behavior.
+* Class.refactor
+	- this.parent is no longer useful; you must use this.previous
+* String.cleanQueryString
+	- if you specify a custom message its arguments are now *key, value* (before it was *set* where *set* was "key=value").

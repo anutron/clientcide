@@ -263,5 +263,51 @@
 			"deps": ["PostEditor"],
 			"desc": "Extends Posted editor to implement default rules used by the (old) MooTools forums."
 		}
+	},
+	"Compatability": {
+		"Browser.Extras.Compat": {
+			"deps":["DomReady", "URI"],
+			"desc":""
+		},
+		"Date.Compat": {
+			"deps":["Date", "String", "Number"],
+			"desc":""
+		},
+		"Element.Forms.Compat": {
+			"deps":["Element"],
+			"desc":""
+		},
+		"Element.MouseOvers.Compat": {
+			"deps":["Element.Shortcuts", "Element.Event"],
+			"desc":""
+		},
+		"Element.Position.Compat": {
+			"deps":["Element.Position"],
+			"desc":""
+		},
+		"Element.Shortcuts.Compat": {
+			"deps":["Element.Shortcuts"],
+			"desc":""
+		},
+		"IframeShim.Compat": {
+			"deps":["IframeShim", "Class.Refactor"],
+			"desc":""
+		},
+		"JsonP.Compat": {
+			"deps":["Class.Refactor", "Request.JSONP"],
+			"desc":""
+		},
+		"OverText.Compat": {
+			"deps":["OverText", "Class.Refactor"],
+			"desc":""
+		},
+		"Request.Queue.Compat": {
+			"deps":["Request.Queue", "Class.Refactor"],
+			"desc":""
+		},
+		"String.Extras.Compat": {
+			"deps":["String"],
+			"desc":""
+		}
 	}
 }

@@ -267,47 +267,47 @@
 	"Compatability": {
 		"Browser.Extras.Compat": {
 			"deps":["DomReady", "URI"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"Date.Compat": {
 			"deps":["Date", "String", "Number"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"Element.Forms.Compat": {
 			"deps":["Element"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"Element.MouseOvers.Compat": {
 			"deps":["Element.Shortcuts", "Element.Event"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"Element.Position.Compat": {
 			"deps":["Element.Position"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"Element.Shortcuts.Compat": {
 			"deps":["Element.Shortcuts"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"IframeShim.Compat": {
 			"deps":["IframeShim", "Class.Refactor"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"JsonP.Compat": {
 			"deps":["Class.Refactor", "Request.JSONP"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"OverText.Compat": {
 			"deps":["OverText", "Class.Refactor"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"Request.Queue.Compat": {
 			"deps":["Request.Queue", "Class.Refactor"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		},
 		"String.Extras.Compat": {
 			"deps":["String"],
-			"desc":""
+			"desc":"Compatibility for MooTools More 1.2.2"
 		}
 	}
 }

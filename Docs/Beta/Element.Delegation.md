@@ -3,6 +3,10 @@ Native: Element {#Element}
 
 Extends the [Element][] native object to include delegations in the addEvent and addEvents methods.
 
+### Note
+
+This library is beta. It recreates in portion the functionality coming in MooTools 2.0 that supports event delegation and mirrors 2.0's syntax. This syntax is still subject to change. Also note that this library does not support all custom events nor does it support *focus* and *blur* events.
+
 ### Credits
 
 Event checking based on the work of [Daniel Steigerwald][] found here [originally][].
@@ -29,7 +33,7 @@ Delegates the methods of an element's children to the parent element for greater
 
 ### Example
 
-	$(element).addEvent('click(a)', function(){
+	$(element).addEvent('click:relay(a)', function(){
 		alert('you clicked a link!');
 	});
 
@@ -64,7 +68,7 @@ Delegates the events to the parent just as with addEvent above.
 		//monitor an element for mouseover
 		mouseover: fn,
 		//but only monitor links for click
-		'click(a)':fn2
+		'click:relay(a)':fn2
 	});
 
 Element method: removeEvent {#Element:removeEvent}
@@ -78,16 +82,16 @@ Removes a method from an element as [removeEvent][] always does. Provided here j
 
 ### Arguments
 
-1. type - (*string*) An event name (*click*, *click(selector)*, etc) that should was originally added.
+1. type - (*string*) An event name (*click*, *click:relay(selector)*, etc) that should was originally added.
 3. fn - (*function*; optional) A pointer to the original call back passed when the event was originally added.
 
 ### Example
 
 	var monitor = function(){ alert('you clicked a link!')};
-	$(element).addEvent('click(a)', monitor);
+	$(element).addEvent('click:relay(a)', monitor);
 	//link clicks are delegated to element
 	//...now we remove the delegation:
-	$(element).removeEvent('click(a)', monitor);
+	$(element).removeEvent('click:relay(a)', monitor);
 
 ### Returns
 
@@ -108,24 +112,24 @@ Removes a series of methods from delegation if the functions were used for deleg
 
 ### Arguments
 
-1. events - (*mixed*) If a string (like 'click' or 'click(a)'), all click events are removed as [removeEvents][] normally works. Otherwise each method defined in the key/value set of event types/functions is removed. If the method was used for delegation, the delegation is removed.
+1. events - (*mixed*) If a string (like 'click' or 'click:relay(a)'), all click events are removed as [removeEvents][] normally works. Otherwise each method defined in the key/value set of event types/functions is removed. If the method was used for delegation, the delegation is removed.
 3. fn - (*function*) A pointer to the original call back passed when the event was originally added.
 
 ### Example
 
 	var monitor = function(){ alert('you clicked or moused over a link!')};
 	$(element).addEvents({
-		'mouseover(a)': monitor,
-		'click(a)': monitor
+		'mouseover:relay(a)': monitor,
+		'click:relay(a)': monitor
 	});
 	//link clicks are delegated to element
 	//...now we remove the delegation:
 	$(element).removeEvents({
-		'mouseover(a)': monitor,
-		'click(a)': monitor
+		'mouseover:relay(a)': monitor,
+		'click:relay(a)': monitor
 	});
-	//or we could remove all click(a) events
-	$(element).removeEvents('click(a)');
+	//or we could remove all click:relay(a) events
+	$(element).removeEvents('click:relay(a)');
 
 ### Returns
 
@@ -152,14 +156,14 @@ Adds delegation when you pass in an object with selector/events pairs, otherwise
 	//delegation:
 	myElement.set({
 		events: {
-			'click(a)': function1,
-			'mouseover(a)': function2
+			'click:relay(a)': function1,
+			'mouseover:relay(a)': function2
 		}
 	});
 	//mixed
 	myElement.set({
 		events: {
-			'click(a)': function1,
+			'click:relay(a)': function1,
 			mouseover: function2
 		}
 	});

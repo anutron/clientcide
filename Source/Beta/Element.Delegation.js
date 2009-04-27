@@ -31,21 +31,30 @@ Script: Element.Delegation.js
 		var els = this.getElements(test);
 		var match = els.indexOf(target);
 		if (match >= 0) return els[match];
-		for (var i = els.length; i--; ){
+		for 	(var i = els.length; i--; ){
 			var el = els[i];
 			if (el == target || el.hasChild(target)){
 				return (!isOverOut || checkOverOut(el, e)) ? el : false;
 			}
 		}
 	};
-
+	var regs = {
+		test: /^.*:relay?\(.*?\)$/,
+		event: /.*?(?=:relay\()/,
+		selector: /^.*?:relay\((.*)\)$/,
+		warn: /^.*?\(.*?\)$/
+	};
 	var splitType = function(type){
-		if (type.test(/^.*?\(.*?\)$/)){
+		if (type.test(regs.test)){
 			return {
-				event: type.match(/.*?(?=\()/),
-				selector: type.replace(/^.*?\((.*)\)$/, "$1")
+				event: type.match(regs.event),
+				selector: type.replace(regs.selector, "$1")
 			};
-		}
+		} else if (type.test(/^.*?\(.*?\)$/)) {
+			if (window.console && console.warn) {
+				console.warn('The selector ' + type + ' could not be delegated; the syntax has changed. Check the documentation.');
+			}
+		}		
 		return {event: type};
 	};
 
@@ -88,17 +97,18 @@ Script: Element.Delegation.js
 				var events = this.retrieve('events');
 				//if there are no events with this type or
 				//if a specific fn is being removed but isn't attached, return
-				if (!events[type] || (fn && !events[type].contains(fn))) return this;
+				if (!events || !events[type] || (fn && !events[type].keys.contains(fn))) return this;
 				//if a fn is defined, remove it from the events
-				if (fn) events[type].erase(fn);
+				if (fn) oldRemoveEvent.apply(this, [type, fn]);
 				//else empty all the events of this type
-				else events[type].empty();
+				else oldRemoveEvent.apply(this, type);
 				//if there are none left, we remove the monitor, too
-				if (events[type].length == 0){
+				var events = this.retrieve('events');
+				if (events && events[type] && events[type].length == 0){
 					//get the monitors we've created
 					var monitors = this.retrieve('$moo:delegateMonitors', {});
 					//remove the monitor
-					oldRemoveEvent(splitted.event, monitors[type]);
+					oldRemoveEvent.apply(this, [splitted.event, monitors[type]]);
 					//delete the monitor from the monitors list
 					delete monitors[type];
 				}

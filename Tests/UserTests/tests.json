@@ -52,6 +52,7 @@
 		"Lightbox":['all']
 	},
 	"Beta":{
+		"Element.Delegation":['all'],
 		"PostEditor.Forum":['all']
 	}
 }

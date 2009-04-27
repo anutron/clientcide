@@ -5,7 +5,9 @@
 			description: "Adds hover and click events to the list items",
 			verify: "Do the items change color when you mouseover/out? Does the text show when you click?",
 			before: function(){
-				$('someListing').removeEvents('mouseover(.item)').removeEvents('mousedown(.item)').removeEvents('mouseout(.item)');
+				$('someListing').removeEvents('mouseover:relay(.item)')
+					.removeEvents('mousedown:relay(.item)')
+					.removeEvents('mouseout:relay(.item)');
 				var over = function(){
 					this.morph({ backgroundColor: '#222' });
 				};
@@ -20,7 +22,9 @@
 					$$('label')[0].set('text', text);
 				};
 				$('someListing').store('delegateTests', [over, out, down]);
-				$('someListing').addEvent('mouseover(.item)', over).addEvent('mouseout(.item)', out).addEvent('mousedown(.item)', down);
+				$('someListing').addEvent('mouseover:relay(.item)', over)
+					.addEvent('mouseout:relay(.item)', out)
+					.addEvent('mousedown:relay(.item)', down);
 			}
 		},
 		{
@@ -29,9 +33,9 @@
 			verify: "Did the colors stop changing on mouseover/out? When you click does the text remain unchanged?",
 			before: function(){
 				var tests = $('someListing').retrieve('delegateTests');
-				$('someListing').removeEvent('mouseover', tests[0]);
-				$('someListing').removeEvent('mouseout', tests[1]);
-				$('someListing').removeEvent('mousedown', tests[2]);
+				$('someListing').removeEvent('mouseover:relay(.item)', tests[0]);
+				$('someListing').removeEvent('mouseout:relay(.item)', tests[1]);
+				$('someListing').removeEvent('mousedown:relay(.item)', tests[2]);
 			}
 		},
 		{
@@ -39,7 +43,9 @@
 			description: "Adds hover and click events to the list items",
 			verify: "Do the items change color when you mouseover/out? Does the text show when you click?",
 			before: function(){
-				$('someListing').removeEvents('mouseover(.item)').removeEvents('mousedown(.item)').removeEvents('mouseout(.item)');
+				$('someListing').removeEvents('mouseover:relay(.item)')
+					.removeEvents('mousedown:relay(.item)')
+					.removeEvents('mouseout:relay(.item)');
 				var over = function(){
 					this.morph({ backgroundColor: '#222' });
 				};
@@ -55,9 +61,9 @@
 				};
 				$('someListing').store('delegateTests', [over, out, down]);
 				$('someListing').addEvents({
-					'mouseover(.item)': over,
-					'mouseout(.item)': out,
-					'mousedown(.item)': down
+					'mouseover:relay(.item)': over,
+					'mouseout:relay(.item)': out,
+					'mousedown:relay(.item)': down
 				});
 			}
 		},
@@ -68,9 +74,9 @@
 			before: function(){
 				var tests = $('someListing').retrieve('delegateTests');
 				$('someListing').removeEvents({
-					'mouseover(.item)': tests[0],
-					'mouseout(.item)': tests[1],
-					'mousedown(.item)': tests[2]
+					'mouseover:relay(.item)': tests[0],
+					'mouseout:relay(.item)': tests[1],
+					'mousedown:relay(.item)': tests[2]
 				});
 			}
 		}

@@ -1,6 +1,0 @@
-# list of paths to necessary scripts.json
-:dependency_paths:
-  - '/Users/aaron/Development/mootools/core/Source'  # Mootools Core
-  - '/Users/aaron/Development/mootools/more/Source'  # Mootools More
-  - '/Users/aaron/Development/mootools/clientcide/Source' # clientcide
-  - './Source'                 # This project

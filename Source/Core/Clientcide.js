@@ -8,7 +8,7 @@ License:
 var Clientcide = {
 	version: '%build%',
 	setAssetLocation: function(baseHref) {
-		if (window.StickyWin && StickyWin.ui) {
+		if (window.StickyWin && StickyWin.UI) {
 			StickyWin.UI.implement({
 				options: {
 					baseHref: baseHref + '/stickyWinHTML/'
@@ -19,6 +19,13 @@ var Clientcide = {
 				StickyWin.alert = function(msghdr, msg, base) {
 				    return CGFsimpleErrorPopup(msghdr, msg, base||baseHref + "/simple.error.popup");
 				};
+			}
+			if (StickyWin.UI.Pointy) {
+				StickyWin.UI.Pointy.implement({
+					options: {
+						baseHref: baseHref + '/PointyTip/'
+					}
+				});
 			}
 		}
 		if (window.TagMaker) {

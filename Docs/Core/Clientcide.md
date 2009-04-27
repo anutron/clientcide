@@ -10,13 +10,11 @@ This method resets the location of all the Clientcide image assets to your speci
 
 ### Download the assets
 
- * [http://code.google.com/p/cnetjavascript/downloads/list][]
-   [http://code.google.com/p/cnetjavascript/downloads/list]: http://code.google.com/p/cnetjavascript/downloads/list
+ * [http://github.com/anutron/clientcide/downloads](http://github.com/anutron/clientcide/downloads)
 
 ### Tutorial/Demo
 
-* [Online Tutorial/Demo][]
-[Online Tutorial/Demo]:http://www.clientcide.com/wiki/cnet-libraries/01-core/00-clientcide
+* [Online Tutorial/Demo](http://www.clientcide.com/wiki/cnet-libraries/01-core/00-clientcide)
 
 ### Syntax
 
@@ -65,8 +63,7 @@ This is the entirety of the method:
 
 ### Tutorial/Demo
 
-* [Online Tutorial/Demo][]
-[Online Tutorial/Demo]:http://www.clientcide.com/wiki/cnet-libraries/01-core/00-dbug#dbugscripts
+* [Online Tutorial/Demo](http://www.clientcide.com/wiki/cnet-libraries/01-core/00-dbug#dbugscripts)
 
 Script: dbugScripts.js {#dbugScripts}
 ------------------------------------

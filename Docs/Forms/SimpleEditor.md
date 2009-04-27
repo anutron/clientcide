@@ -186,6 +186,6 @@ Element property: SimpleEditor {#Element:SimpleEditor}
 [StickyWin.Modal]: /docs/UI/StickyWin.Modal
 [StickyWin.UI]: /docs/UI/StickyWin.UI
 [Clientcide's Download Page]: http://www.clientcide.com/js
-[send it in]: http://code.google.com/p/cnetjavascript/issues/list
+[send it in]: http://github.com/anutron/clientcide/issues
 [Class.ToElement]: /docs/Class/Class.ToElement
 [Class.Occlude]: http://mootools.net/docs/more/Class/Class.Occlude

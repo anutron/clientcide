@@ -294,8 +294,8 @@ Adds the appropriate [ProductPicker][]s to all the inputs in a form as defined i
 [Request.JSONP]: http://www.mootools.net/docs/more/Request/Request.JSONP
 [StickyWin]: /docs/UI/StickyWin
 [StyleWriter]: /docs/UI/StyleWriter
-[CNETProductPicker]: http://cnetjavascript.googlecode.com/svn/trunk/implementations/picklets/
-[NewsStoryPicker]: http://cnetjavascript.googlecode.com/svn/trunk/implementations/picklets/
+[CNETProductPicker]: http://cnetjavascript.googlecode.com/svn/tags/r817-github-move/implementations/picklets/
+[NewsStoryPicker]: http://cnetjavascript.googlecode.com/svn/tags/r817-github-move/implementations/picklets/
 [Request]: http://www.mootools.net/docs/core/Request/Request
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

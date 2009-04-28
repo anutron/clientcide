@@ -74,6 +74,19 @@ Immediately hides the submenu.
 
 * *object* - This instance of [MenuSlider][].
 
+MenuSlider method: isVisible {#MenuSlider:isVisible}
+------------------------------------------
+
+Returns *true* if the slider is visible (or in the process of displaying).
+
+### Example
+
+	myMenu.isVisible(); //true if visible
+
+### Returns
+
+* *boolean* - *true* if the slider is visible or in the process of displaying.
+
 [IframeShim]: /Browser/IframeShim
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

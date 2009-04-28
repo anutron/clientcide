@@ -84,10 +84,11 @@ var Fupdate;
 		},
 
 		send: function(){
-			var formData = dedupeQs($(this).toQueryString()).parseQueryString(false, false);
+			var str = $(this).toQueryString().trim();
+			formData = str.parseQueryString();
 			var data = $H(this.options.extraData).combine(formData);
 			this.fireEvent('send', [$(this), data]);
-			this.request.send(unescape(data.toQueryString()));
+			this.request.send({data: data});
 			return this;
 		}
 
@@ -131,15 +132,5 @@ var Fupdate;
 		}
 
 	});
-
-	var dedupeQs = function(str){
-		if (!str.trim()) return "";
-		var result = $H({});
-		str.split("&").each(function(pair){
-			var n = pair.indexOf("=");
-			result.include(unescape(pair.substring(0, n)), unescape(pair.substring(n+1, pair.length)));
-		});
-		return result.toQueryString();
-	};
 
 })();

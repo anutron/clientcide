@@ -8,22 +8,25 @@ License:
 var Clientcide = {
 	version: '%build%',
 	setAssetLocation: function(baseHref) {
+		var clean = function(str){
+			return str.replace(/\/\//g, '/');
+		}
 		if (window.StickyWin && StickyWin.UI) {
 			StickyWin.UI.implement({
 				options: {
-					baseHref: baseHref + '/stickyWinHTML/'
+					baseHref: clean(baseHref + '/stickyWinHTML/')
 				}
 			});
 			if (StickyWin.alert) {
 				var CGFsimpleErrorPopup = StickyWin.alert.bind(window);
 				StickyWin.alert = function(msghdr, msg, base) {
-				    return CGFsimpleErrorPopup(msghdr, msg, base||baseHref + "/simple.error.popup");
+				    return CGFsimpleErrorPopup(msghdr, msg, base||clean(baseHref + "/simple.error.popup"));
 				};
 			}
 			if (StickyWin.UI.Pointy) {
 				StickyWin.UI.Pointy.implement({
 					options: {
-						baseHref: baseHref + '/PointyTip/'
+						baseHref: clean(baseHref + '/PointyTip/')
 					}
 				});
 			}
@@ -31,14 +34,14 @@ var Clientcide = {
 		if (window.TagMaker) {
 			TagMaker.implement({
 			    options: {
-			        baseHref: baseHref + '/tips/'
+			        baseHref: clean(baseHref + '/tips/')
 			    }
 			});
 		}
 		if (window.ProductPicker) {
 			ProductPicker.implement({
 			    options:{
-			        baseHref: baseHref + '/Picker'
+			        baseHref: clean(baseHref + '/Picker')
 			    }
 			});
 		}
@@ -46,7 +49,7 @@ var Clientcide = {
 		if (window.Autocompleter) {
 			Autocompleter.Base.implement({
 					options: {
-						baseHref: baseHref + '/autocompleter/'
+						baseHref: clean(baseHref + '/autocompleter/')
 					}
 			});
 		}
@@ -54,7 +57,7 @@ var Clientcide = {
 		if (window.Lightbox) {
 			Lightbox.implement({
 			    options: {
-			        assetBaseUrl: baseHref + '/slimbox/'
+			        assetBaseUrl: clean(baseHref + '/slimbox/')
 			    }
 			});
 		}
@@ -62,7 +65,7 @@ var Clientcide = {
 		if (window.Waiter) {
 			Waiter.implement({
 				options: {
-					baseHref: baseHref + '/waiter/'
+					baseHref: clean(baseHref + '/waiter/')
 				}
 			});
 		}

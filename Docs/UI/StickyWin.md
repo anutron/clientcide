@@ -44,8 +44,9 @@ Creates a div within the page with the specified contents at the location relati
 
 ### Events
 
-* onDisplay - (*function*) callback to execute when the popup is shown
-* onClose - (*function*) callback to execute when the popup is closed
+* onDisplay - (*function*) callback to execute when the popup is shown.
+* onClose - (*function*) callback to execute when the popup is closed.
+* onDestroy - (*function*) callback to execute when the popup is destroyed.
 
 ### Example
 

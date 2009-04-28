@@ -13,6 +13,7 @@ var StickyWin = new Class({
 	options: {
 //		onDisplay: $empty,
 //		onClose: $empty,
+//		onDestroy: $empty,
 		closeClassName: 'closeSticky',
 		pinClassName: 'pinSticky',
 		content: '',
@@ -165,6 +166,7 @@ var StickyWin = new Class({
 	destroy: function(){
 		if (this.win) this.win.destroy();
 		if (this.options.useIframeShim && this.shim) this.shim.destroy();
-		if ($('modalOverlay'))$('modalOverlay').destroy();
+		if ($('modalOverlay')) $('modalOverlay').destroy();
+		this.fireEvent('destroy');
 	}
 });

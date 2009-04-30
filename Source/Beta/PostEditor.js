@@ -184,7 +184,7 @@ var PostEditor = new Class({
 	filterByTab: function(e){
 		if (this.autoTab){
 			var ss = this.ss();
-			var se = this.se()
+			var se = this.se();
 			var  key = this.ssKey;
 			var end = this.seKey;
 			if (![key + 1,key,key - 1, end].contains(ss)){

@@ -6,7 +6,7 @@
 	"dbugBaseHref": "http://www.clientcide.com/cnet.gf/svn/",
 	"mootools-core": {
 		"scripts": "http://www.clientcide.com/cnet.gf/Mootools/mootools-core/",
-		"name": "Mootools 1.2",
+		"name": "Mootools 1.2.2",
 		"optional": "true"
 	},
 	"mootools-more": {

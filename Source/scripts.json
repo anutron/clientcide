@@ -269,6 +269,10 @@
 			"deps":["DomReady", "URI"],
 			"desc":"Compatibility for MooTools More 1.2.2"
 		},
+		"Class.Refactor.Compat": {
+			"deps":["Class.Refactor"],
+			"desc":"Compatibility for MooTools More 1.2.2"
+		},
 		"Date.Compat": {
 			"deps":["Date", "String", "Number"],
 			"desc":"Compatibility for MooTools More 1.2.2"

@@ -10,7 +10,7 @@ var Clientcide = {
 	setAssetLocation: function(baseHref) {
 		var clean = function(str){
 			return str.replace(/\/\//g, '/');
-		}
+		};
 		if (window.StickyWin && StickyWin.UI) {
 			StickyWin.UI.implement({
 				options: {

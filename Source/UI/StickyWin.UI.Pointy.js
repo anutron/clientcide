@@ -34,7 +34,8 @@ StickyWin.UI.Pointy = new Class({
 		"div.DefaultPointyTip .pointyWrapper div.bottom_ll{font-size:1; background: url({%baseHref%}{%imgset%}_back.png) bottom left no-repeat;width: 6px;height: 6px;position: absolute; left: 0px;}"+
 		"div.DefaultPointyTip .pointyWrapper div.bottom_lr{font-size:1; background: url({%baseHref%}{%imgset%}_back.png) bottom right;height: 6px;margin: 0 0 0 6px !important;position: relative;left: 0 !important;}"+
 		"div.DefaultPointyTip .pointyWrapper div.noCaption{ height: 6px; overflow: hidden}"+
-		"div.DefaultPointyTip .pointyWrapper div.closeButton{width:13px; height:13px; background:url({%baseHref%}{%imgset%}_x.png) no-repeat; position: absolute; right: 0px; margin:0px !important; cursor:pointer; z-index: 1; top: 4px;}",
+		"div.DefaultPointyTip .pointyWrapper div.closeButton{width:13px; height:13px; background:url({%baseHref%}{%imgset%}_x.png) no-repeat; position: absolute; right: 0px; margin:0px !important; cursor:pointer; z-index: 1; top: 4px;}"+
+		"div.DefaultPointyTip .pointyWrapper div.pointyDivot {background: url({%divot%}) no-repeat;}",
 		baseHref: 'http://github.com/anutron/clientcide/raw/master/Assets/PointyTip/',
 		divot: '{%baseHref%}{%imgset%}_divot.png',
 		divotSize: 22,
@@ -46,7 +47,10 @@ StickyWin.UI.Pointy = new Class({
 		var args = this.getArgs(arguments);
 		this.setOptions(args.options);
 		$extend(this.options, this.options.themes[this.options.theme]);
+		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
+		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		this.options.css = this.options.css.substitute(this.options, /\\?\{%([^}]+)%\}/g);
+		dbug.log(this.options.css);
 		if (args.options && args.options.theme) {
 			while (!this.id) {
 				var id = $random(0, 999999999);
@@ -67,8 +71,6 @@ StickyWin.UI.Pointy = new Class({
 			};
 			this.options.direction = map[this.options.direction];
 		}
-		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
-		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		
 		this.parent(args.caption, args.body, this.options);
 		if (this.id) $(this).set('id', "pointy_"+this.id);
@@ -110,7 +112,6 @@ StickyWin.UI.Pointy = new Class({
 		};
 		this.pointer = new Element('div', {
 			styles: $extend({
-				background: "url("+opt.divot+") no-repeat",
 				width: w,
 				height: h,
 				overflow: 'hidden'

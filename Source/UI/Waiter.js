@@ -64,7 +64,9 @@ var Waiter = new Class({
 			else this.msg = $(this.options.msg);
 			this.msgContainer.adopt(this.msg);
 		}
-		if (this.options.img) this.waiterImg = $(this.options.img.id) || new Element('img').inject(this.waiterContainer);
+		if (this.options.img) this.waiterImg = $(this.options.img.id) || new Element('img', $merge(this.options.img, {
+			src: this.options.baseHref + this.options.img.src
+		})).inject(this.waiterContainer);
 		this.waiterOverlay = $(this.options.layer.id) || new Element('div').adopt(this.waiterContainer);
 		this.waiterOverlay.set(this.options.layer);
 		this.place(target);
@@ -105,12 +107,6 @@ var Waiter = new Class({
 		this.reset();
 		element = $(element) || $(this.target);
 		this.place(element);
-		if (this.options.img) {
-			this.waiterImg.set($merge(this.options.img, {
-				src: this.options.baseHref + this.options.img.src
-			}));
-		}
-		
 		var start = function() {
 			var dim = element.getComputedSize();
 			this.active = element;

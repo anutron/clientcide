@@ -91,10 +91,10 @@ License:
 						this.swin.Request.response.text.stripScripts(function(script){	responseScript += script; });
 						var content = this.options.useUi?StickyWin.ui('Update Info', response, this.options.stickyWinUiOptions):response;
 						this.swin.setContent(content);
+						if (this.options.requestOptions.evalScripts) $exec(responseScript);
 						this.element = this.swin.win.getElement('form');
 						this.initAfterUpdate();
 						this.swin.show();
-						if (this.options.requestOptions.evalScripts) $exec(responseScript);
 					}.bind(this)
 				}, this.options.stickyWinOptions));
 				return this.swin;

@@ -14,6 +14,7 @@ License:
 				//onUpdate: $empty,
 				stickyWinToUse: StickyWin.Modal,
 				stickyWinOptions: {},
+				caption: 'Update Info',
 				useUi: true,
 				stickyWinUiOptions: {
 					width: 500
@@ -32,7 +33,7 @@ License:
 			makeStickyWin: function(form){
 				if ($(form)) form = $(form);
 				this.swin = new this.options.stickyWinToUse({
-					content: this.options.useUi?StickyWin.ui('Update Info', form, this.options.stickyWinUiOptions):form,
+					content: this.options.useUi?StickyWin.ui(this.options.caption, form, this.options.stickyWinUiOptions):form,
 					showNow: false
 				});
 				this.element = this.swin.win.getElement('form');

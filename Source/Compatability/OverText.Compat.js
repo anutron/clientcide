@@ -1,7 +1,7 @@
 OverText = Class.refactor(OverText, {
 	initialize: function(inputs, options){
-		if ($type(inputs) == 'array') {
-			this.instances = [];
+		this.instances = [];
+		if (['array', 'string'].contains($type(inputs))) {
 			this.setOptions(options);
 			$$(inputs).each(this.addElement, this);
 		} else {
@@ -12,11 +12,13 @@ OverText = Class.refactor(OverText, {
 		this.instances.push(new OverText(el, this.options))
 	},
 	startPolling: function(){
+		if (!this.instances.length) return this.parent.apply(this, arguments);
 		this.instances.each(function(instance) {
 			instance.startPolling();
 		});
 	},
 	stopPolling: function(){
+		if (!this.instances.length) return this.parent.apply(this, arguments);
 		this.instances.each(function(instance) {
 			instance.stopPolling();
 		});

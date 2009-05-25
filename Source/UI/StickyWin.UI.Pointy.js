@@ -22,18 +22,20 @@ StickyWin.UI.Pointy = new Class({
 				imgset: 'light'
 			}
 		},
-		css: "div.DefaultPointyTip {position: relative}"+
+		css: "div.DefaultPointyTip {vertical-align: auto; position: relative;}"+
+		"div.DefaultPointyTip * {text-align:left !important}"+
 		"div.DefaultPointyTip .pointyWrapper div.body{background: {%bgColor%}; color: {%fgColor%}; left: 0px; right: 0px !important;padding:  0px 10px !important;margin-left: 0px !important;font-family: verdana;font-size: 11px;line-height: 13px;position: relative;}"+
-		"div.DefaultPointyTip .pointyWrapper div.top {position: relative;height: 25px; overflow: visible}"+
+		"div.DefaultPointyTip .pointyWrapper div.top {position: relative;height: 25px; overflow: visible;}"+
 		"div.DefaultPointyTip .pointyWrapper div.top_ul{background: url({%baseHref%}{%imgset%}_back.png) top left no-repeat;width: 8px;height: 25px; position: absolute; left: 0px;}"+
 		"div.DefaultPointyTip .pointyWrapper div.top_ur{background: url({%baseHref%}{%imgset%}_back.png) top right !important;margin: 0 0 0 8px !important;height: 25px;position: relative;left: 0px !important;padding: 0;}"+
 		"div.DefaultPointyTip .pointyWrapper h1.caption{color: {%fgColor%};left: 0px !important;top: 4px !important;clear: none !important;overflow: hidden;font-weight: 700;font-size: 12px !important;position: relative;float: left;height: 22px !important;margin: 0 !important;padding: 0 !important;}"+
 		"div.DefaultPointyTip .pointyWrapper div.middle, div.DefaultPointyTip .pointyWrapper div.closeBody{background:  {%bgColor%};margin: 0 0px 0 0 !important;position: relative;top: 0 !important;}"+
-		"div.DefaultPointyTip .pointyWrapper div.bottom {clear: both; width: 100% !important;} "+
+		"div.DefaultPointyTip .pointyWrapper div.bottom {clear: both; width: 100% !important; background: none; height: 6px} "+
 		"div.DefaultPointyTip .pointyWrapper div.bottom_ll{font-size:1; background: url({%baseHref%}{%imgset%}_back.png) bottom left no-repeat;width: 6px;height: 6px;position: absolute; left: 0px;}"+
 		"div.DefaultPointyTip .pointyWrapper div.bottom_lr{font-size:1; background: url({%baseHref%}{%imgset%}_back.png) bottom right;height: 6px;margin: 0 0 0 6px !important;position: relative;left: 0 !important;}"+
-		"div.DefaultPointyTip .pointyWrapper div.noCaption{height: 6px; overflow: hidden}"+
-		"div.DefaultPointyTip .pointyWrapper div.closeButton{width:13px; height:13px; background:url({%baseHref%}{%imgset%}_x.png) no-repeat; position: absolute; right: 0px; margin:4px 0px 0px !important; cursor:pointer; z-index: 1; top: 0px;}",
+		"div.DefaultPointyTip .pointyWrapper div.noCaption{ height: 6px; overflow: hidden}"+
+		"div.DefaultPointyTip .pointyWrapper div.closeButton{width:13px; height:13px; background:url({%baseHref%}{%imgset%}_x.png) no-repeat; position: absolute; right: 0px; margin:0px !important; cursor:pointer; z-index: 1; top: 4px;}"+
+		"div.DefaultPointyTip .pointyWrapper div.pointyDivot {background: url({%divot%}) no-repeat;}",
 		baseHref: 'http://github.com/anutron/clientcide/raw/master/Assets/PointyTip/',
 		divot: '{%baseHref%}{%imgset%}_divot.png',
 		divotSize: 22,
@@ -45,7 +47,10 @@ StickyWin.UI.Pointy = new Class({
 		var args = this.getArgs(arguments);
 		this.setOptions(args.options);
 		$extend(this.options, this.options.themes[this.options.theme]);
+		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
+		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		this.options.css = this.options.css.substitute(this.options, /\\?\{%([^}]+)%\}/g);
+		dbug.log(this.options.css);
 		if (args.options && args.options.theme) {
 			while (!this.id) {
 				var id = $random(0, 999999999);
@@ -66,8 +71,6 @@ StickyWin.UI.Pointy = new Class({
 			};
 			this.options.direction = map[this.options.direction];
 		}
-		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
-		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		
 		this.parent(args.caption, args.body, this.options);
 		if (this.id) $(this).set('id', "pointy_"+this.id);
@@ -109,7 +112,6 @@ StickyWin.UI.Pointy = new Class({
 		};
 		this.pointer = new Element('div', {
 			styles: $extend({
-				background: "url("+opt.divot+") no-repeat",
 				width: w,
 				height: h,
 				overflow: 'hidden'

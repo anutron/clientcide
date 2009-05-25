@@ -41,12 +41,14 @@ var MenuSlider = new Class({
 			if (this.shim) this.shim.show();
 			this.fireEvent('in');
 		}.bind(this));
+		this.visible = true;
 		return this;
 	},
 	slideOut: function(){
 		this.hide();
 		this.fireEvent('out');
 		if (this.shim) this.shim.hide();
+		this.visible = false;
 		return this;
 	},
 	hide: function(){
@@ -55,6 +57,10 @@ var MenuSlider = new Class({
 		this.slider.cancel();
 		this.slider.hide();
 		if (this.shim) this.shim.hide();
+		this.visible = true;
 		return this;
+	},
+	isVisible: function(){
+		return this.visible;
 	}
 });

@@ -1,1 +1,1 @@
-Element.alias('isVisible', 'isDisplayed');
+Element.alias('isDisplayed', 'isVisible');

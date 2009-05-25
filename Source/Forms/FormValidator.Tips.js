@@ -74,7 +74,7 @@ FormValidator.Tips = new Class({
 			if (fields.length) {
 				fields.each(function(f, i) {
 					var adv = this.getAdvice(f);
-					adv.hide();
+					if (adv) adv.hide();
 				}, this);
 			}
 		}
@@ -87,7 +87,9 @@ FormValidator.Tips = new Class({
 		if (advice && advice.msgs[className]) return advice.msgs[className].set('html', errorMsg);
 		return new Element('li', {
 			html: errorMsg,
-			display: 'none'
+			style: {
+				display: 'none'
+			}
 		});
 	},
 	makeAdviceMsg: function(field, error, warn){
@@ -100,8 +102,7 @@ FormValidator.Tips = new Class({
 		if (advice.msgs[className]) return advice.msgs[className].set('html', this.makeAdviceMsg(field, error, warn)).show();
 		var li = this.makeAdviceItem(className, field, error, warn);
 		if (!li) return;
-		li.inject(field.retrieve('validationMsgs'));
-		li[li.reveal?'reveal':'show']();
+		li.inject(field.retrieve('validationMsgs')).show();
 		advice.msgs[className] = li;
 	},
 	insertAdvice: function(advice, field){

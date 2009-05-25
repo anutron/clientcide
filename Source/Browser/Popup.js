@@ -9,6 +9,7 @@ License:
 Browser.Popup = new Class({
 	Implements:[Options, Events],
 	options: {
+		// onBlock: $empty,
 		width: 500,
 		height: 300,
 		x: 50,
@@ -17,10 +18,9 @@ Browser.Popup = new Class({
 		location: 0,
 		directories: 0,
 		status: 0,
-		scrollbars: 'auto',
+		scrollbars: 'yes',
 		resizable: 1,
 		name: 'popup'
-//	onBlock: $empty
 	},
 	initialize: function(url, options){
 		this.url = url || false;

@@ -4,7 +4,7 @@
 		setPosition: function(options){
 			//call setPosition if the options are x/y values
 			if (options && ($defined(options.x) || $defined(options.y))) return orig.apply(this, arguments);
-			else this.position(options);
+			else return this.position(options);
 		}
 	});
 })();

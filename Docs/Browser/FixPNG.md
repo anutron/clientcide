@@ -70,4 +70,4 @@ Scans the document or a specified element for img tags with a source url set to 
 
 [Browser:FixPNG]: #Browser:fixPNG
 [http://homepage.ntlworld.com/bobosola/pnginfo.htm]: http://homepage.ntlworld.com/bobosola/pnginfo.htm
-[http://www.dillerdesign.com/experiment/DD_belatedPNG/]: http://www.twinhelix.com/css/iepngfix/
+[http://www.dillerdesign.com/experiment/DD_belatedPNG/]: http://www.dillerdesign.com/experiment/DD_belatedPNG/

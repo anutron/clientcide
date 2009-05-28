@@ -14,7 +14,6 @@ var SimpleEditor = new Class({
 		this.commands = new Hash($extend(SimpleEditor.commands, commands||{}));
 		this.buttons = $$(buttons);
 		this.buttons.each(function(button){
-			dbug.log(button, button.addEvent);
 			button.addEvent('click', function() {
 				this.exec(button.get('rel'));
 			}.bind(this));

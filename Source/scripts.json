@@ -86,6 +86,10 @@
 			"deps":["StickyWin.Modal", "StickyWin.UI"],
 			"desc":"The function in this script just makes a little alert box with a close button."
 		},
+		"StickyWin.confirm":{
+			"deps":["StickyWin.Modal", "StickyWin.UI"],
+			"desc":"The function in this script just makes a confirmation box with ok and close buttons."
+		},
 		"StickyWin.UI":{
 			"deps":["Element.Style", "String.Extras", "StickyWin"],
 			"desc":"Creates an html holder for in-page popups using a default style."

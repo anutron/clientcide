@@ -10,7 +10,6 @@
 		"Fx.Marquee":['all']
 	},
 	"UI": {
-		"StickyWin.alert":['all'],
 		"IconMenu":['all'],
 		"Modalizer":['all'],
 		"ObjectBrowser":['all'],
@@ -24,6 +23,8 @@
 		"StickyWin.UI.Pointy":['all'],
 		"StickyWin.PointyTip":['all'],
 		"StickyWin.UI":['all'],
+		"StickyWin.alert":['all'],
+		"StickyWin.confirm":['all'],
 		"Tips.Pointy":['all'],
 		"Waiter":['all']
 	},

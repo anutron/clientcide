@@ -7,7 +7,9 @@ License:
 */
 StickyWin.confirm = function(caption, message, callback, options) {
 	return new StickyWin.Modal(
-		$merge(options, {
+		$merge({
+			destroyOnClose: true
+		}, options, {
 			content: StickyWin.ui(caption, message, {
 				buttons: [
 					{text: 'Cancel'},

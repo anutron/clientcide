@@ -165,8 +165,8 @@ var Waiter = new Class({
 	}
 });
 
-if (typeof Request != "undefined" && Request.HTML) {
-	Request.HTML = Class.refactor(Request.HTML, {
+if (window.Request) {
+	Request = Class.refactor(Request, {
 		options: {
 			useWaiter: false,
 			waiterOptions: {},

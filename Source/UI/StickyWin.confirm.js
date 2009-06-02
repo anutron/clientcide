@@ -5,17 +5,21 @@ Script: StickyWin.confirm.js
 License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
+StickyWin.Confirm = new Class({
+	Extends: StickyWin.Alert,
+	options: {
+		uiOptions: {
+			width: 250,
+			buttons: [
+				{text: 'Cancel'},
+				{text: 'Ok', onClick: function(){
+					this.fireEvent('confirm');
+				}}
+			]
+		}
+	}
+});
+
 StickyWin.confirm = function(caption, message, callback, options) {
-	return new StickyWin.Modal(
-		$merge({
-			destroyOnClose: true
-		}, options, {
-			content: StickyWin.ui(caption, message, {
-				buttons: [
-					{text: 'Cancel'},
-					{text: 'Ok', onClick: callback}
-				]
-			})
-		})
-	);
+	return new StickyWin.Confirm(caption, message, options).addEvent('confirm', callback);
 };

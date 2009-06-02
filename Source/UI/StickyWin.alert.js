@@ -5,14 +5,11 @@ Script: StickyWin.alert.js
 License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
-StickyWin.alert = function(msghdr, msg, baseHref) {
-	baseHref = baseHref||"http://www.cnet.com/html/rb/assets/global/simple.error.popup";
-	msg = '<p class="errorMsg SWclearfix" style="margin: 0px;min-height:10px">' +
-						'<img src="'+baseHref+'/icon_problems_sm.gif"'+
-						' class="bang clearfix" style="float: left; width: 30px; height: 30px; margin: 3px 5px 5px 0px;">'
-						 + msg + '</p>';
-	var body = StickyWin.ui(msghdr, msg, {width: 250});
-	return new StickyWin.Modal({
+StickyWin.Alert = new Class(
+	Implements: Options,
+	options: {
+		baseHref: "http://www.cnet.com/html/rb/assets/global/simple.error.popup"
+		stickyWinToUse: StickyWin.Modal,
 		destroyOnClose: true,
 		modalOptions: {
 			modalStyle: {
@@ -20,10 +17,58 @@ StickyWin.alert = function(msghdr, msg, baseHref) {
 			}
 		},
 		zIndex: 110001,
-		content: body,
-		position: 'center', //center, corner
-		onClose: function(){
-			this.destroy();
+		uiOptions: {
+			width: 250,
+			buttons: [
+				{text: 'Ok'}
+			]
 		}
-	});
+	},
+	initialize: function(caption, message, options) {
+		this.message = msg;
+		this.caption = caption;
+		this.setOptions({
+			content: this.build();
+		}, options);
+	},
+	makeMessage: function() {
+		return new Element('p', {
+			'class': 'errorMsg SWclearfix',
+			styles: {
+				margin: 0,
+				minHeight: 10
+			},
+			html: this.message
+		});
+	},
+	build: function(){
+		return StickyWin.ui(this.caption, this.makeMessage(), this.options.uiOptions);
+	}
+});
+
+StickyWin.Error = new Class({
+	Extends: StickyWin.Alert, 
+	makeMessage: function(){
+		return this.parent().adopt(
+			new Element('img', {
+				src: this.options.baseHref + '/icon_problems_sm.gif',
+				'class': 'bang clearfix',
+				styles: {
+					'float': 'left',
+					width: 30,
+					height: 30,
+					margin: '3px 5px 5px 0px'
+				}
+			}).inject(content, 'top');
+		);
+	}
+});
+
+StickyWin.alert = function(caption, message, options) {
+	if ($type(options) == "string") options = {baseHref: options};
+	return new StickyWin.Alert(caption, message)
+};
+
+StickyWin.error = function(caption, message, options) {
+	return new StickyWin.Error(caption, message, options);
 };

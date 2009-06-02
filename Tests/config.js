@@ -5,7 +5,7 @@ window.addEvent('load', function(){
 	var sources = {
 		mootoolsCore: '../../core',
 		mootoolsMore: '../../more',
-		clientside: '..'
+		clientcide: '..'
 	};
 	if (window.location.href.contains("http://www.clientcide.com/tests")) {
 		sources = {

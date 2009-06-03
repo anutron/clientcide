@@ -23,8 +23,9 @@
 		"StickyWin.UI.Pointy":['all'],
 		"StickyWin.PointyTip":['all'],
 		"StickyWin.UI":['all'],
-		"StickyWin.alert":['all'],
-		"StickyWin.confirm":['all'],
+		"StickyWin.Alert":['all'],
+		"StickyWin.Confirm":['all'],
+		"StickyWin.Prompt":['all'],
 		"Tips.Pointy":['all'],
 		"Waiter":['all']
 	},

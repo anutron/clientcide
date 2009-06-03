@@ -11,6 +11,10 @@ StickyWin.Modal = new Class({
 	Extends: StickyWin,
 
 	Implements: Modalizer,
+	
+	options: {
+		modalize: true
+	},
 
 	initialize: function(options){
 		options = options||{};
@@ -23,7 +27,7 @@ StickyWin.Modal = new Class({
 	},
 
 	show: function(showModal){
-		if ($pick(showModal, true)) {
+		if ($pick(showModal, this.options.modalize)) {
 			this.modalShow();
 			if (this.modalOptions.elementsToHide) this.win.getElements(this.modalOptions.elementsToHide).setStyle('opacity', 1);
 		}

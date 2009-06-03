@@ -91,7 +91,7 @@
 			"desc":"Extends StickyWin.Alert to make a confirmation box with ok and close buttons."
 		},
 		"StickyWin.Prompt":{
-			"deps":["StickyWin.Modal", "StickyWin.UI"],
+			"deps":["StickyWin.Confirm"],
 			"desc":"Extends StickyWin.Confirm to make a prompt box with an input as well as ok and close buttons."
 		},
 		"StickyWin.UI":{

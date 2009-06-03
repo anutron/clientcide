@@ -148,7 +148,8 @@ SimpleSlideShow.Carousel = new Class({
 		this.container = $(container);
 		this.element = new Element('div').wraps(this.container).setStyles({
 			width: this.container.getSize().x,
-			overflow: 'hidden'
+			overflow: 'hidden',
+			position: 'relative'
 		});
 		this.container.setStyles({
 			width: this.options.sliderWidth,

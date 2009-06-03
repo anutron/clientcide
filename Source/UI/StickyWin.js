@@ -92,7 +92,7 @@ var StickyWin = new Class({
 	},
 	show: function(suppressEvent){
 		this.showWin();
-		if (!suppressEvent) this.fireEvent('onDisplay');
+		if (!suppressEvent) this.fireEvent('display');
 		if (this.options.useIframeShim) this.showIframeShim();
 		this.visible = true;
 		return this;
@@ -102,7 +102,7 @@ var StickyWin = new Class({
 		this.win.show();
 	},
 	hide: function(suppressEvent){
-		if ($type(suppressEvent) == "event" || !suppressEvent) this.fireEvent('onClose');
+		if ($type(suppressEvent) == "event" || !suppressEvent) this.fireEvent('close');
 		this.hideWin();
 		if (this.options.useIframeShim) this.hideIframeShim();
 		this.visible = false;

@@ -27,9 +27,11 @@ StickyWin.Alert = new Class({
 	initialize: function(caption, message, options) {
 		this.message = message;
 		this.caption = caption;
-		this.parent($merge({
+		this.setOptions(options);
+		this.setOptions({
 			content: this.build()
-		}, options));
+		});
+		this.parent(options);
 	},
 	makeMessage: function() {
 		return new Element('p', {

@@ -10,14 +10,15 @@ StickyWin.Prompt = new Class({
 	options: {
 		defaultValue: ''
 	},
-	initialize: function(){
-		this.parent.apply(this, arguments);
+	initialize: function(message, header, options){
 		this.addEvent('display', function(){
 			this.input.select();
-		});
+		}.bind(this));
+		this.parent.apply(this, arguments);
 	},
 	makeMessage: function(){
 		this.input = new Element('input', {
+			value: this.options.defaultValue,
 			type: 'text',
 			id: 'foo',
 			styles: {

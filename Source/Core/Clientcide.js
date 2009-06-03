@@ -17,11 +17,12 @@ var Clientcide = {
 					baseHref: clean(baseHref + '/stickyWinHTML/')
 				}
 			});
-			if (StickyWin.alert) {
-				var CGFsimpleErrorPopup = StickyWin.alert.bind(window);
-				StickyWin.alert = function(msghdr, msg, base) {
-				    return CGFsimpleErrorPopup(msghdr, msg, base||clean(baseHref + "/simple.error.popup"));
-				};
+			if (StickyWin.Alert) {
+				StickyWin.Alert.implement({
+					options: {
+						baseHref: baseHref + "/simple.error.popup"
+					}
+				});
 			}
 			if (StickyWin.UI.Pointy) {
 				StickyWin.UI.Pointy.implement({

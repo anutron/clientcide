@@ -50,7 +50,6 @@ StickyWin.UI.Pointy = new Class({
 		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
 		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		this.options.css = this.options.css.substitute(this.options, /\\?\{%([^}]+)%\}/g);
-		dbug.log(this.options.css);
 		if (args.options && args.options.theme) {
 			while (!this.id) {
 				var id = $random(0, 999999999);

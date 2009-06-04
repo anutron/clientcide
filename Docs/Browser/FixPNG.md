@@ -13,7 +13,7 @@ Browser Method: fixPNG {#Browser:fixPNG}
 
 Makes transparent pngs show up correctly in IE. This function is based almost entirely on the function found here: [http://homepage.ntlworld.com/bobosola/pnginfo.htm][].
 
-Note that this method is only marginally useful and must be fired after the image loads. There is a new method here: [http://www.twinhelix.com/css/iepngfix/][] that is *much/* more effective that I highly recommend using.
+Note that this method is only marginally useful and must be fired after the image loads. There is a new method here: [http://www.dillerdesign.com/experiment/DD_belatedPNG/][] that is *much* more effective that I highly recommend using.
 
 ### Syntax
 
@@ -70,4 +70,4 @@ Scans the document or a specified element for img tags with a source url set to 
 
 [Browser:FixPNG]: #Browser:fixPNG
 [http://homepage.ntlworld.com/bobosola/pnginfo.htm]: http://homepage.ntlworld.com/bobosola/pnginfo.htm
-[http://www.twinhelix.com/css/iepngfix/]: http://www.twinhelix.com/css/iepngfix/
+[http://www.dillerdesign.com/experiment/DD_belatedPNG/]: http://www.dillerdesign.com/experiment/DD_belatedPNG/

@@ -7,7 +7,7 @@ License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
 var Waiter = new Class({
-	Implements: [Options, Events, Chain],
+	Implements: [Options, Events, Chain, Class.Occlude],
 	options: {
 		baseHref: 'http://www.cnet.com/html/rb/assets/global/waiter/',
 		containerProps: {
@@ -53,9 +53,15 @@ var Waiter = new Class({
 //	onShow: $empty
 //	onHide: $empty
 	},
+	property: 'Waiter',
 	initialize: function(target, options){
-		this.target = $(target)||$(document.body);
+		this.element = $(target)||$(document.body);
+		if (this.occlude()) return this.occluded;
 		this.setOptions(options);
+		this.build();
+		this.place(target);
+	},
+	build: function(){
 		this.waiterContainer = new Element('div', this.options.containerProps);
 		if (this.options.msg) {
 			this.msgContainer = new Element('div', this.options.msgProps);
@@ -69,7 +75,6 @@ var Waiter = new Class({
 		})).inject(this.waiterContainer);
 		this.waiterOverlay = $(this.options.layer.id) || new Element('div').adopt(this.waiterContainer);
 		this.waiterOverlay.set(this.options.layer);
-		this.place(target);
 		try {
 			if (this.options.useIframeShim) this.shim = new IframeShim(this.waiterOverlay, this.options.iframeShimOptions);
 		} catch(e) {
@@ -84,7 +89,7 @@ var Waiter = new Class({
 	},
 	toggle: function(element, show) {
 		//the element or the default
-		element = $(element) || $(this.active) || $(this.target);
+		element = $(element) || $(this.active) || $(this.element);
 		this.place(element);
 		if (!$(element)) return this;
 		if (this.active && element != this.active) return this.stop(this.start.bind(this, element));
@@ -105,7 +110,7 @@ var Waiter = new Class({
 	},
 	start: function(element){
 		this.reset();
-		element = $(element) || $(this.target);
+		element = $(element) || $(this.element);
 		this.place(element);
 		var start = function() {
 			var dim = element.getComputedSize();
@@ -160,8 +165,8 @@ var Waiter = new Class({
 	}
 });
 
-if (typeof Request != "undefined" && Request.HTML) {
-	Request.HTML = Class.refactor(Request.HTML, {
+if (window.Request) {
+	Request = Class.refactor(Request, {
 		options: {
 			useWaiter: false,
 			waiterOptions: {},

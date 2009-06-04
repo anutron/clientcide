@@ -8,7 +8,7 @@ License:
 */
 
 var StickyWin = new Class({
-	Binds: ['destroy', 'hide', 'togglepin'],
+	Binds: ['destroy', 'hide', 'togglepin', 'esc'],
 	Implements: [Options, Events, StyleWriter, Class.ToElement],
 	options: {
 //		onDisplay: $empty,
@@ -34,7 +34,9 @@ var StickyWin = new Class({
 		showNow: true,
 		useIframeShim: true,
 		iframeShimSelector: '',
-		destroyOnClose: false
+		destroyOnClose: false,
+		closeOnClickOut: false,
+		closeOnEsc: false
 	},
 
 	css: '.SWclearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}'+
@@ -55,10 +57,22 @@ var StickyWin = new Class({
 				this.hide.delay(this.options.timeout, this)
 			}.bind(this));
 		}
-		if (this.options.showNow) this.show();
 		//add css for clearfix
 		this.createStyle(this.css, 'StickyWinClearFix');
+		if (this.options.closeOnClickOut || this.options.closeOnEsc) this.attach();
 		if (this.options.destroyOnClose) this.addEvent('close', this.destroy)
+		if (this.options.showNow) this.show();
+	},
+	attach: function(attach){
+		var method = $pick(attach, true) ? 'addEvents' : 'removeEvents';
+		var events = {};
+		if (this.options.closeOnClickOut) events.click = this.esc;
+		if (this.options.closeOnEsc) events.keyup = this.esc;
+		document[method](events);
+	},
+	esc: function(e) {
+		if (e.key == "esc") this.hide();
+		if (e.type == "click" && this.element != e.target && !this.element.hasChild(e.target)) this.hide();
 	},
 	makeWindow: function(){
 		this.destroyOthers();
@@ -78,7 +92,7 @@ var StickyWin = new Class({
 	},
 	show: function(suppressEvent){
 		this.showWin();
-		if (!suppressEvent) this.fireEvent('onDisplay');
+		if (!suppressEvent) this.fireEvent('display');
 		if (this.options.useIframeShim) this.showIframeShim();
 		this.visible = true;
 		return this;
@@ -88,7 +102,7 @@ var StickyWin = new Class({
 		this.win.show();
 	},
 	hide: function(suppressEvent){
-		if ($type(suppressEvent) == "event" || !suppressEvent) this.fireEvent('onClose');
+		if ($type(suppressEvent) == "event" || !suppressEvent) this.fireEvent('close');
 		this.hideWin();
 		if (this.options.useIframeShim) this.hideIframeShim();
 		this.visible = false;

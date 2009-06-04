@@ -82,9 +82,17 @@
 			"deps":["Request", "StickyWin", "StickyWin.UI"],
 			"desc":"Adds ajax functionality to all the StickyWin classes."
 		},
-		"StickyWin.alert":{
+		"StickyWin.Alert":{
 			"deps":["StickyWin.Modal", "StickyWin.UI"],
-			"desc":"The function in this script just makes a little alert box with a close button."
+			"desc":"Extends StickyWin to create little alert box with a close button."
+		},
+		"StickyWin.Confirm":{
+			"deps":["StickyWin.Alert"],
+			"desc":"Extends StickyWin.Alert to make a confirmation box with ok and close buttons."
+		},
+		"StickyWin.Prompt":{
+			"deps":["StickyWin.Confirm"],
+			"desc":"Extends StickyWin.Confirm to make a prompt box with an input as well as ok and close buttons."
 		},
 		"StickyWin.UI":{
 			"deps":["Element.Style", "String.Extras", "StickyWin"],

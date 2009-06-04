@@ -26,7 +26,8 @@ Extends [StickyWin][] to add [Modalizer][] functionality for modal popups.
 
 ### Options
 
-* all of [StickyWin][]'s options plus [Modalizer][]'s options
+* all of [StickyWin][]'s options plus [Modalizer][]'s options, and:
+* modalize - (*boolean*) if *true* (the default) the modal layer is displayed when the window is displayed, if *false*, then the window behaves just like it's [StickyWin][] counterpart without the modal behavior.
 
 ### Example
 

@@ -41,6 +41,8 @@ Creates a div within the page with the specified contents at the location relati
 * iframeShimSelector - (*string*) the css selector to find the element within your popup under which the [IframeShim][] should be placed to obscure select lists and the like (see [IframeShim][])
 * inject - (*object*) the target and location of where to inject the StickyWin; defaults to *{target: document.body, where: 'bottom'}*
 * destroyOnClose - (*boolean*) when closed, the container is removed and garbage collected (this makes the StickyWin instance useless after it's been closed). Defaults to *false*.
+* closeOnClickOut - (*boolean*) if *true*, clicks outside the window will close it; defaults to *false*.
+* closeOnEsc - (*boolean*) if *true*, closes the window when the user hits escape; defaults to *false*.
 
 ### Events
 

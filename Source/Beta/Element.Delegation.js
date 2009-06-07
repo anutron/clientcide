@@ -15,39 +15,24 @@ Script: Element.Delegation.js
 
 */
 (function(){
-
-	var checkOverOut = function(el, e){
-		if (el == e.target || el.hasChild(e.target)){
-			var related = e.relatedTarget;
-			if (related == undefined) return true;
-			if (related === false) return false;
-			return ($type(el) != 'document' && related != el && related.prefix != 'xul' && !el.hasChild(related));
-		}
-	};
-
+	
 	var check = function(e, test){
-		var target = e.target;
-		var isOverOut = /^(mouseover|mouseout)$/.test(e.type);
-		var els = this.getElements(test);
-		var match = els.indexOf(target);
-		if (match >= 0) return els[match];
-		for 	(var i = els.length; i--; ){
-			var el = els[i];
-			if (el == target || el.hasChild(target)){
-				return (!isOverOut || checkOverOut(el, e)) ? el : false;
-			}
-		}
+		// walk up tree from event target, testing against selector
+		for (var t = $(e.target); t && t != this; t = t.getParent())
+			if (t.match(test)) return t;
 	};
+	
 	var regs = {
 		test: /^.*:relay?\(.*?\)$/,
 		event: /.*?(?=:relay\()/,
 		selector: /^.*?:relay\((.*)\)$/,
 		warn: /^.*?\(.*?\)$/
 	};
+	
 	var splitType = function(type){
 		if (type.test(regs.test)){
 			return {
-				event: type.match(regs.event),
+				event: type.match(regs.event)[0],
 				selector: type.replace(regs.selector, "$1")
 			};
 		} else if (type.test(/^.*?\(.*?\)$/)) {
@@ -63,7 +48,7 @@ Script: Element.Delegation.js
 	Element.implement({
 		//use as usual (this.addEvent('click', fn))
 		//or for delegation
-		//this.addEvent('click(div.foo)', fn)
+		//this.addEvent('click:relay(div.foo)', fn)
 		addEvent: function(type, fn){
 			var splitted = splitType(type);
 			//if the type has a selector
@@ -84,7 +69,7 @@ Script: Element.Delegation.js
 					//and fires the event
 					//we only create one monitor for a given selector and all it does
 					//is calls fireEvent for that selector
-					//i.e. this.fireEvent('click:div.foo')
+					//i.e. this.fireEvent('click:relay(div.foo)')
 					oldAddEvent.call(this, splitted.event, monitor);
 				}
 			}

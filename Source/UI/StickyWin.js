@@ -60,7 +60,7 @@ var StickyWin = new Class({
 		//add css for clearfix
 		this.createStyle(this.css, 'StickyWinClearFix');
 		if (this.options.closeOnClickOut || this.options.closeOnEsc) this.attach();
-		if (this.options.destroyOnClose) this.addEvent('close', this.destroy)
+		if (this.options.destroyOnClose) this.addEvent('close', this.destroy);
 		if (this.options.showNow) this.show();
 	},
 	attach: function(attach){

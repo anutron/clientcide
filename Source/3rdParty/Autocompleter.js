@@ -308,9 +308,10 @@ Autocompleter.Base = new Class({
 	},
 
 	filter: function(tokens) {
-		var regex = new RegExp(((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp(), (this.options.filterCase) ? '' : 'i');
-		return (tokens || this.tokens).filter(regex.test, regex);
-	},
+		return (tokens || this.tokens).filter(function(token) {
+			return this.test(token);
+		}, new RegExp(((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp(), (this.options.filterCase) ? '' : 'i'));
+	}
 
 	/**
 	 * markQueryValue

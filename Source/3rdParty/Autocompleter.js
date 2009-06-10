@@ -49,7 +49,6 @@ Autocompleter.Base = new Class({
 
 		multiple: false,
 		separator: ', ',
-		separatorSplit: /\s*[,;]\s*/,
 		autoTrim: true,
 		allowDupes: false,
 
@@ -60,6 +59,7 @@ Autocompleter.Base = new Class({
 	initialize: function(element, options) {
 		this.element = $(element);
 		this.setOptions(options);
+		this.options.separatorSplit = new RegExp("\s*["+this.options.separator.trim()+"]\s*/");
 		this.build();
 		this.observer = new Observer(this.element, this.prefetch.bind(this), $merge({
 			'delay': this.options.delay
@@ -311,7 +311,7 @@ Autocompleter.Base = new Class({
 		return (tokens || this.tokens).filter(function(token) {
 			return this.test(token);
 		}, new RegExp(((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp(), (this.options.filterCase) ? '' : 'i'));
-	}
+	},
 
 	/**
 	 * markQueryValue

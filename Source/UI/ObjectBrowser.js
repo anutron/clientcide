@@ -20,7 +20,7 @@ var ObjectBrowser = new Class({
 		includeKeys: []
 	},
 	initialize: function(container, options){
-		this.container = $(container);
+		this.container = document.id(container);
 		this.setOptions(options);
 		this.data = $H(this.options.data);
 		this.levels = {};

@@ -13,7 +13,7 @@ var InputFocus = new Class({
 		hideOutline: false
 	},
 	initialize: function(input, options) {
-		this.element = $(input);
+		this.element = document.id(input);
 		if (this.occlude('focuser')) return this.occluded;
 		this.setOptions(options);
 		this.element.addEvents({
@@ -24,13 +24,13 @@ var InputFocus = new Class({
 	focus: function(){
 		if (this.options.hideOutline) {
 			(function(){
-				if (Browser.Engine.trident) $(this).set('hideFocus', true);
-				else $(this).setStyle('outline', '0');
+				if (Browser.Engine.trident) document.id(this).set('hideFocus', true);
+				else document.id(this).setStyle('outline', '0');
 			}).delay(500, this);
 		}
-		$(this).addClass(this.options.focusedClass);
+		document.id(this).addClass(this.options.focusedClass);
 	},
 	blur: function(){
-		$(this).removeClass(this.options.focusedClass);
+		document.id(this).removeClass(this.options.focusedClass);
 	}
 });

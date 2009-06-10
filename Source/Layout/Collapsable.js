@@ -8,8 +8,8 @@ License:
 var Collapsable = new Class({
 	Extends: Fx.Reveal,
 	initialize: function(clicker, section, options) {
-		this.clicker = $(clicker);
-		this.section = $(section);
+		this.clicker = document.id(clicker);
+		this.section = document.id(section);
 		this.parent(this.section, options);
 		this.addEvents();
 	},

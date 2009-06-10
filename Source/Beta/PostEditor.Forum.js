@@ -28,7 +28,7 @@ PostEditor.Forum = new Class({
 			"js" : ["<javascript>\n		","something here","\n</javascript>"],
 
 			"$" : {
-				snippet:["$('","id')","."],
+				snippet:["document.id('","id')","."],
 				tab:['id','']
 			},
 

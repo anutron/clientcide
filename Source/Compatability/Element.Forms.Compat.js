@@ -27,15 +27,15 @@ Sets the value of the form Element.
 
 #### Examples:
 
-	$('mySelect').set('inputValue', 'option1'); //option with value 'option1' is selected
-	$('myMultiSelect').set('inputValue', ['option1', 'option2']); 
+	document.id('mySelect').set('inputValue', 'option1'); //option with value 'option1' is selected
+	document.id('myMultiSelect').set('inputValue', ['option1', 'option2']); 
 		//options w/ values 'option1' and 'option2' are selected
-	$('myRadio').set('inputValue', true); //the radio is checked
-	$('myRadio').set('inputValue', 'red'); //if the radio's name is 'red', it is checked
-	$('myCheckbox').set('inputValue', true); //the checkbox is checked
-	$('myCheckbox').set('inputValue', 'red'); //if the checkbox's name is 'red', it is checked
-	$('myTextArea').set('inputValue', 'foo'); //the value of the textarea is 'foo'
-	$('myTextInput').set('inputValue', 'foo'); //the value of the text input is 'foo'
+	document.id('myRadio').set('inputValue', true); //the radio is checked
+	document.id('myRadio').set('inputValue', 'red'); //if the radio's name is 'red', it is checked
+	document.id('myCheckbox').set('inputValue', true); //the checkbox is checked
+	document.id('myCheckbox').set('inputValue', 'red'); //if the checkbox's name is 'red', it is checked
+	document.id('myTextArea').set('inputValue', 'foo'); //the value of the textarea is 'foo'
+	document.id('myTextInput').set('inputValue', 'foo'); //the value of the text input is 'foo'
 
 ### Getter:	
 	
@@ -76,7 +76,7 @@ Element.Properties.inputValue = {
 					case 'radio':
 						var checked;
 						if (this.get('checked')) return this.get('value');
-						$(this.getParent('form')||document.body).getElements('input').each(function(input){
+						document.id(this.getParent('form')||document.body).getElements('input').each(function(input){
 							if (input.get('name') == this.get('name') && input.get('checked')) checked = input.get('value');
 						}, this);
 						return checked||null;

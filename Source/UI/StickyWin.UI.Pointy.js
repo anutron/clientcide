@@ -72,15 +72,15 @@ StickyWin.UI.Pointy = new Class({
 		}
 		
 		this.parent(args.caption, args.body, this.options);
-		if (this.id) $(this).set('id', "pointy_"+this.id);
+		if (this.id) document.id(this).set('id', "pointy_"+this.id);
 	},
 	build: function(){
 		this.parent();
 		var opt = this.options;
 		this.pointyWrapper = new Element('div', {
 			'class': 'pointyWrapper'
-		}).inject($(this));
-		$(this).getChildren().each(function(el){
+		}).inject(document.id(this));
+		document.id(this).getChildren().each(function(el){
 			if (el != this.pointyWrapper) this.pointyWrapper.grab(el);
 		}, this);
 
@@ -119,19 +119,19 @@ StickyWin.UI.Pointy = new Class({
 		}).inject(this.pointyWrapper);
 	},
 	expose: function(){
-		if ($(this).getStyle('display') != 'none' && $(document.body).hasChild($(this))) return $empty;
-		$(this).setStyles({
+		if (document.id(this).getStyle('display') != 'none' && document.id(document.body).hasChild(document.id(this))) return $empty;
+		document.id(this).setStyles({
 			visibility: 'hidden',
 			position: 'absolute'
 		});
 		var dispose;
-		if (!document.body.hasChild($(this))) {
-			$(this).inject(document.body);
+		if (!document.body.hasChild(document.id(this))) {
+			document.id(this).inject(document.body);
 			dispose = true;
 		}
 		return (function(){
-			if (dispose) $(this).dispose();
-			$(this).setStyles({
+			if (dispose) document.id(this).dispose();
+			document.id(this).setStyles({
 				visibility: 'visible',
 				position: 'relative'
 			});
@@ -205,7 +205,7 @@ StickyWin.UI.Pointy = new Class({
 	setContent: function(a1, a2){
 		this.parent(a1, a2);
 		this.top[this.h1?'removeClass':'addClass']('noCaption');
-		if (Browser.Engine.trident4) $(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
+		if (Browser.Engine.trident4) document.id(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
 		if (this.options.closeButton) this.body.setStyle('margin-right', 6);
 		this.positionPointer();
 		return this;
@@ -217,6 +217,6 @@ StickyWin.UI.Pointy = new Class({
 });
 
 StickyWin.UI.pointy = function(caption, body, options){
-	return $(new StickyWin.UI.Pointy(caption, body, options));
+	return document.id(new StickyWin.UI.Pointy(caption, body, options));
 };
 StickyWin.ui.pointy = StickyWin.UI.pointy;

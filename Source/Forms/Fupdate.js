@@ -30,14 +30,14 @@ var Fupdate;
 		property: 'fupdate',
 
 		initialize: function(form, update, options) {
-			this.element = $(form);
+			this.element = document.id(form);
 			if (this.occlude()) return this.occluded;
-			this.update = $(update);
+			this.update = document.id(update);
 			this.setOptions(options);
 			this.makeRequest();
 			if (this.options.resetForm) {
 				this.request.addEvent('success', function(){
-					$try(function(){ $(this).reset(); }.bind(this));
+					$try(function(){ document.id(this).reset(); }.bind(this));
 					if (window.OverText) OverText.update();
 				}.bind(this));
 			}
@@ -46,11 +46,11 @@ var Fupdate;
 
 		makeRequest: function(){
 			this.request = new Request.HTML($merge({
-					url: $(this).get('action'),
+					url: document.id(this).get('action'),
 					update: this.update,
 					emulation: false,
-					waiterTarget: $(this),
-					method: $(this).get('method') || 'post'
+					waiterTarget: document.id(this),
+					method: document.id(this).get('method') || 'post'
 			}, this.options.requestOptions)).addEvents({
 				success: function(text, xml){
 					['success', 'complete'].each(function(evt){
@@ -67,7 +67,7 @@ var Fupdate;
 		},
 
 		addFormEvent: function(){
-			var fv = $(this).retrieve('validator');
+			var fv = document.id(this).retrieve('validator');
 			if (fv) {
 				fv.addEvent('onFormValidate', function(valid, form, e) {
 					if (valid || !fv.options.stopOnFailure) {
@@ -76,7 +76,7 @@ var Fupdate;
 					}
 				}.bind(this));
 			} else {
-				$(this).addEvent('submit', function(e){
+				document.id(this).addEvent('submit', function(e){
 					e.stop();
 					this.send();
 				}.bind(this));
@@ -84,10 +84,10 @@ var Fupdate;
 		},
 
 		send: function(){
-			var str = $(this).toQueryString().trim();
+			var str = document.id(this).toQueryString().trim();
 			formData = str.parseQueryString();
 			var data = $H(this.options.extraData).combine(formData);
-			this.fireEvent('send', [$(this), data]);
+			this.fireEvent('send', [document.id(this), data]);
 			this.request.send({data: data});
 			return this;
 		}
@@ -101,7 +101,7 @@ var Fupdate;
 			var update = opt.update || opt.updateId;
 			var fupdate = this.retrieve('fupdate');
 			if (update) {
-				if (fupdate) fupdate.update = $(update);
+				if (fupdate) fupdate.update = document.id(update);
 				this.store('fupdate:update', update);
 			}
 			if (opt.options) {

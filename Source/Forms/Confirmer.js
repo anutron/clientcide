@@ -35,8 +35,8 @@ var Confirmer = new Class({
 	},
 	initialize: function(options){
 			this.setOptions(options);
-			this.options.positionOptions.relativeTo = $(this.options.positionOptions.relativeTo) || document.body;
-			this.prompter = ($(this.options.msg))?$(this.options.msg):this.makePrompter(this.options.msg);
+			this.options.positionOptions.relativeTo = document.id(this.options.positionOptions.relativeTo) || document.body;
+			this.prompter = (document.id(this.options.msg))?document.id(this.options.msg):this.makePrompter(this.options.msg);
 			if (this.options.reposition){
 				this.prompter.setStyles({
 					position: 'absolute',
@@ -63,8 +63,8 @@ var Confirmer = new Class({
 		if (!this.paused)this.stop();
 		var msg = (options)?options.msg:false;
 		options = $merge(this.options, {saveAsDefault: false}, options||{});
-		if ($(options.msg) && msg) this.msgHolder.empty().adopt(options.msg);
-		else if (!$(options.msg) && options.msg) this.msgHolder.empty().appendText(options.msg);
+		if (document.id(options.msg) && msg) this.msgHolder.empty().adopt(options.msg);
+		else if (!document.id(options.msg) && options.msg) this.msgHolder.empty().appendText(options.msg);
 		if (!this.paused) {
 			if (options.reposition) this.position(options.positionOptions);
 			(function(){

@@ -39,16 +39,16 @@ var TabSwapper = new Class({
 	},
 	setup: function(){
 		var opt = this.options;
-		sections = $$(opt.sections);
-		tabs = $$(opt.tabs);
+		sections = document.id(opt.sections);
+		tabs = document.id(opt.tabs);
 		if (tabs[0] && tabs[0].retrieve('tabSwapper')) return tabs[0].retrieve('tabSwapper');
-		clickers = $$(opt.clickers);
+		clickers = document.id(opt.clickers);
 		tabs.each(function(tab, index){
 			this.addTab(tab, sections[index], clickers[index], index);
 		}, this);
 	},
 	addTab: function(tab, section, clicker, index){
-		tab = $(tab); clicker = $(clicker); section = $(section);
+		tab = document.id(tab); clicker = document.id(clicker); section = document.id(section);
 		//if the tab is already in the interface, just move it
 		if (this.tabs.indexOf(tab) >= 0 && tab.retrieve('tabbered') 
 			 && this.tabs.indexOf(tab) != index && this.options.rearrangeDOM) {

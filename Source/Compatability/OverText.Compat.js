@@ -3,7 +3,7 @@ OverText = Class.refactor(OverText, {
 		this.instances = [];
 		if (['array', 'string'].contains($type(inputs))) {
 			this.setOptions(options);
-			$$(inputs).each(this.addElement, this);
+			document.id(inputs).each(this.addElement, this);
 		} else {
 			return this.previous.apply(this, arguments);
 		}

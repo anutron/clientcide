@@ -57,7 +57,7 @@ Autocompleter.Base = new Class({
 	},
 
 	initialize: function(element, options) {
-		this.element = $(element);
+		this.element = document.id(element);
 		this.setOptions(options);
 		this.options.separatorSplit = new RegExp("\s*["+this.options.separator.trim()+"]\s*/");
 		this.build();
@@ -79,7 +79,7 @@ Autocompleter.Base = new Class({
 	 * Override this function to modify the html generation.
 	 */
 	build: function() {
-		if ($(this.options.customChoices)) {
+		if (document.id(this.options.customChoices)) {
 			this.choices = this.options.customChoices;
 		} else {
 			this.choices = new Element('ul', {

@@ -51,7 +51,7 @@ Element.implement({
 	}
 });
 window.addEvent('domready', function(){
-	$$('img.autoMouseOver').each(function(img){
+	document.id('img.autoMouseOver').each(function(img){
 		img.autoMouseOvers();
 	});
 });

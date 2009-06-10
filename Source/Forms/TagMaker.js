@@ -168,7 +168,7 @@ var TagMaker = new Class({
 					maxHeight: this.options.maxHeight
 				}
 			}).adopt(this.form);
-			this.validator = new FormValidator(this.form);
+			this.validator = new FormValidator.Inline(this.form);
 			this.validator.insertAdvice = function(advice, field){
 				var p = $(field.parentNode);
 				if (p) p.adopt(advice);
@@ -204,7 +204,7 @@ var TagMaker = new Class({
 	},
 	insert: function(){
 		if (!this.target) {
-			simpleErrorPopup('Cannot Paste','This tag builder was not launched with a target input specified; you\'ll have to copy the tag yourself. Sorry!');
+			StickyWin.alert('Cannot Paste','This tag builder was not launched with a target input specified; you\'ll have to copy the tag yourself. Sorry!');
 			return;
 		}
 		var value = (this.target)?this.target.value:this.target;

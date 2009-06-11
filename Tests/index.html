@@ -8,7 +8,6 @@
 	<script>
 		var path = '../UnitTester/';
 		function scripter(scr) {
-			console.log(scr, "<scri"+"pt src=\""+scr+"\"> </scr"+"ipt>");
 			document.write("<scri"+"pt src='"+scr+"'> </scr"+"ipt>");
 		};
 		debug = {
@@ -20,6 +19,7 @@
 		scripter(path+'assets/UnitTester.js');
 		scripter(path+'assets/posteditor.js');
 		scripter(path+'assets/Debugger.cnet.js');
+		
 		document.write('<link rel="STYLESHEET" type="text/css" href="'+path+'assets/tests.css"/>');
 	</script>
 	<script>
@@ -29,6 +29,7 @@
 			new PostEditor('script');
 		});
 	</script>
+	<script src="config.js" type="text/javascript" charset="utf-8"></script>
 
 	<div id="title">
 		<h1>
@@ -46,7 +47,7 @@
 				</dl>
 			</div>
 			<div id="testFrameContainer">
-				<iframe src="../UnitTester/test_frame.html" id="testFrame"></iframe>
+				<iframe src="test_frame.html" id="testFrame"></iframe>
 				<div>
 					<b>manual code entry:</b>
 					<center>

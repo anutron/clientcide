@@ -55,7 +55,7 @@ var Waiter = new Class({
 	},
 	property: 'Waiter',
 	initialize: function(target, options){
-		this.element = $(target)||$(document.body);
+		this.element = document.id(target)||document.id(document.body);
 		if (this.occlude()) return this.occluded;
 		this.setOptions(options);
 		this.build();
@@ -66,14 +66,14 @@ var Waiter = new Class({
 		if (this.options.msg) {
 			this.msgContainer = new Element('div', this.options.msgProps);
 			this.waiterContainer.adopt(this.msgContainer);
-			if (!$(this.options.msg)) this.msg = new Element('p').appendText(this.options.msg);
-			else this.msg = $(this.options.msg);
+			if (!document.id(this.options.msg)) this.msg = new Element('p').appendText(this.options.msg);
+			else this.msg = document.id(this.options.msg);
 			this.msgContainer.adopt(this.msg);
 		}
-		if (this.options.img) this.waiterImg = $(this.options.img.id) || new Element('img', $merge(this.options.img, {
+		if (this.options.img) this.waiterImg = document.id(this.options.img.id) || new Element('img', $merge(this.options.img, {
 			src: this.options.baseHref + this.options.img.src
 		})).inject(this.waiterContainer);
-		this.waiterOverlay = $(this.options.layer.id) || new Element('div').adopt(this.waiterContainer);
+		this.waiterOverlay = document.id(this.options.layer.id) || new Element('div').adopt(this.waiterContainer);
 		this.waiterOverlay.set(this.options.layer);
 		try {
 			if (this.options.useIframeShim) this.shim = new IframeShim(this.waiterOverlay, this.options.iframeShimOptions);
@@ -81,7 +81,7 @@ var Waiter = new Class({
 			dbug.log("Waiter attempting to use IframeShim but failed; did you include IframeShim? Error: ", e);
 			this.options.useIframeShim = false;
 		}
-		this.waiterFx = this.waiterFx || new Fx.Elements($$(this.waiterContainer, this.waiterOverlay), this.options.fxOptions);
+		this.waiterFx = this.waiterFx || new Fx.Elements(document.id(this.waiterContainer, this.waiterOverlay), this.options.fxOptions);
 	},
 	place: function(target, where){
 		var where = where || this.options.injectWhere || target == document.body ? 'inside' : 'after';
@@ -89,9 +89,9 @@ var Waiter = new Class({
 	},
 	toggle: function(element, show) {
 		//the element or the default
-		element = $(element) || $(this.active) || $(this.element);
+		element = document.id(element) || document.id(this.active) || document.id(this.element);
 		this.place(element);
-		if (!$(element)) return this;
+		if (!document.id(element)) return this;
 		if (this.active && element != this.active) return this.stop(this.start.bind(this, element));
 		//if it's not active or show is explicit
 		//or show is not explicitly set to false
@@ -110,7 +110,7 @@ var Waiter = new Class({
 	},
 	start: function(element){
 		this.reset();
-		element = $(element) || $(this.element);
+		element = document.id(element) || document.id(this.element);
 		this.place(element);
 		var start = function() {
 			var dim = element.getComputedSize();
@@ -180,7 +180,7 @@ if (window.Request) {
 				return this;
 			};
 			this.previous(options);
-			if (this.options.useWaiter && ($(this.options.update) || $(this.options.waiterTarget))) {
+			if (this.options.useWaiter && (document.id(this.options.update) || document.id(this.options.waiterTarget))) {
 				this.waiter = new Waiter(this.options.waiterTarget || this.options.update, this.options.waiterOptions);
 				['onComplete', 'onException', 'onCancel'].each(function(event){
 					this.addEvent(event, this.waiter.stop.bind(this.waiter));

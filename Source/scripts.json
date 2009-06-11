@@ -12,7 +12,7 @@
 	"Class":{
 		"Class.ToElement": {
 			"deps":["Class", "Clientcide"],
-			"desc":"Mixin class that returns *this.element*. Allows you to do $(myInstance)."
+			"desc":"Mixin class that returns *this.element*. Allows you to do document.id(myInstance)."
 		}
 	},
 	"Browser":{
@@ -197,7 +197,7 @@
 			"desc":"A simple html editor for wrapping text with links and whatnot."
 		},
 		"TagMaker":{
-			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator", "StickyWin.UI", "HtmlTable", "Drag"],
+			"deps":["Element.Dimensions", "Element.Event", "Selectors", "Fx.Tween", "Fx.Morph", "Tips", "Element.Shortcuts", "Element.Forms", "FormValidator.Inline", "StickyWin.UI", "HtmlTable", "Drag"],
 			"desc":"Prompts the user to fill in the gaps to create an html tag output."
 		}
 	},

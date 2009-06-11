@@ -56,7 +56,7 @@ var IconMenu = new Class({
 		//set the options
 		this.setOptions(options);
 		//save a reference to the container
-		this.container = $(this.options.container);
+		this.container = document.id(this.options.container);
 		//get the captions from the options
 		var captions = ($type(this.options.captions) == "string")
 			?this.container.getElements(this.options.captions)
@@ -132,7 +132,7 @@ var IconMenu = new Class({
 		//if we've already got this image in there, remove it before putting it in the right place
 		if (this.imgs.contains(img)) this.removeItems([img], true);
 		//insert the image and caption into the array of these things
-		this.imgs.splice(where, 0, $(img));
+		this.imgs.splice(where, 0, document.id(img));
 
 		//set up the events for the element
 		this.setupIconEvents(img, caption);
@@ -301,7 +301,7 @@ var IconMenu = new Class({
 		if ($type(this.options.length) == "number") return this.options.length;
 		//if, on the other hand, they specified another element than the container
 		//to calculate the width, use it
-		var container = $(this.options.length);
+		var container = document.id(this.options.length);
 		//otherwise, use the container
 		if (!container) container = this.container.getParent();
 		//return the width or height of that element, depending on the axis chosen in the options
@@ -382,21 +382,21 @@ var IconMenu = new Class({
 		return index < range.end && index >= range.start;
 	},
 	setupEvents: function(){
-		$(this.options.container).addEvents({
+		document.id(this.options.container).addEvents({
 			"mouseleave": function() {
 				if (this.inFocus) this.inFocus = null;
 				this.imgOut(null, true);
 			}.bind(this)
 		});
 		
-		$$(this.options.backScrollButtons).each(function(el){
+		document.id(this.options.backScrollButtons).each(function(el){
 			el.addEvents({
 				click: this.pageBack.bind(this),
 				mouseover: function(){ this.addClass('hover'); },
 				mouseout: function(){ this.removeClass('hover'); }
 			});
 		}, this);
-		$$(this.options.forwardScrollButtons).each(function(el){
+		document.id(this.options.forwardScrollButtons).each(function(el){
 			el.addEvents({
 				click: this.pageForward.bind(this),
 				mouseover: function(){ this.addClass('hover'); },
@@ -404,10 +404,10 @@ var IconMenu = new Class({
 			});
 		}, this);
 
-		$$(this.options.clearLinks).each(function(el){
+		document.id(this.options.clearLinks).each(function(el){
 			el.addEvent('click', this.empty.bind(this));
 		}, this);
-		$$(this.options.removeLinks).each(function(el){
+		document.id(this.options.removeLinks).each(function(el){
 			el.addEvent('click', this.removeSelected.bind(this));
 		}, this);
 	},

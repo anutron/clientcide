@@ -37,14 +37,7 @@
 			description: "Retrieves content via ajax and automatically applies the waiter to it.",
 			verify: "Did the waiter show up until the ajax finished and updated the content?",
 			before: function(){
-				var r = new Class({
-					Extends: Request.HTML,
-					success: function(text,allow){
-						if (allow) this.parent(text);
-						else this.success.delay(0, this, [text, true]);
-					}
-				});
-				var req = new r({
+				var req = new Request.HTML({
 					url: 'UserTests/Request/simple.php?sleep=1',
 					method: 'get',
 					useWaiter: true,

@@ -29,7 +29,7 @@ Tips.Pointy = new Class({
 		this.tip = new StickyWin.PointyTip($extend(this.options.pointyTipOptions, {
 			showNow: false
 		}));
-		if (this.options.className) $(this.tip).addClass(this.options.className);
+		if (this.options.className) document.id(this.tip).addClass(this.options.className);
 		if (params.elements) this.attach(params.elements);
 	},
 	elementEnter: function(event, element){
@@ -61,11 +61,11 @@ Tips.Pointy = new Class({
 	},
 
 	show: function(){
-		this.fireEvent('show', [$(this.tip), this.tip]);
+		this.fireEvent('show', [document.id(this.tip), this.tip]);
 	},
 
 	hide: function(){
-		this.fireEvent('hide', [$(this.tip), this.tip]);
+		this.fireEvent('hide', [document.id(this.tip), this.tip]);
 	}
 
 });

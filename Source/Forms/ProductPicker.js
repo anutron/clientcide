@@ -45,7 +45,7 @@ var ProductPicker = new Class({
 	initialize: function(input, picklets, options){
 		this.setOptions(options);
 		this.writeCss();
-		this.input = $(input);
+		this.input = document.id(input);
 		if (!this.input) return;
 		this.picklets = picklets;
 		this.setUpObservers();
@@ -162,7 +162,7 @@ var ProductPicker = new Class({
 						this.shown = true;
 						(function(){
               if (!this.shown) return;
-              $(tip).setStyles({ display:'block', opacity: 0 });
+              document.id(tip).setStyles({ display:'block', opacity: 0 });
               new Fx.Tween(tip, {property: 'opacity', duration: 300 }).start(0,.9);
             }).delay(500, this);
           },
@@ -192,7 +192,7 @@ var ProductPicker = new Class({
 		}catch(e){dbug.log(e); return false;}
 	},
 	getResults: function(form, picklet){
-		if (form.get('tag') != "form") form = $$('form').filter(function(fm){ return fm.hasChild(form) })[0];
+		if (form.get('tag') != "form") form = document.id('form').filter(function(fm){ return fm.hasChild(form) })[0];
 		if (!form) {
 			dbug.log('error computing form');
 			return null;
@@ -278,7 +278,7 @@ var ProductPicker = new Class({
 			this.sliderContent.empty();
 			var content = this.getPreview(index);
 			if ($type(content)=="string") this.sliderContent.set('html', content);
-			else if ($(content)) this.sliderContent.adopt(content);
+			else if (document.id(content)) this.sliderContent.adopt(content);
 			this.showPreview.delay(200, this);
 		}.bind(this));
 		pDiv.addEvent('mouseleave', function(e){
@@ -314,7 +314,7 @@ var ProductPicker = new Class({
 		return this;
 	},
 	hide: function(){
-		$$('.tool-tip').hide();
+		document.id('.tool-tip').hide();
 		this.swin.hide();
 		this.focused = false;
 		return this;
@@ -324,7 +324,7 @@ var ProductPicker = new Class({
 			if (this.options.showOnFocus) this.input.addEvent('focus', this.show.bind(this));
 			if (this.options.additionalShowLinks.length>0) {
 				this.options.additionalShowLinks.each(function(lnk){
-					$(lnk).addEvent('click', this.show.bind(this));
+					document.id(lnk).addEvent('click', this.show.bind(this));
 				}, this);
 			}
 		}catch(e){dbug.log(e);}
@@ -403,7 +403,7 @@ var FormPickers = new Class({
 	},
 	initialize: function(form, options){
 		this.setOptions(options);
-		this.form = $(form);
+		this.form = document.id(form);
 		this.inputs = this.form.getElements(this.options.inputs);
 		this.setUpInputs();
 	},

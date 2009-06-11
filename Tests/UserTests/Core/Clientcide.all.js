@@ -11,5 +11,5 @@
 			}
 		}
 	],
-	otherScripts: ["StickyWin.alert", "DatePicker"]
+	otherScripts: ["StickyWin.Alert", "DatePicker"]
 }

@@ -61,7 +61,7 @@ var TagMaker = new Class({
 		this.createStyle(this.options.css.replace("%baseHref%", this.options.baseHref, "g"), 'defaultTagBuilderStyle');
 	},
 	prompt: function(target){
-		this.target = $(target);
+		this.target = document.id(target);
 		var content = this.getContent();
 		if (this.options.clearOnPrompt) this.clear();
 		if (content) {
@@ -72,7 +72,7 @@ var TagMaker = new Class({
 						draggable: true,
 						relativeTo: relativeTo,
 						onClose: function(){
-							$$('.tagMaker-tip').hide();
+							document.id('.tagMaker-tip').hide();
 						}
 					});
 				}
@@ -168,9 +168,9 @@ var TagMaker = new Class({
 					maxHeight: this.options.maxHeight
 				}
 			}).adopt(this.form);
-			this.validator = new FormValidator(this.form);
+			this.validator = new FormValidator.Inline(this.form);
 			this.validator.insertAdvice = function(advice, field){
-				var p = $(field.parentNode);
+				var p = document.id(field.parentNode);
 				if (p) p.adopt(advice);
 			};
 		}
@@ -204,7 +204,7 @@ var TagMaker = new Class({
 	},
 	insert: function(){
 		if (!this.target) {
-			simpleErrorPopup('Cannot Paste','This tag builder was not launched with a target input specified; you\'ll have to copy the tag yourself. Sorry!');
+			StickyWin.alert('Cannot Paste','This tag builder was not launched with a target input specified; you\'ll have to copy the tag yourself. Sorry!');
 			return;
 		}
 		var value = (this.target)?this.target.value:this.target;
@@ -225,7 +225,7 @@ var TagMaker = new Class({
 
 		this.target.selectRange(this.range.start, output.value.length + this.range.start);
 		this.fireEvent('onChoose');
-		$$('.tagMaker-tip').hide();
+		document.id('.tagMaker-tip').hide();
 		this.win.hide();
 		return;
 	}

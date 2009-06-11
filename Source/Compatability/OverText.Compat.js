@@ -12,13 +12,13 @@ OverText = Class.refactor(OverText, {
 		this.instances.push(new OverText(el, this.options))
 	},
 	startPolling: function(){
-		if (!this.instances.length) return this.parent.apply(this, arguments);
+		if (!this.instances || !this.instances.length) return this.previous.apply(this, arguments);
 		this.instances.each(function(instance) {
 			instance.startPolling();
 		});
 	},
 	stopPolling: function(){
-		if (!this.instances.length) return this.parent.apply(this, arguments);
+		if (!this.instances.length) return this.previous.apply(this, arguments);
 		this.instances.each(function(instance) {
 			instance.stopPolling();
 		});

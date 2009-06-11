@@ -1,1 +1,0 @@
-var path = '../UnitTester/';

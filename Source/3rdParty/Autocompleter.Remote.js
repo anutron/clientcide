@@ -27,7 +27,7 @@ Autocompleter.Ajax.Base = new Class({
 
 	initialize: function(element, options) {
 		this.parent(element, options);
-		var indicator = document.id(this.options.indicator);
+		var indicator = $(this.options.indicator);
 		if (indicator) {
 			this.addEvents({
 				'onRequest': indicator.show.bind(indicator),

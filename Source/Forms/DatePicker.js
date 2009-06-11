@@ -65,7 +65,7 @@ var DatePicker;
 	
 		initialize: function(input, options){
 			DPglobal(); //make sure controller is setup
-			if (document.id(input)) this.inputs = $H({start: document.id(input)});
+			if ($(input)) this.inputs = $H({start: $(input)});
 	    	this.today = new Date();
 			this.setOptions(options);
 			if (this.options.useDefaultCss) this.createStyle(this.options.defaultCss, 'datePickerStyle');
@@ -106,7 +106,7 @@ var DatePicker;
 				}.bind(this));
 			}, this);
 			this.options.additionalShowLinks.each(function(lnk){
-				document.id(lnk).addEvent('click', this.show.bind(this))
+				$(lnk).addEvent('click', this.show.bind(this))
 			}, this);
 		},
 		getDates: function(dates, getFromInputs){
@@ -284,7 +284,7 @@ var DatePicker;
 			var monthyr = new Element('span', {
 				html: Date.getMsg('months')[date.getMonth()] + " " + date.getFullYear()
 			});
-			document.id(this.rows[0].getElements('td')[1]).empty().adopt(monthyr);
+			$(this.rows[0].getElements('td')[1]).empty().adopt(monthyr);
 			var atDate = startDate.clone();
 			this.rows.each(function(row, i){
 				if (i < 2) return;

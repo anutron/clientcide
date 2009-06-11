@@ -23,7 +23,7 @@ License:
 			},
 			initialize: function(form, update, options){
 				this.setOptions(options);
-				this.update = document.id(update);
+				this.update = $(update);
 				this.makeStickyWin(form);
 				this.swin.addEvent('close', function(){
 					if (this.request && this.request.waiter) this.request.waiter.stop();
@@ -31,7 +31,7 @@ License:
 				this.addEvent('success', this.hide.bind(this));
 			},
 			makeStickyWin: function(form){
-				if (document.id(form)) form = document.id(form);
+				if ($(form)) form = $(form);
 				this.swin = new this.options.stickyWinToUse({
 					content: this.options.useUi?StickyWin.ui(this.options.caption, form, this.options.stickyWinUiOptions):form,
 					showNow: false
@@ -51,7 +51,7 @@ License:
 				this.setOptions({
 					requestOptions: {
 						useWaiter: this.options.useWaiter,
-						waiterTarget: document.id(this),
+						waiterTarget: $(this),
 						waiterOptions: {
 							layer: {
 								styles: {
@@ -63,7 +63,7 @@ License:
 				});
 				this.makeRequest();
 				this.addFormEvent();
-				document.id(this).store('fupdate', this);
+				$(this).store('fupdate', this);
 			}
 		};
 	};

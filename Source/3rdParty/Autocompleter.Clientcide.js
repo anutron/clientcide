@@ -16,7 +16,7 @@ License:
 		},
 		writeStyle: function(){
 			window.addEvent('domready', function(){
-				if (document.id('AutocompleterCss')) return;
+				if ($('AutocompleterCss')) return;
 				new Element('link', {
 					rel: 'stylesheet', 
 					media: 'screen', 

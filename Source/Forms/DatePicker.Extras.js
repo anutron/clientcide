@@ -37,10 +37,10 @@ DatePicker = Class.refactor(DatePicker, {
 		this.whens = (this.options.range)?['start', 'end']:['start'];
 		if ($type(inputs) == 'object') {
 			this.inputs = $H(inputs);
-		} else if ($type(document.id(inputs)) == "element") {
-			this.inputs = $H({'start': document.id(inputs)});
+		} else if ($type($(inputs)) == "element") {
+			this.inputs = $H({'start': $(inputs)});
 		} else if ($type(inputs) == "array"){
-			inputs = document.id(inputs);
+			inputs = $$(inputs);
 			this.inputs = $H({});
 			this.whens.each(function(when, i){
 				this.inputs.set(when, inputs[i]);

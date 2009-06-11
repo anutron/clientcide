@@ -31,7 +31,7 @@ var Modalizer = new Class({
 	},
 	layer: function(){
 		if (!this.modalOptions.layerId) this.setModalOptions();
-		return document.id(this.modalOptions.layerId) || new Element('div', {id: this.modalOptions.layerId}).inject(document.body);
+		return $(this.modalOptions.layerId) || new Element('div', {id: this.modalOptions.layerId}).inject(document.body);
 	},
 	resize: function(){
 		if (this.layer()) {
@@ -81,7 +81,7 @@ var Modalizer = new Class({
 	},
 	togglePopThroughElements: function(opacity){
 		if (Browser.Engine.trident4 || (Browser.Engine.gecko && Browser.Platform.mac)) {
-			document.id(this.modalOptions.elementsToHide).each(function(sel){
+			$$(this.modalOptions.elementsToHide).each(function(sel){
 				sel.setStyle('opacity', opacity);
 			});
 		}

@@ -9,7 +9,7 @@ $extend(Browser, {
 	fixPNG: function(el) {
 		try {
 			if (Browser.Engine.trident4){
-				el = document.id(el);
+				el = $(el);
 				if (!el) return el;
 				if (el.get('tag') == "img" && el.get('src').test(".png")) {
 					var vis = el.isDisplayed();
@@ -76,10 +76,10 @@ $extend(Browser, {
     //TODO: should this also be testing the css background-image property for pngs?
     //Q: should it return an array of all those it has tweaked?
     if (document.getElements){ // more efficient but requires 'selectors'
-      el = document.id(el||document.body);
+      el = $(el||document.body);
       el.getElements('img[src$=.png]').addClass(className);
     } else { // scan the whole page
-      var els = document.id('img').each(function(img) {
+      var els = $$('img').each(function(img) {
         if (Browser.pngTest(img.src)){
           img.addClass(className);
         }
@@ -87,4 +87,4 @@ $extend(Browser, {
     }
   }
 });
-if (Browser.Engine.trident4) window.addEvent('domready', function(){document.id('img.fixPNG').each(Browser.fixPNG)});
+if (Browser.Engine.trident4) window.addEvent('domready', function(){$$('img.fixPNG').each(Browser.fixPNG)});

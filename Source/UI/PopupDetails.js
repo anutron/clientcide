@@ -34,8 +34,8 @@ var PopupDetail = new Class({
 	},
 	initialize: function(html, observer, options){
 		this.setOptions(options);
-		this.observer = document.id(observer);
-		this.html = (document.id(html))?document.id(html).get('html'):html||'';
+		this.observer = $(observer);
+		this.html = ($(html))?$(html).get('html'):html||'';
 		if (this.options.showNow) this.show.delay(this.options.delayOn, this);
 		this.setUpObservers();
 	},
@@ -67,7 +67,7 @@ var PopupDetail = new Class({
 				content: this.content,
 				allowMultipleByClass: true
 			}));
-			if (document.id(opt.linkPopup) || $type(opt.linkPopup)=='string') {
+			if ($(opt.linkPopup) || $type(opt.linkPopup)=='string') {
 				this.stickyWin.win.setStyle('cursor','pointer').addEvent('click', function(){
 					window.location.href = ($type(url)=='string')?url:url.src;
 				});
@@ -141,7 +141,7 @@ var PopupDetailCollection = new Class({
 	},
 	cache: {},
 	initialize: function(observers, options) {
-		this.observers = document.id(observers);
+		this.observers = $$(observers);
 		this.setOptions(options);
 		var ln = this.options.ajaxLinks.length;
 		if (ln <= 0) ln = this.options.details.length;

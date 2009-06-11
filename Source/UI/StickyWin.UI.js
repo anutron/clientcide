@@ -113,7 +113,7 @@ StickyWin.UI = new Class({
 		var opt = this.options;
 		var h1Caption = new Element('h1').addClass('caption');
 		if (opt.width) h1Caption.setStyle('width', (opt.width-(opt.cornerHandle?55:40)-(opt.closeButton?10:0)));
-		if (document.id(this.caption)) h1Caption.adopt(this.caption);
+		if ($(this.caption)) h1Caption.adopt(this.caption);
 		else h1Caption.set('html', this.caption);
 		this.top_ur.adopt(h1Caption);
 		this.h1 = h1Caption;
@@ -133,7 +133,7 @@ StickyWin.UI = new Class({
 		var body = args.body;
 		if (this.h1) this.destroyCaption();
 		this.makeCaption(caption);
-		if (document.id(body)) this.body.empty().adopt(body);
+		if ($(body)) this.body.empty().adopt(body);
 		else this.body.set('html', body);
 		return this;
 	}
@@ -152,5 +152,5 @@ StickyWin.UI.getArgs = function(){
 };
 
 StickyWin.ui = function(caption, body, options){
-	return document.id(new StickyWin.UI(caption, body, options))
+	return $(new StickyWin.UI(caption, body, options))
 };

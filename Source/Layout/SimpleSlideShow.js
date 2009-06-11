@@ -35,8 +35,8 @@ var SimpleSlideShow = new Class({
 	},
 	slides:[],
 	setCounters: function(){
-		if (document.id(this.options.currentIndexContainer))document.id(this.options.currentIndexContainer).set('html', this.now+1);
-		if (document.id(this.options.maxContainer))document.id(this.options.maxContainer).set('html', this.slides.length);
+		if ($(this.options.currentIndexContainer))$(this.options.currentIndexContainer).set('html', this.now+1);
+		if ($(this.options.maxContainer))$(this.options.maxContainer).set('html', this.slides.length);
 	},
 	makeSlides: function(slides){
 		//hide them all
@@ -51,13 +51,13 @@ var SimpleSlideShow = new Class({
 		this.slides.include(slide);
 	},
 	setUpNav: function(){	
-		if (document.id(this.options.nextLink)) {
-			document.id(this.options.nextLink).addEvent('click', function(){
+		if ($(this.options.nextLink)) {
+			$(this.options.nextLink).addEvent('click', function(){
 				this.forward();
 			}.bind(this));
 		}
-		if (document.id(this.options.prevLink)) {
-			document.id(this.options.prevLink).addEvent('click', function(){
+		if ($(this.options.prevLink)) {
+			$(this.options.prevLink).addEvent('click', function(){
 				this.back();
 			}.bind(this));
 		}
@@ -65,8 +65,8 @@ var SimpleSlideShow = new Class({
 	disableLinks: function(now){
 		if (this.options.wrap) return;
 		now = $pick(now, this.now);
-		var prev = document.id(this.options.prevLink);
-		var next = document.id(this.options.nextLink);
+		var prev = $(this.options.prevLink);
+		var next = $(this.options.nextLink);
 		var dlc = this.options.disabledLinkClass;
 		if (now > 0) {
 			if (prev) prev.removeClass(dlc);
@@ -145,7 +145,7 @@ SimpleSlideShow.Carousel = new Class({
 	},
 	initialize: function(container, options){
 		this.setOptions(options);
-		this.container = document.id(container);
+		this.container = $(container);
 		this.element = new Element('div').wraps(this.container).setStyles({
 			width: this.container.getSize().x,
 			overflow: 'hidden',
@@ -168,7 +168,7 @@ SimpleSlideShow.Carousel = new Class({
 		var s = new Element('div', {
 			styles: {
 				'float': 'left',
-				width: document.id(this).getSize().x
+				width: $(this).getSize().x
 			}
 		}).wraps(slide);
 		this.parent(s);
@@ -214,7 +214,7 @@ var SimpleImageSlideShow;
 			},
 			initialize: function(){
 				var args = Array.link(arguments, {options: Object.type, container: $defined});
-				this.container = document.id(args.container) || (args.options?document.id(args.options.container):false); //legacy
+				this.container = $(args.container) || (args.options?$(args.options.container):false); //legacy
 				if (passContainer) this.parent(this.container, args.options);
 				else this.parent(args.options);
 				this.options.imgUrls.each(function(url){

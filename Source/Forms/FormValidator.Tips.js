@@ -49,7 +49,7 @@ FormValidator.Tips = new Class({
 			this.advices.push(advice);
 			advice.msgs = {};
 			field.store('PointyTip', advice);
-			document.id(advice).addClass(cssClass).set('id', 'advice-'+className+'-'+this.getFieldId(field));			
+			$(advice).addClass(cssClass).set('id', 'advice-'+className+'-'+this.getFieldId(field));			
 		}
 		field.store('advice-'+className, advice);
 		this.appendAdvice(className, field, error, warn);
@@ -109,16 +109,16 @@ FormValidator.Tips = new Class({
 		//Check for error position prop
 		var props = field.get('validatorProps');
 		//Build advice
-		if (!props.msgPos || !document.id(props.msgPos)) {
+		if (!props.msgPos || !$(props.msgPos)) {
 			switch (field.type.toLowerCase()) {
 				case 'radio':
 					var p = field.getParent().adopt(advice);
 					break;
 				default: 
-					document.id(advice).inject(document.id(field), 'after');
+					$(advice).inject($(field), 'after');
 			};
 		} else {
-			document.id(props.msgPos).grab(advice);
+			$(props.msgPos).grab(advice);
 		}
 		advice.position();
 	}

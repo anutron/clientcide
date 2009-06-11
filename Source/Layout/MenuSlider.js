@@ -21,8 +21,8 @@ var MenuSlider = new Class({
 		useIframeShim: true
 	},
 	initialize: function(menu, subMenu, options) {
-		this.menu = document.id(menu);
-		this.subMenu = document.id(subMenu);
+		this.menu = $(menu);
+		this.subMenu = $(subMenu);
 		this.setOptions(options);
 		this.makeSlider();
 		this.hoverGroup = new HoverGroup($merge(this.options.hoverGroupOptions, {

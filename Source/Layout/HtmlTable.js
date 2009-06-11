@@ -36,7 +36,7 @@ var HtmlTable = new Class({
 			var td = new Element('td').inject(tr);
 			if (tdata.properties) td.setProperties(tdata.properties);
 			function setContent(content){
-				if (document.id(content)) td.adopt(document.id(content));
+				if ($(content)) td.adopt($(content));
 				else td.set('html', content);
 			};
 			if ($defined(tdata.content)) setContent(tdata.content);

@@ -35,8 +35,8 @@ var Lightbox = new Class({
 		var args = Array.link(arguments, {options: Object.type, links: Array.type});
 		this.setOptions(args.options);
 		var anchors = args.links || this.options.anchors;
-		if (this.options.autoScanLinks && !anchors) anchors = document.id('a[rel^='+this.options.relString+']');
-		if (!document.id(anchors).length) return; //no links!
+		if (this.options.autoScanLinks && !anchors) anchors = $$('a[rel^='+this.options.relString+']');
+		if (!$$(anchors).length) return; //no links!
 		this.addAnchors(anchors);
 		if (this.options.useDefaultCss) this.addCss();
 		window.addEvent('domready', this.addHtmlElements.bind(this));
@@ -45,7 +45,7 @@ var Lightbox = new Class({
 	anchors: [],
 	
 	addAnchors: function(anchors){
-		document.id(anchors).each(function(el){
+		$$(anchors).each(function(el){
 			if (!el.retrieve('lightbox')) {
 				el.store('lightbox', this);
 				this.attach(el);
@@ -128,7 +128,7 @@ var Lightbox = new Class({
 	
 	addCss: function(){
 		window.addEvent('domready', function(){
-			if (document.id('LightboxCss')) return;
+			if ($('LightboxCss')) return;
 			new Element('link', {
 				rel: 'stylesheet', 
 				media: 'screen', 
@@ -140,7 +140,7 @@ var Lightbox = new Class({
 	},
 
 	click: function(el){
-		link = document.id(el);
+		link = $(el);
 		var rel = link.get('rel')||this.options.relString;
 		if (rel == this.options.relString) return this.show(link.get('href'), link.get('title'));
 
@@ -176,8 +176,8 @@ var Lightbox = new Class({
 	},
 
 	setup: function(open){
-		var elements = document.id('iframe');
-		elements.extend(document.id(Browser.Engine.trident ? 'select' : 'embed, object'));
+		var elements = $$('iframe');
+		elements.extend($$(Browser.Engine.trident ? 'select' : 'embed, object'));
 		elements.reverse().each(function(el){
 			if (open) el.store('lbBackupStyle', el.getStyle('visibility') || 'visible');
 			var vis = (open ? 'hidden' : el.retrieve('lbBackupStyle') || 'visible');
@@ -240,9 +240,9 @@ var Lightbox = new Class({
 			this.caption.set('html',this.images[this.activeImage][1] || '');
 			this.number.set('html',(!this.options.showCounter || (this.images.length == 1)) ? '' : 'Image '+(this.activeImage+1)+' of '+this.images.length);
 
-			if (this.activeImage) document.id(this.preloadPrev).set('src', this.images[this.activeImage-1][0]);
+			if (this.activeImage) $(this.preloadPrev).set('src', this.images[this.activeImage-1][0]);
 			if (this.activeImage != (this.images.length - 1)) 
-				document.id(this.preloadNext).set('src',  this.images[this.activeImage+1][0]);
+				$(this.preloadNext).set('src',  this.images[this.activeImage+1][0]);
 			if (this.center.clientHeight != this.image.offsetHeight){
 				this.fx.resize.start({height: this.image.offsetHeight});
 				break;
@@ -291,4 +291,4 @@ var Lightbox = new Class({
 		return;
 	}
 });
-window.addEvent('domready', function(){if (document.id(document.body).get('html').match(/rel=?.lightbox/i)) new Lightbox()});
+window.addEvent('domready', function(){if ($(document.body).get('html').match(/rel=?.lightbox/i)) new Lightbox()});

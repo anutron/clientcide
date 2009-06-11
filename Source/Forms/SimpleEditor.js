@@ -9,7 +9,7 @@ var SimpleEditor = new Class({
 	Implements: [Class.ToElement, Class.Occlude],
 	property: 'SimpleEditor',
 	initialize: function(input, buttons, commands){
-		this.element = $(input);
+		this.element = document.id(input);
 		if (this.occlude()) return this.occluded;
 		this.commands = new Hash($extend(SimpleEditor.commands, commands||{}));
 		this.buttons = $$(buttons);
@@ -18,7 +18,7 @@ var SimpleEditor = new Class({
 				this.exec(button.get('rel'));
 			}.bind(this));
 		}.bind(this));
-		$(this).addEvent('keydown', function(e){
+		document.id(this).addEvent('keydown', function(e){
 			if (e.control||e.meta) {
 				var key = this.shortCutToKey(e.key, e.shift);
 				if (key) {
@@ -47,16 +47,16 @@ var SimpleEditor = new Class({
 	},
 	exec: function(key){
 		var currentScrollPos; 
-		if ($(this).scrollTop || $(this).scrollLeft) {
+		if (document.id(this).scrollTop || document.id(this).scrollLeft) {
 			currentScrollPos = {
-				scrollTop: $(this).getScroll().y,
-				scrollLeft: $(this).getScroll().x
+				scrollTop: document.id(this).getScroll().y,
+				scrollLeft: document.id(this).getScroll().x
 			};
 		}
-		if (this.commands.has(key)) this.commands.get(key).command($(this));
+		if (this.commands.has(key)) this.commands.get(key).command(document.id(this));
 		if (currentScrollPos) {
-			$(this).set('scrollTop', currentScrollPos.getScroll().y);
-			$(this).set('scrollLeft', currentScrollPos.getScroll().x);
+			document.id(this).set('scrollTop', currentScrollPos.getScroll().y);
+			document.id(this).set('scrollLeft', currentScrollPos.getScroll().x);
 		}
 	}
 });

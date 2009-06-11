@@ -31,7 +31,7 @@ var Modalizer = new Class({
 	},
 	layer: function(){
 		if (!this.modalOptions.layerId) this.setModalOptions();
-		return $(this.modalOptions.layerId) || new Element('div', {id: this.modalOptions.layerId}).inject(document.body);
+		return document.id(this.modalOptions.layerId) || new Element('div', {id: this.modalOptions.layerId}).inject(document.body);
 	},
 	resize: function(){
 		if (this.layer()) {

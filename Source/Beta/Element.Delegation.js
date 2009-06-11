@@ -19,7 +19,7 @@ Script: Element.Delegation.js
 	var check = function(e, test){
 		// walk up tree from event target, testing against selector
 		for (var t = e.target; t && t != this; t = t.parentNode)
-			if (Element.match(t, test)) return $(t);
+			if (Element.match(t, test)) return document.id(t);
 	};
 	
 	var regs = {

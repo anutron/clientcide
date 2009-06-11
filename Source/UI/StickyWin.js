@@ -76,7 +76,7 @@ var StickyWin = new Class({
 	},
 	makeWindow: function(){
 		this.destroyOthers();
-		if (!$(this.id)) {
+		if (!document.id(this.id)) {
 			this.win = new Element('div', {
 				id:		this.id
 			}).addClass(this.options.className).addClass('StickyWinInstance').addClass('SWclearfix').setStyles({
@@ -84,7 +84,7 @@ var StickyWin = new Class({
 				position:'absolute',
 				zIndex:this.options.zIndex
 			}).inject(this.options.inject.target, this.options.inject.where).store('StickyWin', this);			
-		} else this.win = $(this.id);
+		} else this.win = document.id(this.id);
 		this.element = this.win;
 		if (this.options.width && $type(this.options.width.toInt())=="number") this.win.setStyle('width', this.options.width.toInt());
 		if (this.options.height && $type(this.options.height.toInt())=="number") this.win.setStyle('height', this.options.height.toInt());
@@ -122,7 +122,7 @@ var StickyWin = new Class({
 	setContent: function(html) {
 		if (this.win.getChildren().length>0) this.win.empty();
 		if ($type(html) == "string") this.win.set('html', html);
-		else if ($(html)) this.win.adopt(html);
+		else if (document.id(html)) this.win.adopt(html);
 		this.win.getElements('.'+this.options.closeClassName).each(function(el){
 			el.addEvent('click', this.hide);
 		}, this);
@@ -180,7 +180,7 @@ var StickyWin = new Class({
 	destroy: function(){
 		if (this.win) this.win.destroy();
 		if (this.options.useIframeShim && this.shim) this.shim.destroy();
-		if ($('modalOverlay')) $('modalOverlay').destroy();
+		if (document.id('modalOverlay')) document.id('modalOverlay').destroy();
 		this.fireEvent('destroy');
 	}
 });

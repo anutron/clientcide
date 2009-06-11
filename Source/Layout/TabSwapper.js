@@ -48,7 +48,7 @@ var TabSwapper = new Class({
 		}, this);
 	},
 	addTab: function(tab, section, clicker, index){
-		tab = $(tab); clicker = $(clicker); section = $(section);
+		tab = document.id(tab); clicker = document.id(clicker); section = document.id(section);
 		//if the tab is already in the interface, just move it
 		if (this.tabs.indexOf(tab) >= 0 && tab.retrieve('tabbered') 
 			 && this.tabs.indexOf(tab) != index && this.options.rearrangeDOM) {

@@ -28,7 +28,7 @@ var PostEditor = new Class({
 
 	initialize: function(el, options){
 		if (Browser.Engine.trident) return;
-		this.element = $(el);
+		this.element = document.id(el);
 		this.setOptions(options);
 		this.styles = {
 			line_height: this.element.getStyle('line-height').toInt() || 14,

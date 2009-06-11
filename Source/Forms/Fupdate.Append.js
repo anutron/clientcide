@@ -19,10 +19,10 @@ Fupdate.Append = new Class({
 
 	makeRequest: function(){
 		this.request = new Request.HTML($merge({
-				url: $(this).get('action'),
-				method: $(this).get('method') || 'post',
+				url: document.id(this).get('action'),
+				method: document.id(this).get('method') || 'post',
 				emulation: false,
-				waiterTarget: $(this)
+				waiterTarget: document.id(this)
 			}, this.options.requestOptions, {
 				evalScripts: false
 			})

@@ -27,8 +27,8 @@ var MooScroller = new Class({
 		this.setOptions(options);
 		this.horz = (this.options.mode == "horizontal");
 
-		this.content = $(content).setStyle('overflow', 'hidden');
-		this.knob = $(knob);
+		this.content = document.id(content).setStyle('overflow', 'hidden');
+		this.knob = document.id(knob);
 		this.track = this.knob.getParent();
 		this.setPositions();
 		
@@ -58,7 +58,7 @@ var MooScroller = new Class({
 			$clear(this.scrolling);
 		}.bind(this);
 		['forward','back'].each(function(direction) {
-			var lnk = $(this.options.scrollLinks[direction]);
+			var lnk = document.id(this.options.scrollLinks[direction]);
 			if (lnk) {
 				lnk.addEvents({
 					mousedown: function() {
@@ -72,7 +72,7 @@ var MooScroller = new Class({
 		this.knob.addEvent('click', clearScroll.bind(this));
 		window.addEvent('domready', function(){
 			try {
-				$(document.body).addEvent('mouseup', clearScroll.bind(this));
+				document.id(document.body).addEvent('mouseup', clearScroll.bind(this));
 			}catch(e){}
 		}.bind(this));
 	},

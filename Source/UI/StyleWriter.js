@@ -11,7 +11,7 @@ var StyleWriter = new Class({
 	createStyle: function(css, id) {
 		window.addEvent('domready', function(){
 			try {
-				if ($(id) && id) return;
+				if (document.id(id) && id) return;
 				var style = new Element('style', {id: id||''}).inject($$('head')[0]);
 				if (Browser.Engine.trident) style.styleSheet.cssText = css;
 				else style.set('text', css);

@@ -23,7 +23,7 @@ var SimpleCarousel = new Class({
 		autoplay: true
 	},
 	initialize: function(container, slides, buttons, options){
-		this.container = $(container);
+		this.container = document.id(container);
 		var instance = this.container.retrieve('SimpleCarouselInstance');
 		if (instance) return instance;
 		this.container.store('SimpleCarouselInstance', this);
@@ -42,7 +42,7 @@ var SimpleCarousel = new Class({
 	},
 	setupAction: function(action) {
 		this.buttons.each(function(el, idx){
-			$(el).addEvent(action, function() {
+			document.id(el).addEvent(action, function() {
 				this.slideFx.setOptions(this.slideFx.options, {duration: this.options.rotateActionDuration});
 				if (this.currentSlide != idx) this.showSlide(idx);
 				this.stop();
@@ -59,12 +59,12 @@ var SimpleCarousel = new Class({
 		var action = {};
 		this.slides.each(function(slide, index){
 			if (index == slideIndex && index != this.currentSlide){ //show
-				$(this.buttons[index]).swapClass(this.options.buttonOffClass, this.options.buttonOnClass);
+				document.id(this.buttons[index]).swapClass(this.options.buttonOffClass, this.options.buttonOnClass);
 				action[index.toString()] = {
 					opacity: 1
 				};
 			} else {
-				$(this.buttons[index]).swapClass(this.options.buttonOnClass, this.options.buttonOffClass);
+				document.id(this.buttons[index]).swapClass(this.options.buttonOnClass, this.options.buttonOffClass);
 				action[index.toString()] = {
 					opacity:0
 				};

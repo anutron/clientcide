@@ -128,7 +128,7 @@ var Lightbox = new Class({
 	
 	addCss: function(){
 		window.addEvent('domready', function(){
-			if ($('LightboxCss')) return;
+			if (document.id('LightboxCss')) return;
 			new Element('link', {
 				rel: 'stylesheet', 
 				media: 'screen', 
@@ -140,7 +140,7 @@ var Lightbox = new Class({
 	},
 
 	click: function(el){
-		link = $(el);
+		link = document.id(el);
 		var rel = link.get('rel')||this.options.relString;
 		if (rel == this.options.relString) return this.show(link.get('href'), link.get('title'));
 
@@ -240,9 +240,9 @@ var Lightbox = new Class({
 			this.caption.set('html',this.images[this.activeImage][1] || '');
 			this.number.set('html',(!this.options.showCounter || (this.images.length == 1)) ? '' : 'Image '+(this.activeImage+1)+' of '+this.images.length);
 
-			if (this.activeImage) $(this.preloadPrev).set('src', this.images[this.activeImage-1][0]);
+			if (this.activeImage) document.id(this.preloadPrev).set('src', this.images[this.activeImage-1][0]);
 			if (this.activeImage != (this.images.length - 1)) 
-				$(this.preloadNext).set('src',  this.images[this.activeImage+1][0]);
+				document.id(this.preloadNext).set('src',  this.images[this.activeImage+1][0]);
 			if (this.center.clientHeight != this.image.offsetHeight){
 				this.fx.resize.start({height: this.image.offsetHeight});
 				break;
@@ -291,4 +291,4 @@ var Lightbox = new Class({
 		return;
 	}
 });
-window.addEvent('domready', function(){if ($(document.body).get('html').match(/rel=?.lightbox/i)) new Lightbox()});
+window.addEvent('domready', function(){if (document.id(document.body).get('html').match(/rel=?.lightbox/i)) new Lightbox()});

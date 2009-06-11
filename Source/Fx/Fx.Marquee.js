@@ -21,7 +21,7 @@ Fx.Marquee = new Class({
 		onMessage: $empty */
 	},
 	initialize: function(container, options){
-		container = $(container); 
+		container = document.id(container); 
 		var msg = this.options.currentMessage || (container.getChildren().length == 1)?container.getFirst():''; 
 		var wrapper = new Element('div', {	
 				styles: { position: 'relative' },
@@ -31,8 +31,8 @@ Fx.Marquee = new Class({
 		this.current = this.wrapMessage(msg);
 	},
 	wrapMessage: function(msg){
-		if ($(msg) && $(msg).hasClass('fxMarquee')) { //already set up
-			var wrapper = $(msg);
+		if (document.id(msg) && document.id(msg).hasClass('fxMarquee')) { //already set up
+			var wrapper = document.id(msg);
 		} else {
 			//create the wrapper
 			var wrapper = new Element('span', {
@@ -41,7 +41,7 @@ Fx.Marquee = new Class({
 					position: 'relative'
 				}
 			});
-			if ($(msg)) wrapper.grab($(msg)); //if the message is a dom element, inject it inside the wrapper
+			if (document.id(msg)) wrapper.grab(document.id(msg)); //if the message is a dom element, inject it inside the wrapper
 			else if ($type(msg) == "string") wrapper.set('html', msg); //else set it's value as the inner html
 		}
 		return wrapper.inject(this.element); //insert it into the container
@@ -57,9 +57,9 @@ Fx.Marquee = new Class({
 			var chain = this.$chain?$A(this.$chain):[];
 			//clear teh chain
 			this.clearChain();
-			this.element = $(this.element);
-			this.current = $(this.current);
-			this.message = $(this.message);
+			this.element = document.id(this.element);
+			this.current = document.id(this.current);
+			this.message = document.id(this.message);
 			//execute the hide effect
 			this.start(this.options.hideEffect).chain(function(){
 				//if we're reverting, hide the message and show the original

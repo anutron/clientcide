@@ -19,7 +19,7 @@ var Observer = new Class({
 	initialize: function(el, onFired, options){
 		this.setOptions(options);
 		this.addEvent('onFired', onFired);
-		this.element = $(el) || $$(el);
+		this.element = document.id(el) || $$(el);
 		/* Clientcide change */
 		this.boundChange = this.changed.bind(this);
 		this.resume();

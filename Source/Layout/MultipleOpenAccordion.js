@@ -38,8 +38,8 @@ var MultipleOpenAccordion = new Class({
 		this.closeSections = this.hideSections.bind(this);
 	},
 	addSection: function(toggler, element){
-		toggler = $(toggler);
-		element = $(element);
+		toggler = document.id(toggler);
+		element = document.id(element);
 		var test = this.togglers.contains(toggler);
 		var len = this.togglers.length;
 		this.togglers.include(toggler);

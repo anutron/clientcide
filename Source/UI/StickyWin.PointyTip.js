@@ -32,7 +32,7 @@ StickyWin.PointyTip = new Class({
 		this.options.content = null;
 		this.setOptions(args.options, this.getPositionSettings());
 		this.parent(this.options);
-		this.win.empty().adopt($(this.pointy));
+		this.win.empty().adopt(document.id(this.pointy));
 		this.attachHandlers(this.win);
 		if (this.options.showNow) this.position();
 	},

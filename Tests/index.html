@@ -3,23 +3,33 @@
 <head>
 	<title>Unit Tester</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<script src="assets/mootools-1.2.js" type="text/javascript"></script>
-	<script src="assets/mootools-more-1.2.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/clientside.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/UnitTester.js" type="text/javascript"></script>
-	<script src="assets/posteditor.js" type="text/javascript"></script>
-	<script src="assets/Debugger.cnet.js" type="text/javascript"></script>
-	<script src="config.js" type="text/javascript"></script>
+</head>
+<body>
 	<script>
+		var path = '../UnitTester/';
+		function scripter(scr) {
+			console.log(scr, "<scri"+"pt src=\""+scr+"\"> </scr"+"ipt>");
+			document.write("<scri"+"pt src='"+scr+"'> </scr"+"ipt>");
+		};
+		debug = {
+			path: path
+		};
+		scripter(path+'assets/mootools-1.2.js');
+		scripter(path+'assets/mootools-more-1.2.js');
+		scripter(path+'assets/clientside.js');
+		scripter(path+'assets/UnitTester.js');
+		scripter(path+'assets/posteditor.js');
+		scripter(path+'assets/Debugger.cnet.js');
+		document.write('<link rel="STYLESHEET" type="text/css" href="'+path+'assets/tests.css"/>');
+	</script>
+	<script>
+		setCNETAssetBaseHref(path + 'assets/');
 		window.addEvent('domready', function(){
 			$('script').set('value', '');
 			new PostEditor('script');
 		});
 	</script>
 
-	<link rel="STYLESHEET" type="text/css" href="assets/tests.css">
-</head>
-<body>
 	<div id="title">
 		<h1>
 			<div style="float:right; margin-right: 20px">
@@ -36,7 +46,7 @@
 				</dl>
 			</div>
 			<div id="testFrameContainer">
-				<iframe src="test_frame.html" id="testFrame"></iframe>
+				<iframe src="../UnitTester/test_frame.html" id="testFrame"></iframe>
 				<div>
 					<b>manual code entry:</b>
 					<center>

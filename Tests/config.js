@@ -1,7 +1,7 @@
 var UnitTester = {
 	site: 'Clientcide',
 	title: 'Unit Tests',
-	path: '../UnitTester/',
+	path: 'UnitTester/',
 	ready: function(){
 		var sources = {
 			mootoolsCore: '../../core',

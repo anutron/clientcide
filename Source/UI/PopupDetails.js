@@ -25,7 +25,6 @@ var PopupDetail = new Class({
 		delayOn: 100,
 		delayOff: 100,
 		stickyWinOptions:{},
-		stickyWinToUse: StickyWin,
 		showNow: false,
 		htmlResponse: false,
 		regExp: /\\?%([^%]+)%/g
@@ -33,7 +32,9 @@ var PopupDetail = new Class({
 		onPopupHide: $empty */
 	},
 	initialize: function(html, observer, options){
-		this.setOptions(options);
+		this.setOptions({
+			stickyWinToUse: StickyWin
+		}, options);
 		this.observer = document.id(observer);
 		this.html = (document.id(html))?document.id(html).get('html'):html||'';
 		if (this.options.showNow) this.show.delay(this.options.delayOn, this);
@@ -145,8 +146,7 @@ var PopupDetailCollection = new Class({
 		this.setOptions(options);
 		var ln = this.options.ajaxLinks.length;
 		if (ln <= 0) ln = this.options.details.length;
-		if (this.observers.length != ln) 
-			dbug.log("warning: observers and details are out of sync.");
+		if (this.observers.length != ln) dbug.log("warning: observers and details are out of sync.");
 		this.makePopupDetails();
 	},
 	makePopupDetails: function(){

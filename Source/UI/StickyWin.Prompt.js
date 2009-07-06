@@ -40,7 +40,7 @@ StickyWin.Prompt = new Class({
 			this.fireEvent('confirm', this.input.get('value'));
 		}.bind(this));
 	}
-})
+});
 
 StickyWin.prompt = function(caption, message, callback, options) {
 	return new StickyWin.Prompt(caption, message, options).addEvent('confirm', callback);

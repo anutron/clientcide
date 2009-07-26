@@ -6,8 +6,7 @@ License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
 var InputFocus = new Class({
-	Implements: [Options, Class.Occlude, Class.ToElement],
-	Binds: ['focus', 'blur'],
+	Implements: [Options, Class.Occlude, Class.ToElement, Class.Binds],
 	options: {
 		focusedClass: 'focused',
 		hideOutline: false
@@ -17,8 +16,8 @@ var InputFocus = new Class({
 		if (this.occlude('focuser')) return this.occluded;
 		this.setOptions(options);
 		this.element.addEvents({
-			focus: this.focus,
-			blur: this.blur
+			focus: this.bound('focus'),
+			blur: this.bound('blur')
 		});
 	},
 	focus: function(){

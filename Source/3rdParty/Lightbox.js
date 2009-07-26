@@ -8,8 +8,7 @@ Script: Lightbox.js
 
 */
 var Lightbox = new Class({
-	Implements: [Options, Events, Modalizer],
-	Binds: ['click', 'keyboardListener', 'addHtmlElements'],
+	Implements: [Options, Events, Modalizer, Class.Binds],
 	options: {
 //		anchors: null,
 		resizeDuration: 400,
@@ -39,7 +38,7 @@ var Lightbox = new Class({
 		if (!$$(anchors).length) return; //no links!
 		this.addAnchors(anchors);
 		if (this.options.useDefaultCss) this.addCss();
-		window.addEvent('domready', this.addHtmlElements.bind(this));
+		window.addEvent('domready', this.bound('addHtmlElements'));
 	},
 		
 	anchors: [],
@@ -54,7 +53,7 @@ var Lightbox = new Class({
 	},
 	
 	attach: function(el) {		
-		el.addEvent('click', this.click.pass(el, this));
+		el.addEvent('click', this.bound('click').pass(el, this));
 		this.anchors.include(el);
 	},
 
@@ -184,7 +183,7 @@ var Lightbox = new Class({
 			el.setStyle('visibility', vis);
 		});
 		var fn = open ? 'addEvent' : 'removeEvent';
-		document[fn]('keydown', this.keyboardListener);
+		document[fn]('keydown', this.bound('keyboardListener'));
 		this.step = 0;
 	},
 

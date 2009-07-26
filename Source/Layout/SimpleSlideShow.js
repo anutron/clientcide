@@ -139,7 +139,6 @@ var SimpleSlideShow = new Class({
 SimpleSlideShow.Carousel = new Class({
 	Extends: SimpleSlideShow,
 	Implements: [Class.ToElement],
-	Binds: ['makeSlide'],
 	options: {
 		sliderWidth: 999999
 	},
@@ -159,7 +158,7 @@ SimpleSlideShow.Carousel = new Class({
 	},
 	makeSlides: function(slides) {
 		this.slides = [];
-		slides.each(this.makeSlide);
+		slides.each(this.makeSlide, this);
 	},
 	makeSlide: function(slide) {
 		if (slide.retrieve('slideSetup')) return;

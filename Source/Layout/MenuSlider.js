@@ -6,8 +6,7 @@ License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
 var MenuSlider = new Class({
-	Implements: [Options, Events],
-	Binds: ['slideIn', 'slideOut'],
+	Implements: [Options, Events, Class.Binds],
 	options: {
 	/*	onIn: $empty,
 		onInStart: $empty,
@@ -27,8 +26,8 @@ var MenuSlider = new Class({
 		this.makeSlider();
 		this.hoverGroup = new HoverGroup($merge(this.options.hoverGroupOptions, {
 			elements: [this.menu, this.subMenu],
-			onEnter: this.slideIn,
-			onLeave: this.slideOut
+			onEnter: this.bound('slideIn'),
+			onLeave: this.bound('slideOut')
 		}));
 	},
 	makeSlider: function(){

@@ -68,7 +68,7 @@ StickyWin.Error = new Class({
 
 StickyWin.alert = function(caption, message, options) {
 	if ($type(options) == "string") options = {baseHref: options};
-	return new StickyWin.Alert(caption, message);
+	return new StickyWin.Alert(caption, message, options);
 };
 
 StickyWin.error = function(caption, message, options) {

@@ -26,8 +26,7 @@
 		"StickyWin.Alert":['all'],
 		"StickyWin.Confirm":['all'],
 		"StickyWin.Prompt":['all'],
-		"Tips.Pointy":['all'],
-		"Waiter":['all']
+		"Tips.Pointy":['all']
 	},
 	"Layout": {
 		"Collapsable":['all'],
@@ -40,8 +39,6 @@
 	},
 	"Forms":{
 		"FormValidator.Tips":['all'],
-		"Fupdate": ['all'],
-		"Fupdate.Append": ['all'],
 		"Fupdate.Prompt": ['all'],
 		"Confirmer": ['all'],
 		"DatePicker": ['all'],
@@ -54,7 +51,6 @@
 		"Lightbox":['all']
 	},
 	"Beta":{
-		"Element.Delegation":['all'],
 		"PostEditor.Forum":['all']
 	}
 }

@@ -109,11 +109,6 @@
 		"Tips.Pointy":{
 			"deps":["Tips", "StickyWin.PointyTip"],
 			"desc":"Creates Tips using the StickyWin.PointyTip layout."
-		},
-		"Waiter":{
-			"deps": ["Fx.Elements", "Class.Refactor", "Element.Shortcuts", "Element.Position", "IframeShim"],
-			"optional": ["Request.HTML"],
-			"desc": "Adds a semi-transparent overlay over a dom element with a spinnin ajax icon."
 		}
 	},
 	"Layout":{
@@ -171,14 +166,6 @@
 		"FormValidator.Tips":{
 			"deps":["FormValidator.Inline","StickyWin.PointyTip"],
 			"desc":"FormValidator using StickyWin.PointyTip."
-		},
-		"Fupdate":{
-			"deps":["Element.Event",  "Request.HTML", "Class.ToElement", "Class.Occlude", "Waiter", "String.QueryString"],
-			"desc":"Handles the basic functionality of submitting a form and updating a dom element with the result."
-		},
-		"Fupdate.Append":{
-			"deps": ["Fupdate", "Fx.Reveal"],
-			"desc":"Uses Fupdate to fetch and update a DOM element, but appends the result into the target instead of overwriting its contents."
 		},
 		"Fupdate.Prompt":{
 			"deps":["Fupdate.Append", "StickyWin.Modal", "StickyWin.Ajax"],
@@ -246,6 +233,11 @@
 			"desc":"SimpleEditor messages in French (feel free to send in your own translations).",
 			"exclude": true
 		},
+		"SimpleEditor.Italian":{
+			"deps":["Lang"],
+			"desc":"SimpleEditor messages in Italian (feel free to send in your own translations).",
+			"exclude": true
+		},
 		"SimpleEditor.Portuguese":{
 			"deps":["Lang"],
 			"desc":"SimpleEditor messages in Portuguese (feel free to send in your own translations).",
@@ -258,11 +250,6 @@
 		}
 	},
 	"Beta": {
-		"Element.Delegation": {
-			"deps":["Element.Event"],
-			"desc":"Delegates events for child elements to their parents for greater efficiency.",
-			"exclude": true
-		},
 		"PostEditor": {
 			"deps": ["Class.Extras", "Element.Style", "Element.Event"],
 			"desc": "A MooTools 1.2.2 version of <a href=\"http://icebeat.bitacoras.com/mootools/posteditor/\">PostEditor</a>."

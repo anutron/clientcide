@@ -5,12 +5,12 @@ Contains the messages for [SimpleEditor][] in Italian.
 
 ### Authors
 
-* Miquel Hudin
+* Marco Cervellin
 
 ### Usage
 
-Simply change the language property to *es-ES*.
+Simply change the language property to *it-IT*.
 
-	MooTools.lang.setLanguage("es-ES");
+	MooTools.lang.setLanguage("it-IT");
 
 [SimpleEditor]: http://www.clientcide.com/docs/Forms/SimpleEditor

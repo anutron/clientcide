@@ -8,7 +8,8 @@ License:
 */
 
 var StickyWin = new Class({
-	Implements: [Options, Events, StyleWriter, Class.ToElement, Class.Binds],
+	Binds: ['destroy', 'hide', 'togglepin', 'esc'],
+	Implements: [Options, Events, StyleWriter, Class.ToElement],
 	options: {
 //		onDisplay: $empty,
 //		onClose: $empty,
@@ -59,14 +60,14 @@ var StickyWin = new Class({
 		//add css for clearfix
 		this.createStyle(this.css, 'StickyWinClearFix');
 		if (this.options.closeOnClickOut || this.options.closeOnEsc) this.attach();
-		if (this.options.destroyOnClose) this.addEvent('close', this.bound('destroy'));
+		if (this.options.destroyOnClose) this.addEvent('close', this.destroy);
 		if (this.options.showNow) this.show();
 	},
 	attach: function(attach){
 		var method = $pick(attach, true) ? 'addEvents' : 'removeEvents';
 		var events = {};
-		if (this.options.closeOnClickOut) events.click = this.bound('esc');
-		if (this.options.closeOnEsc) events.keyup = this.bound('esc');
+		if (this.options.closeOnClickOut) events.click = this.esc;
+		if (this.options.closeOnEsc) events.keyup = this.esc;
 		document[method](events);
 	},
 	esc: function(e) {
@@ -123,10 +124,10 @@ var StickyWin = new Class({
 		if ($type(html) == "string") this.win.set('html', html);
 		else if (document.id(html)) this.win.adopt(html);
 		this.win.getElements('.'+this.options.closeClassName).each(function(el){
-			el.addEvent('click', this.bound('hide'));
+			el.addEvent('click', this.hide);
 		}, this);
 		this.win.getElements('.'+this.options.pinClassName).each(function(el){
-			el.addEvent('click', this.bound('togglepin'));
+			el.addEvent('click', this.togglepin);
 		}, this);
 		return this;
 	},

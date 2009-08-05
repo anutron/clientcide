@@ -1,5 +1,6 @@
 var HoverGroup = new Class({
-	Implements: [Options, Events, Class.Binds],
+	Implements: [Options, Events],
+	Binds: ['enter', 'leave', 'remain'],
 	options: {
 		//onEnter: $empty,
 		//onLeave: $empty,
@@ -26,13 +27,13 @@ var HoverGroup = new Class({
 		var starters = {}, remainers = {}, enders = {};
 		elements = $G(elements);
 		this.options.start.each(function(start) {
-			starters[start] = this.bound('enter');
+			starters[start] = this.enter;
 		}, this);
 		this.options.end.each(function(end) {
-			enders[end] = this.bound('leave');
+			enders[end] = this.leave;
 		}, this);
 		this.options.remain.each(function(remain){
-			remainers[remain] = this.bound('remain');
+			remainers[remain] = this.remain;
 		}, this);
 		if (detach) {
 			elements.each(function(el) {

@@ -12,7 +12,7 @@ Fupdate.Append = new Class({
 
 	options: {
 		//onBeforeEffect: $empty,
-		useReveal: !!(window.Fx && Fx.Reveal),
+		useReveal: true,
 		revealOptions: {},
 		inject: 'bottom'
 	},

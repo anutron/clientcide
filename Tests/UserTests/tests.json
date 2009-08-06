@@ -30,7 +30,6 @@
 	},
 	"Layout": {
 		"Collapsable":['all'],
-		"HtmlTable":['all'],
 		"MultipleOpenAccordion":['all'],
 		"MooScroller":['all'],
 		"SimpleCarousel":['all'],

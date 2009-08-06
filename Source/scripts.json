@@ -120,10 +120,6 @@
 			"deps":["Class.Extras", "Element.Event", "Class.Binds", "DollarG"],
 			"desc":"Manages mousing in and out of multiple objects (think drop-down menus)."
 		},
-		"HtmlTable":{
-			"deps":["Element", "Class.Extras", "Clientcide"],
-			"desc":"Builds table elements with methods to add rows quickly."
-		},
 		"MenuSlider": {
 			"deps":["Fx.Slide", "HoverGroup"],
 			"optional":["IframeShim"],

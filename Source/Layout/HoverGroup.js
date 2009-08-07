@@ -39,7 +39,7 @@ var HoverGroup = new Class({
 			elements.each(function(el) {
 				el.removeEvents(starters).removeEvents(enders).removeEvents(remainers);
 				this.elements.erase(el);
-			});
+			}, this);
 		} else {
 			elements.each(function(el){
 				el.addEvents(starters).addEvents(enders).addEvents(remainers);

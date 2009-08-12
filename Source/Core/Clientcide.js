@@ -17,6 +17,7 @@ var Clientcide = {
 					baseHref: clean(baseHref + '/stickyWinHTML/')
 				}
 			});
+			if ($('defaultStickyWinStyle')) $('defaultStickyWinStyle').destroy();
 			if (StickyWin.Alert) {
 				StickyWin.Alert.implement({
 					options: {
@@ -30,6 +31,7 @@ var Clientcide = {
 						baseHref: clean(baseHref + '/PointyTip/')
 					}
 				});
+				if ($('defaultPointyTipStyle')) $('defaultPointyTipStyle').destroy();
 			}
 		}
 		if (window.TagMaker) {
@@ -70,6 +72,7 @@ var Clientcide = {
 				}
 			});
 		}
+		if (Clientcide.preloaded) Clientcide.preLoadCss();
 	},
 	preLoadCss: function(){
 		if (window.StickyWin && StickyWin.ui) StickyWin.ui();

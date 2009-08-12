@@ -153,6 +153,7 @@ var TabSwapper = new Class({
 		if (this.now != idx) {
 			if (!tab.retrieve('tabFx')) 
 				tab.store('tabFx', new Fx.Morph(sect, this.options.effectOptions));
+			var overflow = sect.getStyle('overflow');
 			var start = {
 				display:'block',
 				overflow: 'hidden'
@@ -179,7 +180,10 @@ var TabSwapper = new Class({
 			if (effect) {
 				tab.retrieve('tabFx').start(effect).chain(function(){
 					this.fireEvent('onActiveAfterFx', [idx, sect, tab]);
-					sect.setStyle("height", "auto");
+					sect.setStyles({
+						height: "auto",
+						overflow: overflow
+					});
 				}.bind(this));
 			}
 			this.now = idx;

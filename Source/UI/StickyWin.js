@@ -29,7 +29,7 @@ var StickyWin = new Class({
 		width: false,
 		height: false,
 		timeout: -1,
-		allowMultipleByClass: false,
+		allowMultipleByClass: true,
 		allowMultiple: true,
 		showNow: true,
 		useIframeShim: true,

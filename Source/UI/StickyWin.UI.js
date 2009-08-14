@@ -107,7 +107,7 @@ StickyWin.UI = new Class({
 		if (this.options.closeButton) container.adopt(new Element('div').addClass('closeButton').addClass('closeSticky'));
 		return this;
 	},
-	setCaption(caption) {
+	setCaption: function(caption) {
 		return this.destroyCaption().makeCaption(caption);
 	},
 	makeCaption: function(caption) {

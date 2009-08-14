@@ -36,6 +36,28 @@ This method sets new values for the caption and the body:
 	var myUI = StickyWin.ui('A caption', 'Some body text');
 	myUI.retrieve('StickyWinUI').setContent('New caption', 'New body');
 
+StickyWin.UI method: setCaption {#StickyWin.UI}
+-----------------------------------------------
+
+This method sets the caption for an existing UI instance.
+
+### Syntax
+
+	myStickyWinUi.setCaption(caption);
+
+### Arguments
+
+1. caption - (*mixed*) A string (text or html), a DOM Element, or a DOM Element's id to be set as the caption.
+
+### Returns
+
+* *object* - This instance of StickyWin.UI
+
+### Example
+
+	var myUI = StickyWin.ui('A caption', 'Some body text');
+	myUI.retrieve('StickyWinUI').setCaption('New caption');
+
 Static Method: StickyWin.ui {#StickyWin-ui}
 ===========================================
 

@@ -1,4 +1,4 @@
-/*
+ /*
 Script: StickyWin.ui.js
 
 Creates an html holder for in-page popups using a default style.
@@ -107,6 +107,9 @@ StickyWin.UI = new Class({
 		if (this.options.closeButton) container.adopt(new Element('div').addClass('closeButton').addClass('closeSticky'));
 		return this;
 	},
+	setCaption(caption) {
+		return this.destroyCaption().makeCaption(caption);
+	},
 	makeCaption: function(caption) {
 		if (!caption) return this.destroyCaption();
 		this.caption = caption;
@@ -131,8 +134,7 @@ StickyWin.UI = new Class({
 		var args = this.getArgs.apply(this, arguments);
 		var caption = args.caption;
 		var body = args.body;
-		if (this.h1) this.destroyCaption();
-		this.makeCaption(caption);
+		this.set(caption);
 		if (document.id(body)) this.body.empty().adopt(body);
 		else this.body.set('html', body);
 		return this;

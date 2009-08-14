@@ -15,8 +15,11 @@ StickyWin = Class.refactor(StickyWin, {
 		resizeOptions: {},
 		resizeHandleSelector: ''
 	},
-	setContent: function(html){
-		this.previous(html);
+	setCaption: function(){
+		if (this.options.draggable) this.makeDraggable();
+	},
+	setContent: function(){
+		this.previous.apply(this, arguments);
 		if (this.options.draggable) this.makeDraggable();
 		if (this.options.resizable) this.makeResizable();
 		return this;

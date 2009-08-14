@@ -134,7 +134,7 @@ StickyWin.UI = new Class({
 		var args = this.getArgs.apply(this, arguments);
 		var caption = args.caption;
 		var body = args.body;
-		this.set(caption);
+		this.setCaption(caption);
 		if (document.id(body)) this.body.empty().adopt(body);
 		else this.body.set('html', body);
 		return this;

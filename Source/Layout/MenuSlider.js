@@ -7,7 +7,7 @@ License:
 */
 var MenuSlider = new Class({
 	Implements: [Options, Events],
-	Binds: ['slideIn', 'slideOut'],
+	Binds: ['slideIn', 'hide', 'slideOut'],
 	options: {
 	/*	onIn: $empty,
 		onInStart: $empty,
@@ -18,6 +18,7 @@ var MenuSlider = new Class({
 			transition: 'expo:out',
 			link: 'cancel'
 		},
+		outFx: false,
 		useIframeShim: true
 	},
 	initialize: function(menu, subMenu, options) {
@@ -44,11 +45,9 @@ var MenuSlider = new Class({
 		this.visible = true;
 		return this;
 	},
-	slideOut: function(){
-		this.hide();
-		this.fireEvent('out');
-		if (this.shim) this.shim.hide();
-		this.visible = false;
+	slideOut: function(useFx){
+		if ($pick(useFx, this.options.outFx)) this.slider.slideOut().chain(this.hide);
+		else this.hide();
 		return this;
 	},
 	hide: function(){
@@ -56,6 +55,7 @@ var MenuSlider = new Class({
 		this.hoverGroup.active = false;
 		this.slider.cancel();
 		this.slider.hide();
+		this.fireEvent('out');
 		if (this.shim) this.shim.hide();
 		this.visible = true;
 		return this;

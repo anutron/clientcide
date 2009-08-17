@@ -29,6 +29,7 @@ Slides an element down when the user interacts with a "toggler" element (think d
 * hoverGroupOptions - (*object*) Values passed to the instance of [HoverGroup][] used by the class.
 * fxOptions - (*object*) Values passed to the instance of [Fx.Morph][] used by the class.
 * useIframeShim - (*boolean*; defaults to *true*) If *true* and [IframeShim][] is present in your environment, the class integrates with IframeShim to shim the sub-menu.
+* outFx - (*boolean*) if *true* the menu slides out when hidden; otherwise hides immediately (the default);
 
 ### Example
 
@@ -53,9 +54,13 @@ MenuSlider method: slideOut {#MenuSlider:slideOut}
 
 Slides the submenu out of view. Note that, by default, there is no animation for this behavior.
 
-### Example
+### Syntax
 
-	myMenu.slideOut();
+	myMenu.slideOut(useFx);
+
+### Arguments
+
+1. useFx - (*boolean*) if *false* the menu hides immediately (same as calling *.hide*). If not specified, uses the value of *outFx* in the options (defaults to *false*).
 
 ### Returns
 

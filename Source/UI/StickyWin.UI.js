@@ -108,18 +108,22 @@ StickyWin.UI = new Class({
 		return this;
 	},
 	setCaption: function(caption) {
-		return this.destroyCaption().makeCaption(caption);
+		this.caption = caption;
+		if (!this.h1) {
+			this.makeCaption(caption);
+		} else {
+			if (document.id(caption)) this.h1.adopt(caption);
+			else this.h1.set('html', caption);
+		}
+		return this;
 	},
 	makeCaption: function(caption) {
 		if (!caption) return this.destroyCaption();
-		this.caption = caption;
 		var opt = this.options;
-		var h1Caption = new Element('h1').addClass('caption');
-		if (opt.width) h1Caption.setStyle('width', (opt.width-(opt.cornerHandle?55:40)-(opt.closeButton?10:0)));
-		if (document.id(this.caption)) h1Caption.adopt(this.caption);
-		else h1Caption.set('html', this.caption);
-		this.top_ur.adopt(h1Caption);
-		this.h1 = h1Caption;
+		this.h1 = new Element('h1').addClass('caption');
+		if (opt.width) this.h1.setStyle('width', (opt.width-(opt.cornerHandle?55:40)-(opt.closeButton?10:0)));
+		this.setCaption(caption);
+		this.top_ur.adopt(this.h1);
 		if (!this.options.cornerHandle) this.h1.addClass('dragHandle');
 		return this;
 	},
@@ -154,5 +158,5 @@ StickyWin.UI.getArgs = function(){
 };
 
 StickyWin.ui = function(caption, body, options){
-	return document.id(new StickyWin.UI(caption, body, options))
+	return document.id(new StickyWin.UI(caption, body, options));
 };

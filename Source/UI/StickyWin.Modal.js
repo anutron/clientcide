@@ -10,33 +10,29 @@ StickyWin.Modal = new Class({
 
 	Extends: StickyWin,
 
-	Implements: Modalizer,
-	
 	options: {
-		modalize: true
+		modalize: true,
+		maskOptions: {},
+		hideOnClick: true
 	},
 
-	initialize: function(options){
-		options = options||{};
-		this.setModalOptions($merge(options.modalOptions||{}, {
-			onModalHide: function(){
-					this.hide(false);
-				}.bind(this)
-			}));
+	initialize: function(options) {
+		this.options.maskTarget = document.body;
+		this.setOptions(options);
+		this.mask = new Mask(this.options.maskTarget, this.maskOptions).addEvent('click', function() {
+			if (this.options.hideOnClick) this.hide();
+		}.bind(this));
 		this.parent(options);
 	},
 
 	show: function(showModal){
-		if ($pick(showModal, this.options.modalize)) {
-			this.modalShow();
-			if (this.modalOptions.elementsToHide) this.win.getElements(this.modalOptions.elementsToHide).setStyle('opacity', 1);
-		}
+		if ($pick(showModal, this.options.modalize)) this.mask.show();
 		this.parent();
 	},
 
 	hide: function(hideModal){
-		if ($pick(hideModal, true)) this.modalHide();
-		else this.parent();
+		if ($pick(hideModal, true)) this.mask.hide();
+		this.parent();
 	}
 
 });

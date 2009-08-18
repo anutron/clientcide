@@ -75,7 +75,7 @@
 			"desc":"Extends StickyWin to create popups that fade in and out and are draggable."
 		},
 		"StickyWin.Modal":{
-			"deps":["StickyWin", "Modalizer"],
+			"deps":["StickyWin", "Mask"],
 			"desc":"This script extends StickyWin class to add Modalizer functionality."
 		},
 		"StickyWin.Ajax":{

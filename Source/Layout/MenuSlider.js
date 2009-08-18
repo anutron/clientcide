@@ -29,7 +29,7 @@ var MenuSlider = new Class({
 		this.hoverGroup = new HoverGroup($merge(this.options.hoverGroupOptions, {
 			elements: [this.menu, this.subMenu],
 			onEnter: this.slideIn,
-			onLeave: this.slideOut
+			onLeave: this.options.outFx ? this.slideOut : this.hide
 		}));
 	},
 	makeSlider: function(){
@@ -46,8 +46,7 @@ var MenuSlider = new Class({
 		return this;
 	},
 	slideOut: function(useFx){
-		if ($pick(useFx, this.options.outFx)) this.slider.slideOut().chain(this.hide);
-		else this.hide();
+		this.slider.slideOut().chain(this.hide);
 		return this;
 	},
 	hide: function(){

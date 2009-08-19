@@ -111,6 +111,8 @@ StickyWin.UI = new Class({
 		this.caption = caption;
 		if (!this.h1) {
 			this.makeCaption(caption);
+			this.window.makeDraggable();
+			
 		} else {
 			if (document.id(caption)) this.h1.adopt(caption);
 			else this.h1.set('html', caption);

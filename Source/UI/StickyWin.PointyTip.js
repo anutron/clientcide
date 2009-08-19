@@ -42,6 +42,7 @@ StickyWin.PointyTip = new Class({
 	getPositionSettings: function(){
 		var s = this.pointy.options.divotSize;
 		var d = this.options.point;
+		var offset = this.options.offset;
 		switch(d) {
 			case "left": case 8: case 9: case 10:
 				return {
@@ -51,17 +52,21 @@ StickyWin.PointyTip = new Class({
 					},
 					position: {x: 'right', y: 'center'},
 					offset: {
-						x: s
+						x: s + (offset.x || 0),
+						y: offset.y || 0
 					}
 				};
 			case "right": case 2:  case 3: case 4:
 				return {
 					edge: {
 						x: 'right', 
-						y: d==2?'top':d==4?'bottom':'center'
+						y: (d==2?'top':d==4?'bottom':'center') + (offset.y || 0)
 					},
 					position: {x: 'left', y: 'center'},
-					offset: {x: -s}
+					offset: {
+						x: -s + (offset.x || 0),
+						y: offset.y || 0
+					}
 				};
 			case "up": case 11: case 12: case 1:
 				return {
@@ -71,20 +76,20 @@ StickyWin.PointyTip = new Class({
 					},
 					position: {	x: 'center', y: 'bottom' },
 					offset: {
-						y: s,
-						x: d==11?-s:d==1?s:0
+						y: s + (offset.y || 0),
+						x: (d==11?-s:d==1?s:0) + (offset.x || 0)
 					}
 				};
 			case "down": case 5: case 6: case 7:
 				return {
 					edge: {
-						x: d==7?'left':d==5?'right':'center', 
+						x: (d==7?'left':d==5?'right':'center') + (offset.x || 0), 
 						y: 'bottom'
 					},
 					position: {x: 'center', y: 'top'},
 					offset: {
-						y: -s,
-						x: d==7?-s:d==5?s:0
+						y: -s + (offset.y || 0),
+						x: (d==7?-s:d==5?s:0) + (offset.x || 0)
 					}
 				};
 		};

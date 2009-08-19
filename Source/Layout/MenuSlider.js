@@ -46,6 +46,7 @@ var MenuSlider = new Class({
 		return this;
 	},
 	slideOut: function(useFx){
+		this.hoverGroup.active = true;
 		this.slider.slideOut().chain(this.hide);
 		return this;
 	},
@@ -56,7 +57,7 @@ var MenuSlider = new Class({
 		this.slider.hide();
 		this.fireEvent('out');
 		if (this.shim) this.shim.hide();
-		this.visible = true;
+		this.visible = false;
 		return this;
 	},
 	isVisible: function(){

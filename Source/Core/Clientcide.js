@@ -65,13 +65,6 @@ var Clientcide = {
 			});
 		}
 
-		if (window.Waiter) {
-			Waiter.implement({
-				options: {
-					baseHref: clean(baseHref + '/waiter/')
-				}
-			});
-		}
 		if (Clientcide.preloaded) Clientcide.preLoadCss();
 	},
 	preLoadCss: function(){

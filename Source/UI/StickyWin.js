@@ -215,7 +215,6 @@ StickyWin.Stacker = new Class({
 	focus: function(instance){
 		if (this.focused == instance) return;
 		this.focused = instance;
-		dbug.log('focus ', $(instance));
 		if (instance) this.instances.erase(instance).push(instance);
 		this.instances.each(function(current, i){
 			$(current).setStyle('z-index', this.options.zIndexBase + i);

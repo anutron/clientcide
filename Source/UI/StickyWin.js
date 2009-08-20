@@ -7,6 +7,7 @@ License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
 
+
 var StickyWin = new Class({
 	Binds: ['destroy', 'hide', 'togglepin', 'esc'],
 	Implements: [Options, Events, StyleWriter, Class.ToElement],
@@ -36,7 +37,8 @@ var StickyWin = new Class({
 		iframeShimSelector: '',
 		destroyOnClose: false,
 		closeOnClickOut: false,
-		closeOnEsc: false
+		closeOnEsc: false,
+		getWindowManager: function(){ return StickyWin.WM; }
 	},
 
 	css: '.SWclearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}'+
@@ -45,16 +47,18 @@ var StickyWin = new Class({
 	initialize: function(options){
 		this.options.inject = this.options.inject || {
 			target: document.body,
-			where: 'bottom' 
+			where: 'bottom'
 		};
 		this.setOptions(options);
+		this.windowManager = this.options.getWindowManager();
 		this.id = this.options.id || 'StickyWin_'+new Date().getTime();
 		this.makeWindow();
+		if (this.windowManager) this.windowManager.add(this);
 
 		if (this.options.content) this.setContent(this.options.content);
 		if (this.options.timeout > 0) {
 			this.addEvent('onDisplay', function(){
-				this.hide.delay(this.options.timeout, this)
+				this.hide.delay(this.options.timeout, this);
 			}.bind(this));
 		}
 		//add css for clearfix
@@ -184,3 +188,38 @@ var StickyWin = new Class({
 		this.fireEvent('destroy');
 	}
 });
+
+StickyWin.Stacker = new Class({
+	Implements: [Options, Events],
+	Binds: ['click'],
+	instances: [],
+	options: {
+		zIndexBase: 9000
+	},
+	initialize: function(options) {
+		this.setOptions(options);
+		this.zIndex = this.options.zIndex;
+	},
+	add: function(sw) {
+		this.instances.include(sw);
+		$(sw).addEvent('click', this.click);
+	},
+	click: function(e) {
+		this.instances.each(function(sw){
+			var el = $(sw);
+			if (el == e.target || el.hasChild($(e.target))) this.focus(sw);
+		}, this);
+	},
+	focus: function(instance){
+		if (instance) this.instances.erase(instance).push(instance);
+		this.instances.each(function(current, i){
+			$(current).setStyle('z-index', this.options.zIndexBase + i);
+		}, this);
+		this.focused = instance;
+	},
+	remove: function(sw) {
+		this.instances.erase(sw);
+		$(sw).removeEvent('click', this.click);
+	}
+});
+StickyWin.WM = new StickyWin.Stacker();

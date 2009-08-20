@@ -102,6 +102,7 @@ var StickyWin = new Class({
 		return this;
 	},
 	showWin: function(){
+		if (this.windowManager) this.windowManager.focus(this);
 		if (!this.positioned) this.position();
 		this.win.show();
 	},
@@ -182,6 +183,7 @@ var StickyWin = new Class({
 		if (this.shim) this.shim.hide();
 	},
 	destroy: function(){
+		if (this.windowManager) this.windowManager.remove(this);
 		if (this.win) this.win.destroy();
 		if (this.options.useIframeShim && this.shim) this.shim.destroy();
 		if (document.id('modalOverlay')) document.id('modalOverlay').destroy();
@@ -211,6 +213,9 @@ StickyWin.Stacker = new Class({
 		}, this);
 	},
 	focus: function(instance){
+		if (this.focused == instance) return;
+		this.focused = instance;
+		dbug.log('focus ', $(instance));
 		if (instance) this.instances.erase(instance).push(instance);
 		this.instances.each(function(current, i){
 			$(current).setStyle('z-index', this.options.zIndexBase + i);

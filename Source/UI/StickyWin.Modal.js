@@ -13,11 +13,12 @@ StickyWin.Modal = new Class({
 	options: {
 		modalize: true,
 		maskOptions: {},
-		hideOnClick: true
+		hideOnClick: true,
+		getWindowManager: function(){ return StickyWin.ModalWM; }
 	},
 
 	initialize: function(options) {
-		this.options.maskTarget = document.body;
+		this.options.maskTarget = this.options.maskTarget || document.body;
 		this.setOptions(options);
 		this.mask = new Mask(this.options.maskTarget, this.maskOptions).addEvent('click', function() {
 			if (this.options.hideOnClick) this.hide();
@@ -35,5 +36,9 @@ StickyWin.Modal = new Class({
 		this.parent();
 	}
 
+});
+
+StickyWin.ModalWM = new StickyWin.Stacker({
+	zIndexBase: 11000
 });
 if (StickyWin.Fx) StickyWin.Fx.Modal = StickyWin.Modal;

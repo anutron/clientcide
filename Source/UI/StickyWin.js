@@ -202,7 +202,7 @@ StickyWin.Stacker = new Class({
 	},
 	add: function(sw) {
 		this.instances.include(sw);
-		$(sw).addEvent('click', this.click);
+		$(sw).addEvent('mousedown', this.click);
 	},
 	click: function(e) {
 		this.instances.each(function(sw){

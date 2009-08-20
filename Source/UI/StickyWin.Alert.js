@@ -22,7 +22,8 @@ StickyWin.Alert = new Class({
 			buttons: [
 				{text: 'Ok'}
 			]
-		}
+		},
+		getWindowManager: $empty
 	},
 	initialize: function(caption, message, options) {
 		this.message = message;

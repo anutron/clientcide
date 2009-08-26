@@ -71,7 +71,7 @@ var SimpleSlideShow = new Class({
 		if (now > 0) {
 			if (prev) prev.removeClass(dlc);
 			if (now === this.slides.length-1 && next) next.addClass(dlc);
-			else if (next) next.removeClass(dlc)
+			else if (next) next.removeClass(dlc);
 		}	else { //now is zero
 			if (this.slides.length > 0 && next) next.removeClass(dlc);
 			if (prev) prev.addClass(dlc);
@@ -179,7 +179,7 @@ SimpleSlideShow.Carousel = new Class({
 	},
 	show: function(index) {
 		if (!this.container) return;
-		this.fx = this.fx || new Fx.Tween(this.container, {
+		this.fx = this.fx || new Fx.Tween(this.container.setStyle('left', 0), {
 			property: 'left'
 		});
 		if (this.showing) return this.chain(this.show.bind(this, index));
@@ -187,7 +187,7 @@ SimpleSlideShow.Carousel = new Class({
 		var s = this.slides[index]; //saving bytes
 		if (s) {
 			if (this.now != index) {
-				this.fx.start(-s.getPosition(this.container).x).chain(function(){
+				this.fx.start(this.container.getStyle('left') || 0, -s.getPosition(this.container).x).chain(function(){
 					s.addClass(this.options.currentSlideClass);
 					this.showing = false;
 					this.disableLinks();

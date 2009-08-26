@@ -187,7 +187,7 @@ SimpleSlideShow.Carousel = new Class({
 		var s = this.slides[index]; //saving bytes
 		if (s) {
 			if (this.now != index) {
-				this.fx.start(this.container.getStyle('left') || 0, -s.getPosition(this.container).x).chain(function(){
+				this.fx.start(-s.getPosition(this.container).x).chain(function(){
 					s.addClass(this.options.currentSlideClass);
 					this.showing = false;
 					this.disableLinks();

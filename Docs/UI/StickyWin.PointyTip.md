@@ -66,8 +66,8 @@ See the note on arguments in the section above.
 
 * *object* - This instance of StickyWin.PointyTip
 
-[StickyWin]: /docs/UI/StickyWin
-[StickyWin.UI.Pointy]: /docs/UI/StickyWin.UI.Pointy
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[StickyWin.UI.Pointy]: http://clientcide.com/docs/UI/StickyWin.UI.Pointy
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras
-[Class.ToElement]: /docs/Class/Class.ToElement
-[StyleWriter]: /docs/UI/StyleWriter
+[Class.ToElement]: http://clientcide.com/docs/Class/Class.ToElement
+[StyleWriter]: http://clientcide.com/docs/UI/StyleWriter

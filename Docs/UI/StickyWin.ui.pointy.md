@@ -76,7 +76,7 @@ The pointy ui has a pointer that points up, down, left, or right. The *direction
 
 See also [StickyWin.PointyTip][] which is a version of [StickyWin][] that automatically positions itself using this tip layout and the direction you specify.
 
-[StickyWin.UI]: /docs/UI/StickyWin.UI
+[StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
 [StickyWin.UI.pointy]: #StickyWin-UI-pointy
-[StickyWin.PointyTip]: /docs/UI/StickyWin.PointyTip
-[StickyWin]: /docs/UI/StickyWin
+[StickyWin.PointyTip]: http://clientcide.com/docs/UI/StickyWin.PointyTip
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin

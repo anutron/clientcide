@@ -182,13 +182,13 @@ This method on the DatePicker namespace hides all instances of DatePickers.
 
 
 [DatePicker]: #DatePicker
-[DatePicker.Extras]: /docs/Forms/DatePicker.Extras
-[StyleWriter]: /docs/UI/StyleWriter
+[DatePicker.Extras]: http://clientcide.com/docs/Forms/DatePicker.Extras
+[StyleWriter]: http://clientcide.com/docs/UI/StyleWriter
 [Date]: http://www.mootools.net/docs/more/Native/Date
 [Date.Extras]: http://www.mootools.net/docs/more/Native/Date.Extras
-[StickyWin]: /docs/UI/StickyWin
-[StickyWin.UI]: /docs/UI/StickyWin.UI
-[StickyWin.Modal]: /docs/UI/StickyWin.Modal
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
+[StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
 [FormValidator]: http://www.mootools.net/docs/more/Forms/FormValidator
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

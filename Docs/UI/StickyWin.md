@@ -192,10 +192,10 @@ In the example *myElement.retrieve('StickyWin')*, *myElement* is the containing 
 	myStickyWin == document.getElement('div.StickyWinInstance').retrieve('StickyWin');
 
 [StickyWin]: #StickyWin
-[StyleWriter]: /docs/UI/StyleWriter
-[IframeShim]: /docs/Browser/IframeShim
-[Element:position]: /docs/Element/Element.Position#Element:position
-[Element:pin]: /docs/Element/Element.Pin#Element:pin
-[Element:unpin]: /docs/Element/Element.Pin#Element:unpin
+[StyleWriter]: http://clientcide.com/docs/UI/StyleWriter
+[IframeShim]: http://clientcide.com/docs/Browser/IframeShim
+[Element:position]: http://clientcide.com/docs/Element/Element.Position#Element:position
+[Element:pin]: http://clientcide.com/docs/Element/Element.Pin#Element:pin
+[Element:unpin]: http://clientcide.com/docs/Element/Element.Pin#Element:unpin
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

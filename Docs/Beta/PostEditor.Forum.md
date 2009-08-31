@@ -32,4 +32,4 @@ All the options from [PostEditor][]. Defaults to the snippets, typing pairs, and
 [http://xergio.net]: http://xergio.net
 [http://godsea.dsland.org]: http://godsea.dsland.org
 [http://www.clientcide.com]: http://www.clientcide.com
-[PostEditor]: /docs/Beta/PostEditor
+[PostEditor]: http://clientcide.com/docs/Beta/PostEditor

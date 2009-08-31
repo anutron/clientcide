@@ -46,5 +46,5 @@ Extends [StickyWin][] to add [Modalizer][] functionality for modal popups.
 	  }
 	});
 
-[StickyWin]: /docs/UI/StickyWin
-[Modalizer]: /docs/UI/Modalizer
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[Modalizer]: http://clientcide.com/docs/UI/Modalizer

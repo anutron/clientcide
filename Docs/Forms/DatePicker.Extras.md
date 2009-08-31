@@ -29,6 +29,6 @@ DatePicker.Extras extends [DatePicker][] to include range selection and time ent
 
 *	See [DatePicker][] for more options.
 
-[DatePicker]: /docs/Forms/DatePicker
+[DatePicker]: http://clientcide.com/docs/Forms/DatePicker
 [Date]: http://www.mootools.net/docs/more/Native/Date
 [Date.Extras]: http://www.mootools.net/docs/more/Native/Date.Extras

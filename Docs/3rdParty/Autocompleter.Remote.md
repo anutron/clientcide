@@ -93,6 +93,6 @@ All those specified in [Autocompleter.Ajax.Base][] and [Autocompleter.Base][].
 [Autocompleter.Ajax.Base]: #Autocompleter-Ajax:Base
 [Autocompleter.Ajax.Json]: #Autocompleter-Ajax:Json
 [Autocompleter.Ajax.Xhtml]: #Autocompleter-Ajax:Xhtml
-[Autocompleter.Base]: /docs/3rdParty/Autocompleter#Autocompleter:Base
-[Autocompleter]: /docs/3rdParty/Autocompleter
+[Autocompleter.Base]: http://clientcide.com/docs/3rdParty/Autocompleter#Autocompleter:Base
+[Autocompleter]: http://clientcide.com/docs/3rdParty/Autocompleter
 [Request]: http://www.mootools.net/Request/Request

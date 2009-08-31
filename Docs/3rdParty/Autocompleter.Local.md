@@ -50,4 +50,4 @@ Extends the [Autocompleter.Base][] class to add support for a pre-defined object
 		}
 	});
 
-[Autocompleter.Base]: /docs/3rdParty/Autocompleter
+[Autocompleter.Base]: http://clientcide.com/docs/3rdParty/Autocompleter

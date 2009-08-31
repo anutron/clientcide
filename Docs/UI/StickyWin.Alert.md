@@ -105,8 +105,8 @@ This is the intended use for this functionality.
 
 [StickyWin.alert]: #StickyWin.alert
 [StickyWin.Alert]: #StickyWin.Alert
-[StickyWin.Modal]: /docs/UI/StickyWin.Modal
-[StickyWin.UI]: /docs/UI/StickyWin.UI
-[StickyWin.Confirm]: /docs/UI/STickyWin.Confirm
-[StickyWin.Prompt]: /docs/UI/STickyWin.Prompt
-[StickyWin.Error]: /docs/UI/STickyWin.Error
+[StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
+[StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
+[StickyWin.Confirm]: http://clientcide.com/docs/UI/STickyWin.Confirm
+[StickyWin.Prompt]: http://clientcide.com/docs/UI/STickyWin.Prompt
+[StickyWin.Error]: http://clientcide.com/docs/UI/STickyWin.Error

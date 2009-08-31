@@ -40,4 +40,4 @@ Extends the [Tips][] class to use [StickyWin.PointyTip][].
 	new Tips.Pointy($$('a'));
 
 [Tips]: http://mootools.net/docs/Plugins/Tips
-[StickyWin.PointyTip]: /docs/UI/StickyWin.PointyTip
+[StickyWin.PointyTip]: http://clientcide.com/docs/UI/StickyWin.PointyTip

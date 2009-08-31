@@ -26,4 +26,4 @@ Sets up a DOM element to toggle open and closed when another DOM element is clic
 
 * All the options for [Fx.Reveal][].
 
-[Fx.Reveal]: /docs/Fx/Fx.Reveal
+[Fx.Reveal]: http://clientcide.com/docs/Fx/Fx.Reveal

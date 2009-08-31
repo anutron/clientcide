@@ -181,7 +181,7 @@ After invocation you can retrieve the instance of [StickyWin.UI][] and set conte
 	</style> 
 
 [Notes]: #StickyWin-notes
-[StickyWin]: /docs/UI/StickyWin
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
 [StickyWin.ui]: #StickyWin-ui
-[StickyWin.UI.Pointy]: /docs/UI/StickyWin.UI.Pointy
+[StickyWin.UI.Pointy]: http://clientcide.com/docs/UI/StickyWin.UI.Pointy
 [Element:setProperties]: http://www.mootools.net/docs/core/Element/Element#Element:setProperties

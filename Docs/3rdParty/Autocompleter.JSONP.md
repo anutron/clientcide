@@ -91,8 +91,8 @@ You're not really done though, because you need to handle the results that come 
 		}
 	});
 
-[Autocompleter]: /docs/3rdParty/Autocompleter
-[Autocompleter.Base]: /docs/3rdParty/Autocompleter
+[Autocompleter]: http://clientcide.com/docs/3rdParty/Autocompleter
+[Autocompleter.Base]: http://clientcide.com/docs/3rdParty/Autocompleter
 [Request.JSONP]: http://www.mootools.net/docs/more/Request/Request.JSONP
-[Autocompleter.Ajax.Base]: /docs/3rdParty/Autocompleter.Remote#Autocompleter-Ajax:Base
-[Autocompleter.Ajax.Json]: /docs/3rdParty/Autocompleter.Remote#Autocompleter-Ajax:Json
+[Autocompleter.Ajax.Base]: http://clientcide.com/docs/3rdParty/Autocompleter.Remote#Autocompleter-Ajax:Base
+[Autocompleter.Ajax.Json]: http://clientcide.com/docs/3rdParty/Autocompleter.Remote#Autocompleter-Ajax:Json

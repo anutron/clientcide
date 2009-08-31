@@ -33,4 +33,4 @@ Simply adds the css class 'focused' to an input that currently has focus.
 
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Class.Occlude]: http://www.mootools.net/docs/more/Class/Class.Occlude
-[Class.ToElement]: /docs/Class/ToElement
+[Class.ToElement]: http://clientcide.com/docs/Class/ToElement

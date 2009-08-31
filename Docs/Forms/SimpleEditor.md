@@ -182,10 +182,10 @@ Element property: SimpleEditor {#Element:SimpleEditor}
 [SimpleEditor]: #SimpleEditor
 [SimpleEditor:addCommands]: #SimpleEditor:addCommands
 [SimpleEditor:addCommand]: #SimpleEditor:addCommand
-[Element.tidy]: /docs/Element/Element.Forms
-[StickyWin.Modal]: /docs/UI/StickyWin.Modal
-[StickyWin.UI]: /docs/UI/StickyWin.UI
+[Element.tidy]: http://clientcide.com/docs/Element/Element.Forms
+[StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
+[StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
 [Clientcide's Download Page]: http://www.clientcide.com/js
 [send it in]: http://github.com/anutron/clientcide/issues
-[Class.ToElement]: /docs/Class/Class.ToElement
+[Class.ToElement]: http://clientcide.com/docs/Class/Class.ToElement
 [Class.Occlude]: http://mootools.net/docs/more/Class/Class.Occlude

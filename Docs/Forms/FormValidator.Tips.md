@@ -32,4 +32,4 @@ Extends the [FormValidator][] class to use [StickyWin.PointyTip][] to display va
 * Because the tips show up in ways that can obscure elements of the form and each other (all along one side, or always above or below the input), it's best that the *serial* option remain at the default (*true*).
 
 [FormValidator]: http://mootools.net/docs/more/Forms/FormValidator
-[StickyWin.PointyTip]: /docs/UI/StickyWin.PointyTip
+[StickyWin.PointyTip]: http://clientcide.com/docs/UI/StickyWin.PointyTip

@@ -34,7 +34,7 @@ Extends [StickyWin][] to create popups that fade in and out.
 	});
 	//fades in a box in the middle of the window with "hi there" and a close link
 
-[StickyWin]: /docs/UI/StickyWin
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
 [Drag]: http://www.mootools.net/docs/more/Drag/Drag
 [Fx.Transitions]: http://www.mootools.net/docs/core/Fx/Fx.Transitions
 [sine:in:out]: http://www.mootools.net/docs/core/Fx/Fx.Transitions#Fx-Transitions:sine

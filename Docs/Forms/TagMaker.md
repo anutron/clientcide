@@ -145,9 +145,9 @@ The default anchor tag maker.
 [TagMaker]: #TagMaker
 [TagMaker.anchor]: #TagMaker-anchor
 [TagMaker.image]: #TagMaker-image
-[Picklet]: /docs/Forms/ProductPicker#Picklet
-[ProductPicker]: /docs/Forms/ProductPicker#ProductPicker
-[FormValidator]: /docs/Forms/FormValidator
-[StyleWriter]: /docs/UI/StyleWriter
+[Picklet]: http://clientcide.com/docs/Forms/ProductPicker#Picklet
+[ProductPicker]: http://clientcide.com/docs/Forms/ProductPicker#ProductPicker
+[FormValidator]: http://clientcide.com/docs/Forms/FormValidator
+[StyleWriter]: http://clientcide.com/docs/UI/StyleWriter
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

@@ -34,5 +34,5 @@ Class: StickyWin.Drag {#StickyWin-Drag}
 	//window is draggable using the image(s) with the class "handle"
 
 
-[StickyWin]: /docs/UI/StickyWin
-[StickyWin.Fx]: /docs/UI/StickyWin.Fx
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[StickyWin.Fx]: http://clientcide.com/docs/UI/StickyWin.Fx

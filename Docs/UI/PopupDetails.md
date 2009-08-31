@@ -149,10 +149,10 @@ Now when the user mouses over the link for 100ms, a popup will appear 100px to t
 
 [PopupDetail]: #PopupDetail
 [PopupDetailCollection]: #PopupDetailCollection
-[StickyWin]: /docs/UI/StickyWin
-[StickyWin.Fx]: /docs/UI/StickyWin.Fx
-[StickyWin.Modal]: /docs/UI/StickyWin.Modal
-[StickyWin.Fx.Modal]: /docs/UI/StickyWin.Modal#StickyWin.Fx.Modal
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[StickyWin.Fx]: http://clientcide.com/docs/UI/StickyWin.Fx
+[StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
+[StickyWin.Fx.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal#StickyWin.Fx.Modal
 [String.substitute]: http://www.mootools.net/docs/Native/String#String:substitute
 [Request]: http://www.mootools.net/docs/core/Request/Request
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options

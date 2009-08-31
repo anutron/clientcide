@@ -132,11 +132,11 @@ Fupdate.Append.AjaxPrompt Method: constructor {#Fupdate-Append-AjaxPrompt:constr
 
 * The same as [Fupdate.Append][] and [Fupdate.AjaxPrompt][] combined
 
-[Fupdate.Append]: /docs/Forms/Fupdate.Append
+[Fupdate.Append]: http://clientcide.com/docs/Forms/Fupdate.Append
 [Fupdate.AjaxPrompt]: #Fupdate-AjaxPrompt
-[StickyWin]: /docs/UI/StickyWin
-[StickyWin.Modal]: /docs/UI/StickyWin.Modal
-[StickyWin.UI]: /docs/UI/StickyWin.UI
-[StickyWin.Modal.Ajax]: /docs/UI/StickyWin.Modal.Ajax
-[Waiter]: /docs/UI/Waiter
-[Fupdate]: /docs/Forms/Fupdate
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
+[StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
+[StickyWin.Modal.Ajax]: http://clientcide.com/docs/UI/StickyWin.Modal.Ajax
+[Waiter]: http://clientcide.com/docs/UI/Waiter
+[Fupdate]: http://clientcide.com/docs/Forms/Fupdate

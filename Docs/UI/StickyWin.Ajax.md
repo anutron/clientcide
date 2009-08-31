@@ -60,8 +60,8 @@ Sends a request for new content.
 * this file only depends on [StickyWin][]; if you also include [StickyWin.Modal][] it will also be extended with *.Ajax versions.
 
 [StickyWin.Ajax]: #StickyWin-Ajax
-[StickyWin.UI]: /docs/UI/StickyWin.UI
-[StickyWin]: /docs/UI/StickyWin
-[StickyWin:setContent]: /docs/UI/StickyWin#StickyWin:setContent
-[StickyWin:show]: /docs/UI/StickyWin#StickyWin:show
-[StickyWin.Modal]: /docs/UI/StickyWin.Modal
+[StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
+[StickyWin]: http://clientcide.com/docs/UI/StickyWin
+[StickyWin:setContent]: http://clientcide.com/docs/UI/StickyWin#StickyWin:setContent
+[StickyWin:show]: http://clientcide.com/docs/UI/StickyWin#StickyWin:show
+[StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal

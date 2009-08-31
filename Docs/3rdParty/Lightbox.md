@@ -65,7 +65,7 @@ Each image managed by the instance will have a property called "lightbox" stored
 A new Lightbox is created on [DomReady][], so it is not required that you write any javascript at all. All you must do is add rel="lightbox" to your images (and rel="lightbox[setName]" for sets). If you want to create a Lightbox on the fly or with some other set of images, you can do that whenever you like.
 
 [LightBox]: #LightBox
-[Clientcide.setAssetLocation]: /docs/Core/Clientcide#Clientcide:setAssetLocation
+[Clientcide.setAssetLocation]: http://clientcide.com/docs/Core/Clientcide#Clientcide:setAssetLocation
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
 [Fx.Transitions]: http://www.mootools.net/docs/core/Fx/Fx.Transitions

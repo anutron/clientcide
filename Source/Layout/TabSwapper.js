@@ -116,7 +116,7 @@ var TabSwapper = new Class({
 		if (!$chk(this.now)) {
 			this.tabs.each(function(tab, idx){
 				if (i != idx) 
-					this.hideSection(idx)
+					this.hideSection(idx);
 			}, this);
 		}
 		this.showSection(i).save(i);

@@ -25,7 +25,7 @@ var HoverGroup = new Class({
 	elements: [],
 	attachTo: function(elements, detach){
 		var starters = {}, remainers = {}, enders = {};
-		elements = $G(elements);
+		elements = $splat(document.id(elements)||$$(elements));
 		this.options.start.each(function(start) {
 			starters[start] = this.enter;
 		}, this);

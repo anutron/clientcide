@@ -27,7 +27,7 @@ Prompts the user to fill in the gaps to create an HTML tag output.
 * picklets - (*object*) a key/value set where the keys are the tokens in the output and the values are arrays of picklets; see [Picklet][] and [ProductPicker][];
 * help - (*object*) a key/value set where the keys are the tokens in the output and the values are help text for tooltips; see example.
 * example - (*object*) a key/value set where the keys are the tokens in the output and the values are examples of valid inputs.
-* class - (*object*) a key/value set where the keys are the tokens in the output and the values are css classes; use these to pass along validators for [FormValidator][] if you want the fields validated.
+* class - (*object*) a key/value set where the keys are the tokens in the output and the values are css classes; use these to pass along validators for [Form.Validator][] if you want the fields validated.
 * selectLists - (*object*) a key/value set where the keys are the tokens in the output and the values are arrays of objects. These sub-objects have keys for "key" and "value" that correspond to the innerText of the option and the value of the option respectively. Additionally, one of them can have the key/value set of *"selected: true"* to have that option be selected. (see example)
 * width - (*integer*) the width for the prompt; defaults to *400*
 * maxHeight - (*integer*) the maximum height for the prompt; defaults to *500*
@@ -147,7 +147,7 @@ The default anchor tag maker.
 [TagMaker.image]: #TagMaker-image
 [Picklet]: http://clientcide.com/docs/Forms/ProductPicker#Picklet
 [ProductPicker]: http://clientcide.com/docs/Forms/ProductPicker#ProductPicker
-[FormValidator]: http://clientcide.com/docs/Forms/FormValidator
+[Form.Validator]: http://clientcide.com/docs/Forms/Form.Validator
 [StyleWriter]: http://clientcide.com/docs/UI/StyleWriter
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

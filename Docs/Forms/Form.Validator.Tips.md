@@ -1,7 +1,7 @@
-Class: FormValidator.Tips {#FormValidator-Tips}
+Class: Form.Validator.Tips {#Form-Validator-Tips}
 ===============================================
 
-Extends the [FormValidator][] class to use [StickyWin.PointyTip][] to display validation errors in a tip overlay that points at the input.
+Extends the [Form.Validator][] class to use [StickyWin.PointyTip][] to display validation errors in a tip overlay that points at the input.
 
 ### Tutorial/Demo
 
@@ -10,11 +10,11 @@ Extends the [FormValidator][] class to use [StickyWin.PointyTip][] to display va
 
 ### Extends
 
-* [FormValidator][]
+* [Form.Validator][]
 
 ### Syntax
 
-	new FormValidator.Tips(form[, options]);
+	new Form.Validator.Tips(form[, options]);
 
 ### Arguments
 
@@ -23,7 +23,7 @@ Extends the [FormValidator][] class to use [StickyWin.PointyTip][] to display va
 
 ### Options
 
-* The same options as [FormValidator][] in addition to:
+* The same options as [Form.Validator][] in addition to:
 * pointyTipOptions - (*object*) Options object passed along to [StickyWin.PointyTip][] for each validation popup
 * tipCaption - (*mixed*) A string, DOM id, or DOM element to be used for the caption for each popup tip (not required).
 
@@ -31,5 +31,5 @@ Extends the [FormValidator][] class to use [StickyWin.PointyTip][] to display va
 
 * Because the tips show up in ways that can obscure elements of the form and each other (all along one side, or always above or below the input), it's best that the *serial* option remain at the default (*true*).
 
-[FormValidator]: http://mootools.net/docs/more/Forms/FormValidator
+[Form.Validator]: http://mootools.net/docs/more/Forms/Form.Validator
 [StickyWin.PointyTip]: http://clientcide.com/docs/UI/StickyWin.PointyTip

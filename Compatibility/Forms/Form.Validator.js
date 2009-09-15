@@ -1,8 +1,8 @@
-FormValidator.validators['validate-number'] = FormValidator.validators['validate-integer'];
-FormValidator.add('validate-date-au', {
+Form.Validator.validators['validate-number'] = Form.Validator.validators['validate-integer'];
+Form.Validator.add('validate-date-au', {
 	errorMsg: 'Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.',
 	test: function(element) {
-		if (FormValidator.getValidator('IsEmpty').test(element)) return true;
+		if (Form.Validator.getValidator('IsEmpty').test(element)) return true;
     var regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     if (!regex.test(element.getValue())) return false;
     var d = new Date(element.getValue().replace(regex, '$2/$1/$3'));

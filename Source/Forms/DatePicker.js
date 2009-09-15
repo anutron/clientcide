@@ -82,7 +82,7 @@ var DatePicker;
 				var props;
 				if (input.get('validatorProps')) props = input.get('validatorProps');
 				if (props && props.dateFormat) {
-					dbug.log('using date format specified in validatorProps property of element to play nice with FormValidator');
+					dbug.log('using date format specified in validatorProps property of element to play nice with Form.Validator');
 					this.setOptions({ format: props.dateFormat });
 				} else {
 					if (!props) props = {};
@@ -106,7 +106,7 @@ var DatePicker;
 				}.bind(this));
 			}, this);
 			this.options.additionalShowLinks.each(function(lnk){
-				document.id(lnk).addEvent('click', this.show.bind(this))
+				document.id(lnk).addEvent('click', this.show.bind(this));
 			}, this);
 		},
 		getDates: function(dates, getFromInputs){
@@ -164,7 +164,7 @@ var DatePicker;
 						var td = new Element('td').inject(row).set('html', '&nbsp;');
 					});
 				});
-				var rows = tbody.getElements('tr');
+				rows = tbody.getElements('tr');
 				rows[0].addClass('dateNav');
 				rows[1].addClass('dayNames');
 				(6).times(function(i){
@@ -175,7 +175,7 @@ var DatePicker;
 				dayCells.each(function(cell, i){
 					cell.firstChild.data = Date.getMsg('days')[(i + this.options.weekStartOffset) % 7].substring(0,3);
 				}, this);
-				[6,5,4,3].each(function(i){ rows[0].getElements('td')[i].dispose() });
+				[6,5,4,3].each(function(i){ rows[0].getElements('td')[i].dispose(); });
 				this.prevLnk = rows[0].getElement('td').setStyle('text-align', 'right');
 				this.prevLnk.adopt(new Element('a').set('html', "&lt;").addClass('rightScroll'));
 				this.month = rows[0].getElements('td')[1];

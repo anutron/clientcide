@@ -1,5 +1,5 @@
-FormValidator.Tips = new Class({
-	Extends: FormValidator.Inline,
+Form.Validator.Tips = new Class({
+	Extends: Form.Validator.Inline,
 	options: {
 		pointyTipOptions: {
 			point: "left",
@@ -68,7 +68,7 @@ FormValidator.Tips = new Class({
 		}
 		var msgs = field.retrieve('validationMsgs');
 		if (msgs) msgs.getChildren().hide();
-		if (field.hasClass('validation-failed') || field.hasClass('warning')) if (advice) advice.show();
+		if ((field.hasClass('validation-failed') || field.hasClass('warning')) && advice) advice.show();
 		if (this.options.serial) {
 			var fields = this.element.getElements('.validation-failed, .warning');
 			if (fields.length) {

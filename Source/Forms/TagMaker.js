@@ -168,7 +168,7 @@ var TagMaker = new Class({
 					maxHeight: this.options.maxHeight
 				}
 			}).adopt(this.form);
-			this.validator = new FormValidator.Inline(this.form);
+			this.validator = new Form.Validator.Inline(this.form);
 			this.validator.insertAdvice = function(advice, field){
 				var p = document.id(field.parentNode);
 				if (p) p.adopt(advice);

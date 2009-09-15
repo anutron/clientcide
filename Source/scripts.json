@@ -159,9 +159,9 @@
 			"deps":["Class.Extras", "Element.Event", "dbug", "StickyWin"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
-		"FormValidator.Tips":{
-			"deps":["FormValidator.Inline","StickyWin.PointyTip"],
-			"desc":"FormValidator using StickyWin.PointyTip."
+		"Form.Validator.Tips":{
+			"deps":["Form.Validator.Inline","StickyWin.PointyTip"],
+			"desc":"Form.Validator using StickyWin.PointyTip."
 		},
 		"Fupdate.Prompt":{
 			"deps":["Fupdate.Append", "StickyWin.Modal", "StickyWin.Ajax"],

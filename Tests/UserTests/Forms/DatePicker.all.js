@@ -9,7 +9,7 @@
 					stickyWinOptions: { draggable: false },
 					format: "db"
 				});
-				new FormValidator('pickerForm', {
+				new Form.Validator('pickerForm', {
 					onFormValidate: function(passed, form, event){
 						event.stop();
 						if (passed) alert('form validated');
@@ -20,5 +20,5 @@
 			verify: "Were you able to choose from various dates without error?"
 		}
 	],
-	otherScripts: ["Date.Extras", "FormValidator"]
+	otherScripts: ["Date.Extras", "Form.Validator"]
 }

@@ -37,7 +37,7 @@
 		"TabSwapper":['all']
 	},
 	"Forms":{
-		"FormValidator.Tips":['all'],
+		"Form.Validator.Tips":['all'],
 		"Fupdate.Prompt": ['all'],
 		"Confirmer": ['all'],
 		"DatePicker": ['all'],

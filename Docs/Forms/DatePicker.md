@@ -69,7 +69,7 @@ Allows the user to enter a date in any popuplar format or choose from a calendar
 
 ### Note
 
-This class will play nice with [FormValidator][]. If you specify a date format with the validatorProps property of the input, then the format option in [DatePicker][] will be overwritten by that value (so your form validator will get a valid value). If you don't specify a format in the element, then [DatePicker][] will define one using its format option.
+This class will play nice with [Form.Validator][]. If you specify a date format with the validatorProps property of the input, then the format option in [DatePicker][] will be overwritten by that value (so your form validator will get a valid value). If you don't specify a format in the element, then [DatePicker][] will define one using its format option.
 
 	<input id="birthday" name="birthday" validatorProps="{dateFormat: '%x'}"/>
 	new DatePicker("birthday", {format: "%db"}); //format will be overwritten to be %x; validatorProps win
@@ -79,7 +79,7 @@ This class will play nice with [FormValidator][]. If you specify a date format w
 
 	//input is now
 	//<input id="birthday" name="birthday" validatorProps="{dateFormat: '%db'}"/>
-	//DatePicker assigns format, even if FormValidator not in use.
+	//DatePicker assigns format, even if Form.Validator not in use.
 
 DatePicker Method: updateInput {#DatePicker:updateInput}
 --------------------------------------------------------
@@ -189,7 +189,7 @@ This method on the DatePicker namespace hides all instances of DatePickers.
 [StickyWin]: http://clientcide.com/docs/UI/StickyWin
 [StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
 [StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
-[FormValidator]: http://www.mootools.net/docs/more/Forms/FormValidator
+[Form.Validator]: http://www.mootools.net/docs/more/Forms/Form.Validator
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events
 [Drag]: http://www.mootools.net/docs/more/Drag/Drag

@@ -1,4 +1,4 @@
-Class: Fupdate.Prompt {#Fupdate-Prompt}
+Class: Form.Request.Prompt {#Form-Request-Prompt}
 =======================================
 Prompts the user with the contents of a form and updates a DOM element with the result of the submission.
 
@@ -9,14 +9,14 @@ Prompts the user with the contents of a form and updates a DOM element with the 
 
 ### Extends
 
-- [Fupdate][]
+- [Form.Request][]
 
-Fupdate.Prompt Method: constructor {#Fupdate-Prompt:constructor}
+Form.Request.Prompt Method: constructor {#Form-Request-Prompt:constructor}
 ----------------------------------------------------------------
 
 ### Syntax
 
-	new Fupdate.Prompt(form, update[, options]);
+	new Form.Request.Prompt(form, update[, options]);
 
 ### Arguments
 
@@ -26,7 +26,7 @@ Fupdate.Prompt Method: constructor {#Fupdate-Prompt:constructor}
 
 ### Options
 
-* The same as [Fupdate][] in addition to:
+* The same as [Form.Request][] in addition to:
 * stickyWinToUse - (*class*) Which [StickyWin][] to use, defaults to [StickyWin.Modal][].
 * stickyWinOptions - (*object*) Options to pass along to the specified [StickyWin][].
 * useUi - (*boolean*) If *true* (the default), the form will be wrapped in [StickyWin.ui][].
@@ -35,49 +35,49 @@ Fupdate.Prompt Method: constructor {#Fupdate-Prompt:constructor}
 
 ### Example
 
-	new Fupdate($('myForm'), $('info'));
+	new Form.Request($('myForm'), $('info'));
 
-Fupdate.Prompt Method: prompt {#Fupdate-Prompt:prompt}
+Form.Request.Prompt Method: prompt {#Form-Request-Prompt:prompt}
 ------------------------------------------------------
 
 Displays the popup with the form to the user.
 
 ### Syntax
 
-	myFupdate.prompt();
+	myFormRequest.prompt();
 
 ### Returns
 
-* (*object*) This instance of [Fupdate.Prompt][]
+* (*object*) This instance of [Form.Request.Prompt][]
 
-Fupdate.Prompt Method: hide {#Fupdate-Prompt:hide}
+Form.Request.Prompt Method: hide {#Form-Request-Prompt:hide}
 ------------------------------------------------------
 
 Hides the popup from to the user.
 
 ### Syntax
 
-	myFupdate.hide();
+	myFormRequest.hide();
 
 ### Returns
 
-* (*object*) This instance of [Fupdate.Prompt][]
+* (*object*) This instance of [Form.Request.Prompt][]
 
-Class: Fupdate.AjaxPrompt {#Fupdate-AjaxPrompt}
+Class: Form.Request.AjaxPrompt {#Form-Request-AjaxPrompt}
 =================================================
 
-The same as [Fupdate.Prompt][] except the form is fetched from the specified url.
+The same as [Form.Request.Prompt][] except the form is fetched from the specified url.
 
 ### Extends
 
-- [Fupdate.Prompt][]
+- [Form.Request.Prompt][]
 
-Fupdate.AjaxPrompt Method: constructor {#Fupdate-AjaxPrompt:constructor}
+Form.Request.AjaxPrompt Method: constructor {#Form-Request-AjaxPrompt:constructor}
 --------------------------------------------------------------------------
 
 ### Syntax
 
-	new Fupdate.AjaxPrompt(formUrl, update[, options]);
+	new Form.Request.AjaxPrompt(formUrl, update[, options]);
 
 ### Arguments
 
@@ -87,56 +87,56 @@ Fupdate.AjaxPrompt Method: constructor {#Fupdate-AjaxPrompt:constructor}
 
 ### Options
 
-* The same as [Fupdate][]
+* The same as [Form.Request][]
 * Note: the default for the *stickyWinToUse* for this class is [StickyWin.Modal.Ajax][]
 
 
 
-Class: Fupdate.Append.Prompt {#Fupdate-Append-Prompt}
+Class: Form.Request.Append.Prompt {#Form-Request-Append-Prompt}
 =====================================================
 
-Extends [Fupdate.Append][] to use a prompt popup.
+Extends [Form.Request.Append][] to use a prompt popup.
 
-Fupdate.Append.Prompt Method: constructor {#Fupdate-Append-Prompt:constructor}
+Form.Request.Append.Prompt Method: constructor {#Form-Request-Append-Prompt:constructor}
 ------------------------------------------------------------------------------
 
 ### Syntax
 
-	new Fupdate.Append.Prompt(form, update[,options]);
+	new Form.Request.Append.Prompt(form, update[,options]);
 
 ### Arguments
 
-* The same as [Fupdate.Append][] and [Fupdate.Prompt][] combined
+* The same as [Form.Request.Append][] and [Form.Request.Prompt][] combined
 
 ### Options
 
-* The same as [Fupdate.Append][] and [Fupdate.Prompt][] combined
+* The same as [Form.Request.Append][] and [Form.Request.Prompt][] combined
 
-Class: Fupdate.Append.AjaxPrompt {#Fupdate-Append-AjaxPrompt}
+Class: Form.Request.Append.AjaxPrompt {#Form-Request-Append-AjaxPrompt}
 =============================================================
 
-Extends [Fupdate.Append][] to use a prompt popup, fetching the prompt form from the specified url.
+Extends [Form.Request.Append][] to use a prompt popup, fetching the prompt form from the specified url.
 
-Fupdate.Append.AjaxPrompt Method: constructor {#Fupdate-Append-AjaxPrompt:constructor}
+Form.Request.Append.AjaxPrompt Method: constructor {#Form-Request-Append-AjaxPrompt:constructor}
 --------------------------------------------------------------------------------------
 
 ### Syntax
 
-	new Fupdate.Append.AjaxPrompt(formUrl, update[,options]);
+	new Form.Request.Append.AjaxPrompt(formUrl, update[,options]);
 
 ### Arguments
 
-* The same as [Fupdate.Append][] and [Fupdate.AjaxPrompt][] combined
+* The same as [Form.Request.Append][] and [Form.Request.AjaxPrompt][] combined
 
 ### Options
 
-* The same as [Fupdate.Append][] and [Fupdate.AjaxPrompt][] combined
+* The same as [Form.Request.Append][] and [Form.Request.AjaxPrompt][] combined
 
-[Fupdate.Append]: http://clientcide.com/docs/Forms/Fupdate.Append
-[Fupdate.AjaxPrompt]: #Fupdate-AjaxPrompt
+[Form.Request.Append]: http://clientcide.com/docs/Forms/Form.Request.Append
+[Form.Request.AjaxPrompt]: #Form.Request-AjaxPrompt
 [StickyWin]: http://clientcide.com/docs/UI/StickyWin
 [StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
 [StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
 [StickyWin.Modal.Ajax]: http://clientcide.com/docs/UI/StickyWin.Modal.Ajax
 [Waiter]: http://clientcide.com/docs/UI/Waiter
-[Fupdate]: http://clientcide.com/docs/Forms/Fupdate
+[Form.Request]: http://mootools.net/docs/more/Forms/Form.Request

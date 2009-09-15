@@ -38,7 +38,7 @@
 	},
 	"Forms":{
 		"Form.Validator.Tips":['all'],
-		"Fupdate.Prompt": ['all'],
+		"Form.Request.Prompt": ['all'],
 		"Confirmer": ['all'],
 		"DatePicker": ['all'],
 		"SimpleEditor": ['all'],

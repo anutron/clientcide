@@ -1,5 +1,5 @@
 /*
-Script: Fupdate.Prompt.js
+Script: Form.Request.Prompt.js
 	Prompts the user with the contents of a form (retrieved via ajax) and updates a DOM element with the result of the submission.
 
 License:
@@ -63,13 +63,13 @@ License:
 				});
 				this.makeRequest();
 				this.addFormEvent();
-				document.id(this).store('fupdate', this);
+				document.id(this).store('form.request', this);
 			}
 		};
 	};
 	
-	Fupdate.Prompt = new Class(prompter(Fupdate));
-	if (Fupdate.Append) Fupdate.Append.Prompt = new Class(prompter(Fupdate.Append));
+	Form.Request.Prompt = new Class(prompter(Form.Request));
+	if (Form.Request.Append) Form.Request.Append.Prompt = new Class(prompter(Form.Request.Append));
 	
 	
 	var ajaxPrompter = function(ext) {
@@ -107,6 +107,6 @@ License:
 		};
 	};
 
-	Fupdate.AjaxPrompt = new Class(ajaxPrompter(Fupdate.Prompt));
-	if (Fupdate.Append) Fupdate.Append.AjaxPrompt = new Class(ajaxPrompter(Fupdate.Append.Prompt));
+	Form.Request.AjaxPrompt = new Class(ajaxPrompter(Form.Request.Prompt));
+	if (Form.Request.Append) Form.Request.Append.AjaxPrompt = new Class(ajaxPrompter(Form.Request.Append.Prompt));
 })();

@@ -163,9 +163,9 @@
 			"deps":["Form.Validator.Inline","StickyWin.PointyTip"],
 			"desc":"Form.Validator using StickyWin.PointyTip."
 		},
-		"Fupdate.Prompt":{
-			"deps":["Fupdate.Append", "StickyWin.Modal", "StickyWin.Ajax"],
-			"desc":"Extends Fupdate and Fupdate.Append to use a popup (StickyWin) for the form."
+		"Form.Request.Prompt":{
+			"deps":["Form.Request.Append", "StickyWin.Modal", "StickyWin.Ajax"],
+			"desc":"Extends Form.Request and Form.Request.Append to use a popup (StickyWin) for the form."
 		},
 		"InputFocus": {
 			"deps":["Class.Extras", "Element", "Class.Occlude", "Class.ToElement"],

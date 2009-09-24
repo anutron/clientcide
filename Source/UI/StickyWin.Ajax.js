@@ -11,6 +11,7 @@ License:
 		return {
 			Extends: extend,
 			options: {
+				//onUpdate: $empty,
 				url: '',
 				showNow: false,
 				requestOptions: {
@@ -27,6 +28,7 @@ License:
 					this.setContent(response);
 					this.show();
 					if (this.evalScripts) $exec(responseScript);
+					this.fireEvent('update')
 				}
 			},
 			initialize: function(options){

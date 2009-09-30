@@ -54,7 +54,7 @@ var MooScroller = new Class({
 		this.update();
 		this.attach();
 		
-		var clearScroll = function (){
+		this.clearScroll = function (){
 			$clear(this.scrolling);
 		}.bind(this);
 		['forward','back'].each(function(direction) {
@@ -64,15 +64,15 @@ var MooScroller = new Class({
 					mousedown: function() {
 						this.scrolling = this[direction].periodical(50, this);
 					}.bind(this),
-					mouseup: clearScroll.bind(this),
-					click: clearScroll.bind(this)
+					mouseup: this.clearScroll.bind(this),
+					click: this.clearScroll.bind(this)
 				});
 			}
 		}, this);
-		this.knob.addEvent('click', clearScroll.bind(this));
+		this.knob.addEvent('click', this.clearScroll.bind(this));
 		window.addEvent('domready', function(){
 			try {
-				document.id(document.body).addEvent('mouseup', clearScroll.bind(this));
+				document.id(document.body).addEvent('mouseup', this.clearScroll);
 			}catch(e){}
 		}.bind(this));
 	},
@@ -120,6 +120,13 @@ var MooScroller = new Class({
 		this.knob.addEvent('mousedown', this.bound.start);
 		if (this.options.scrollSteps) this.content.addEvent('mousewheel', this.bound.wheel);
 		this.track.addEvent('mouseup', this.bound.page);
+	},
+
+	detach: function(){
+		this.knob.removeEvent('mousedown', this.bound.start);
+		if (this.options.scrollSteps) this.content.removeEvent('mousewheel', this.bound.wheel);
+		this.track.removeEvent('mouseup', this.bound.page);
+		document.id(document.body).removeEvent('mouseup', this.clearScroll);
 	},
 
 	wheel: function(event){

@@ -42,7 +42,7 @@ StickyWin.PointyTip = new Class({
 	getPositionSettings: function(){
 		var s = this.pointy.options.divotSize;
 		var d = this.options.point;
-		var offset = this.options.offset;
+		var offset = this.options.offset || {};
 		switch(d) {
 			case "left": case 8: case 9: case 10:
 				return {

@@ -21,7 +21,7 @@ Extends the [Autocompleter.Base][] class to add support for a pre-defined object
 ### Options
 
 * All values passed to [Autocompleter.Base][], PLUS:
-* filterTokens - (*function*) An optional *function* to override default filterTokens method.
+* filter - (*function*) An optional *function* to override default filter method.
 
 ### Example
 	//this object's structure is arbitrary
@@ -33,7 +33,7 @@ Extends the [Autocompleter.Base][] class to add support for a pre-defined object
 	new Autocompleter.Local($('myInput'), tokens, {
 		delay: 100,
 		//this is a custom filter because our object has a unique structure
-		filterTokens: function() {
+		filter: function() {
 			var regex = new RegExp('^' + (this.queryValue || '').escapeRegExp(), 'i');
 			var filtered = this.tokens.filter(function(token){
 				return (regex.test(token[0]) || regex.test(token[1]));

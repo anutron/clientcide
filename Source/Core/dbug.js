@@ -33,7 +33,11 @@ var dbug = {
 			try {
 				dbug.enabled = true;
 				dbug.log = function(){
-						(con.debug || con.log).apply(con, arguments);
+						try {
+							(con.debug || con.log).apply(con, arguments);
+						} catch(e) {
+							console.log(Array.slice(arguments));
+						}
 				};
 				dbug.time = function(){
 					con.time.apply(con, arguments);

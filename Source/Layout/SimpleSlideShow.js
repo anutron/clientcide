@@ -179,9 +179,9 @@ SimpleSlideShow.Carousel = new Class({
 	},
 	show: function(index) {
 		if (!this.container) return;
-		this.fx = this.fx || new Fx.Tween(this.container.setStyle('left', 0), {
+		this.fx = this.fx || new Fx.Tween(this.container.setStyle('left', 0), $merge({
 			property: 'left'
-		});
+		}, this.options.crossFadeOptions));
 		if (this.showing) return this.chain(this.show.bind(this, index));
 		var now = this.now;
 		var s = this.slides[index]; //saving bytes

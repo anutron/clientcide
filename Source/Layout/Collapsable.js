@@ -11,9 +11,13 @@ var Collapsable = new Class({
 		this.clicker = document.id(clicker);
 		this.section = document.id(section);
 		this.parent(this.section, options);
-		this.addEvents();
+		this.boundtoggle = this.toggle.bind(this);
+		this.attach();
 	},
-	addEvents: function(){
-		this.clicker.addEvent('click', this.toggle.bind(this));
+	attach: function(){
+		this.clicker.addEvent('click', this.boundtoggle);
+	},
+	detach: function(){
+		this.clicker.removeEvent('click', this.boundtoggle);
 	}
 });

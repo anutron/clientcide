@@ -29,7 +29,7 @@
 		"Tips.Pointy":['all']
 	},
 	"Layout": {
-		"Collapsable":['all'],
+		"Collapsible":['all'],
 		"MultipleOpenAccordion":['all'],
 		"MooScroller":['all'],
 		"SimpleCarousel":['all'],

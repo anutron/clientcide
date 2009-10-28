@@ -1,4 +1,4 @@
-Class: Collapsable {#Collapsable}
+Class: Collapsible {#Collapsible}
 =================================
 
 Sets up a DOM element to toggle open and closed when another DOM element is clicked (kind of like a single item Accordion).
@@ -6,7 +6,7 @@ Sets up a DOM element to toggle open and closed when another DOM element is clic
 ### Tutorial/Demo
 
 * [Online Tutorial/Demo][]
-[Online Tutorial/Demo]:http://www.clientcide.com/wiki/cnet-libraries/08-layout/0.1-collapsable
+[Online Tutorial/Demo]:http://www.clientcide.com/wiki/cnet-libraries/08-layout/0.1-Collapsible
 
 ### Extends
 
@@ -14,7 +14,7 @@ Sets up a DOM element to toggle open and closed when another DOM element is clic
 
 ### Syntax
 
-	new Collapsable(clicker, section[, options]);
+	new Collapsible(clicker, section[, options]);
 
 ### Arguments
 

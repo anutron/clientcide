@@ -1,7 +1,7 @@
 /*
 Script: StickyWin.Modal.js
 
-This script extends StickyWin and StickyWin.Fx classes to add Modalizer functionality.
+This script extends StickyWin and StickyWin.Fx classes to add Mask functionality.
 
 License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
@@ -14,7 +14,7 @@ StickyWin.Modal = new Class({
 		modalize: true,
 		maskOptions: {},
 		hideOnClick: true,
-		getWindowManager: function(){ return StickyWin.ModalWM; }
+		getWindowManager: function(){ return StickyWin.ModalWM; },
 	},
 
 	initialize: function(options) {

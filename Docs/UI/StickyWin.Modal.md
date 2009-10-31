@@ -1,7 +1,7 @@
 Class: StickyWin.Modal {#StickyWin-Modal}
 =======================================
 
-Extends [StickyWin][] to add [Modalizer][] functionality for modal popups.
+Extends [StickyWin][] to add [Mask][] functionality for modal popups.
 
 ### Tutorial/Demo
 
@@ -11,10 +11,6 @@ Extends [StickyWin][] to add [Modalizer][] functionality for modal popups.
 ### Extends
 
 * [StickyWin][]
-
-### Implements
-
-* [Modalizer][]
 
 ### Syntax
 
@@ -26,25 +22,27 @@ Extends [StickyWin][] to add [Modalizer][] functionality for modal popups.
 
 ### Options
 
-* all of [StickyWin][]'s options plus [Modalizer][]'s options, and:
+* all of [StickyWin][]'s options plus:
 * modalize - (*boolean*) if *true* (the default) the modal layer is displayed when the window is displayed, if *false*, then the window behaves just like it's [StickyWin][] counterpart without the modal behavior.
+* maskOptions - (*object*) options passed to [Mask][].
+* hideOnClick - (*boolean*) if *true* (the default) clicking the mask closes the window.
 
 ### Example
 
 	new StickyWin.Modal({
-	  content: myContent, //a string or a DOM element
-	  relativeTo: $('fxTarget'),
-	  offset: {
-	    x: -200,
-	    y: 10
-	  },
-	  modalOptions: {
-	    modalStyle: {
-	      'background-color':'#d6e1b9',
-	      'opacity':.6
-	    }
-	  }
+		content: myContent, //a string or a DOM element
+		relativeTo: $('fxTarget'),
+		offset: {
+			x: -200,
+			y: 10
+		},
+		maskOptions: {
+			style: {
+				'background-color':'#d6e1b9',
+				'opacity':.6
+			}
+		}
 	});
 
 [StickyWin]: http://clientcide.com/docs/UI/StickyWin
-[Modalizer]: http://clientcide.com/docs/UI/Modalizer
+[Mask]: http://mootools.net/docs/more/Interface/Mask

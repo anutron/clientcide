@@ -11,12 +11,34 @@ Links
 * [Tutorials/Examples](http://www.clientcide.com/wiki)
 * [Bugs](http://clientcide.lighthouseapp.com)
 
-Todo
-====
 
-* Migrate bugs to lighthouse
+Changes in 2.2.0
+=======
+* Modalizer is deprecated in favor of [Mask](http://mootools.net/docs/more/Interface/Mask)
+** compat file is just the deprecated library; does not convert to Mask instances but rather just returns Modalizer as it always did
+* StickyWin.Modal has new options for Mask; *this is a breaking change*
+* Removed Element.Delegation (now in MooTools More; unchanged)
+* Deprecated DollarE
+* Deprecated DollarG
+* Fupdate is now Form.Request in MooTools More; see compat files
+** Fupdate.Prompt is now Form.Request.Prompt
+** Fupdate.Append.Prompt is now Form.Request.Append.Prompt
+** Fupdate.AjaxPrompt is now Form.Request.AjaxPrompt
+** Fupdate.Append.AjaxPrompt are now Form.Request.Append.AjaxPrompt
+* FormValidator got renamed in MooTools More to Form.Validator (the old name is preserved); updated FormValidator.Tips to Form.Validator.Tips (again, the old name still works).
+* Collapsable is now Collapsible (that's correct, I cannot spell). The old name is preserved (though the file name itself changed; update your build scripts).
+* HtmlTable moved to MooTools More. No breaking changes, but the -more version has new features.
+* Added Italian, Spanish translations for Simple Editor
+* New StickyWin features
+** Z-index Ordering!
+** changing default value for allowMultipleByClass in StickyWin to true
+** Added setCaption method to StickyWin.UI
+** onUpdate event for StickyWin.Ajax
+* added detach method to MooScroller
+* dbug should now work in IE8
+* offset options are now additive for pointy tip
 
-Changes
+Changes in 2.1.0
 =======
 * MultipleOpenAccordion 
 	- now only takes options

@@ -123,3 +123,5 @@ Form.Validator.Tips = new Class({
 		advice.position();
 	}
 });
+
+if (window.FormValidator) FormValidator.Tips = Form.Validator.Tips;

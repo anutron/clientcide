@@ -25,16 +25,6 @@
 			"desc": "A Class wrapper for window.open that provides a more pleasant interface than the default window.open arguments."
 		}
 	},
-	"Utilities": {
-		"DollarE": {
-			"deps":["Element", "Clientcide"],
-			"desc":"Brings back $E from MooTools 1.11. Returns a single Element for a selector."
-		},
-		"DollarG": {
-			"deps":["Element", "Clientcide"],
-			"desc":"Returns a collection when given an element, a collection of elements, an element id, or a selector."
-		}
-	},
 	"Fx":{
 		"Fx.Marquee": {
 			"deps": ["Fx.Morph", "Element.Shortcuts"],
@@ -45,10 +35,6 @@
 		"IconMenu":{
 			"deps":["Element.Event", "Selectors", "Element.Dimensions", "Fx.Tween", "Fx.Morph", "Fx.Elements", "Fx.Transitions", "dbug"],
 			"desc":"A simple icon (img) based menu."
-		},
-		"Modalizer":{
-			"deps":["DomReady", "Element.Dimensions", "Element.Style", "Selectors", "Class.Extras"],
-			"desc":"Provides functionality to overlay the window contents with a semi-transparent layer."
 		},
 		"ObjectBrowser":{
 			"deps":["Element.Event", "Class.Extras", "dbug", "Hash.Extras", "Element.Shortcuts"],
@@ -268,6 +254,14 @@
 			"deps":["Date", "String", "Number"],
 			"desc":"Compatibility for MooTools More 1.2.2"
 		},
+		"DollarE": {
+			"deps":["Element", "Clientcide"],
+			"desc":"Brings back $E from MooTools 1.11. Returns a single Element for a selector. DEPRECATED."
+		},
+		"DollarG": {
+			"deps":["Element", "Clientcide"],
+			"desc":"Returns a collection when given an element, a collection of elements, an element id, or a selector. DEPRECATED."
+		}
 		"Element.Forms.Compat": {
 			"deps":["Element"],
 			"desc":"Compatibility for MooTools More 1.2.2"
@@ -291,6 +285,10 @@
 		"JsonP.Compat": {
 			"deps":["Class.Refactor", "Request.JSONP"],
 			"desc":"Compatibility for MooTools More 1.2.2"
+		},
+		"Modalizer.Compat":{
+			"deps":["DomReady", "Element.Dimensions", "Element.Style", "Selectors", "Class.Extras"],
+			"desc":"Provides functionality to overlay the window contents with a semi-transparent layer. DEPRECATED (See Mask in MooTools More)."
 		},
 		"OverText.Compat": {
 			"deps":["OverText", "Class.Refactor"],

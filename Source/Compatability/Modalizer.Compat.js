@@ -1,10 +1,3 @@
-/*
-Script: modalizer.js
-	Defines Modalizer: functionality to overlay the window contents with a semi-transparent layer that prevents interaction with page content until it is removed
-
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
-*/
 var Modalizer = new Class({
 	defaultModalStyle: {
 		display:'block',

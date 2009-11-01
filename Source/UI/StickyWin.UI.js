@@ -10,7 +10,7 @@ StickyWin.UI = new Class({
 	Implements: [Options, Class.ToElement, StyleWriter],
 	options: {
 		width: 300,
-		css: "div.DefaultStickyWin {font-family:verdana; font-size:11px; line-height: 13px;}"+
+		css: "div.DefaultStickyWin {font-family:verdana; font-size:11px; line-height: 13px;position: relative;}"+
 			"div.DefaultStickyWin div.top{-moz-user-select: none;-khtml-user-select: none;}"+
 			"div.DefaultStickyWin div.top_ul{background:url({%baseHref%}full.png) top left no-repeat; height:30px; width:15px; float:left}"+
 			"div.DefaultStickyWin div.top_ur{position:relative; left:0px !important; left:-4px; background:url({%baseHref%}full.png) top right !important; height:30px; margin:0px 0px 0px 15px !important; margin-right:-4px; padding:0px}"+

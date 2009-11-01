@@ -62,7 +62,7 @@
 		},
 		"StickyWin.Modal":{
 			"deps":["StickyWin", "Mask"],
-			"desc":"This script extends StickyWin class to add Modalizer functionality."
+			"desc":"This script extends StickyWin class to add Mask functionality."
 		},
 		"StickyWin.Ajax":{
 			"deps":["Request", "StickyWin", "StickyWin.UI"],
@@ -196,7 +196,7 @@
 			"desc":"Extends Autocompleter to automatically inject the css styles."
 		},
 		"Lightbox": {
-			"deps":["Element.Event", "Element.Dimensions", "Selectors", "Browser", "Fx.Tween", "Fx.Morph", "DomReady", "Clientcide", "Class.Binds", "Modalizer"],
+			"deps":["Element.Event", "Element.Dimensions", "Selectors", "Browser", "Fx.Tween", "Fx.Morph", "DomReady", "Clientcide", "Class.Binds", "Mask"],
 			"desc":"A <a href=\"http://www.huddletogether.com/projects/lightbox/\">Lightbox clone for MooTools.</a>"
 		}
 	},
@@ -234,7 +234,7 @@
 	"Beta": {
 		"PostEditor": {
 			"deps": ["Class.Extras", "Element.Style", "Element.Event"],
-			"desc": "A MooTools 1.2.2 version of <a href=\"http://icebeat.bitacoras.com/mootools/posteditor/\">PostEditor</a>."
+			"desc": "A MooTools 1.2.4 version of <a href=\"http://icebeat.bitacoras.com/mootools/posteditor/\">PostEditor</a>."
 		},
 		"PostEditor.Forum": {
 			"deps": ["PostEditor"],
@@ -244,63 +244,67 @@
 	"Compatability": {
 		"Browser.Extras.Compat": {
 			"deps":["DomReady", "URI"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Class.Refactor.Compat": {
 			"deps":["Class.Refactor"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Date.Compat": {
 			"deps":["Date", "String", "Number"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"DollarE": {
 			"deps":["Element", "Clientcide"],
-			"desc":"Brings back $E from MooTools 1.11. Returns a single Element for a selector. DEPRECATED."
+			"desc":"Brings back $E from MooTools 1.11. Returns a single Element for a selector. <b>DEPRECATED</b>."
 		},
 		"DollarG": {
 			"deps":["Element", "Clientcide"],
-			"desc":"Returns a collection when given an element, a collection of elements, an element id, or a selector. DEPRECATED."
-		}
+			"desc":"Returns a collection when given an element, a collection of elements, an element id, or a selector. <b>DEPRECATED</b>."
+		},
 		"Element.Forms.Compat": {
 			"deps":["Element"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Element.MouseOvers.Compat": {
 			"deps":["Element.Shortcuts", "Element.Event"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Element.Position.Compat": {
 			"deps":["Element.Position"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Element.Shortcuts.Compat": {
 			"deps":["Element.Shortcuts"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"IframeShim.Compat": {
 			"deps":["IframeShim", "Class.Refactor"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"JsonP.Compat": {
 			"deps":["Class.Refactor", "Request.JSONP"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Modalizer.Compat":{
 			"deps":["DomReady", "Element.Dimensions", "Element.Style", "Selectors", "Class.Extras"],
-			"desc":"Provides functionality to overlay the window contents with a semi-transparent layer. DEPRECATED (See Mask in MooTools More)."
+			"desc":"Provides functionality to overlay the window contents with a semi-transparent layer. <b>DEPRECATED</b> (See Mask in MooTools More)."
 		},
 		"OverText.Compat": {
 			"deps":["OverText", "Class.Refactor"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"Request.Queue.Compat": {
 			"deps":["Request.Queue", "Class.Refactor"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
 		},
 		"String.Extras.Compat": {
 			"deps":["String"],
-			"desc":"Compatibility for MooTools More 1.2.2"
+			"desc":"Compatibility for MooTools More 1.2.4"
+		},
+		"Waiter.Compat": {
+			"deps":["String"],
+			"desc":"Compatibility for MooTools More 1.2.4"
 		}
 	}
 }

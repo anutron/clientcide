@@ -28,7 +28,7 @@ License:
 					this.setContent(response);
 					this.show();
 					if (this.evalScripts) $exec(responseScript);
-					this.fireEvent('update')
+					this.fireEvent('update');
 				}
 			},
 			initialize: function(options){

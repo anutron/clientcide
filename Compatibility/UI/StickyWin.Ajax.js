@@ -15,7 +15,7 @@
 				this.uiOptions = this.options.stickyWinHTMLOptions;
 				this.previous(options);
 			}
-		}
+		});
 	};
 	try {	SWA(StickyWin.Ajax); } catch(e){}
 	try {	SWA(StickyWin.Fx.Ajax); } catch(e){}

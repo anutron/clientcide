@@ -31,7 +31,7 @@ Form.Request.Prompt Method: constructor {#Form-Request-Prompt:constructor}
 * stickyWinOptions - (*object*) Options to pass along to the specified [StickyWin][].
 * useUi - (*boolean*) If *true* (the default), the form will be wrapped in [StickyWin.ui][].
 * stickyWinUiOptions - (*object*) Options passed along to [StickyWin.ui][]; defaults to *{ width: 500}*.
-* useWaiter - (*boolean*) If *true* (the default) the form (in the popup) will have a [Waiter][] on it while it is being submitted.
+* useSpinner - (*boolean*) If *true* (the default) the form (in the popup) will have a [Spinner][] on it while it is being submitted.
 
 ### Example
 
@@ -138,5 +138,5 @@ Form.Request.Append.AjaxPrompt Method: constructor {#Form-Request-Append-AjaxPro
 [StickyWin.Modal]: http://clientcide.com/docs/UI/StickyWin.Modal
 [StickyWin.UI]: http://clientcide.com/docs/UI/StickyWin.UI
 [StickyWin.Modal.Ajax]: http://clientcide.com/docs/UI/StickyWin.Modal.Ajax
-[Waiter]: http://clientcide.com/docs/UI/Waiter
+[Spinner]: http://mootools.net/docs/more/Interface/Spinner
 [Form.Request]: http://mootools.net/docs/more/Forms/Form.Request

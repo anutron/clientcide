@@ -9,5 +9,6 @@
 				new StickyWin.Modal({content: body});
 			}
 		}
-	]
+	],
+	otherScripts: ['Modalizer.Compat']
 }

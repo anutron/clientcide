@@ -12,15 +12,20 @@ StickyWin.Modal = new Class({
 
 	options: {
 		modalize: true,
-		maskOptions: {},
+		maskOptions: {
+			style: {
+				'background-color':'#333',
+				opacity:0.8
+			}
+		},
 		hideOnClick: true,
-		getWindowManager: function(){ return StickyWin.ModalWM; },
+		getWindowManager: function(){ return StickyWin.ModalWM; }
 	},
 
 	initialize: function(options) {
 		this.options.maskTarget = this.options.maskTarget || document.body;
 		this.setOptions(options);
-		this.mask = new Mask(this.options.maskTarget, this.maskOptions).addEvent('click', function() {
+		this.mask = new Mask(this.options.maskTarget, this.options.maskOptions).addEvent('click', function() {
 			if (this.options.hideOnClick) this.hide();
 		}.bind(this));
 		this.parent(options);

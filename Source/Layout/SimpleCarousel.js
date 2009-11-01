@@ -59,12 +59,12 @@ var SimpleCarousel = new Class({
 		var action = {};
 		this.slides.each(function(slide, index){
 			if (index == slideIndex && index != this.currentSlide){ //show
-				document.id(this.buttons[index]).swapClass(this.options.buttonOffClass, this.options.buttonOnClass);
+				if (document.id(this.buttons[index])) document.id(this.buttons[index]).swapClass(this.options.buttonOffClass, this.options.buttonOnClass);
 				action[index.toString()] = {
 					opacity: 1
 				};
 			} else {
-				document.id(this.buttons[index]).swapClass(this.options.buttonOnClass, this.options.buttonOffClass);
+				if (document.id(this.buttons[index])) document.id(this.buttons[index]).swapClass(this.options.buttonOnClass, this.options.buttonOffClass);
 				action[index.toString()] = {
 					opacity:0
 				};

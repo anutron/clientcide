@@ -2,7 +2,7 @@ var CNETcarousel = new Class({
 	Extends: SimpleCarousel,
 	options:{
 		slidesSelector: ".slide",
-		buttonsSelector: ".button",
+		buttonsSelector: ".button"
 	},
 	initialize: function(container, options){
 		this.setOptions(options);

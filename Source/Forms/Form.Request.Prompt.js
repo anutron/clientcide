@@ -19,14 +19,14 @@ License:
 				stickyWinUiOptions: {
 					width: 500
 				},
-				useWaiter: true
+				useSpinner: true
 			},
 			initialize: function(form, update, options){
 				this.setOptions(options);
 				this.update = document.id(update);
 				this.makeStickyWin(form);
 				this.swin.addEvent('close', function(){
-					if (this.request && this.request.waiter) this.request.waiter.stop();
+					if (this.request && this.request.spinner) this.request.spinner.hide();
 				});
 				this.addEvent('success', this.hide.bind(this));
 			},
@@ -50,9 +50,9 @@ License:
 			initAfterUpdate: function(){
 				this.setOptions({
 					requestOptions: {
-						useWaiter: this.options.useWaiter,
-						waiterTarget: document.id(this),
-						waiterOptions: {
+						useSpinner: this.options.useWaiter || this.options.useSpinner,
+						spinnerTarget: document.id(this),
+						spinnerOptions: {
 							layer: {
 								styles: {
 									zIndex: 10001
@@ -62,7 +62,7 @@ License:
 					}
 				});
 				this.makeRequest();
-				this.addFormEvent();
+				this.attach();
 				document.id(this).store('form.request', this);
 			}
 		};

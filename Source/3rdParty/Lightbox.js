@@ -8,7 +8,7 @@ Script: Lightbox.js
 
 */
 var Lightbox = new Class({
-	Implements: [Options, Events, Modalizer],
+	Implements: [Options, Events],
 	Binds: ['click', 'keyboardListener', 'addHtmlElements'],
 	options: {
 //		anchors: null,
@@ -24,7 +24,8 @@ var Lightbox = new Class({
 		useDefaultCss: true,
 		assetBaseUrl: 'http://www.cnet.com/html/rb/assets/global/slimbox/',
 		overlayStyles: {
-			opacity: 0.8
+			'background-color':'#333',
+			opacity:0.8
 		}
 //		onImageShow: $empty,
 //		onDisplay: $empty,
@@ -62,18 +63,14 @@ var Lightbox = new Class({
 		this.container = new Element('div', {
 			'class':'lbContainer'
 		}).inject(document.body);
-		this.setModalOptions({
-			onModalHide: this.close.bind(this)
+		this.mask = new Mask(document.body, {
+			onHide: this.close.bind(this),
+			style: this.options.overlayStyles,
+			hideOnClick: true
 		});
-		this.overlay = this.layer().addClass('lbOverlay');
-		this.setModalStyle($merge(this.options.overlayStyles, {
-				opacity: 0
-			})
-		);
 		this.popup = new Element('div', {
 			'class':'lbPopup'
 		}).inject(this.container);
-		this.overlay.inject(this.popup);
 		this.center = new Element('div', {
 			styles: {	
 				width: this.options.initialWidth, 
@@ -107,13 +104,11 @@ var Lightbox = new Class({
 			'class': 'lbCloseLink', 
 			href: 'javascript:void(0);'
 		}).inject(this.bottom).addEvent('click', this.close.bind(this));
-		this.overlay.addEvent('click', this.close.bind(this));
 		this.caption = new Element('div', {'class': 'lbCaption'}).inject(this.bottom);
 		this.number = new Element('div', {'class': 'lbNumber'}).inject(this.bottom);
 		new Element('div', {'styles': {'clear': 'both'}}).inject(this.bottom);
 		var nextEffect = this.nextEffect.bind(this);
 		this.fx = {
-			overlay: new Fx.Tween(this.overlay, {property: 'opacity', duration: 500}).set(0),
 			resize: new Fx.Morph(this.center, $extend({
 				duration: this.options.resizeDuration, 
 				onComplete: nextEffect}, 
@@ -147,7 +142,9 @@ var Lightbox = new Class({
 		var j, imageNum, images = [];
 		this.anchors.each(function(el){
 			if (el.get('rel') == link.get('rel')){
-				for (j = 0; j < images.length; j++) if (images[j][0] == el.get('href')) break;
+				for (j = 0; j < images.length; j++) {
+					if (images[j][0] == el.get('href')) break;
+				}
 				if (j == images.length){
 					images.push([el.get('href'), el.get('title')]);
 					if (el.get('href') == link.get('href')) imageNum = j;
@@ -170,8 +167,7 @@ var Lightbox = new Class({
 			top: this.top,
 			display: ''
 		});
-		this.modalShow();
-		this.fx.overlay.start(0, this.options.overlayStyles.opacity);
+		this.mask.show();
 		return this.changeImage(imageNum);
 	},
 
@@ -219,7 +215,7 @@ var Lightbox = new Class({
 		this.preload = new Element('img', {
 			events: {
 				load: function(){
-					this.nextEffect.delay(100, this)
+					this.nextEffect.delay(100, this);
 				}.bind(this)
 			}
 		});
@@ -287,8 +283,9 @@ var Lightbox = new Class({
 		for (var f in this.fx) this.fx[f].cancel();
 		this.center.setStyle('display', 'none');
 		this.bottomContainer.setStyle('display', 'none');
-		this.fx.overlay.chain(this.setup.pass(false, this)).start(0);
+		this.mask.hide();
+		this.setup(false);
 		return;
 	}
 });
-window.addEvent('domready', function(){if (document.id(document.body).get('html').match(/rel=?.lightbox/i)) new Lightbox()});
+window.addEvent('domready', function(){if (document.id(document.body).get('html').match(/rel=?.lightbox/i)) new Lightbox();});

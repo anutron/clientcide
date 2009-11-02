@@ -150,8 +150,7 @@ var TabSwapper = new Class({
 		if (!tab) return this;
 		var sect = tab.retrieve('section');
 		if (!sect) return this;
-		var smoothOk = this.options.smooth && (!Browser.Engine.trident4 
-										|| (Browser.Engine.trident4 && !Browser.Engine.trident4));
+		var smoothOk = this.options.smooth && !Browser.Engine.trident4;
 		if (this.now != idx) {
 			if (!tab.retrieve('tabFx')) 
 				tab.store('tabFx', new Fx.Morph(sect, this.options.effectOptions));
@@ -166,8 +165,7 @@ var TabSwapper = new Class({
 				effect = {opacity: 1};
 			} else if (sect.getStyle('opacity').toInt() < 1) {
 				sect.setStyle('opacity', 1);
-				if (!this.options.smoothSize) 
-					this.fireEvent('onActiveAfterFx', [idx, sect, tab]);
+				if (!this.options.smoothSize) this.fireEvent('onActiveAfterFx', [idx, sect, tab]);
 			}
 			if (this.options.smoothSize) {
 				var size = sect.getDimensions().height;
@@ -183,9 +181,10 @@ var TabSwapper = new Class({
 				tab.retrieve('tabFx').start(effect).chain(function(){
 					this.fireEvent('onActiveAfterFx', [idx, sect, tab]);
 					sect.setStyles({
-						height: "auto",
+						height: this.options.maxSize == effect.height ? this.options.maxSize : "auto",
 						overflow: overflow
 					});
+					sect.getElements('input, textarea').setStyle('opacity', 1);
 				}.bind(this));
 			}
 			this.now = idx;

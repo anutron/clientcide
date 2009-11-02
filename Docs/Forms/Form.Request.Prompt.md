@@ -29,6 +29,7 @@ Form.Request.Prompt Method: constructor {#Form-Request-Prompt:constructor}
 * The same as [Form.Request][] in addition to:
 * stickyWinToUse - (*class*) Which [StickyWin][] to use, defaults to [StickyWin.Modal][].
 * stickyWinOptions - (*object*) Options to pass along to the specified [StickyWin][].
+* caption - (*string*) the caption for the [StickyWin][]; defaults to "Update Info".
 * useUi - (*boolean*) If *true* (the default), the form will be wrapped in [StickyWin.ui][].
 * stickyWinUiOptions - (*object*) Options passed along to [StickyWin.ui][]; defaults to *{ width: 500}*.
 * useSpinner - (*boolean*) If *true* (the default) the form (in the popup) will have a [Spinner][] on it while it is being submitted.

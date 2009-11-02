@@ -147,6 +147,8 @@ StickyWin.UI = new Class({
 });
 StickyWin.UI.getArgs = function(){
 	var input = $type(arguments[0]) == "arguments"?arguments[0]:arguments;
+	if (Browser.Engine.presto && 1 === input.length) input = input[0];
+
 	var cap = input[0], bod = input[1];
 	var args = Array.link(input, {options: Object.type});
 	if (input.length == 3 || (!args.options && input.length == 2)) {

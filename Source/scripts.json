@@ -254,11 +254,11 @@
 			"deps":["Date", "String", "Number"],
 			"desc":"Compatibility for MooTools More 1.2.4"
 		},
-		"DollarE": {
+		"DollarE.Compat": {
 			"deps":["Element", "Clientcide"],
 			"desc":"Brings back $E from MooTools 1.11. Returns a single Element for a selector. <b>DEPRECATED</b>."
 		},
-		"DollarG": {
+		"DollarG.Compat": {
 			"deps":["Element", "Clientcide"],
 			"desc":"Returns a collection when given an element, a collection of elements, an element id, or a selector. <b>DEPRECATED</b>."
 		},

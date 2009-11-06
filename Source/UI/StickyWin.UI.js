@@ -27,7 +27,6 @@ StickyWin.UI = new Class({
 			"div.DefaultStickyWin div.dragHandle {	width: 11px;	height: 25px;	position: relative;	top: 5px;	left: -3px;	cursor: move;	background: url({%baseHref%}drag_corner.gif); float: left;}",
 		cornerHandle: false,
 		cssClass: '',
-		baseHref: 'http://www.cnet.com/html/rb/assets/global/stickyWinHTML/',
 		buttons: [],
 		cssId: 'defaultStickyWinStyle',
 		cssClassName: 'DefaultStickyWin',
@@ -42,7 +41,7 @@ StickyWin.UI = new Class({
 		var args = this.getArgs(arguments);
 		this.setOptions(args.options);
 		this.legacy();
-		var css = this.options.css.substitute({baseHref: this.options.baseHref}, /\\?\{%([^}]+)%\}/g);
+		var css = this.options.css.substitute({baseHref: this.options.baseHref || Clientcide.assetLocation + '/stickyWinHTML/'}, /\\?\{%([^}]+)%\}/g);
 		if (Browser.Engine.trident4) css = css.replace(/png/g, 'gif');
 		this.createStyle(css, this.options.cssId);
 		this.build();

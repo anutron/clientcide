@@ -18,7 +18,6 @@ var TagMaker = new Class({
 		width: 400,
 		maxHeight: 500,
 		clearOnPrompt: true,
-		baseHref: "http://www.cnet.com/html/rb/assets/global/tips", 
 		css: "table.trinket {	width: 98%;	margin: 0px auto;	font-size: 10px; }"+
 					"table.trinket td {	vertical-align: top;	padding: 4px;}"+
 					"table.trinket td a.button {	position: relative;	top: -2px;}"+
@@ -58,7 +57,7 @@ var TagMaker = new Class({
 				}
 			}
 		];
-		this.createStyle(this.options.css.replace("%baseHref%", this.options.baseHref, "g"), 'defaultTagBuilderStyle');
+		this.createStyle(this.options.css.replace("%baseHref%", this.options.baseHref || Clientcide.assetLocation + '/tips', "g"), 'defaultTagBuilderStyle');
 	},
 	prompt: function(target){
 		this.target = document.id(target);
@@ -102,8 +101,9 @@ var TagMaker = new Class({
 			this.form = new Element('form');
 				var table = new HtmlTable({properties: {'class':'trinket'}});
 				this.getKeys(opt.output).each(function(inputKey) {
+					var input;
 					if (this.options.selectLists[inputKey]){
-						var input = new Element('select').setProperties({
+						input = new Element('select').setProperties({
 							name: inputKey.replace(' ', '-', 'g')
 						}).addEvent('change', this.createOutput.bind(this));
 						this.options.selectLists[inputKey].each(function(opt){
@@ -114,14 +114,14 @@ var TagMaker = new Class({
 						}, this);
 						table.push([inputKey, input]);
 					} else {
-						var input = new Element('input', {
+						input = new Element('input', {
 							type: 'text',
 							name: inputKey.replace(/ /g, '-'),
 							title: inputKey+'::'+opt.help[inputKey],
 							'class': 'text tip ' + ((opt['class'])?opt['class'][inputKey]||'':''),
 							events: {
 								keyup: this.createOutput.bind(this),
-								focus: function(){this.select()},
+								focus: function(){this.select();},
 								change: this.createOutput.bind(this)
 							}
 						});
@@ -144,7 +144,7 @@ var TagMaker = new Class({
 										if (inputKey == "Full Path" && val.test(/^http:/))
 												input.set('value', val.substring(val.indexOf('/', 7), val.length));
 										this.createOutput();
-									} catch(e){dbug.log(e)}
+									} catch(e){dbug.log(e);}
 								}.bind(this)
 							});
 							table.push([inputKey, div]);
@@ -158,7 +158,7 @@ var TagMaker = new Class({
 						type: 'text',
 						title: 'HTML::This is the resulting tag html.',
 						'class': 'text result tip'
-					}).addEvent('focus', function(){this.select()});
+					}).addEvent('focus', function(){this.select();});
 				table.push(['HTML', this.resultInput]).tr;
 
 			this.form = table.table;
@@ -183,7 +183,7 @@ var TagMaker = new Class({
 			new Tips(this.content.getElements('.tip'), {
 				showDelay: 700,
 				maxTitleChars: 50, 
-				maxOpacity: .9,
+				maxOpacity: 0.9,
 				className: 'tagMaker'
 			});
 		}

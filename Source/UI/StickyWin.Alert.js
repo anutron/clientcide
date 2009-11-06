@@ -9,7 +9,6 @@ StickyWin.Alert = new Class({
 	Implements: Options,
 	Extends: StickyWin.Modal,
 	options: {
-		baseHref: "http://www.cnet.com/html/rb/assets/global/simple.error.popup",
 		destroyOnClose: true,
 		modalOptions: {
 			modalStyle: {
@@ -54,7 +53,7 @@ StickyWin.Error = new Class({
 	makeMessage: function(){
 		var message = this.parent();
 		new Element('img', {
-			src: this.options.baseHref + '/icon_problems_sm.gif',
+			src: (this.options.baseHref || Clientcide.assetLocation + '/simple.error.popup') + '/icon_problems_sm.gif',
 			'class': 'bang clearfix',
 			styles: {
 				'float': 'left',

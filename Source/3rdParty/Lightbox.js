@@ -22,7 +22,6 @@ var Lightbox = new Class({
 		autoScanLinks: true,
 		relString: 'lightbox',
 		useDefaultCss: true,
-		assetBaseUrl: 'http://www.cnet.com/html/rb/assets/global/slimbox/',
 		overlayStyles: {
 			'background-color':'#333',
 			opacity:0.8
@@ -128,7 +127,7 @@ var Lightbox = new Class({
 				rel: 'stylesheet', 
 				media: 'screen', 
 				type: 'text/css', 
-				href: this.options.assetBaseUrl + 'slimbox.css',
+				href: (this.options.assetBaseUrl || Clientcide.assetLocation + '/slimbox') + '/slimbox.css',
 				id: 'LightboxCss'
 			}).inject(document.head);
 		}.bind(this));

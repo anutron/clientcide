@@ -36,7 +36,6 @@ StickyWin.UI.Pointy = new Class({
 		"div.DefaultPointyTip .pointyWrapper div.noCaption{ height: 6px; overflow: hidden}"+
 		"div.DefaultPointyTip .pointyWrapper div.closeButton{width:13px; height:13px; background:url({%baseHref%}{%imgset%}_x.png) no-repeat; position: absolute; right: 0px; margin:0px !important; cursor:pointer; z-index: 1; top: 4px;}"+
 		"div.DefaultPointyTip .pointyWrapper div.pointyDivot {background: url({%divot%}) no-repeat;}",
-		baseHref: 'http://github.com/anutron/clientcide/raw/master/Assets/PointyTip/',
 		divot: '{%baseHref%}{%imgset%}_divot.png',
 		divotSize: 22,
 		direction: 12,

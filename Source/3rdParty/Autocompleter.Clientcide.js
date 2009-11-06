@@ -7,9 +7,6 @@ License:
 */
 (function(){
 	Autocompleter.Base = Class.refactor(Autocompleter.Base, {
-		options: {
-			baseHref: 'http://www.cnet.com/html/rb/assets/global/autocompleter/'
-		},
 		initialize: function(a1,a2,a3) {
 			this.previous(a1,a2,a3);
 			this.writeStyle();
@@ -21,7 +18,7 @@ License:
 					rel: 'stylesheet', 
 					media: 'screen', 
 					type: 'text/css', 
-					href: this.options.baseHref+'Autocompleter.css', 
+					href: (this.options.baseHref || Clientcide.assetLocation + '/autocompleter')+'/Autocompleter.css', 
 					id: 'AutocompleterCss'
 				}).inject(document.head);
 			}.bind(this));

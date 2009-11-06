@@ -7,67 +7,9 @@ License:
 */
 var Clientcide = {
 	version: '%build%',
+	assetLocation: "http://github.com/anutron/clientcide/raw/master/Assets",
 	setAssetLocation: function(baseHref) {
-		var clean = function(str){
-			return str.replace(/\/\//g, '/');
-		};
-		var test = function(val) {
-			return window[val] && $type(window[val]) == "function";
-		};
-		if (test('StickyWin') && StickyWin.UI) {
-			StickyWin.UI.implement({
-				options: {
-					baseHref: clean(baseHref + '/stickyWinHTML/')
-				}
-			});
-			if ($('defaultStickyWinStyle')) $('defaultStickyWinStyle').destroy();
-			if (StickyWin.Alert) {
-				StickyWin.Alert.implement({
-					options: {
-						baseHref: baseHref + "/simple.error.popup"
-					}
-				});
-			}
-			if (StickyWin.UI.Pointy) {
-				StickyWin.UI.Pointy.implement({
-					options: {
-						baseHref: clean(baseHref + '/PointyTip/')
-					}
-				});
-				if ($('defaultPointyTipStyle')) $('defaultPointyTipStyle').destroy();
-			}
-		}
-		if (test('TagMaker')) {
-			TagMaker.implement({
-					options: {
-							baseHref: clean(baseHref + '/tips/')
-					}
-			});
-		}
-		if (test('ProductPicker')) {
-			ProductPicker.implement({
-					options:{
-							baseHref: clean(baseHref + '/Picker')
-					}
-			});
-		}
-
-		if (test('Autocompleter')) {
-			Autocompleter.Base.implement({
-					options: {
-						baseHref: clean(baseHref + '/autocompleter/')
-					}
-			});
-		}
-
-		if (test('Lightbox')) {
-			Lightbox.implement({
-					options: {
-							assetBaseUrl: clean(baseHref + '/slimbox/')
-					}
-			});
-		}
-
+		Clientcide.assetLocation = baseHref;
 		if (Clientcide.preloaded) Clientcide.preLoadCss();
 	},
 	preLoadCss: function(){

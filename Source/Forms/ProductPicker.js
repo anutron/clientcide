@@ -32,7 +32,6 @@ var ProductPicker = new Class({
 			width: 450
 		},
 		moveIntoView: true,
-		baseHref: 'http://www.cnet.com/html/rb/assets/global/Picker',
 		css: "div.productPickerProductDiv div.results { overflow: 'auto'; width: 100%; margin-top: 4px }"+
 			"div.productPickerProductDiv select { margin: 4px 0px 4px 0px}"+
 			"div.pickerPreview div.sliderContent img {border: 1px solid #000}"+
@@ -51,7 +50,7 @@ var ProductPicker = new Class({
 		this.setUpObservers();
 	},
 	writeCss: function(){
-		var art = this.options.baseHref;
+		var art = this.options.baseHref || Clientcide.assetLocation + '/Picker';
 		var tipsArt = art.replace("Picker", "tips");
 		this.createStyle(this.options.css.replace("%tipsArt%", tipsArt, "g"), 'pickerStyles');
 	},
@@ -111,7 +110,7 @@ var ProductPicker = new Class({
 			}.bind(this),
 			mouseout: function(){
 				this.previewHover = false;
-				(function(){if (!this.previewHover) this.hidePreview()}).delay(400, this);
+				(function(){if (!this.previewHover) this.hidePreview();}).delay(400, this);
 			}.bind(this)
 		});
 		this.sliderContent = new Element('div', {
@@ -161,27 +160,27 @@ var ProductPicker = new Class({
 					onShow: function(tip){
 						this.shown = true;
 						(function(){
-              if (!this.shown) return;
-              document.id(tip).setStyles({ display:'block', opacity: 0 });
-              new Fx.Tween(tip, {property: 'opacity', duration: 300 }).start(0,.9);
-            }).delay(500, this);
-          },
-          onHide: function(tip){
-            tip.setStyle('visibility', 'hidden');
-            this.shown = false;
-          }
-        });
-      }
-      if (val.tagName == "select"){
-        val.value.each(function(option, index){
-          var opt = new Element('option',{ value: option });
-          opt.text = (val.optionNames && val.optionNames[index])?$pick(val.optionNames[index], option):option;
-          input.adopt(opt);
-        });
-      } else {
+							if (!this.shown) return;
+							document.id(tip).setStyles({ display:'block', opacity: 0 });
+							new Fx.Tween(tip, {property: 'opacity', duration: 300 }).start(0,0.9);
+						}).delay(500, this);
+					},
+					onHide: function(tip){
+						tip.setStyle('visibility', 'hidden');
+						this.shown = false;
+					}
+				});
+			}
+			if (val.tagName == "select"){
+				val.value.each(function(option, index){
+					var opt = new Element('option',{ value: option });
+					opt.text = (val.optionNames && val.optionNames[index])?$pick(val.optionNames[index], option):option;
+					input.adopt(opt);
+				});
+			} else {
 				input.set('value', $pick(val.value,""));
 			}
-      var holder = new Element('tr');
+			var holder = new Element('tr');
 			var colspan=0;
 			if (val.instructions) holder.adopt(new Element('td').set('html', val.instructions));
 			else colspan=2;
@@ -192,7 +191,7 @@ var ProductPicker = new Class({
 		}catch(e){dbug.log(e); return false;}
 	},
 	getResults: function(form, picklet){
-		if (form.get('tag') != "form") form = $$('form').filter(function(fm){ return fm.hasChild(form) })[0];
+		if (form.get('tag') != "form") form = $$('form').filter(function(fm){ return fm.hasChild(form); })[0];
 		if (!form) {
 			dbug.log('error computing form');
 			return null;

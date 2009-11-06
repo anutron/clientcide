@@ -11,7 +11,10 @@ var Clientcide = {
 		var clean = function(str){
 			return str.replace(/\/\//g, '/');
 		};
-		if (window.StickyWin && StickyWin.UI) {
+		var test = function(val) {
+			return window[val] && $type(window[val]) == "function";
+		};
+		if (test('StickyWin') && StickyWin.UI) {
 			StickyWin.UI.implement({
 				options: {
 					baseHref: clean(baseHref + '/stickyWinHTML/')
@@ -34,22 +37,22 @@ var Clientcide = {
 				if ($('defaultPointyTipStyle')) $('defaultPointyTipStyle').destroy();
 			}
 		}
-		if (window.TagMaker) {
+		if (test('TagMaker')) {
 			TagMaker.implement({
-			    options: {
-			        baseHref: clean(baseHref + '/tips/')
-			    }
+					options: {
+							baseHref: clean(baseHref + '/tips/')
+					}
 			});
 		}
-		if (window.ProductPicker) {
+		if (test('ProductPicker')) {
 			ProductPicker.implement({
-			    options:{
-			        baseHref: clean(baseHref + '/Picker')
-			    }
+					options:{
+							baseHref: clean(baseHref + '/Picker')
+					}
 			});
 		}
 
-		if (window.Autocompleter) {
+		if (test('Autocompleter')) {
 			Autocompleter.Base.implement({
 					options: {
 						baseHref: clean(baseHref + '/autocompleter/')
@@ -57,11 +60,11 @@ var Clientcide = {
 			});
 		}
 
-		if (window.Lightbox) {
+		if (test('Lightbox')) {
 			Lightbox.implement({
-			    options: {
-			        assetBaseUrl: clean(baseHref + '/slimbox/')
-			    }
+					options: {
+							assetBaseUrl: clean(baseHref + '/slimbox/')
+					}
 			});
 		}
 

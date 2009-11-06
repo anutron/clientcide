@@ -37,6 +37,7 @@ Changes in 2.2.0
 * added detach method to MooScroller
 * dbug should now work in IE8
 * offset options are now additive for pointy tip
+* numerous bug fixes
 
 Changes in 2.1.0
 =======

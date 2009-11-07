@@ -5,6 +5,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({
 					content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 						direction: 11
@@ -18,6 +19,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 12,
 					theme: 'light'
@@ -29,6 +31,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 1
 				})});
@@ -39,6 +42,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 2,
 					theme: 'light'
@@ -50,6 +54,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({
 					content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 						direction: 3
@@ -62,6 +67,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 4
 				})});
@@ -72,6 +78,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 5
 				})});
@@ -92,6 +99,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 7
 				})});
@@ -102,6 +110,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 8
 				})});
@@ -112,6 +121,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 9
 				})});
@@ -122,6 +132,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
 					direction: 10
 				})});

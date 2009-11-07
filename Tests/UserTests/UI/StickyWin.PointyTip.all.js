@@ -5,6 +5,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin.PointyTip('This is the caption', 
 					'This is the body. You can close me with the little "X" in the upper right corner', {
 					relativeTo: 'foo',
@@ -18,6 +19,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin.PointyTip('This is the body. You can close me with the little "X" in the upper right corner', {
 					relativeTo: 'foo',
 					width: 200,
@@ -33,6 +35,7 @@
 			description: "Creates a StickyWin popup with a styled layout with a pointer.",
 			verify: "Did the styled popup show up? Can you close it?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new StickyWin.PointyTip('This is the body. You can close me with the little "X" in the upper right corner', {
 					relativeTo: 'foo',
 					width: 200,

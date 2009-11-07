@@ -4,9 +4,10 @@
 			title: "DatePicker",
 			description: "Allows the user to enter a date value into an input.",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				new DatePicker('datePicker', {
 					additionalShowLinks: ['pickerImg'],
-					stickyWinOptions: { draggable: false },
+					stickyWinOptions: { draggable: true },
 					format: "db"
 				});
 				new Form.Validator('pickerForm', {

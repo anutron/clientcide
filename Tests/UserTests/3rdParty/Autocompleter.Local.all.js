@@ -5,6 +5,7 @@
 			description: "Creates an auto completed input using data in memory.",
 			verify: "Can you use the input to type in values that are autocompleted?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				// Our instance for the element with id "demo-local"
 				new Autocompleter.Local('foo', tokens, {
 					minLength: 1, // We need at least 1 character
@@ -18,6 +19,7 @@
 			description: "Creates an auto completed input using data in memory; allows for more than one value.",
 			verify: "Can you use the input to type in values that are autocompleted? Can you add a comma and enter another value that is autocompleted?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				// Our instance for the element with id "demo-local"
 				new Autocompleter.Local('foo2', tokens, {
 					minLength: 1, // We need at least 1 character
@@ -32,6 +34,7 @@
 			description: "Creates an auto completed input using data in memory; allows for more than one value.",
 			verify: "Can you use the input to type in values that are autocompleted? Can you add a comma and enter another value that is autocompleted?",
 			before: function(){
+				Clientcide.setAssetLocation('../Assets');
 				// Our instance for the element with id "demo-local"
 				new Autocompleter.Local('foo3', tokens, {
 					minLength: 1, // We need at least 1 character

@@ -138,11 +138,11 @@
 			"desc":"Fades a message in and out for the user to tell them that some event (like an ajax save) has occurred."
 		},
 		"DatePicker":{
-			"deps":["Class.Extras", "Element.Event", "Date", "dbug", "StickyWin.UI"],
+			"deps":["Class.Extras", "Element.Event", "Date", "dbug", "StickyWin.UI", "StickyWin.Drag"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
 		"DatePicker.Extras":{
-			"deps":["Class.Extras", "Element.Event", "dbug", "StickyWin"],
+			"deps":["Class.Extras", "Element.Event", "dbug", "StickyWin", "Class.Refactor"],
 			"desc":"Allows the user to enter a date in any popuplar format or choose from a calendar."
 		},
 		"Form.Validator.Tips":{

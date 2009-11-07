@@ -198,7 +198,7 @@ var DatePicker;
 				});
 				this.stickyWin = new this.options.stickyWinToUse(opts);
 				this.stickyWin.addEvent('onDisplay', this.positionClose.bind(this));
-				this.container.setStyle('z-index', this.stickyWin.win.getStyle('z-index').toInt()+1);
+				
 			}
 			return this.calendar;
 		},
@@ -279,8 +279,10 @@ var DatePicker;
 			var startDate = (date)?new Date(date.getTime()):new Date();
 			var hours = startDate.get('hours');
 			startDate.setDate(1);
-			startDate.setTime((startDate.getTime() - (Date.units.day() * (startDate.getDay()))) + 
-			                  (Date.units.day() * this.options.weekStartOffset));
+			var startDay = startDate.getDay( );						//line added
+			if ( startDay < this.options.weekStartOffset ) startDay += 7;			//line added
+			startDate.setTime((startDate.getTime() - (Date.units.day() * (startDay))) + 
+				(Date.units.day() * this.options.weekStartOffset));
 			var monthyr = new Element('span', {
 				html: Date.getMsg('months')[date.getMonth()] + " " + date.getFullYear()
 			});

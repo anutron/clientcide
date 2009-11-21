@@ -198,7 +198,8 @@ StickyWin.UI.Pointy = new Class({
 		};
 		var putItBack = this.expose();
 		this.pointer.position($extend({
-			relativeTo: this.pointyWrapper
+			relativeTo: this.pointyWrapper,
+			allowNegative: true
 		}, pos, options));
 		putItBack();
 	},

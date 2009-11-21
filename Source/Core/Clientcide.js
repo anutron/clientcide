@@ -6,7 +6,7 @@ License:
 	http://www.clientcide.com/wiki/cnet-libraries#license
 */
 var Clientcide = {
-	version: '2.2.0',
+	version: '2.2.1dev',
 	assetLocation: "http://github.com/anutron/clientcide/raw/master/Assets",
 	setAssetLocation: function(baseHref) {
 		Clientcide.assetLocation = baseHref;

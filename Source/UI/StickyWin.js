@@ -82,12 +82,12 @@ var StickyWin = new Class({
 		this.destroyOthers();
 		if (!document.id(this.id)) {
 			this.win = new Element('div', {
-				id:		this.id
+				id: this.id
 			}).addClass(this.options.className).addClass('StickyWinInstance').addClass('SWclearfix').setStyles({
-			 	display:'none',
-				position:'absolute',
-				zIndex:this.options.zIndex
-			}).inject(this.options.inject.target, this.options.inject.where).store('StickyWin', this);			
+			 	display: 'none',
+				position: 'absolute',
+				zIndex: this.options.zIndex
+			}).inject(this.options.inject.target, this.options.inject.where).store('StickyWin', this);
 		} else this.win = document.id(this.id);
 		this.element = this.win;
 		if (this.options.width && $type(this.options.width.toInt())=="number") this.win.setStyle('width', this.options.width.toInt());
@@ -183,6 +183,7 @@ var StickyWin = new Class({
 		if (this.shim) this.shim.hide();
 	},
 	destroy: function(){
+		this.destroyed = true;
 		if (this.windowManager) this.windowManager.remove(this);
 		if (this.win) this.win.destroy();
 		if (this.options.useIframeShim && this.shim) this.shim.destroy();
@@ -200,7 +201,6 @@ StickyWin.Stacker = new Class({
 	},
 	initialize: function(options) {
 		this.setOptions(options);
-		this.zIndex = this.options.zIndex;
 	},
 	add: function(sw) {
 		this.instances.include(sw);

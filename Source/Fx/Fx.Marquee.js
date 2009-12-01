@@ -1,9 +1,20 @@
 /*
-Script: Fx.Marquee.js
-	Defines Fx.Marquee, a marquee class for animated notifications.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: Fx.Marquee.js
+
+description: Defines Fx.Marquee, a marquee class for animated notifications.
+
+License: MIT-Style License
+
+requires:
+- core:1.2.4/Fx.Morph
+- more:1.2.4.2/Element.Shortcuts
+
+provides:
+- Fx.Marquee
+
+...
 */
 Fx.Marquee = new Class({
 	Extends: Fx.Morph,
@@ -31,11 +42,12 @@ Fx.Marquee = new Class({
 		this.current = this.wrapMessage(msg);
 	},
 	wrapMessage: function(msg){
+		var wrapper;
 		if (document.id(msg) && document.id(msg).hasClass('fxMarquee')) { //already set up
-			var wrapper = document.id(msg);
+			wrapper = document.id(msg);
 		} else {
 			//create the wrapper
-			var wrapper = new Element('span', {
+			wrapper = new Element('span', {
 				'class':'fxMarquee',
 				styles: {
 					position: 'relative'

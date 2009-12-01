@@ -1,12 +1,25 @@
 /*
+---
+
 name: TabSwapper.js
+
 description: Handles the scripting for a common UI layout; the tabbed box.
-License: http://www.clientcide.com/wiki/cnet-libraries#license
+
+license: http://www.clientcide.com/wiki/cnet-libraries#license
 
 requires:
- - core: Element.Event, Fx.Tween, Fx.Morph
- - more: Element.Shortcuts, Element.Dimensions, Element.Measure
+ - core:1.2.4/
+ - core:1.2.4/Element.Event
+ - core:1.2.4/Fx.Tween
+ - core:1.2.4/Fx.Morph
+ - more:1.2.4.2/Element.Shortcuts
+ - more:1.2.4.2/Element.Dimensions
+ - more:1.2.4.2/Element.Measure
 
+provides:
+- TabSwapper
+
+...
 */
 var TabSwapper = new Class({
 	Implements: [Options, Events],

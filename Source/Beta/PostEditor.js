@@ -1,18 +1,27 @@
 /*
-Script: PostEditor.js
-	Using postEditor you can tabulate without losing your focus and maintain the tabsize in line brakes. 
-	You can also use snippets like in TextMate.
+---
+script: Using postEditor you can tabulate without losing your focus and maintain the tabsize in line brakes. 
 
-Author:
-	Daniel Mota aka IceBeat, <http://icebeat.bitacoras.com>
+description: Default snippets for PostEditor.
 
-Contributors:
-	Sergio Álvarez aka Xergio, <http://xergio.net>
-	Jordi Rivero aka Godsea, <http://godsea.dsland.org>
-	Aaron Newton, <http://www.clientcide.com>
+author: Daniel Mota aka IceBeat, <http://icebeat.bitacoras.com>
 
-License:
-	MIT-style license.
+credit:
+- Sergio Álvarez aka Xergio, <http://xergio.net>
+- Jordi Rivero aka Godsea, <http://godsea.dsland.org>
+- Aaron Newton, <http://www.clientcide.com>
+
+license: MIT-style license.
+
+requires:
+- core:1.2.4/Class.Extras
+- core:1.2.4/Element.Style
+- core:1.2.4/Element.Event
+
+provides:
+- PostEditor
+
+...
 */
 var PostEditor = new Class({
 	

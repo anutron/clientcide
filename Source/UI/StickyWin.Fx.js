@@ -1,23 +1,23 @@
 /*
-Script: StickyWin.Fx.js
+---
 
-	Extends StickyWin to create popups that fade in and out.
+script: StickyWin.Fx.js
 
-	License:
-		MIT-style license.
+description: Extends StickyWin to create popups that fade in and out.
 
-	Authors:
-		Aaron Newton
+license: MIT-style license.
+
+requires:
+- more:1.2.4.2/Class.Refactor
+- core:1.2.4/Fx.Tween
+- /StickyWin
+
+provides:
+- StickyWin.Fx
+
+...
 */
 
-/*
-Script: StickyWin.Fx.js
-
-Extends StickyWin to create popups that fade in and out and can be dragged and resized (requires StickyWin.Fx.Drag.js).
-
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
-*/
 StickyWin = Class.refactor(StickyWin, {
 	options: {
 		//fadeTransition: 'sine:in:out',

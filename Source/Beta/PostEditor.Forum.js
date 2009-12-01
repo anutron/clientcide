@@ -1,17 +1,25 @@
 /*
-Script: PostEditor.Forum.js
-	Default snippets for PostEditor.
+---
+script: PostEditor.Forum.js
 
-Author:
-	Daniel Mota aka IceBeat, <http://icebeat.bitacoras.com>
+description: Default snippets for PostEditor.
 
-Contributors:
-	Sergio Álvarez aka Xergio, <http://xergio.net>
-	Jordi Rivero aka Godsea, <http://godsea.dsland.org>
-	Aaron Newton, <http://www.clientcide.com>
+author: Daniel Mota aka IceBeat, <http://icebeat.bitacoras.com>
 
-License:
-	MIT-style license.
+credit:
+- Sergio Álvarez aka Xergio, <http://xergio.net>
+- Jordi Rivero aka Godsea, <http://godsea.dsland.org>
+- Aaron Newton, <http://www.clientcide.com>
+
+license: MIT-style license.
+
+requires:
+- PostEditor
+
+provides:
+- /PostEditor.Forum
+
+...
 */
 PostEditor.Forum = new Class({
 	Extends: PostEditor,

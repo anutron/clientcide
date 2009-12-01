@@ -1,10 +1,20 @@
  /*
-Script: StickyWin.ui.js
+---
+script: StickyWin.ui.js
 
-Creates an html holder for in-page popups using a default style.
+description: Creates an html holder for in-page popups using a default style.
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Style
+- more:1.2.4.2/String.Extras
+- /StyleWriter
+- /StickyWin
+
+provides:
+- StickyWin.UI
+...
 */
 StickyWin.UI = new Class({
 	Implements: [Options, Class.ToElement, StyleWriter],

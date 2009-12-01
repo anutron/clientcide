@@ -1,9 +1,21 @@
 /*
-Script: FixPNG.js
-	Extends the Browser hash object to include methods useful in managing the window location and urls.
+---
+script: FixPNG.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Extends the Browser hash object to include methods useful in managing the window location and urls.
+
+license: MIT-Style Licence
+
+requires:
+- core:1.2.4/Element.Dimensions
+- core:1.2.4/DomReady
+- more:1.2.4.2/Element.Shortcuts
+- /dbug
+
+provides:
+- FixPNG
+
+...
 */
 $extend(Browser, {
 	fixPNG: function(el) {
@@ -54,7 +66,7 @@ $extend(Browser, {
 								styles[n[0]] = n[1];
 							});
 							replacement.setStyle(styles);
-						} catch(e){ dbug.log('fixPNG1: ', e)}
+						} catch(e){ dbug.log('fixPNG1: ', e);}
 					}
 					if (replacement.cloneEvents) replacement.cloneEvents(el);
 					replacement.replaces(el);
@@ -68,7 +80,7 @@ $extend(Browser, {
 				 	};
 				}
 			}
-		} catch(e) {dbug.log('fixPNG2: ', e)}
+		} catch(e) {dbug.log('fixPNG2: ', e);}
 	},
   pngTest: /\.png$/, // saves recreating the regex repeatedly
   scanForPngs: function(el, className) {
@@ -87,4 +99,4 @@ $extend(Browser, {
     }
   }
 });
-if (Browser.Engine.trident4) window.addEvent('domready', function(){$$('img.fixPNG').each(Browser.fixPNG)});
+if (Browser.Engine.trident4) window.addEvent('domready', function(){$$('img.fixPNG').each(Browser.fixPNG);});

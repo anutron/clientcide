@@ -1,9 +1,19 @@
 /*
-Script: SimpleEditor.Portuguese.js
-	SimpleEditor messages in Portuguese. Thanks Miquel Hudin.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: SimpleEditor.Portuguese.js
+
+description: SimpleEditor messages in Portuguese. Thanks Miquel Hudin.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/MooTools.Lang
+
+provides:
+- SimpleEditor.Portuguese
+
+...
 */
 MooTools.lang.set('pt-PT', 'SimpleEditor', {
 	woops:'Opa',

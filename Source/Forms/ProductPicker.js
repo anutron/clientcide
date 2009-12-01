@@ -1,9 +1,28 @@
 /*
-Script: ProductPicker.js
-	Allows the user to pick a product from a data source.
+script: ProductPicker.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Allows the user to pick a product from a data source.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Event
+- core:1.2.4/Fx.Tween
+- core:1.2.4/Element.Dimensions
+- more:1.2.4.2/Fx.Elements
+- more:1.2.4.2/Drag
+- more:1.2.4.2/Request.JSONP
+- more:1.2.4.2/Element.Shortcuts
+- more:1.2.4.2/Tips
+- /StickyWin
+- /dbug
+- /StyleWriter
+
+provides:
+- Picklet
+- ProductPicker
+- FormPickers
+...
 */
 var Picklet = new Class({
 	Implements: [Options, Events],

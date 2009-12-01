@@ -1,9 +1,19 @@
 /*
-Script: SimpleEditor.Dutch.js
-	SimpleEditor messages in Dutch. Thanks Lennart Pilon.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: SimpleEditor.Dutch.js
+
+descripion: SimpleEditor messages in Dutch. Thanks Lennart Pilon.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/MooTools.Lang
+
+provides:
+- SimpleEditor.Dutch
+
+...
 */
 MooTools.lang.set('nl-NL', 'SimpleEditor', {
 	woops:'Oeps',

@@ -1,10 +1,20 @@
 /*
-Script: SimpleCarousel.js
+---
+script: SimpleCarousel.js
 
-Builds a carousel object that manages the basic functions of a generic carousel (a carousel	here being a collection of "slides" that play from one to the next, with a collection of "buttons" that reference each slide).
+description: Builds a carousel object that manages the basic functions of a generic carousel (a carousel	here being a collection of "slides" that play from one to the next, with a collection of "buttons" that reference each slide).
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+license: MIT-Style License
+
+requires:
+- core:1.2.4/DomReady
+- more:1.2.4.2/Fx.Elements
+- more:1.2.4.2/Element.Shortcuts
+
+provides:
+- SimpleCarousel
+
+...
 */
 var SimpleCarousel = new Class({
 	Implements: [Options, Events],

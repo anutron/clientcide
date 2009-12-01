@@ -1,9 +1,23 @@
 /*
-Script: StickyWin.Alert.js
-	Defines StickyWin.Alert, a simple little alert box with a close button.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: StickyWin.Alert.js
+
+description: Defines StickyWin.Alert, a simple little alert box with a close button.
+
+license: MIT-Style License
+
+requires:
+- /StickyWin.Modal
+- /StickyWin.UI
+
+provides:
+- StickyWin.Alert
+- StickyWin.Error
+- StickyWin.alert
+- StickyWin.error
+
+...
 */
 StickyWin.Alert = new Class({
 	Implements: Options,

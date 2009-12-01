@@ -1,9 +1,16 @@
 /*
-Script: Clientcide.js
-	The Clientcide namespace.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: Clientcide.js
+
+description: The Clientcide namespace.
+
+license: MIT-style license.
+
+provides:
+- Clientcide
+
+...
 */
 var Clientcide = {
 	version: '2.2.1dev',

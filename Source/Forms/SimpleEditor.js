@@ -1,9 +1,25 @@
 /*
-Script: SimpleEditor.js
-	A simple html editor for wrapping text with links and whatnot.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: SimpleEditor.js
+
+description: A simple html editor for wrapping text with links and whatnot.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Class.Extras
+- core:1.2.4/Element.Event
+- more:1.2.4.2/Class.Occlude
+- more:1.2.4.2/Element.Forms
+- more:1.2.4.2/Element.Shortcuts
+- more:1.2.4.2/String.Extras
+- /Class.ToElement
+- /SimpleEditor.English.US
+
+provides:
+- SimpleEditor
+...
 */
 var SimpleEditor = new Class({
 	Implements: [Class.ToElement, Class.Occlude],
@@ -66,7 +82,7 @@ $extend(SimpleEditor, {
 		SimpleEditor.commands[key] = {
 			command: command,
 			shortcut: shortcut
-		}
+		};
 	},
 	addCommands: function(commands){
 		$extend(SimpleEditor.commands, commands);
@@ -206,7 +222,7 @@ SimpleEditor.addCommands({
 				}
 				this.container.set('html', input.get('value'));
 				this.preview.show();
-			} catch(e){dbug.log('you need StickyWin.Modal and StickyWin.ui')}
+			} catch(e){dbug.log('you need StickyWin.Modal and StickyWin.ui');}
 		}
 	}
 });

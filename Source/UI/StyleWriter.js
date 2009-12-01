@@ -1,10 +1,21 @@
 /*
-Script: StyleWriter.js
+---
+script: StyleWriter.js
 
-Provides a simple method for injecting a css style element into the DOM if it's not already present.
+description: Provides a simple method for injecting a css style element into the DOM if it's not already present.
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Class
+- core:1.2.4/DomReady
+- core:1.2.4/Element
+- /dbug
+
+provides:
+- StyleWriter
+
+...
 */
 
 var StyleWriter = new Class({

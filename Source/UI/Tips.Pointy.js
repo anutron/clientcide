@@ -1,9 +1,19 @@
 /*
-Script: Tips.Pointy.js
-	Defines Tips.Pointy, An extension to Tips that adds a pointy style to the tip.
+---
+script: Tips.Pointy.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Defines Tips.Pointy, An extension to Tips that adds a pointy style to the tip.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/Tips
+- /StickyWin.PointyTip
+
+provides:
+- Tips.Pointy
+
+...
 */
 
 Tips.Pointy = new Class({

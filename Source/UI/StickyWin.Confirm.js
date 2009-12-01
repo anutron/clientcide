@@ -1,9 +1,19 @@
 /*
-Script: StickyWin.Confirm.js
-	Defines StickyWin.Conferm, a simple confirmation box with an ok and a close button.
+---
+script: StickyWin.Confirm.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Defines StickyWin.Conferm, a simple confirmation box with an ok and a close button.
+
+license: MIT-Style License
+
+requires:
+- /StickyWin.Alert
+
+provides:
+- StickyWin.Confirm
+- StickyWin.confirm
+
+...
 */
 StickyWin.Confirm = new Class({
 	Extends: StickyWin.Alert,

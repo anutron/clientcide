@@ -1,10 +1,19 @@
 /*
-Script: StickyWin.Modal.js
+---
 
-This script extends StickyWin and StickyWin.Fx classes to add Mask functionality.
+script: StickyWin.Modal.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: This script extends StickyWin and StickyWin.Fx classes to add Mask functionality.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/Mask
+- /StickyWin
+
+provides:
+- StickyWin.Modal
+...
 */
 StickyWin.Modal = new Class({
 

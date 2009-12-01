@@ -1,9 +1,18 @@
 /*
-Script: StickyWin.PointyTip.js
-	Positions a pointy tip relative to the element you specify.
+---
+script: StickyWin.PointyTip.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Positions a pointy tip relative to the element you specify.
+
+license: MIT-Style License
+
+requires:
+- /StickyWin.UI.Pointy
+
+provides:
+- StickyWin.PointyTip
+
+...
 */
 StickyWin.PointyTip = new Class({
 	Extends: StickyWin,

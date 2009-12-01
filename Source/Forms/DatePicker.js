@@ -1,9 +1,22 @@
 /*
-Script: DatePicker.js
-	Allows the user to enter a date in many popuplar date formats or choose from a calendar.
+---
+script: DatePicker.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Allows the user to enter a date in many popuplar date formats or choose from a calendar.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Class.Extras
+- core:1.2.4/Element.Event
+- more:1.2.4.2/Date
+- /dbug
+- /StickyWin.UI
+- /StickyWin.Drag
+
+provides:
+- DatePicker
+...
 */
 var DatePicker;
 (function(){

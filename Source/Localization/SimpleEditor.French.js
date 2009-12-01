@@ -1,9 +1,18 @@
 /*
-Script: SimpleEditor.French.js
-	SimpleEditor messages in French. Thanks Miquel Hudin.
+---
+script: SimpleEditor.French.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: SimpleEditor messages in French. Thanks Miquel Hudin.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/MooTools.Lang
+
+provides:
+- SimpleEditor.French
+
+...
 */
 MooTools.lang.set('fr-FR', 'SimpleEditor', {
 	woops:'Oops',

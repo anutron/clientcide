@@ -1,9 +1,19 @@
 /*
-Script: Form.Request.Prompt.js
-	Prompts the user with the contents of a form (retrieved via ajax) and updates a DOM element with the result of the submission.
+---
+script: Form.Request.Prompt.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Prompts the user with the contents of a form (retrieved via ajax) and updates a DOM element with the result of the submission.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/Form.Request.Append
+- /StickyWin.Modal
+- /StickyWin.Ajax
+
+provides:
+- Form.Request.Prompt
+...
 */
 (function(){
 	

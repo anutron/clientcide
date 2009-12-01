@@ -81,7 +81,7 @@
 			"desc":"Extends StickyWin.Confirm to make a prompt box with an input as well as ok and close buttons."
 		},
 		"StickyWin.UI":{
-			"deps":["Element.Style", "String.Extras", "StickyWin"],
+			"deps":["Element.Style", "String.Extras", "StickyWin", "StyleWriter"],
 			"desc":"Creates an html holder for in-page popups using a default style."
 		},
 		"StickyWin.UI.Pointy":{

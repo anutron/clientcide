@@ -1,14 +1,21 @@
-/**
- * Autocompleter.Local
- *
- * @version		1.1.1
- *
- * @todo: Caching, no-result handling!
- *
- *
- * @license		MIT-style license
- * @author		Harald Kirschner <mail [at] digitarald.de>
- * @copyright	Author
+/*
+---
+script: Autocompleter.Local
+
+description: Allows Autocompleter to use an object in memory for autocompletion (instead of retrieving via ajax).
+
+version: 1.1.1
+
+license: MIT-style license
+author: Harald Kirschner <mail [at] digitarald.de>
+copyright: Author
+
+requires:
+- /Autocompleter.base
+
+provides:
+- Autocompleter.Local
+...
  */
 Autocompleter.Local = new Class({
 

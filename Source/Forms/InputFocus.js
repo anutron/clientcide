@@ -1,9 +1,21 @@
 /*
-Script: InputFocus.js
-	Adds a focused css class to inputs when they have focus.
+---
+script: InputFocus.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Adds a focused css class to inputs when they have focus.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Class.Extras
+- core:1.2.4/Element
+- more:1.2.4.2/Class.Occlude
+- more:1.2.4.2/Class.ToElement
+
+provides:
+- InputFocus
+
+...
 */
 var InputFocus = new Class({
 	Implements: [Options, Class.Occlude, Class.ToElement],

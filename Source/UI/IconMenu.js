@@ -1,9 +1,26 @@
 /*
-Script: IconMenu.js
-	Defines IconMenu, a simple icon (img) based menu.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: IconMenu.js
+
+description: Defines IconMenu, a simple icon (img) based menu.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Event
+- core:1.2.4/Selectors
+- core:1.2.4/Element.Dimensions
+- core:1.2.4/Fx.Tween
+- core:1.2.4/Fx.Morph
+- core:1.2.4/Fx.Transitions
+- more:1.2.4.2/Fx.Elements
+- /dbug
+
+provides:
+- IconMenu
+
+...
 */
 var IconMenu = new Class({
 	Implements: [Options, Events],

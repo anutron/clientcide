@@ -1,9 +1,17 @@
 /*
-Script: AutoCompleter.Clientcide.js
-	Adds Clientcide css assets to autocompleter automatically.
+---
+script: AutoCompleter.Clientcide.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Adds Clientcide css assets to autocompleter automatically.
+
+license: MIT-Style License
+
+requires:
+- /Autocompleter.Base
+
+provides:
+- Autocompleter.Clientcide
+...
 */
 (function(){
 	Autocompleter.Base = Class.refactor(Autocompleter.Base, {

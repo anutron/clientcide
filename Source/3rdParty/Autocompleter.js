@@ -1,15 +1,31 @@
-/**
- * Autocompleter
- *
- * @version		1.1.1
- *
- * @todo: Caching, no-result handling!
- *
- *
- * @license		MIT-style license
- * @author		Harald Kirschner <mail [at] digitarald.de>
- * @copyright	Author
- */
+/*
+---
+script: Autocompleter
+
+description: An auto completer class from <a href=\"http://digitarald.de\">http://digitarald.de</a>.
+
+version: 1.1.1
+
+license: MIT-style license
+
+author: Harald Kirschner <mail [at] digitarald.de>
+
+copyright: Author
+
+requires:
+- core:1.2.4/Fx.Tween
+- more:1.2.4.2/Element.Shortcuts
+- more:1.2.4.2/Element.Forms
+- more:1.2.4.2/IframeShim
+- /Autocompleter.Observer
+- /Clientcide
+
+provides:
+- Autocompleter.Base
+- OverlayFix
+
+...
+*/
 var Autocompleter = {};
 
 var OverlayFix = IframeShim;

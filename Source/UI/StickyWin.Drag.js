@@ -1,10 +1,21 @@
 /*
-Script: StickyWin.Drag.js
+---
 
-Implements drag and resize functionaity into StickyWin.Fx. See StickyWin.Fx for the options.
+script: StickyWin.Drag.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Implements drag and resize functionaity into StickyWin.Fx. See StickyWin.Fx for the options.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/Class.Refactor
+- more:1.2.4.2/Drag.Move
+- /StickyWin
+
+provides:
+- StickyWin.Drag
+
+...
 */
 StickyWin = Class.refactor(StickyWin, {
 	options: {

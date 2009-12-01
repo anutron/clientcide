@@ -1,9 +1,19 @@
 /*
-Script: SimpleEditor.Spanish.js
-	SimpleEditor messages in Spanish. Thanks Miquel Hudin.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: SimpleEditor.Spanish.js
+
+description: SimpleEditor messages in Spanish. Thanks Miquel Hudin.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/MooTools.Lang
+
+provides:
+- SimpleEditor.Spanish
+
+...
 */
 MooTools.lang.set('es-ES', 'SimpleEditor', {
 	woops:'¡Vaya!',

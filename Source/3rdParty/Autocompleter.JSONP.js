@@ -1,9 +1,18 @@
 /*
-Script: Autocompleter.JSONP.js
-	Implements Request.JSONP support for the Autocompleter class.
+---
+script: Autocompleter.JSONP.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Implements Request.JSONP support for the Autocompleter class.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/Request.JSONP
+- /Autocompleter.Remote
+
+provides:
+- Autocompleter.JSONP
+...
 */
 
 Autocompleter.JSONP = new Class({

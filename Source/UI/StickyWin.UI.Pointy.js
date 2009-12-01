@@ -1,10 +1,20 @@
 /*
-Script: StickyWin.UI.Pointy.js
+---
+script: StickyWin.UI.Pointy.js
 
-Creates an html holder for in-page popups using a default style - this one including a pointer in the specified direction.
+description: Creates an html holder for in-page popups using a default style - this one including a pointer in the specified direction.
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/Element.Shortcuts
+- more:1.2.4.2/Element.Position
+- /StickyWin.UI
+
+provides:
+- StickyWin.UI.Pointy
+- StickyWin.UI.pointy
+...
 */
 StickyWin.UI.Pointy = new Class({
 	Extends: StickyWin.UI,

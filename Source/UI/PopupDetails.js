@@ -1,9 +1,25 @@
 /*
-Script: PopupDetails.js
-	Creates hover detail popups for a collection of elements and data.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: PopupDetails.js
+
+description: Creates hover detail popups for a collection of elements and data.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Event
+- core:1.2.4/Request
+- core:1.2.4/JSON
+- more:1.2.4.2/String.Extras
+- /dbug
+- /StickyWin
+
+provides:
+- PopupDetail
+_ PopupDetailCollection
+
+...
 */
 var PopupDetail = new Class({
 	Implements: [Options, Events],

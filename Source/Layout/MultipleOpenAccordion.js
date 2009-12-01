@@ -1,10 +1,19 @@
 /*
-Script: MultipleOpenAccordion.js
+---
+script: MultipleOpenAccordion.js
 
-Creates a Mootools Fx.Accordion that allows the user to open more than one element.
+description: Creates a Mootools Fx.Accordion that allows the user to open more than one element.
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Event
+- more:1.2.4.2/Fx.Reveal
+
+provides:
+- MultipleOpenAccordion
+
+...
 */
 var MultipleOpenAccordion = new Class({
 	Implements: [Options, Events, Chain],

@@ -1,9 +1,19 @@
 /*
-Script: SimpleEditor.English.US.js
-	SimpleEditor messages in English.
+---
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+script: SimpleEditor.English.US.js
+
+description: SimpleEditor messages in English.
+
+license: MIT-Style License
+
+requires:
+- more:1.2.4.2/MooTools.Lang
+
+provides:
+- SimpleEditor.English.US
+
+...
 */
 MooTools.lang.set('en-US', 'SimpleEditor', {
 	woops:'Woops',

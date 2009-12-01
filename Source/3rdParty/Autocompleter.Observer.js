@@ -1,11 +1,23 @@
-/**
- * Observer - Observe formelements for changes
- *
- * @version		1.0rc3
- *
- * @license		MIT-style license
- * @author		Harald Kirschner <mail [at] digitarald.de>
- * @copyright	Author
+/*
+---
+script: Observer
+description: Observe formelements for changes
+
+version: 1.0rc3
+
+license: MIT-style license
+author: Harald Kirschner <mail [at] digitarald.de>
+copyright: Author
+
+provides:
+- /Observer
+
+requires:
+- core:1.2.4/Class.Extras
+- core:1.2.4/Element.Event
+- core:1.2.4/JSON
+- Clientcide
+...
  */
 var Observer = new Class({
 

@@ -1,14 +1,23 @@
-/**
- * Autocompleter.Remote
- *
- * @version		1.1.1
- *
- * @todo: Caching, no-result handling!
- *
- *
- * @license		MIT-style license
- * @author		Harald Kirschner <mail [at] digitarald.de>
- * @copyright	Author
+/*
+script: Autocompleter.Remote
+
+version: 1.1.1
+
+license: MIT-style license
+author: Harald Kirschner <mail [at] digitarald.de>
+copyright: Author
+
+requires:
+- /Autocompleter
+- core:1.2.4/Request.HTML
+- core:1.2.4/Request.JSON
+
+provides:
+- Autocompleter.Ajax
+- Autocompleter.Ajax.Base
+- Autocompleter.Ajax.Json
+- Autocompleter.Ajax.Hhtml
+...
  */
 
 Autocompleter.Ajax = {};

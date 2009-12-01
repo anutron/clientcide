@@ -1,9 +1,32 @@
 /*
-Script: TagMaker.js
-	Prompts the user to fill in the gaps to create an html tag output.
+---
+script: TagMaker.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Prompts the user to fill in the gaps to create an html tag output.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Dimensions
+- core:1.2.4/Element.Event
+- core:1.2.4/Selectors
+- core:1.2.4/Fx.Tween
+- core:1.2.4/Fx.Morph
+- more:1.2.4.2/Tips
+- more:1.2.4.2/Element.Shortcuts
+- more:1.2.4.2/Element.Forms
+- more:1.2.4.2/Form.Validator.Inline
+- more:1.2.4.2/HtmlTable
+- more:1.2.4.2/Drag
+- /StickyWin.UI
+- 
+
+provides:
+- TagMaker
+- TagMaker.image
+- TagMaker.anchor
+
+...
 */
 var TagMaker = new Class({
 	Implements: [Options, Events, StyleWriter],

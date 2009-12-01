@@ -1,9 +1,18 @@
 /*
-Script: Collapsible.js
-	Enables a dom element to, when clicked, hide or show (it toggles) another dom element. Kind of an Accordion for one item.
+---
+script: Collapsible.js
 
-License:
-	http://www.clientcide.com/wiki/cnet-libraries#license
+description: Enables a dom element to, when clicked, hide or show (it toggles) another dom element. Kind of an Accordion for one item.
+
+license: MIT-Style License
+
+requires:
+- core:1.2.4/Element.Event
+- more:1.2.4.2/Fx.Reveal
+
+provides:
+- Collapsible
+...
 */
 var Collapsible = new Class({
 	Extends: Fx.Reveal,

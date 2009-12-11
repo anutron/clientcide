@@ -5,7 +5,7 @@ name: TabSwapper.js
 
 description: Handles the scripting for a common UI layout; the tabbed box.
 
-license: http://www.clientcide.com/wiki/cnet-libraries#license
+license: MIT-Style License
 
 requires:
  - core:1.2.4/

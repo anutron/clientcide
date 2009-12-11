@@ -48,6 +48,11 @@ StickyWin.Modal = new Class({
 	hide: function(hideModal){
 		if ($pick(hideModal, true)) this.mask.hide();
 		this.parent();
+	},
+
+	destroy: function(){
+		this.mask.destroy();
+		this.parent.apply(this, arguments);
 	}
 
 });

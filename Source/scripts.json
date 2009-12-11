@@ -215,6 +215,11 @@
 			"desc":"SimpleEditor messages in French (feel free to send in your own translations).",
 			"exclude": true
 		},
+		"SimpleEditor.German":{
+			"deps":["Lang"],
+			"desc":"SimpleEditor messages in German (feel free to send in your own translations).",
+			"exclude": true
+		},
 		"SimpleEditor.Italian":{
 			"deps":["Lang"],
 			"desc":"SimpleEditor messages in Italian (feel free to send in your own translations).",

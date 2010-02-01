@@ -134,6 +134,19 @@ Rotates one slide forward.
 
 * (*object*) This instance of [SimpleCarousel][]
 
+SimpleCarousel Method: detach {#SimpleCarousel:detach}
+------------------------------------------------------------
+
+Detaches the slideshow from the DOM elements. The elements are left in whatever state they are when the detachment is present. Any running transition will finish.
+
+### Syntax
+
+	myCarousel.detach();
+
+### Returns
+
+* (*object*) This instance of [SimpleCarousel][]
+
 [SimpleCarousel]: #SimpleCarousel
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras#Options
 [Events]: http://www.mootools.net/docs/core/Class/Class.Extras#Events

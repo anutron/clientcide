@@ -44,20 +44,29 @@ var SimpleCarousel = new Class({
 		this.createFx();
 		this.showSlide(this.options.startIndex);
 		if (this.options.autoplay) this.autoplay();
-		if (this.options.rotateAction != 'none') this.setupAction(this.options.rotateAction);
+		if (this.options.rotateAction != 'none') this.attach(this.options.rotateAction);
 		return this;
 	},
 	toElement: function(){
 		return this.container;
 	},
-	setupAction: function(action) {
+	attach: function(action) {
 		this.buttons.each(function(el, idx){
-			document.id(el).addEvent(action, function() {
+			var fn = function() {
 				this.slideFx.setOptions(this.slideFx.options, {duration: this.options.rotateActionDuration});
 				if (this.currentSlide != idx) this.showSlide(idx);
 				this.stop();
-			}.bind(this));
+			}.bind(this);
+			document.id(el).addEvent(action, fn).store('SimpleCarousel:action', fn);
 		}, this);
+	},
+	detach: function(){
+		this.buttons.each(function(el, idx){
+			var fn = el.retrieve('SimpleCarousel:action');
+			if (fn) el.removeEvent(fn).eliminate('SimpleCarousel:action');
+		});
+		this.container.eliminate('SimpleCarouselInstance');
+		return this;
 	},
 	createFx: function(){
 		if (!this.slideFx) this.slideFx = new Fx.Elements(this.slides, {duration: this.options.transitionDuration});

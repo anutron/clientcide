@@ -242,7 +242,7 @@ var Lightbox = new Class({
 	nextEffect: function(){
 		switch (this.step++){
 		case 1:
-			this.image.setStyle('backgroundImage', 'url('+escape(this.images[this.activeImage][0])+')');
+			this.image.setStyle('backgroundImage', 'url('+encodeURI(this.images[this.activeImage][0])+')');
 			this.image.setStyle('width', this.preload.width);
 			this.bottom.setStyle('width',this.preload.width);
 			this.image.setStyle('height', this.preload.height);

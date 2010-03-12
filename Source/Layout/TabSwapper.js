@@ -53,11 +53,11 @@ var TabSwapper = new Class({
 		else this.show(this.options.initPanel);
 	},
 	setup: function(){
-		var opt = this.options;
-		sections = $$(opt.sections);
+		var opt = this.options,
+		sections = $$(opt.sections),
 		tabs = $$(opt.tabs);
 		if (tabs[0] && tabs[0].retrieve('tabSwapper')) return tabs[0].retrieve('tabSwapper');
-		clickers = $$(opt.clickers);
+		var clickers = $$(opt.clickers);
 		tabs.each(function(tab, index){
 			this.addTab(tab, sections[index], clickers[index], index);
 		}, this);

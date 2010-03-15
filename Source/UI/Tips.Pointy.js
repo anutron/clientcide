@@ -76,6 +76,11 @@ Tips.Pointy = new Class({
 
 	hide: function(){
 		this.fireEvent('hide', [document.id(this.tip), this.tip]);
+	},
+
+	destroy: function(){
+		this.detach();
+		this.tip.destroy();
 	}
 
 });

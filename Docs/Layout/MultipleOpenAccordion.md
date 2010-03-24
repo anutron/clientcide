@@ -62,6 +62,40 @@ Adds a section to the accordion.
 
 * (*object*) This instance of [MultipleOpenAccordion][]
 
+MultipleOpenAccordion Method: removeSection {#MultipleOpenAccordion:removeSection}
+----------------------------------------------
+
+Detaches the toggle behavior from the DOM specified elements. If that element is expanded, it contracts it. Does not remove the elements from the DOM.
+
+### Syntax
+
+	myAccordion.removeSection(toggler);
+
+### Arguments
+
+1. toggler - (*element*) The toggler element to detach the behavior from.
+
+### Returns
+
+* (*object*) This *MultipleOpenAccordion* instance.
+
+MultipleOpenAccordion Method: detach {#MultipleOpenAccordion:detach}
+----------------------------------------------
+
+Detaches the toggle behavior from the DOM element(s). If no element is specified, this method disables the accordion. Does not alter the DOM in any way (expanded sections remain so).
+
+### Syntax
+
+	myAccordion.detach([toggler]);
+
+### Arguments
+
+1. toggler - (*element*; optional) The toggler element to detach the behavior from; if not specified, detaches all togglers.
+
+### Returns
+
+* (*object*) This *MultipleOpenAccordion* instance.
+
 Method MultipleOpenAccordion: toggleSection {#MultipleOpenAccordion:toggleSection}
 --------------------------------------------------------------------------
 

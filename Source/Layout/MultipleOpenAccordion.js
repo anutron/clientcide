@@ -54,7 +54,8 @@ var MultipleOpenAccordion = new Class({
 		this.togglers.include(toggler);
 		this.elements.include(element);
 		var idx = this.togglers.indexOf(toggler);
-		toggler.addEvent('click', this.toggleSection.bind(this, idx));
+		var displayer = this.toggleSection.bind(this, idx);
+		toggler.addEvent('click', displayer).store('multipleOpenAccordion:display', displayer);
 		var mode;
 		if (this.options.height && this.options.width) mode = "both";
 		else mode = (this.options.height)?"vertical":"horizontal";
@@ -64,6 +65,23 @@ var MultipleOpenAccordion = new Class({
 			heightOverride: this.options.fixedHeight,
 			widthOverride: this.options.fixedWidth
 		}));
+		return this;
+	},
+	removeSection: function(toggler) {
+		var idx = this.togglers.indexOf(toggler);
+		var element = this.elements[idx];
+		element.dissolve();
+		this.togglers.erase(toggler);
+		this.elements.erase(element);
+		this.detach(toggler);
+		return this;
+	},
+	detach: function(toggler){
+		var remove = function(toggler) {
+			toggler.removeEvent(this.options.trigger, toggler.retrieve('multipleOpenAccordion:display'));
+		}.bind(this);
+		if (!toggler) this.togglers.each(remove);
+		else remove(toggler);
 		return this;
 	},
 	onComplete: function(idx, callChain){
@@ -86,7 +104,7 @@ var MultipleOpenAccordion = new Class({
 				this.onComplete.bind(this, [idx, callChain])
 			);
 		} else {
-				if (method == "toggle") el.togglek();
+				if (method == "toggle") el.toggle();
 				else el[method == "reveal"?'show':'hide']();
 				this.onComplete(idx, callChain);
 		}

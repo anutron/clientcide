@@ -7,8 +7,8 @@ description: Adds a focused css class to inputs when they have focus.
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Class.Extras
-- core:1.2.4/Element
+- Core:1.2.4/Class.Extras
+- Core:1.2.4/Element
 - more:1.2.4.2/Class.Occlude
 - more:1.2.4.2/Class.ToElement
 

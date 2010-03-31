@@ -8,8 +8,8 @@ description: Defines the Popup class useful for making popup windows.
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Browser
-- core:1.2.4/Class.Extras
+- Core:1.2.4/Browser
+- Core:1.2.4/Class.Extras
 
 provides:
 - Browser.Popup

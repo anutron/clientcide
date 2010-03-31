@@ -8,10 +8,10 @@ description: Handles the scripting for a common UI layout; the tabbed box.
 license: MIT-Style License
 
 requires:
- - core:1.2.4/
- - core:1.2.4/Element.Event
- - core:1.2.4/Fx.Tween
- - core:1.2.4/Fx.Morph
+ - Core:1.2.4/
+ - Core:1.2.4/Element.Event
+ - Core:1.2.4/Fx.Tween
+ - Core:1.2.4/Fx.Morph
  - more:1.2.4.2/Element.Shortcuts
  - more:1.2.4.2/Element.Dimensions
  - more:1.2.4.2/Element.Measure

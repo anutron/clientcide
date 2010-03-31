@@ -9,7 +9,7 @@ license: MIT-style license.
 
 requires:
 - more:1.2.4.2/Class.Refactor
-- core:1.2.4/Fx.Tween
+- Core:1.2.4/Fx.Tween
 - /StickyWin
 
 provides:

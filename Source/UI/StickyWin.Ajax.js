@@ -8,7 +8,7 @@ descript: Adds ajax functionality to all the StickyWin classes.
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Request
+- Core:1.2.4/Request
 - /StickyWin
 - /StickyWin.UI
 

@@ -9,12 +9,12 @@ credit:
 - Refactored by Aaron Newton 
 
 requires:
-- core:1.2.4/Element.Event
-- core:1.2.4/Selectors
-- core:1.2.4/Browser
-- core:1.2.4/Fx.Tween
-- core:1.2.4/Fx.Morph
-- core:1.2.4/DomReady
+- Core:1.2.4/Element.Event
+- Core:1.2.4/Selectors
+- Core:1.2.4/Browser
+- Core:1.2.4/Fx.Tween
+- Core:1.2.4/Fx.Morph
+- Core:1.2.4/DomReady
 - more:1.2.4.2/Element.Dimensions
 - more:1.2.4.2/Class.Binds
 - more:1.2.4.2/Mask

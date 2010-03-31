@@ -9,8 +9,8 @@ copyright: Author
 
 requires:
 - /Autocompleter
-- core:1.2.4/Request.HTML
-- core:1.2.4/Request.JSON
+- Core:1.2.4/Request.HTML
+- Core:1.2.4/Request.JSON
 
 provides:
 - Autocompleter.Ajax

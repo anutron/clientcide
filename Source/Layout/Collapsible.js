@@ -7,7 +7,7 @@ description: Enables a dom element to, when clicked, hide or show (it toggles) a
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Element.Event
+- Core:1.2.4/Element.Event
 - more:1.2.4.2/Fx.Reveal
 
 provides:

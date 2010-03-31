@@ -7,8 +7,8 @@ description: Fades a message in and out for the user to tell them that some even
 license: MIT-Style License
 
 requires:
-- core:1.2.4/DomReady
-- core:1.2.4/Fx.Tween
+- Core:1.2.4/DomReady
+- Core:1.2.4/Fx.Tween
 - more:1.2.4.2/Element.Shortcuts
 - more:1.2.4.2/Element.Position
 

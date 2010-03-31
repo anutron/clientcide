@@ -8,12 +8,12 @@ description: Defines IconMenu, a simple icon (img) based menu.
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Element.Event
-- core:1.2.4/Selectors
-- core:1.2.4/Element.Dimensions
-- core:1.2.4/Fx.Tween
-- core:1.2.4/Fx.Morph
-- core:1.2.4/Fx.Transitions
+- Core:1.2.4/Element.Event
+- Core:1.2.4/Selectors
+- Core:1.2.4/Element.Dimensions
+- Core:1.2.4/Fx.Tween
+- Core:1.2.4/Fx.Morph
+- Core:1.2.4/Fx.Transitions
 - more:1.2.4.2/Fx.Elements
 - /dbug
 

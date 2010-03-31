@@ -7,7 +7,7 @@ description: Builds a carousel object that manages the basic functions of a gene
 license: MIT-Style License
 
 requires:
-- core:1.2.4/DomReady
+- Core:1.2.4/DomReady
 - more:1.2.4.2/Fx.Elements
 - more:1.2.4.2/Element.Shortcuts
 

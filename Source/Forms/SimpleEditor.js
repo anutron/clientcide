@@ -8,8 +8,8 @@ description: A simple html editor for wrapping text with links and whatnot.
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Class.Extras
-- core:1.2.4/Element.Event
+- Core:1.2.4/Class.Extras
+- Core:1.2.4/Element.Event
 - more:1.2.4.2/Class.Occlude
 - more:1.2.4.2/Element.Forms
 - more:1.2.4.2/Element.Shortcuts

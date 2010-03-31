@@ -8,8 +8,8 @@ description: Manages mousing in and out of multiple objects (think drop-down men
 license: MIT-Style License
 
 requires:
-- core:1.2.4/Class.Extras
-- core:1.2.4/Element.Event
+- Core:1.2.4/Class.Extras
+- Core:1.2.4/Element.Event
 - more:1.2.4.2/Class.Binds
 
 provides:

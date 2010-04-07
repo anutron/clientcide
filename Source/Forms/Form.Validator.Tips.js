@@ -33,7 +33,7 @@ Form.Validator.Tips = new Class({
 	},
 	hideAdvice: function(className, field){
 		var advice = this.getAdvice(field);
-		if (advice && advice.visible) advice.show();
+		if (advice && advice.visible) advice.hide();
 	},
 	getAdvice: function(className, field) {
 		var params = Array.link(arguments, {field: Element.type});

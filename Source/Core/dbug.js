@@ -15,6 +15,9 @@ provides:
 
 ...
 */
+var test = function(){
+	foo();
+};
 var dbug = {
 	logged: [],
 	timers: {},
@@ -83,6 +86,17 @@ var dbug = {
 	disableCookie: function(){
 		dbug.log('disabling debugging cookie');
 		document.cookie = 'jsdebug=false;path=/;';
+	},
+	conditional: function(fn, fnIfError) {
+		if (dbug.enabled) {
+			fn();
+		} else {
+			try {
+				fn();
+			} catch(e) {
+				if (fnIfError) fnIfError(e);
+			}
+		}
 	}
 };
 

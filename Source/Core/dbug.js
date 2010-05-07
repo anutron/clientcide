@@ -15,9 +15,6 @@ provides:
 
 ...
 */
-var test = function(){
-	foo();
-};
 var dbug = {
 	logged: [],
 	timers: {},

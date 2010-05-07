@@ -97,6 +97,32 @@ See [http://www.getfirebug.com/console.html][] for all the methods that Firebug 
 	dbug.dir(obj); //same as console.dir(obj);
 	//etc
 
+dbug Method: conditional {#dbug:conditional}
+------------------------------------------------
+
+Takes a function to attempt, catching any errors if dbug is not enabled.
+
+### Syntax
+
+	dbug.conditional(fn, fnIfError);
+
+### Arguments
+
+* fn - (function) the function to attempt. If it fails and dbug is *not* enabled, the error will be caught
+* fnIfError - (function) a function executed if the error is caught, passed the error
+
+### Example
+
+  dbug.conditional(function(){
+    thisFails();
+  }, function(error){
+    alert('the thisFails function failed and debugging is not enabled');
+  });
+
+### Note
+
+The purpose here is to allow the function to break and give you a line number in your debugger. Otherwise you can capture the error and deal with it (messaging the user, for example).
+
 Script: dbugScripts.js {#dbugScripts-js}
 ========================================
 

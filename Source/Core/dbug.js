@@ -86,10 +86,10 @@ var dbug = {
 	},
 	conditional: function(fn, fnIfError) {
 		if (dbug.enabled) {
-			fn();
+			return fn();
 		} else {
 			try {
-				fn();
+				return fn();
 			} catch(e) {
 				if (fnIfError) fnIfError(e);
 			}

@@ -104,7 +104,14 @@ var dbug = {
 	var otherMethods = ['trace','group','groupEnd','profile','profileEnd','count'];
 	function set(methodList, defaultFunction) {
 		for(var i = 0; i < methodList.length; i++){
-			dbug[methodList[i]] = (fb && con[methodList[i]])?con[methodList[i]]:defaultFunction;
+			var method = methodList[i];
+			if (fb && con[method]) {
+				dbug[method] = function(){
+					con[method].apply(con, arguments);
+				};
+			} else {
+				dbug[method] = defaultFunction;
+			}
 		}
 	};
 	set(debugMethods, dbug.log);

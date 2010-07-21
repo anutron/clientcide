@@ -103,12 +103,18 @@ var dbug = {
 	var debugMethods = ['debug','info','warn','error','assert','dir','dirxml'];
 	var otherMethods = ['trace','group','groupEnd','profile','profileEnd','count'];
 	function set(methodList, defaultFunction) {
+		
+		var getLogger = function(method) {
+			return function(){
+				if (window.paused) debugger;
+				con[method].apply(con, arguments);
+			};
+		};
+		
 		for(var i = 0; i < methodList.length; i++){
 			var method = methodList[i];
 			if (fb && con[method]) {
-				dbug[method] = function(){
-					con[method].apply(con, arguments);
-				};
+				dbug[method] = getLogger(method);
 			} else {
 				dbug[method] = defaultFunction;
 			}

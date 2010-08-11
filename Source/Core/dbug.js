@@ -106,7 +106,6 @@ var dbug = {
 		
 		var getLogger = function(method) {
 			return function(){
-				if (window.paused) debugger;
 				con[method].apply(con, arguments);
 			};
 		};

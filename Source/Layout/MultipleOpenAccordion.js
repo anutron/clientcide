@@ -101,7 +101,7 @@ var MultipleOpenAccordion = new Class({
 		var el = this.elements[idx];
 		if ($pick(useFx, true)) {
 			el.retrieve('reveal')[method]().chain(
-				this.onComplete.bind(this, [idx, callChain])
+				this.onComplete.pass([idx, callChain], this)
 			);
 		} else {
 				if (method == "toggle") el.toggle();

@@ -121,7 +121,7 @@ Autocompleter.Base = new Class({
 		}, this.options.fxOptions)).addEvent('onStart', Chain.prototype.clearChain).set(0);
 		this.element.setProperty('autocomplete', 'off')
 			.addEvent((Browser.Engine.trident || Browser.Engine.webkit) ? 'keydown' : 'keypress', this.onCommand.bind(this))
-			.addEvent('click', this.onCommand.bind(this, [false]))
+			.addEvent('click', this.onCommand.bind(this, false))
 			.addEvent('focus', this.toggleFocus.create({bind: this, arguments: true, delay: 100}));
 			//.addEvent('blur', this.toggleFocus.create({bind: this, arguments: false, delay: 100}));
 		document.addEvent('click', function(e){
@@ -274,7 +274,6 @@ Autocompleter.Base = new Class({
 	},
 
 	fetchCached: function() {
-		return false;
 		if (!this.options.cache
 			|| !this.cached
 			|| !this.cached.length
@@ -353,8 +352,8 @@ Autocompleter.Base = new Class({
 	 */
 	addChoiceEvents: function(el) {
 		return el.addEvents({
-			'mouseover': this.choiceOver.bind(this, [el]),
-			'click': this.choiceSelect.bind(this, [el])
+			'mouseover': this.choiceOver.bind(this, el),
+			'click': this.choiceSelect.bind(this, el)
 		});
 	}
 });

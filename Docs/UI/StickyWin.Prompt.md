@@ -64,6 +64,6 @@ This is the intended use for this functionality.
 * (*object*) an instance of [StickyWin.Prompt][]
 
 [StickyWin.Alert]: #StickyWin.Alert
-[StickyWin.Confirm]: #StickyWin.Confirm
+[StickyWin.Confirm]: http://clientcide.com/docs/UI/StickyWin.Confirm
 [StickyWin.Prompt]: #StickyWin.Prompt
 [StickyWin.prompt]: #StickyWin.prompt

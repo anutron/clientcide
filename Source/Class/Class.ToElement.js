@@ -8,7 +8,7 @@ description: Defines the toElement method for a class.
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Class
+- Core/Class
 
 provides:
 - Class.toElement

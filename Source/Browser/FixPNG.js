@@ -7,9 +7,9 @@ description: Extends the Browser hash object to include methods useful in managi
 license: MIT-Style Licence
 
 requires:
-- Core:1.2.4/Element.Dimensions
-- Core:1.2.4/DomReady
-- more:1.2.4.2/Element.Shortcuts
+- Core/Element.Dimensions
+- Core/DomReady
+- More/Element.Shortcuts
 - /dbug
 
 provides:

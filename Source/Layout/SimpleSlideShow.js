@@ -8,11 +8,11 @@ description: Makes a very, very simple slideshow gallery with a collection of do
 License: MIT-Style License
 
 requires:
-- Core:1.2.4/Element.Dimensions
-- Core:1.2.4/Fx.Tween
-- Core:1.2.4/Element.Event
-- more:1.2.4.2/Class.Binds
-- more:1.2.4.2/Element.Shortcuts
+- Core/Element.Dimensions
+- Core/Fx.Tween
+- Core/Element.Event
+- More/Class.Binds
+- More/Element.Shortcuts
 - /Class.ToElement
 
 provides:

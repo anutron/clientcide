@@ -6,14 +6,14 @@ description: Allows the user to pick a product from a data source.
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Element.Event
-- Core:1.2.4/Fx.Tween
-- Core:1.2.4/Element.Dimensions
-- more:1.2.4.2/Fx.Elements
-- more:1.2.4.2/Drag
-- more:1.2.4.2/Request.JSONP
-- more:1.2.4.2/Element.Shortcuts
-- more:1.2.4.2/Tips
+- Core/Element.Event
+- Core/Fx.Tween
+- Core/Element.Dimensions
+- More/Fx.Elements
+- More/Drag
+- More/Request.JSONP
+- More/Element.Shortcuts
+- More/Tips
 - /StickyWin
 - /dbug
 - /StyleWriter

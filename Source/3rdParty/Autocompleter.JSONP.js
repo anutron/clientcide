@@ -7,7 +7,7 @@ description: Implements Request.JSONP support for the Autocompleter class.
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/Request.JSONP
+- More/Request.JSONP
 - /Autocompleter.Remote
 
 provides:

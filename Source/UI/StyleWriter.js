@@ -7,9 +7,9 @@ description: Provides a simple method for injecting a css style element into the
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Class
-- Core:1.2.4/DomReady
-- Core:1.2.4/Element
+- Core/Class
+- Core/DomReady
+- Core/Element
 - /dbug
 
 provides:

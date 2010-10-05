@@ -8,7 +8,7 @@ description: SimpleEditor messages in English.
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/MooTools.Lang
+- More/MooTools.Lang
 
 provides:
 - SimpleEditor.English.US

@@ -9,15 +9,15 @@ credit:
 - Refactored by Aaron Newton 
 
 requires:
-- Core:1.2.4/Element.Event
-- Core:1.2.4/Selectors
-- Core:1.2.4/Browser
-- Core:1.2.4/Fx.Tween
-- Core:1.2.4/Fx.Morph
-- Core:1.2.4/DomReady
-- more:1.2.4.2/Element.Dimensions
-- more:1.2.4.2/Class.Binds
-- more:1.2.4.2/Mask
+- Core/Element.Event
+- Core/Selectors
+- Core/Browser
+- Core/Fx.Tween
+- Core/Fx.Morph
+- Core/DomReady
+- More/Element.Dimensions
+- More/Class.Binds
+- More/Mask
 - /Clientcide
 
 provides:

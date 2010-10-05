@@ -8,12 +8,12 @@ description: A simple html editor for wrapping text with links and whatnot.
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Event
-- more:1.2.4.2/Class.Occlude
-- more:1.2.4.2/Element.Forms
-- more:1.2.4.2/Element.Shortcuts
-- more:1.2.4.2/String.Extras
+- Core/Class.Extras
+- Core/Element.Event
+- More/Class.Occlude
+- More/Element.Forms
+- More/Element.Shortcuts
+- More/String.Extras
 - /Class.ToElement
 - /SimpleEditor.English.US
 

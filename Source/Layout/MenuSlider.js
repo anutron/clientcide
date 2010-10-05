@@ -8,7 +8,7 @@ description: Slides open a menu when the user mouses over a dom element. leaves 
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/Fx.Slide
+- More/Fx.Slide
 - /HoverGroup
 
 provides:

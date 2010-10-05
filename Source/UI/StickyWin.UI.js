@@ -7,8 +7,8 @@ description: Creates an html holder for in-page popups using a default style.
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Element.Style
-- more:1.2.4.2/String.Extras
+- Core/Element.Style
+- More/String.Extras
 - /StyleWriter
 - /StickyWin
 

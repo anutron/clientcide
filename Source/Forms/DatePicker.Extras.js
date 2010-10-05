@@ -8,9 +8,9 @@ description: Extends DatePicker to allow for range selection and time entry.
 license: MIT-Style license
 
 requires:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Event
-- more:1.2.4.2/Class.Refactor
+- Core/Class.Extras
+- Core/Element.Event
+- More/Class.Refactor
 - /dbug
 - /DatePicker
 

@@ -7,7 +7,7 @@ description: Prompts the user with the contents of a form (retrieved via ajax) a
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/Form.Request.Append
+- More/Form.Request.Append
 - /StickyWin.Modal
 - /StickyWin.Ajax
 

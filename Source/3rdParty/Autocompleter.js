@@ -13,10 +13,10 @@ author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
 requires:
-- Core:1.2.4/Fx.Tween
-- more:1.2.4.2/Element.Shortcuts
-- more:1.2.4.2/Element.Forms
-- more:1.2.4.2/IframeShim
+- Core/Fx.Tween
+- More/Element.Shortcuts
+- More/Element.Forms
+- More/IframeShim
 - /Autocompleter.Observer
 - /Clientcide
 

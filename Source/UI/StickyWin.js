@@ -8,13 +8,13 @@ description: Creates a div within the page with the specified contents at the lo
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/DomReady
-- Core:1.2.4/Selectors
-- more:1.2.4.2/Element.Position
-- more:1.2.4.2/Class.Binds
-- more:1.2.4.2/Element.Shortcuts
-- more:1.2.4.2/Element.Pin
-- more:1.2.4.2/IframeShim
+- Core/DomReady
+- Core/Selectors
+- More/Element.Position
+- More/Class.Binds
+- More/Element.Shortcuts
+- More/Element.Pin
+- More/IframeShim
 - /Class.ToElement
 - /StyleWriter
 

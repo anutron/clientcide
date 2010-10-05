@@ -7,9 +7,9 @@ description: Allows the user to enter a date in many popuplar date formats or ch
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Event
-- more:1.2.4.2/Date
+- Core/Class.Extras
+- Core/Element.Event
+- More/Date
 - /dbug
 - /StickyWin.UI
 - /StickyWin.Drag

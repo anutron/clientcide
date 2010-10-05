@@ -8,8 +8,8 @@ description: Implements drag and resize functionaity into StickyWin.Fx. See Stic
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/Class.Refactor
-- more:1.2.4.2/Drag.Move
+- More/Class.Refactor
+- More/Drag.Move
 - /StickyWin
 
 provides:

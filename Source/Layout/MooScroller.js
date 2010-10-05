@@ -7,11 +7,11 @@ description: Recreates the standard scrollbar behavior for elements with overflo
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Dimensions
-- Core:1.2.4/Element.Event
-- Core:1.2.4/Element.Style
-- Core:1.2.4/Selectors
+- Core/Class.Extras
+- Core/Element.Dimensions
+- Core/Element.Event
+- Core/Element.Style
+- Core/Selectors
 - /Clientcide
 
 provides:

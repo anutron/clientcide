@@ -7,8 +7,8 @@ description: Creates an html holder for in-page popups using a default style - t
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/Element.Shortcuts
-- more:1.2.4.2/Element.Position
+- More/Element.Shortcuts
+- More/Element.Position
 - /StickyWin.UI
 
 provides:

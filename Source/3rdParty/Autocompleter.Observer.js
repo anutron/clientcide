@@ -13,9 +13,9 @@ provides:
 - /Observer
 
 requires:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Event
-- Core:1.2.4/JSON
+- Core/Class.Extras
+- Core/Element.Event
+- Core/JSON
 - Clientcide
 ...
  */

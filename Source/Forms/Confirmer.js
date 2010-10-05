@@ -7,10 +7,10 @@ description: Fades a message in and out for the user to tell them that some even
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/DomReady
-- Core:1.2.4/Fx.Tween
-- more:1.2.4.2/Element.Shortcuts
-- more:1.2.4.2/Element.Position
+- Core/DomReady
+- Core/Fx.Tween
+- More/Element.Shortcuts
+- More/Element.Position
 
 provides:
 - Confirmer

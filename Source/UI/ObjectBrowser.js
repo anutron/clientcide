@@ -8,10 +8,10 @@ description: Creates a tree view of any javascript object.
 license: MIT-Style License
 
 reqiures:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Event
-- more:1.2.4.2/Hash.Extras
-- more:1.2.4.2/Element.Shortcuts
+- Core/Class.Extras
+- Core/Element.Event
+- More/Hash.Extras
+- More/Element.Shortcuts
 - /dbug
 
 provides:

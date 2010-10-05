@@ -14,9 +14,9 @@ credit:
 license: MIT-style license.
 
 requires:
-- Core:1.2.4/Class.Extras
-- Core:1.2.4/Element.Style
-- Core:1.2.4/Element.Event
+- Core/Class.Extras
+- Core/Element.Style
+- Core/Element.Event
 
 provides:
 - PostEditor

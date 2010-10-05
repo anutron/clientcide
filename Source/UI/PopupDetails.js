@@ -8,10 +8,10 @@ description: Creates hover detail popups for a collection of elements and data.
 license: MIT-Style License
 
 requires:
-- Core:1.2.4/Element.Event
-- Core:1.2.4/Request
-- Core:1.2.4/JSON
-- more:1.2.4.2/String.Extras
+- Core/Element.Event
+- Core/Request
+- Core/JSON
+- More/String.Extras
 - /dbug
 - /StickyWin
 

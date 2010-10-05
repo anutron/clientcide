@@ -8,8 +8,8 @@ description: Defines Fx.Marquee, a marquee class for animated notifications.
 License: MIT-Style License
 
 requires:
-- Core:1.2.4/Fx.Morph
-- more:1.2.4.2/Element.Shortcuts
+- Core/Fx.Morph
+- More/Element.Shortcuts
 
 provides:
 - Fx.Marquee

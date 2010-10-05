@@ -7,7 +7,7 @@ description: Defines Tips.Pointy, An extension to Tips that adds a pointy style 
 license: MIT-Style License
 
 requires:
-- more:1.2.4.2/Tips
+- More/Tips
 - /StickyWin.PointyTip
 
 provides:

@@ -1,6 +1,6 @@
 /*
 ---
-script: AutoCompleter.Clientcide.js
+name: AutoCompleter.Clientcide.js
 
 description: Adds Clientcide css assets to autocompleter automatically.
 
@@ -9,8 +9,7 @@ license: MIT-Style License
 requires:
 - /Autocompleter.Base
 
-provides:
-- Autocompleter.Clientcide
+provides: Autocompleter.Clientcide
 ...
 */
 (function(){

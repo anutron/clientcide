@@ -22,18 +22,18 @@ var MultipleOpenAccordion = new Class({
 		elements: [],
 		openAll: false,
 		firstElementsOpen: [0],
-		fixedHeight: false,
-		fixedWidth: false,
+		fixedHeight: null,
+		fixedWidth: null,
 		height: true,
 		opacity: true,
 		width: false
-//	onActive: $empty,
-//	onBackground: $empty
+		//onActive: function(){},
+		//onBackground: function(){}
 	},
 	togglers: [],
 	elements: [],
 	initialize: function(options){
-		var args = Array.link(arguments, {options: Object.type, elements: Array.type});
+		var args = Array.link(arguments, {options: Type.isObject, elements: Type.isElements});
 		this.setOptions(args.options);
 		elements = $$(this.options.elements);
 		$$(this.options.togglers).each(function(toggler, idx){
@@ -59,7 +59,7 @@ var MultipleOpenAccordion = new Class({
 		var mode;
 		if (this.options.height && this.options.width) mode = "both";
 		else mode = (this.options.height)?"vertical":"horizontal";
-		element.store('reveal', new Fx.Reveal(element, {
+		element.store('moa:reveal', new Fx.Reveal(element, {
 			transitionOpacity: this.options.opacity,
 			mode: mode,
 			heightOverride: this.options.fixedHeight,
@@ -96,12 +96,12 @@ var MultipleOpenAccordion = new Class({
 		this.toggleSection(idx, useFx, false);
 	},
 	toggleSection: function(idx, useFx, show, callChain){
-		var method = show?'reveal':$defined(show)?'dissolve':'toggle';
-		callChain = $pick(callChain, true);
+		var method = show?'reveal':show != null?'dissolve':'toggle';
+		callChain = [callChain, true].pick();
 		var el = this.elements[idx];
-		if ($pick(useFx, true)) {
-			el.retrieve('reveal')[method]().chain(
-				this.onComplete.pass([idx, callChain], this)
+		if (useFx != null ? useFx : true) {
+			el.retrieve('moa:reveal')[method]().chain(
+				this.onComplete.bind(this, idx, callChain)
 			);
 		} else {
 				if (method == "toggle") el.toggle();
@@ -111,7 +111,7 @@ var MultipleOpenAccordion = new Class({
 		return this;
 	},
 	toggleAll: function(useFx, show){
-		var method = show?'reveal':$chk(show)?'disolve':'toggle';
+		var method = show?'reveal':(show!=null)?'disolve':'toggle';
 		var last = this.elements.getLast();
 		this.elements.each(function(el, idx){
 			this.toggleSection(idx, useFx, show, el == last);

@@ -1,6 +1,6 @@
 copyright: Unknown
 description: Unknown
-name: clientcide
+name: Clientcide
 sources: [
   Source/Core/Clientcide.js,
   Source/Core/dbug.js,
@@ -23,6 +23,12 @@ sources: [
   Source/UI/StickyWin.UI.js,
   Source/UI/StickyWin.UI.Pointy.js,
   Source/UI/StyleWriter.js,
-  Source/UI/Tips.Pointy.js
+  Source/UI/Tips.Pointy.js,
+  Source/3rdParty/Autocompleter.js,
+  Source/3rdParty/Autocompleter.Clientcide.js,
+  Source/3rdParty/Autocompleter.JSONP.js,
+  Source/3rdParty/Autocompleter.Local.js,
+  Source/3rdParty/Autocompleter.Observer.js,
+  Source/3rdParty/Autocompleter.Remote.js
 ]
 version: 3.0.0

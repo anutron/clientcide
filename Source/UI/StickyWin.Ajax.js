@@ -23,7 +23,7 @@ provides:
 		return {
 			Extends: extend,
 			options: {
-				//onUpdate: $empty,
+				//onUpdate: function(){},
 				url: '',
 				showNow: false,
 				requestOptions: {
@@ -39,7 +39,7 @@ provides:
 					if (this.options.wrapWithUi) response = StickyWin.ui(this.options.caption, response, this.options.uiOptions);
 					this.setContent(response);
 					this.show();
-					if (this.evalScripts) $exec(responseScript);
+					if (this.evalScripts) Browser.exec(responseScript);
 					this.fireEvent('update');
 				}
 			},

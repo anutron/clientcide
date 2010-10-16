@@ -1,6 +1,6 @@
 /*
 ---
-script: Autocompleter
+name: Autocompleter
 
 description: An auto completer class from <a href=\"http://digitarald.de\">http://digitarald.de</a>.
 
@@ -17,12 +17,10 @@ requires:
 - More/Element.Shortcuts
 - More/Element.Forms
 - More/IframeShim
-- /Autocompleter.Observer
+- /Observer
 - /Clientcide
 
-provides:
-- Autocompleter.Base
-- OverlayFix
+provides: [Autocompleter.Base]
 
 ...
 */
@@ -77,7 +75,7 @@ Autocompleter.Base = new Class({
 		this.setOptions(options);
 		this.options.separatorSplit = new RegExp("\s*["+this.options.separator.trim()+"]\s*/");
 		this.build();
-		this.observer = new Observer(this.element, this.prefetch.bind(this), $merge({
+		this.observer = new Observer(this.element, this.prefetch.bind(this), Object.merge({
 			'delay': this.options.delay
 		}, this.options.observerOptions));
 		this.queryValue = null;
@@ -114,15 +112,17 @@ Autocompleter.Base = new Class({
 		if (!this.options.separator.test(this.options.separatorSplit)) {
 			this.options.separatorSplit = this.options.separator;
 		}
-		this.fx = (!this.options.fxOptions) ? null : new Fx.Tween(this.choices, $merge({
+		this.fx = (!this.options.fxOptions) ? null : new Fx.Tween(this.choices, Object.merge({
 			'property': 'opacity',
 			'link': 'cancel',
 			'duration': 200
 		}, this.options.fxOptions)).addEvent('onStart', Chain.prototype.clearChain).set(0);
 		this.element.setProperty('autocomplete', 'off')
-			.addEvent((Browser.Engine.trident || Browser.Engine.webkit) ? 'keydown' : 'keypress', this.onCommand.bind(this))
+			.addEvent((Browser.ie || Browser.chrome || Browser.safari) ? 'keydown' : 'keypress', this.onCommand.bind(this))
 			.addEvent('click', this.onCommand.bind(this, false))
-			.addEvent('focus', this.toggleFocus.create({bind: this, arguments: true, delay: 100}));
+			.addEvent('focus', function(){
+				this.toggleFocus.delay(100, this, [true]);
+			}.bind(this));
 			//.addEvent('blur', this.toggleFocus.create({bind: this, arguments: false, delay: 100}));
 		document.addEvent('click', function(e){
 			if (e.target != this.choices) this.toggleFocus(false);
@@ -144,7 +144,7 @@ Autocompleter.Base = new Class({
 		if (!e && this.focussed) return this.prefetch();
 		if (e && e.key && !e.shift) {
 			switch (e.key) {
-				case 'enter':
+				case 'enter': case 'tab':
 					if (this.element.value != this.opted) return true;
 					if (this.selected && this.visible) {
 						this.choiceSelect(this.selected);
@@ -159,7 +159,7 @@ Autocompleter.Base = new Class({
 						](this.options.choicesMatch), true);
 					}
 					return false;
-				case 'esc': case 'tab':
+				case 'esc':
 					this.hideChoices(true);
 					break;
 			}
@@ -231,7 +231,7 @@ Autocompleter.Base = new Class({
 			var value = this.element.value;
 			if (this.options.forceSelect) value = this.opted;
 			if (this.options.autoTrim) {
-				value = value.split(this.options.separatorSplit).filter($arguments(0)).join(this.options.separator);
+				value = value.split(this.options.separatorSplit).filter(function(){ return arguments[0]; }).join(this.options.separator);
 			}
 			this.observer.setValue(value);
 		}
@@ -338,8 +338,9 @@ Autocompleter.Base = new Class({
 	 * @return		{String} Text
 	 */
 	markQueryValue: function(str) {
-		return (!this.options.markQuery || !this.queryValue) ? str
-			: str.replace(new RegExp('(' + ((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp() + ')', (this.options.filterCase) ? '' : 'i'), '<span class="autocompleter-queried">$1</span>');
+		if (!this.options.markQuery || !this.queryValue) return str;
+		var regex = new RegExp('(' + ((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp() + ')', (this.options.filterCase) ? '' : 'i');
+		return str.replace(regex, '<span class="autocompleter-queried">$1</span>');
 	},
 
 	/**

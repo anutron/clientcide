@@ -1,6 +1,6 @@
 /*
 ---
-script: Autocompleter.Local
+name: Autocompleter.Local
 
 description: Allows Autocompleter to use an object in memory for autocompletion (instead of retrieving via ajax).
 
@@ -11,10 +11,9 @@ author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
 requires:
-- /Autocompleter.base
+- /Autocompleter.Base
 
-provides:
-- Autocompleter.Local
+provides: [Autocompleter.Local]
 ...
  */
 Autocompleter.Local = new Class({

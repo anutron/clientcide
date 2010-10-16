@@ -43,16 +43,16 @@ StickyWin.UI = new Class({
 		closeButton: true
 /*	These options are deprecated:
 		closeTxt: false,
-		onClose: $empty,
+		onClose: function(){},
 		confirmTxt: false,
-		onConfirm: $empty	*/
+		onConfirm: function(){}	*/
 	},
 	initialize: function() {
 		var args = this.getArgs(arguments);
 		this.setOptions(args.options);
 		this.legacy();
 		var css = this.options.css.substitute({baseHref: this.options.baseHref || Clientcide.assetLocation + '/stickyWinHTML/'}, /\\?\{%([^}]+)%\}/g);
-		if (Browser.Engine.trident4) css = css.replace(/png/g, 'gif');
+		if (Browser.ie) css = css.replace(/png/g, 'gif');
 		this.createStyle(css, this.options.cssId);
 		this.build();
 		if (args.caption || args.body) this.setContent(args.caption, args.body);
@@ -66,8 +66,8 @@ StickyWin.UI = new Class({
 	legacy: function(){
 		var opt = this.options; //saving bytes
 		//legacy support
-		if (opt.confirmTxt) opt.buttons.push({text: opt.confirmTxt, onClick: opt.onConfirm || $empty});
-		if (opt.closeTxt) opt.buttons.push({text: opt.closeTxt, onClick: opt.onClose || $empty});
+		if (opt.confirmTxt) opt.buttons.push({text: opt.confirmTxt, onClick: opt.onConfirm || function(){}});
+		if (opt.closeTxt) opt.buttons.push({text: opt.closeTxt, onClick: opt.onClose || function(){}});
 	},
 	build: function(){
 		var opt = this.options;
@@ -103,8 +103,8 @@ StickyWin.UI = new Class({
 					button.properties['class'] = button.properties.className;
 					delete button.properties.className;
 				}
-				var properties = $merge({'class': 'closeSticky'}, button.properties);
-				new Element('a').addEvent('click', button.onClick || $empty)
+				var properties = Object.merge({'class': 'closeSticky'}, button.properties);
+				new Element('a').addEvent('click', button.onClick || function(){})
 					.appendText(button.text).inject(closeButtons).set(properties).addClass('button');
 			});
 			container.adopt(new Element('div').addClass('closeBody').adopt(closeButtons));
@@ -158,15 +158,15 @@ StickyWin.UI = new Class({
 	}
 });
 StickyWin.UI.getArgs = function(){
-	var input = $type(arguments[0]) == "arguments"?arguments[0]:arguments;
-	if (Browser.Engine.presto && 1 === input.length) input = input[0];
+	var input = typeOf(arguments[0]) == "arguments"?arguments[0]:arguments;
+	if (Browser.opera && 1 === input.length) input = input[0];
 
 	var cap = input[0], bod = input[1];
-	var args = Array.link(input, {options: Object.type});
+	var args = Array.link(input, {options: Type.isObject});
 	if (input.length == 3 || (!args.options && input.length == 2)) {
 		args.caption = cap;
 		args.body = bod;
-	} else if (($type(bod) == 'object' || !bod) && cap && $type(cap) != 'object'){
+	} else if ((typeOf(bod) == 'object' || !bod) && cap && typeOf(cap) != 'object'){
 		args.body = cap;
 	}
 	return args;

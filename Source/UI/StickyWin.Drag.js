@@ -20,10 +20,14 @@ provides:
 StickyWin = Class.refactor(StickyWin, {
 	options: {
 		draggable: false,
-		dragOptions: {},
+		dragOptions: {
+			onComplete: function(){}
+		},
 		dragHandleSelector: '.dragHandle',
 		resizable: false,
-		resizeOptions: {},
+		resizeOptions: {
+			onComplete: function(){}
+		},
 		resizeHandleSelector: ''
 	},
 	setContent: function(){
@@ -36,7 +40,7 @@ StickyWin = Class.refactor(StickyWin, {
 		var toggled = this.toggleVisible(true);
 		if (this.options.useIframeShim) {
 			this.makeIframeShim();
-			var onComplete = (this.options.dragOptions.onComplete || $empty);
+			var onComplete = (this.options.dragOptions.onComplete);
 			this.options.dragOptions.onComplete = function(){
 				onComplete();
 				this.shim.position();
@@ -56,7 +60,7 @@ StickyWin = Class.refactor(StickyWin, {
 		var toggled = this.toggleVisible(true);
 		if (this.options.useIframeShim) {
 			this.makeIframeShim();
-			var onComplete = (this.options.resizeOptions.onComplete || $empty);
+			var onComplete = (this.options.resizeOptions.onComplete);
 			this.options.resizeOptions.onComplete = function(){
 				onComplete();
 				this.shim.position();
@@ -70,13 +74,13 @@ StickyWin = Class.refactor(StickyWin, {
 		if (toggled) this.toggleVisible(false);
 	},
 	toggleVisible: function(show){
-		if (!this.visible && Browser.Engine.webkit && $pick(show, true)) {
+		if (!this.visible && show == null || show) {
 			this.win.setStyles({
 				display: 'block',
 				opacity: 0
 			});
 			return true;
-		} else if (!$pick(show, false)){
+		} else if (show != null && !show){
 			this.win.setStyles({
 				display: 'none',
 				opacity: 1

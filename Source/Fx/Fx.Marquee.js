@@ -28,8 +28,8 @@ Fx.Marquee = new Class({
 		hideEffect: {opacity: 0},
 		revertEffect: { opacity: [0,1] },
 		currentMessage: null
-/*	onRevert: $empty,
-		onMessage: $empty */
+/*	onRevert: function(){},
+		onMessage: function(){} */
 	},
 	initialize: function(container, options){
 		container = document.id(container); 
@@ -54,7 +54,7 @@ Fx.Marquee = new Class({
 				}
 			});
 			if (document.id(msg)) wrapper.grab(document.id(msg)); //if the message is a dom element, inject it inside the wrapper
-			else if ($type(msg) == "string") wrapper.set('html', msg); //else set it's value as the inner html
+			else if (typeOf(msg) == "string") wrapper.set('html', msg); //else set it's value as the inner html
 		}
 		return wrapper.inject(this.element); //insert it into the container
 	},
@@ -66,7 +66,7 @@ Fx.Marquee = new Class({
 		//delay the fuction if we're reverting
 		(function(){
 			//store a copy of the current chained functions
-			var chain = this.$chain?$A(this.$chain):[];
+			var chain = this.$chain ? Array.clone(this.$chain) : [];
 			//clear teh chain
 			this.clearChain();
 			this.element = document.id(this.element);

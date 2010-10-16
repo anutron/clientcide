@@ -36,7 +36,7 @@ StickyWin.Alert = new Class({
 				{text: 'Ok'}
 			]
 		},
-		getWindowManager: $empty
+		getWindowManager: function(){}
 	},
 	initialize: function(caption, message, options) {
 		this.message = message;
@@ -81,7 +81,7 @@ StickyWin.Error = new Class({
 });
 
 StickyWin.alert = function(caption, message, options) {
-	if ($type(options) == "string") options = {baseHref: options};
+	if (typeOf(options) == "string") options = {baseHref: options};
 	return new StickyWin.Alert(caption, message, options);
 };
 

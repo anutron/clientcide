@@ -1,6 +1,7 @@
 /*
 ---
-script: Observer
+name: Observer
+
 description: Observe formelements for changes
 
 version: 1.0rc3
@@ -9,14 +10,13 @@ license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
-provides:
-- /Observer
-
 requires:
 - Core/Class.Extras
 - Core/Element.Event
 - Core/JSON
-- Clientcide
+
+provides: [Observer]
+
 ...
  */
 var Observer = new Class({
@@ -56,13 +56,13 @@ var Observer = new Class({
 	},
 
 	clear: function() {
-		$clear(this.timeout || null);
+		clearTimeout(this.timeout || null);
 		return this;
 	},
 	/* Clientcide change */
 	pause: function(){
-		$clear(this.timeout);
-		$clear(this.timer);
+		clearTimeout(this.timeout);
+		clearTimeout(this.timer);
 		this.element.removeEvent('keyup', this.boundChange);
 		return this;
 	},

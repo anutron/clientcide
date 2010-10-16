@@ -32,8 +32,8 @@ var MooScroller = new Class({
 			back: 'scrollBack'
 		},
 		hideWhenNoOverflow: true
-//		onScroll: $empty,
-//		onPage: $empty
+//		onScroll: function(){},
+//		onPage: function(){}
 	},
 
 	initialize: function(content, knob, options){
@@ -68,7 +68,7 @@ var MooScroller = new Class({
 		this.attach();
 		
 		this.clearScroll = function (){
-			$clear(this.scrolling);
+			clearInterval(this.scrolling);
 		}.bind(this);
 		['forward','back'].each(function(direction) {
 			var lnk = document.id(this.options.scrollLinks[direction]);

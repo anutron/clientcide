@@ -41,12 +41,12 @@ StickyWin.Modal = new Class({
 	},
 
 	show: function(showModal){
-		if ($pick(showModal, this.options.modalize)) this.mask.show();
+		if ([showModal, this.options.modalize].pick()) this.mask.show();
 		this.parent();
 	},
 
 	hide: function(hideModal){
-		if ($pick(hideModal, true)) this.mask.hide();
+		if ([hideModal, true].pick()) this.mask.hide();
 		this.parent();
 	},
 

@@ -1,6 +1,6 @@
 /*
 ---
-script: Autocompleter.JSONP.js
+name: Autocompleter.JSONP.js
 
 description: Implements Request.JSONP support for the Autocompleter class.
 
@@ -10,8 +10,7 @@ requires:
 - More/Request.JSONP
 - /Autocompleter.Remote
 
-provides:
-- Autocompleter.JSONP
+provides: [Autocompleter.JSONP]
 ...
 */
 
@@ -35,9 +34,9 @@ Autocompleter.JSONP = new Class({
 	},
 
 	query: function(){
-		var data = $unlink(this.options.jsonpOptions.data||{});
+		var data = Object.clone(this.options.jsonpOptions.data||{});
 		data[this.options.postVar] = this.queryValue;
-		this.jsonp = new Request.JSONP($merge({url: this.url, data: data},	this.options.jsonpOptions));
+		this.jsonp = new Request.JSONP(Object.merge({url: this.url, data: data},	this.options.jsonpOptions));
 		this.jsonp.addEvent('onComplete', this.queryResponse.bind(this));
 		this.fireEvent('onRequest', [this.element, this.jsonp, data, this.queryValue]);
 		this.jsonp.send();
@@ -45,7 +44,7 @@ Autocompleter.JSONP = new Class({
 	
 	queryResponse: function(response) {
 		this.parent();
-		var data = (this.options.filter)?this.options.filter.run([response], this):response;
+		var data = (this.options.filter)?this.options.filter.apply(this, [response]):response;
 		this.update(data);
 	}
 

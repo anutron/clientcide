@@ -22,8 +22,8 @@ var HoverGroup = new Class({
 	Implements: [Options, Events],
 	Binds: ['enter', 'leave', 'remain'],
 	options: {
-		//onEnter: $empty,
-		//onLeave: $empty,
+		//onEnter: function(){},
+		//onLeave: function(){},
 		elements: [],
 		delay: 300,
 		start: ['mouseenter'],
@@ -45,7 +45,7 @@ var HoverGroup = new Class({
 	elements: [],
 	attachTo: function(elements, detach){
 		var starters = {}, remainers = {}, enders = {};
-		elements = $splat(document.id(elements)||$$(elements));
+		elements = Array.from(document.id(elements)||$$(elements));
 		this.options.start.each(function(start) {
 			starters[start] = this.enter;
 		}, this);
@@ -83,7 +83,7 @@ var HoverGroup = new Class({
 		if (this.active) this.enter(e);
 	},
 	assert: function(e){
-		$clear(this.assertion);
+		clearTimeout(this.assertion);
 		this.assertion = (function(){
 			if (!this.isMoused && this.active) this.fireEvent('leave', e);
 			else if (this.isMoused && !this.active) this.fireEvent('enter', e);

@@ -55,14 +55,14 @@ StickyWin.UI.Pointy = new Class({
 	initialize: function() {
 		var args = this.getArgs(arguments);
 		this.setOptions(args.options);
-		$extend(this.options, this.options.themes[this.options.theme]);
+		Object.append(this.options, this.options.themes[this.options.theme]);
 		this.options.baseHref = this.options.baseHref || Clientcide.assetLocation + '/PointyTip/';
 		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
-		if (Browser.Engine.trident4) this.options.divot = this.options.divot.replace(/png/g, 'gif');
+		if (Browser.ie) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		this.options.css = this.options.css.substitute(this.options, /\\?\{%([^}]+)%\}/g);
 		if (args.options && args.options.theme) {
 			while (!this.id) {
-				var id = $random(0, 999999999);
+				var id = Number.random(0, 999999999);
 				if (!StickyWin.UI.Pointy[id]) {
 					StickyWin.UI.Pointy[id] = this;
 					this.id = id;
@@ -71,7 +71,7 @@ StickyWin.UI.Pointy = new Class({
 			this.options.css = this.options.css.replace(/div\.DefaultPointyTip/g, "div#pointy_"+this.id);
 			this.options.cssId = "pointyTipStyle_" + this.id;
 		}
-		if ($type(this.options.direction) == 'string') {
+		if (typeOf(this.options.direction) == 'string') {
 			var map = {
 				left: 9,
 				right: 3,
@@ -120,7 +120,7 @@ StickyWin.UI.Pointy = new Class({
 			};
 		};
 		this.pointer = new Element('div', {
-			styles: $extend({
+			styles: Object.append({
 				width: w,
 				height: h,
 				overflow: 'hidden'
@@ -129,13 +129,15 @@ StickyWin.UI.Pointy = new Class({
 		}).inject(this.pointyWrapper);
 	},
 	expose: function(){
-		if (document.id(this).getStyle('display') != 'none' && document.id(document.body).hasChild(document.id(this))) return $empty;
+		if (document.id(this).getStyle('display') != 'none' &&
+		  document.body != document.id(this) && 
+		  document.id(document.body).contains(document.id(this))) return function(){};
 		document.id(this).setStyles({
 			visibility: 'hidden',
 			position: 'absolute'
 		});
 		var dispose;
-		if (!document.body.hasChild(document.id(this))) {
+		if (document.body != document.id(this) && !document.body.contains(document.id(this))) {
 			document.id(this).inject(document.body);
 			dispose = true;
 		}
@@ -207,7 +209,7 @@ StickyWin.UI.Pointy = new Class({
 				break;
 		};
 		var putItBack = this.expose();
-		this.pointer.position($extend({
+		this.pointer.position(Object.append({
 			relativeTo: this.pointyWrapper,
 			allowNegative: true
 		}, pos, options));
@@ -216,7 +218,7 @@ StickyWin.UI.Pointy = new Class({
 	setContent: function(a1, a2){
 		this.parent(a1, a2);
 		this.top[this.h1?'removeClass':'addClass']('noCaption');
-		if (Browser.Engine.trident4) document.id(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
+		if (Browser.ie) document.id(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
 		if (this.options.closeButton) this.body.setStyle('margin-right', 6);
 		this.positionPointer();
 		return this;

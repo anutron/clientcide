@@ -72,7 +72,7 @@ var dbug = {
 	cookie: function(set){
 		var value = document.cookie.match('(?:^|;)\\s*jsdebug=([^;]*)');
 		var debugCookie = value ? unescape(value[1]) : false;
-		if((!$defined(set) && debugCookie != 'true') || ($defined(set) && set)) {
+		if((set == null && debugCookie != 'true') || (set != null && set)) {
 			dbug.enable();
 			dbug.log('setting debugging cookie');
 			var date = new Date();

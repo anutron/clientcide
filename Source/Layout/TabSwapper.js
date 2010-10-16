@@ -36,9 +36,9 @@ var TabSwapper = new Class({
 		},
 		cookieName: null, 
 		cookieDays: 999
-//	onActive: $empty,
-//	onActiveAfterFx: $empty,
-//	onBackground: $empty
+//	onActive: function(){},
+//	onActiveAfterFx: function(){},
+//	onBackground: function(){}
 	},
 	tabs: [],
 	sections: [],
@@ -70,7 +70,7 @@ var TabSwapper = new Class({
 			return this;
 		}
 		//if the index isn't specified, put the tab at the end
-		if (!$defined(index)) index = this.tabs.length;
+		if (index != null) index = this.tabs.length;
 		//if this isn't the first item, and there's a tab
 		//already in the interface at the index 1 less than this
 		//insert this after that one
@@ -127,7 +127,7 @@ var TabSwapper = new Class({
 		return this;
 	},
 	show: function(i){
-		if (!$chk(this.now)) {
+		if (this.now == null) {
 			this.tabs.each(function(tab, idx){
 				if (i != idx) 
 					this.hideSection(idx);
@@ -142,7 +142,7 @@ var TabSwapper = new Class({
 		return this;
 	},
 	recall: function(){
-		return (this.options.cookieName)?$pick(Cookie.read(this.options.cookieName), false): false;
+		return (this.options.cookieName) ? Cookie.read(this.options.cookieName) : false;
 	},
 	hideSection: function(idx) {
 		var tab = this.tabs[idx];
@@ -162,7 +162,7 @@ var TabSwapper = new Class({
 		if (!tab) return this;
 		var sect = tab.retrieve('section');
 		if (!sect) return this;
-		var smoothOk = this.options.smooth && !Browser.Engine.trident4;
+		var smoothOk = this.options.smooth && !Browser.ie;
 		if (this.now != idx) {
 			if (!tab.retrieve('tabFx')) 
 				tab.store('tabFx', new Fx.Morph(sect, this.options.effectOptions));
@@ -181,12 +181,12 @@ var TabSwapper = new Class({
 			}
 			if (this.options.smoothSize) {
 				var size = sect.getDimensions().height;
-				if ($chk(this.options.maxSize) && this.options.maxSize < size) 
+				if (this.options.maxSize != null && this.options.maxSize < size) 
 					size = this.options.maxSize;
 				if (!effect) effect = {};
 				effect.height = size;
 			}
-			if ($chk(this.now)) this.hideSection(this.now);
+			if (this.now != null) this.hideSection(this.now);
 			if (this.options.smoothSize && this.lastHeight) start.height = this.lastHeight;
 			sect.setStyles(start);
 			if (effect) {

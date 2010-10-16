@@ -8,6 +8,7 @@ license: MIT-Style License
 
 requires:
 - More/Form.Validator.Inline
+- /Clientcide
 - /StickyWin.PointyTip
 
 provides:
@@ -36,7 +37,7 @@ Form.Validator.Tips = new Class({
 		if (advice && advice.visible) advice.hide();
 	},
 	getAdvice: function(className, field) {
-		var params = Array.link(arguments, {field: Element.type});
+		var params = Array.link(arguments, {field: Type.isElement});
 		return params.field.retrieve('PointyTip');
 	},
 	advices: [],
@@ -55,7 +56,7 @@ Form.Validator.Tips = new Class({
 			var li = this.makeAdviceItem(className, field);
 			if (li) msg.adopt(li);
 			field.store('validationMsgs', msg);
-			advice = new StickyWin.PointyTip(this.options.tipCaption, msg, $merge(this.options.pointyTipOptions, {
+			advice = new StickyWin.PointyTip(this.options.tipCaption, msg, Object.merge(this.options.pointyTipOptions, {
 				showNow: false,
 				relativeTo: field,
 				inject: {

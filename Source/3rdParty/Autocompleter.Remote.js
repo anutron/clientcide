@@ -1,4 +1,5 @@
 /*
+---
 script: Autocompleter.Remote
 
 version: 1.1.1
@@ -8,15 +9,12 @@ author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
 requires:
-- /Autocompleter
+- /Autocompleter.Base
 - Core/Request.HTML
 - Core/Request.JSON
 
-provides:
-- Autocompleter.Ajax
-- Autocompleter.Ajax.Base
-- Autocompleter.Ajax.Json
-- Autocompleter.Ajax.Hhtml
+provides: [Autocompleter.Remote, Autocompleter.Ajax, Autocompleter.Ajax.Base, Autocompleter.Ajax.Json, Autocompleter.Ajax.Xhtml]
+
 ...
  */
 
@@ -27,11 +25,11 @@ Autocompleter.Ajax.Base = new Class({
 	Extends: Autocompleter.Base,
 
 	options: {
+		// onRequest: function(){},
+		// onComplete: function(){},
 		postVar: 'value',
 		postData: {},
-		ajaxOptions: {},
-		onRequest: $empty,
-		onComplete: $empty
+		ajaxOptions: {}
 	},
 
 	initialize: function(element, options) {
@@ -46,7 +44,7 @@ Autocompleter.Ajax.Base = new Class({
 	},
 
 	query: function(){
-		var data = $unlink(this.options.postData);
+		var data = Object.clone(this.options.postData);
 		data[this.options.postVar] = this.queryValue;
 		this.fireEvent('onRequest', [this.element, this.request, data, this.queryValue]);
 		this.request.send({'data': data});
@@ -71,7 +69,7 @@ Autocompleter.Ajax.Json = new Class({
 
 	initialize: function(el, url, options) {
 		this.parent(el, options);
-		this.request = new Request.JSON($merge({
+		this.request = new Request.JSON(Object.merge({
 			'url': url,
 			'link': 'cancel'
 		}, this.options.ajaxOptions)).addEvent('onComplete', this.queryResponse.bind(this));
@@ -90,7 +88,7 @@ Autocompleter.Ajax.Xhtml = new Class({
 
 	initialize: function(el, url, options) {
 		this.parent(el, options);
-		this.request = new Request.HTML($merge({
+		this.request = new Request.HTML(Object.merge({
 			'url': url,
 			'link': 'cancel',
 			'update': this.choices

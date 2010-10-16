@@ -34,9 +34,9 @@ Tips.Pointy = new Class({
 		}
 	},
 	initialize: function(){
-		var params = Array.link(arguments, {options: Object.type, elements: $defined});
+		var params = Array.link(arguments, {options: Type.isObject, elements: function(arg){ return arg != null; }});
 		this.setOptions(params.options);
-		this.tip = new StickyWin.PointyTip($extend(this.options.pointyTipOptions, {
+		this.tip = new StickyWin.PointyTip(Object.append(this.options.pointyTipOptions, {
 			showNow: false
 		}));
 		if (this.options.className) document.id(this.tip).addClass(this.options.className);
@@ -48,14 +48,14 @@ Tips.Pointy = new Class({
 		var text = element.retrieve('tip:text');
 		this.tip.setContent(title, text);
 
-		this.timer = $clear(this.timer);
+		this.timer = clearTimeout(this.timer);
 		this.timer = this.show.delay(this.options.showDelay, this);
 
 		this.position(element);
 	},
 
 	elementLeave: function(event){
-		$clear(this.timer);
+		clearTimeout(this.timer);
 		this.timer = this.hide.delay(this.options.hideDelay, this);
 	},
 

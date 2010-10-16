@@ -15,6 +15,7 @@ requires:
 - More/Element.Shortcuts
 - More/Element.Pin
 - More/IframeShim
+- /Clientcide
 - /StyleWriter
 
 provides:
@@ -28,9 +29,9 @@ var StickyWin = new Class({
 	Binds: ['destroy', 'hide', 'togglepin', 'esc'],
 	Implements: [Options, Events, StyleWriter],
 	options: {
-//		onDisplay: $empty,
-//		onClose: $empty,
-//		onDestroy: $empty,
+//		onDisplay: function(){},
+//		onClose: function(){},
+//		onDestroy: function(){},
 		closeClassName: 'closeSticky',
 		pinClassName: 'pinSticky',
 		content: '',
@@ -87,7 +88,7 @@ var StickyWin = new Class({
 		return this.element;
 	},
 	attach: function(attach){
-		var method = $pick(attach, true) ? 'addEvents' : 'removeEvents';
+		var method = attach != null && attach ? 'addEvents' : 'removeEvents';
 		var events = {};
 		if (this.options.closeOnClickOut) events.click = this.esc;
 		if (this.options.closeOnEsc) events.keyup = this.esc;
@@ -95,7 +96,7 @@ var StickyWin = new Class({
 	},
 	esc: function(e) {
 		if (e.key == "esc") this.hide();
-		if (e.type == "click" && this.element != e.target && !this.element.hasChild(e.target)) this.hide();
+		if (e.type == "click" && this.element != e.target && !this.element.contains(e.target)) this.hide();
 	},
 	makeWindow: function(){
 		this.destroyOthers();
@@ -109,8 +110,8 @@ var StickyWin = new Class({
 			}).inject(this.options.inject.target, this.options.inject.where).store('StickyWin', this);
 		} else this.win = document.id(this.id);
 		this.element = this.win;
-		if (this.options.width && $type(this.options.width.toInt())=="number") this.win.setStyle('width', this.options.width.toInt());
-		if (this.options.height && $type(this.options.height.toInt())=="number") this.win.setStyle('height', this.options.height.toInt());
+		if (this.options.width && typeOf(this.options.width.toInt())=="number") this.win.setStyle('width', this.options.width.toInt());
+		if (this.options.height && typeOf(this.options.height.toInt())=="number") this.win.setStyle('height', this.options.height.toInt());
 		return this;
 	},
 	show: function(suppressEvent){
@@ -126,7 +127,7 @@ var StickyWin = new Class({
 		this.win.show();
 	},
 	hide: function(suppressEvent){
-		if ($type(suppressEvent) == "event" || !suppressEvent) this.fireEvent('close');
+		if (typeOf(suppressEvent) == "event" || !suppressEvent) this.fireEvent('close');
 		this.hideWin();
 		if (this.options.useIframeShim) this.hideIframeShim();
 		this.visible = false;
@@ -145,7 +146,7 @@ var StickyWin = new Class({
 	},
 	setContent: function(html) {
 		if (this.win.getChildren().length>0) this.win.empty();
-		if ($type(html) == "string") this.win.set('html', html);
+		if (typeOf(html) == "string") this.win.set('html', html);
 		else if (document.id(html)) this.win.adopt(html);
 		this.win.getElements('.'+this.options.closeClassName).each(function(el){
 			el.addEvent('click', this.hide);
@@ -159,7 +160,7 @@ var StickyWin = new Class({
 		this.positioned = true;
 		this.setOptions(options);
 		this.win.position({
-			allowNegative: $pick(this.options.allowNegative, this.options.relativeTo != document.body),
+			allowNegative: [this.options.allowNegative, this.options.relativeTo != document.body].pick(),
 			relativeTo: this.options.relativeTo,
 			position: this.options.position,
 			offset: this.options.offset,
@@ -173,7 +174,7 @@ var StickyWin = new Class({
 			dbug.log('you must include element.pin.js!');
 			return this;
 		}
-		this.pinned = $pick(pin, true);
+		this.pinned = pin != null && pin;
 		this.win.pin(pin);
 		return this;
 	},
@@ -228,7 +229,7 @@ StickyWin.Stacker = new Class({
 	click: function(e) {
 		this.instances.each(function(sw){
 			var el = $(sw);
-			if (el == e.target || el.hasChild($(e.target))) this.focus(sw);
+			if (el == e.target || el.contains($(e.target))) this.focus(sw);
 		}, this);
 	},
 	focus: function(instance){

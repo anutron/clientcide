@@ -8,12 +8,11 @@ description: Handles the scripting for a common UI layout; the tabbed box.
 license: MIT-Style License
 
 requires:
- - Core/
  - Core/Element.Event
  - Core/Fx.Tween
  - Core/Fx.Morph
+ - Core/Element.Dimensions
  - More/Element.Shortcuts
- - More/Element.Dimensions
  - More/Element.Measure
 
 provides:
@@ -54,8 +53,8 @@ var TabSwapper = new Class({
 	},
 	setup: function(){
 		var opt = this.options,
-		sections = $$(opt.sections),
-		tabs = $$(opt.tabs);
+		    sections = $$(opt.sections),
+		    tabs = $$(opt.tabs);
 		if (tabs[0] && tabs[0].retrieve('tabSwapper')) return tabs[0].retrieve('tabSwapper');
 		var clickers = $$(opt.clickers);
 		tabs.each(function(tab, index){

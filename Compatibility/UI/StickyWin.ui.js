@@ -1,1 +1,0 @@
-var stickyWinHTML = StickyWin.ui;

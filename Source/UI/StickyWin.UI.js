@@ -17,7 +17,7 @@ provides:
 ...
 */
 StickyWin.UI = new Class({
-	Implements: [Options, Class.ToElement, StyleWriter],
+	Implements: [Options, StyleWriter],
 	options: {
 		width: 300,
 		css: "div.DefaultStickyWin {font-family:verdana; font-size:11px; line-height: 13px;position: relative;}"+
@@ -56,6 +56,9 @@ StickyWin.UI = new Class({
 		this.createStyle(css, this.options.cssId);
 		this.build();
 		if (args.caption || args.body) this.setContent(args.caption, args.body);
+	},
+	toElement: function(){
+		return this.element;
 	},
 	getArgs: function(){
 		return StickyWin.UI.getArgs.apply(this, arguments);

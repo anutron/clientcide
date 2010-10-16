@@ -11,7 +11,7 @@ requires:
 - Core/Element.Dimensions
 - Core/Element.Event
 - Core/Element.Style
-- Core/Selectors
+- Core/Slick.Finder
 - /Clientcide
 
 provides:

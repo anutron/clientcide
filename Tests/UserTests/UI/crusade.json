@@ -1,7 +1,0 @@
- {  name: 'The Last Crusade',
-    thumbnail: 'UserTests/UI/crusade.jpg',
-    director: 'Steven Spielberg',
-    writer: 'George Lucas & Philip Kaufman',
-    starring: 'Harrison Ford & Sean Connery',
-    duration: '127 min'
-  }

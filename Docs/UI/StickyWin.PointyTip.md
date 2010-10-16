@@ -10,7 +10,7 @@ This is an instance of [StickyWin][] that automatically wraps the values you pas
 
 ### Implements
 
-* [Options][], [Class.ToElement][], [StyleWriter][]
+* [Options][], [StyleWriter][]
 
 ### Extends
 
@@ -69,5 +69,4 @@ See the note on arguments in the section above.
 [StickyWin]: http://clientcide.com/docs/UI/StickyWin
 [StickyWin.UI.Pointy]: http://clientcide.com/docs/UI/StickyWin.UI.Pointy
 [Options]: http://www.mootools.net/docs/core/Class/Class.Extras
-[Class.ToElement]: http://clientcide.com/docs/Class/Class.ToElement
 [StyleWriter]: http://clientcide.com/docs/UI/StyleWriter

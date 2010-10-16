@@ -1,8 +1,0 @@
-{
-    thumbnail: 'UserTests/UI/jones1.jpg',
-    name: 'Raiders of the Lost Ark',
-    director: 'Steven Spielberg',
-    writer: 'George Lucas & Philip Kaufman',
-    starring: 'Harrison Ford & Karen Allen',
-    duration: '115 min'
-}

@@ -9,13 +9,12 @@ license: MIT-Style License
 
 requires:
 - Core/DomReady
-- Core/Selectors
+- Core/Slick.Finder
 - More/Element.Position
 - More/Class.Binds
 - More/Element.Shortcuts
 - More/Element.Pin
 - More/IframeShim
-- /Class.ToElement
 - /StyleWriter
 
 provides:
@@ -27,7 +26,7 @@ provides:
 
 var StickyWin = new Class({
 	Binds: ['destroy', 'hide', 'togglepin', 'esc'],
-	Implements: [Options, Events, StyleWriter, Class.ToElement],
+	Implements: [Options, Events, StyleWriter],
 	options: {
 //		onDisplay: $empty,
 //		onClose: $empty,
@@ -83,6 +82,9 @@ var StickyWin = new Class({
 		if (this.options.closeOnClickOut || this.options.closeOnEsc) this.attach();
 		if (this.options.destroyOnClose) this.addEvent('close', this.destroy);
 		if (this.options.showNow) this.show();
+	},
+	toElement: function(){
+		return this.element;
 	},
 	attach: function(attach){
 		var method = $pick(attach, true) ? 'addEvents' : 'removeEvents';

@@ -1,1 +1,0 @@
-Element.alias('isDisplayed', 'isVisible');

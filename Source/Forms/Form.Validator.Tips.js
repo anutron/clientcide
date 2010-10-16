@@ -20,8 +20,8 @@ Form.Validator.Tips = new Class({
 		pointyTipOptions: {
 			point: "left",
 			width: 250
-		}
-//		tipCaption: ''
+		},
+		tipCaption: ''
 	},
 	showAdvice: function(className, field){
 		var advice = this.getAdvice(field);

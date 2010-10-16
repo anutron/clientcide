@@ -1,7 +1,0 @@
- {  name: 'Temple of Doom',
-    thumbnail: 'UserTests/UI/doom.jpg',
-    director: 'Steven Spielberg',
-    writer: 'George Lucas & Willard Huyck',
-    starring: 'Harrison Ford & Kate Capshaw',
-    duration: '118 min'
-  }

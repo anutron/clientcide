@@ -11,6 +11,46 @@ Links
 * [Tutorials/Examples](http://www.clientcide.com/wiki)
 * [Bugs](http://clientcide.lighthouseapp.com)
 
+Changes in 3.0
+=======
+* The following files are removed entirely:
+  * 3rdParty/Lightbox.js
+  * 3rdParty/Autocompleter.js
+  * 3rdParty/Autocompleter.Remote.js
+  * 3rdParty/Autocompleter.Observer.js
+  * 3rdParty/Autocompleter.Clientcide.js
+  * 3rdParty/Autocompleter.JSONP.js
+  * 3rdParty/Autocompleter.Local.js
+  * Layout/MenuSlider.js
+  * Layout/SimpleCarousel.js
+  * Layout/SimpleSlideShow.js
+  * Localization/SimpleEditor.Spanish.js
+  * Localization/SimpleEditor.Portuguese.js
+  * Localization/SimpleEditor.Italian.js
+  * Localization/SimpleEditor.French.js
+  * Localization/SimpleEditor.English.US.js
+  * Localization/SimpleEditor.Dutch.js
+  * Forms/DatePicker.js
+  * Forms/TagMaker.js
+  * Forms/ProductPicker.js
+  * Forms/DatePicker.Extras.js
+  * Forms/Confirmer.js
+  * Forms/Form.Request.Prompt.js
+  * Forms/InputFocus.js
+  * Forms/SimpleEditor.js
+  * Beta/PostEditor.Forum.js
+  * Beta/PostEditor.js
+  * UI/IconMenu.js
+  * UI/ObjectBrowser.js
+  * UI/PopupDetails.js
+  * Class/Class.ToElement.js
+  * Browser/Popup.js
+  * Browser/FixPNG.js
+* Updated all tests to use the [UI test runner](http://github.com/anutron/mootools-test-runner)
+* Updated dependency graph to use new YAML formatted headers and manifest
+* Added new method to dbug: dbug.conditional
+* dbug now works in chrome
+* Various small bug fixes
 
 Changes in 2.2.0
 =======

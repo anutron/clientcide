@@ -1,0 +1,13 @@
+<script src="/depender/build?require=Clientcide/StickyWin.Modal"></script>
+
+<a id="make">Make a modal popup</a>
+<script>
+body = "<div style=\"border: 1px solid black;background-color: #ccc; padding: 2px; width: 200px;\">Hi. I'm a stickyWin. You can <a href=\"javascript:void(0);\" class=\"closeSticky\">close me</a> if you want. You can also click the 'grey' layer to close me.</div>";
+
+$('make').addEvent('click', function(){
+	new StickyWin.Modal({
+		content: body,
+		hideOnClick: true
+	});
+});
+</script>

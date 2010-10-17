@@ -1,0 +1,9 @@
+<script src="/depender/build?require=Clientcide/StickyWin.Fx"></script>
+
+<a id="make">Make a simple popup that fades in and out</a>
+<script>
+body = "<div style=\"border: 1px solid black;background-color: #ccc; padding: 2px; width: 200px;\">Hi. I'm a stickyWin. You can <a href=\"javascript:void(0);\" class=\"closeSticky\">close me</a> if you want.</div>";
+$('make').addEvent('click', function(){
+	new StickyWin({content: body, fadeDuration: 500});
+});
+</script>

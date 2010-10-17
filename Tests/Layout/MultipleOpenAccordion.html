@@ -1,0 +1,38 @@
+<style>
+	dl#acc dt {
+		font-weight: bold;
+		background: #dedede;
+		padding: 2px;
+		margin: 2px;
+		cursor: pointer;
+	}
+	dl#acc dd {
+		margin: 2px;
+	}
+</style>
+<dl id="acc">
+	<dt>header 1</dt>
+	<dd>body 1</dd>
+	<dt>header 2</dt>
+	<dd>body 2</dd>
+	<dt>header 3</dt>
+	<dd>body 3</dd>
+	<dt>header 4</dt>
+	<dd>body 4</dd>
+	<dt>header 5</dt>
+	<dd>body 5</dd>
+	<dt>header 6</dt>
+	<dd>body 6</dd>
+</dl>
+
+<hr/>
+<a id="hide">Hide all</a> | <a id="show">Show all</a>
+<script src="/depender/build?require=Clientcide/MultipleOpenAccordion,More/Fx.Reveal"></script>
+
+<script>
+	var moa = new MultipleOpenAccordion($('acc'), {togglers: $$("#acc dt"), elements: $$("#acc dd"), openAll: false});
+
+	['hide', 'show'].each(function(action){
+		$(action).addEvent('click', moa[action + 'All'].bind(moa))
+	});
+</script>

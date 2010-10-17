@@ -1,0 +1,290 @@
+<style>
+div.scroller {
+	width: 200px;
+	height: 150px;
+	margin-left: 100px;
+	border: 1px solid #ddd;
+}
+div.scroller .content {
+	height: 150px;
+	width: 190px;
+	overflow: hidden;
+	float: left;
+}
+div.scroller .content ol {
+	margin-left: 30px;
+}
+div.scroller .content p {
+	margin-left: 10px;
+}
+div.scroller .scrollarea {
+	height: 150px;
+	width: 9px;
+	float: left;
+	border-left: 1px solid #ddd;
+	cursor: pointer;
+}
+div.scroller div.scrollBarContainer {
+	height: 132px;
+}
+div.scroller .scrollKnob {
+	width: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	min-height: 10px;
+}
+div.scroller .scrollForward, div.scroller .scrollBack {
+	width: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	height: 5px;
+}
+
+
+div.horzscroller {
+	width: 200px;
+	height: 160px;
+	margin-left: 100px;
+	margin-top: 50px;
+	border: 1px solid #ddd;
+}
+div.horzscroller .content {
+	height: 150px;
+	width: 200px;
+	overflow: hidden;
+}
+div.horzscroller .content p {
+	margin-left: 10px;
+	width: 500px;	
+}
+div.horzscroller .scrollarea {
+	height: 9px;
+	width: 200px;
+	border-top: 1px solid #ddd;
+	cursor: pointer;
+}
+div.horzscroller div.scrollBarContainer {
+	width: 180px;
+	margin-right: 2px;
+	height: 7px;
+	float: left;
+}
+div.horzscroller .scrollKnob {
+	height: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	min-width: 10px;
+}
+div.horzscroller .scrollForward, div.horzscroller .scrollBack {
+	float: left;
+	height: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	width: 5px;
+}
+
+
+
+div.bothscroller {
+	width: 200px;
+	height: 160px;
+	margin-left: 100px;
+	margin-top: 50px;
+	border: 1px solid #ddd;
+}
+div.bothscroller .content {
+	height: 150px;
+	width: 190px;
+	overflow: hidden;
+	float: left;
+}
+div.bothscroller .content ol {
+	margin-left: 30px;
+}
+div.bothscroller .content p {
+	margin-left: 10px;
+	width: 500px;	
+}
+div.bothscroller .wscrollarea {
+	clear:both;
+	height: 9px;
+	width: 200px;
+	border-top: 1px solid #ddd;
+	cursor: pointer;
+}
+div.bothscroller .wscrollarea div.scrollBarContainer {
+	width: 180px;
+	margin-right: 2px;
+	height: 7px;
+	float: left;
+}
+div.bothscroller .wscrollarea .scrollKnob {
+	height: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	min-width: 10px;
+}
+div.bothscroller .wscrollarea .scrollForward, div.bothscroller .wscrollarea .scrollBack {
+	float: left;
+	height: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	width: 5px;
+}
+
+div.bothscroller .vscrollarea {
+	height: 150px;
+	width: 9px;
+	float: left;
+	border-left: 1px solid #ddd;
+	cursor: pointer;
+}
+div.bothscroller .vscrollarea div.scrollBarContainer {
+	height: 132px;
+}
+div.bothscroller .vscrollarea .scrollKnob {
+	width: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	min-height: 10px;
+}
+div.bothscroller .vscrollarea .scrollForward, div.bothscroller .vscrollarea .scrollBack {
+	width: 5px;
+	margin: 1px;
+	border: 1px solid #999;
+	background: #ccc;
+	height: 5px;
+}
+</style>
+<div class="scroller">
+	<div class="content">
+		<ol>
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+			<li>four</li>
+			<li>five</li>
+			<li>six</li>
+			<li>seven</li>
+			<li>eight</li>
+			<li>nine</li>
+			<li>ten</li>
+		</ol>
+		<p>a paragraph</p>
+		<ol>
+			<li>blah</li>
+			<li>blah</li>
+		</ol>
+		<ol>
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+			<li>four</li>
+			<li>five</li>
+			<li>six</li>
+			<li>seven</li>
+			<li>eight</li>
+			<li>nine</li>
+			<li>ten</li>
+		</ol>
+	</div>
+	<div class="scrollarea">
+		<div class="scrollBack"></div>
+		<div class="scrollBarContainer">
+			<div class="scrollKnob"></div>
+		</div>
+		<div class="scrollForward"></div>
+	</div>
+</div>
+
+<div class="horzscroller clearfix"> 
+	<div class="content"> 
+		<p>a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long </p> 
+	</div> 
+	<div class="scrollarea clearfix"> 
+		<div class="scrollBack"></div> 
+		<div class="scrollBarContainer"> 
+			<div class="scrollKnob"></div> 
+		</div> 
+		<div class="scrollForward"></div> 
+	</div> 
+</div>
+
+<div class="bothscroller clearfix"> 
+	<div class="content"> 
+		<p>a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long a paragraph that is really long </p> 
+		<ol> 
+			<li>one</li> 
+			<li>two</li> 
+			<li>three</li> 
+			<li>four</li> 
+			<li>five</li> 
+			<li>six</li> 
+			<li>seven</li> 
+			<li>eight</li> 
+			<li>nine</li> 
+			<li>ten</li> 
+		</ol> 
+		<p>a paragraph</p> 
+		<ol> 
+			<li>blah</li> 
+			<li>blah</li> 
+		</ol> 
+	</div> 
+	<div class="vscrollarea clearfix"> 
+		<div class="scrollBack"></div> 
+		<div class="scrollBarContainer"> 
+			<div class="scrollKnob"></div> 
+		</div> 
+		<div class="scrollForward"></div> 
+	</div> 
+	<div class="wscrollarea clearfix"> 
+		<div class="scrollBack"></div> 
+		<div class="scrollBarContainer"> 
+			<div class="scrollKnob"></div> 
+		</div> 
+		<div class="scrollForward"></div> 
+	</div> 
+</div>
+
+<script src="/depender/build?require=Clientcide/MooScroller"></script>
+
+<script>
+new MooScroller(document.getElement('div.scroller div.content'), document.getElement('div.scroller .scrollKnob'), {
+	scrollLinks: {
+		forward: document.getElement('div.scroller div.scrollForward'),
+		back: document.getElement('div.scroller div.scrollBack')
+	}
+});
+
+new MooScroller($$('div.horzscroller div.content')[0], $$('div.horzscroller .scrollKnob')[0], {
+	mode: 'horizontal',
+	scrollLinks: {
+		forward: $$('div.horzscroller div.scrollForward')[0],
+		back: $$('div.horzscroller div.scrollBack')[0]
+	}
+});
+
+new MooScroller($$('div.bothscroller div.content')[0], $$('div.bothscroller .vscrollarea .scrollKnob')[0], {
+	scrollLinks: {
+		forward: $$('div.bothscroller .vscrollarea div.scrollForward')[0],
+		back: $$('div.bothscroller .vscrollarea div.scrollBack')[0]
+	}
+});
+new MooScroller($$('div.bothscroller div.content')[0], $$('div.bothscroller .wscrollarea .scrollKnob')[0], {
+	wheel: false,
+	mode: 'horizontal',
+	width: 400,
+	scrollLinks: {
+		forward: $$('div.bothscroller .wscrollarea div.scrollForward')[0],
+		back: $$('div.bothscroller .wscrollarea div.scrollBack')[0]
+	}
+});
+</script>

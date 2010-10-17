@@ -1,0 +1,26 @@
+<script src="/depender/build?require=Clientcide/StickyWin.UI"></script>
+
+<a id="make">Make a simple styled popup</a>
+<a id="make2">Make a simple styled popup w/o a caption</a>
+<script>
+$('make').addEvent('click', function(){
+	new StickyWin({content: StickyWin.ui('This is the StickyWin UI', 'You can close me with the button below',
+		{
+			buttons: [
+				{text: "Close me"}
+			]
+		})
+	});
+});
+
+$('make2').addEvent('click', function(){
+	new StickyWin({content: StickyWin.ui('I have no caption. You can close me with the button below',
+		{
+			buttons: [
+				{text: "Close me"}
+			]
+		})
+	});
+});
+
+</script>

@@ -1,0 +1,46 @@
+<style>
+#foo {
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+	position: relative;
+	left: 300px;
+	top: 100px;
+}
+</style>
+<div id="foo"></div>
+<a id="show">Show some tips</a>
+<script src="/depender/build?require=Clientcide/StickyWin.PointyTip"></script>
+
+<script>
+$('show').addEvent('click', function(){
+	new StickyWin.PointyTip('This is the caption', 
+		'This is the body. You can close me with the little "X" in the upper right corner', {
+		relativeTo: 'foo',
+		width: 200,
+		point: "down"
+	});
+	new StickyWin.PointyTip('This is the body. You can close me with the little "X" in the upper right corner', {
+		relativeTo: 'foo',
+		width: 200,
+		point: "left",
+		pointyOptions: {
+			theme: 'light'
+		}
+	});
+	new StickyWin.PointyTip('This is the body. You can close me with the little "X" in the upper right corner', {
+		relativeTo: 'foo',
+		width: 200,
+		point: 11
+	});
+	new StickyWin.PointyTip('This is the caption', 
+		'This is the body. You can close me with the little "X" in the upper right corner', {
+		relativeTo: 'foo',
+		width: 200,
+		point: "right",
+		pointyOptions: {
+			theme: 'light'
+		}
+	});
+});
+</script>

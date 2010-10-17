@@ -1,0 +1,15 @@
+<script src="/depender/build?require=Clientcide/StickyWin.Ajax"></script>
+
+
+<a id="make">Fetch some HTML from the server and display the response as a popup.</a>
+<script>
+$('make').addEvent('click', function(){
+	new StickyWin.Ajax({
+		fadeDuration: 500,
+		url: '/ajax_html_echo/?html=%3Cdiv%20style%3D%22border%3A%201px%20solid%20black%3Bbackground-color%3A%20%23ccc%3B%20padding%3A%202px%3B%20width%3A%20200px%3B%22%3EThis%20is%20text%20retrieved%20via%20Ajax.%20You%20can%20%3Ca%20href%3D%22javascript%3Avoid%280%29%3B%22%20class%3D%22closeSticky%22%3Eclose%20me%3C/a%3E%20if%20you%20want.%3C/div%3E%3Cscript%3Ealert%28%22StickyWin%20Ajax%20request%20successful.%22%29%3C/script%3E',
+		requestOptions: {
+			evalScripts: true
+		}
+	}).update();
+});
+</script>

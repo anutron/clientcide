@@ -1,7 +1,7 @@
 /*
 ---
 
-script: dbug.js
+name: dbug.js
 
 description: A wrapper for Firebug console.* statements.
 
@@ -10,8 +10,7 @@ license: MIT-style license.
 authors:
 - Aaron Newton
 
-provides: 
- - dbug
+provides: dbug
 
 ...
 */

@@ -1,6 +1,19 @@
-copyright: Unknown
-description: Unknown
-name: Clientcide
+name: "Clientcide"
+
+exports: "clientcide.js"
+
+web: "[clientcide.com](http://clientcide.com)"
+
+description: "Clientcide's plugins for MooTools"
+
+license: "[MIT License](http://mootools.net/license.txt)"
+
+copyright: "&copy; [Aaron Newton](http://clientcide.com)"
+
+authors: "[Aaron Newton](http://clientcide.com)"
+
+version: "3.0.0"
+
 sources: [
   Source/Core/Clientcide.js,
   Source/Core/dbug.js,

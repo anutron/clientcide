@@ -1,7 +1,7 @@
 /*
 ---
 
-script: StickyWin.Prompt.js
+name: StickyWin.Prompt.js
 
 description: Defines StickyWin.Prompt, a little prompt box with an input as well as ok close buttons.
 
@@ -10,9 +10,7 @@ license: MIT-Style License
 requires:
 - /StickyWin.Confirm
 
-provides:
-- StickyWin.Prompt
-- StickyWin.prompt
+provides: [StickyWin.Prompt, StickyWin.prompt]
 
 ...
 */

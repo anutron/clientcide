@@ -1,7 +1,7 @@
 /*
 ---
 
-scirpt: HoverGroup
+name: HoverGroup.js
 
 description: Manages mousing in and out of multiple objects (think drop-down menus).
 
@@ -12,8 +12,7 @@ requires:
 - Core/Element.Event
 - More/Class.Binds
 
-provides:
-- HoverGroup
+provides: HoverGroup
 
 ...
 */

@@ -1,6 +1,6 @@
 /*
 ---
-script: Collapsible.js
+name: Collapsible.js
 
 description: Enables a dom element to, when clicked, hide or show (it toggles) another dom element. Kind of an Accordion for one item.
 
@@ -10,8 +10,7 @@ requires:
 - Core/Element.Event
 - More/Fx.Reveal
 
-provides:
-- Collapsible
+provides: Collapsible
 ...
 */
 var Collapsible = new Class({

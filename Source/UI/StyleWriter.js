@@ -1,6 +1,6 @@
 /*
 ---
-script: StyleWriter.js
+name: StyleWriter.js
 
 description: Provides a simple method for injecting a css style element into the DOM if it's not already present.
 
@@ -12,8 +12,7 @@ requires:
 - Core/Element
 - /dbug
 
-provides:
-- StyleWriter
+provides: StyleWriter
 
 ...
 */

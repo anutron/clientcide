@@ -1,6 +1,6 @@
  /*
 ---
-script: StickyWin.ui.js
+name: StickyWin.ui.js
 
 description: Creates an html holder for in-page popups using a default style.
 
@@ -12,8 +12,7 @@ requires:
 - /StyleWriter
 - /StickyWin
 
-provides:
-- StickyWin.UI
+provides: StickyWin.UI
 ...
 */
 StickyWin.UI = new Class({

@@ -1,6 +1,6 @@
 /*
 ---
-script: MooScroller.js
+name: MooScroller.js
 
 description: Recreates the standard scrollbar behavior for elements with overflow but using DOM elements so that the scroll bar elements are completely styleable by css.
 
@@ -14,8 +14,7 @@ requires:
 - Core/Slick.Finder
 - /Clientcide
 
-provides:
-- MooScroller
+provides: MooScroller
 
 ...
 */

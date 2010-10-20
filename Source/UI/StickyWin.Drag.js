@@ -1,7 +1,7 @@
 /*
 ---
 
-script: StickyWin.Drag.js
+name: StickyWin.Drag.js
 
 description: Implements drag and resize functionaity into StickyWin.Fx. See StickyWin.Fx for the options.
 
@@ -12,8 +12,7 @@ requires:
 - More/Drag.Move
 - /StickyWin
 
-provides:
-- StickyWin.Drag
+provides: StickyWin.Drag
 
 ...
 */

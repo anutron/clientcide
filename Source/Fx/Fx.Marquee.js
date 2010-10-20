@@ -1,7 +1,7 @@
 /*
 ---
 
-script: Fx.Marquee.js
+name: Fx.Marquee.js
 
 description: Defines Fx.Marquee, a marquee class for animated notifications.
 
@@ -11,8 +11,7 @@ requires:
 - Core/Fx.Morph
 - More/Element.Shortcuts
 
-provides:
-- Fx.Marquee
+provides: Fx.Marquee
 
 ...
 */

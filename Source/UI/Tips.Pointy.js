@@ -1,6 +1,6 @@
 /*
 ---
-script: Tips.Pointy.js
+name: Tips.Pointy.js
 
 description: Defines Tips.Pointy, An extension to Tips that adds a pointy style to the tip.
 
@@ -10,8 +10,7 @@ requires:
 - More/Tips
 - /StickyWin.PointyTip
 
-provides:
-- Tips.Pointy
+provides: Tips.Pointy
 
 ...
 */

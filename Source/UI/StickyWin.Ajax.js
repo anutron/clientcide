@@ -1,9 +1,9 @@
 /*
 ---
 
-script: StickyWin.Ajaxjs
+name: StickyWin.Ajaxjs
 
-descript: Adds ajax functionality to all the StickyWin classes.
+dename: Adds ajax functionality to all the StickyWin classes.
 
 license: MIT-Style License
 
@@ -12,9 +12,7 @@ requires:
 - /StickyWin
 - /StickyWin.UI
 
-provides:
-- StickyWin.Ajax
-- StickyWin.Modal.Ajax
+provides: [StickyWin.Ajax, StickyWin.Modal.Ajax]
 
 ...
 */

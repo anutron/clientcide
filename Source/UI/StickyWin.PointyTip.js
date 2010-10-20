@@ -1,6 +1,6 @@
 /*
 ---
-script: StickyWin.PointyTip.js
+name: StickyWin.PointyTip.js
 
 description: Positions a pointy tip relative to the element you specify.
 
@@ -9,8 +9,7 @@ license: MIT-Style License
 requires:
 - /StickyWin.UI.Pointy
 
-provides:
-- StickyWin.PointyTip
+provides: StickyWin.PointyTip
 
 ...
 */

@@ -1,6 +1,6 @@
 /*
 ---
-script: MultipleOpenAccordion.js
+name: MultipleOpenAccordion.js
 
 description: Creates a Mootools Fx.Accordion that allows the user to open more than one element.
 
@@ -10,8 +10,7 @@ requires:
 - Core/Element.Event
 - More/Fx.Reveal
 
-provides:
-- MultipleOpenAccordion
+provides: MultipleOpenAccordion
 
 ...
 */

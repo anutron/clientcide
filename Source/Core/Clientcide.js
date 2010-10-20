@@ -1,14 +1,13 @@
 /*
 ---
 
-script: Clientcide.js
+name: Clientcide.js
 
 description: The Clientcide namespace.
 
 license: MIT-style license.
 
-provides:
-- Clientcide
+provides: Clientcide
 
 ...
 */

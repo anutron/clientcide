@@ -15,8 +15,7 @@ requires:
  - More/Element.Shortcuts
  - More/Element.Measure
 
-provides:
-- TabSwapper
+provides: TabSwapper
 
 ...
 */

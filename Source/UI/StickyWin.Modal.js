@@ -1,7 +1,7 @@
 /*
 ---
 
-script: StickyWin.Modal.js
+name: StickyWin.Modal.js
 
 description: This script extends StickyWin and StickyWin.Fx classes to add Mask functionality.
 
@@ -11,8 +11,7 @@ requires:
 - More/Mask
 - /StickyWin
 
-provides:
-- StickyWin.Modal
+provides: StickyWin.Modal
 ...
 */
 StickyWin.Modal = new Class({

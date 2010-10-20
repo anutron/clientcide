@@ -1,6 +1,6 @@
 /*
 ---
-script: Form.Validator.Tips
+name: Form.Validator.Tips
 
 description: Form.Validator using StickyWin.PointyTip.
 
@@ -11,8 +11,7 @@ requires:
 - /Clientcide
 - /StickyWin.PointyTip
 
-provides:
-- Form.Validator.Tips
+provides: Form.Validator.Tips
 ...
 */
 Form.Validator.Tips = new Class({

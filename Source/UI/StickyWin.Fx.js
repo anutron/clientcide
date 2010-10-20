@@ -1,7 +1,7 @@
 /*
 ---
 
-script: StickyWin.Fx.js
+name: StickyWin.Fx.js
 
 description: Extends StickyWin to create popups that fade in and out.
 
@@ -12,8 +12,7 @@ requires:
 - Core/Fx.Tween
 - /StickyWin
 
-provides:
-- StickyWin.Fx
+provides: StickyWin.Fx
 
 ...
 */

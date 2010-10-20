@@ -1,7 +1,7 @@
 /*
 ---
 
-script: StickyWin.Alert.js
+name: StickyWin.Alert.js
 
 description: Defines StickyWin.Alert, a simple little alert box with a close button.
 
@@ -11,11 +11,7 @@ requires:
 - /StickyWin.Modal
 - /StickyWin.UI
 
-provides:
-- StickyWin.Alert
-- StickyWin.Error
-- StickyWin.alert
-- StickyWin.error
+provides: [StickyWin.Alert, StickyWin.Error, StickyWin.alert, StickyWin.error]
 
 ...
 */

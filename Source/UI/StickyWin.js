@@ -1,7 +1,7 @@
 /*
 ---
 
-script: StickyWin.js
+name: StickyWin.js
 
 description: Creates a div within the page with the specified contents at the location relative to the element you specify; basically an in-page popup maker.
 
@@ -18,9 +18,7 @@ requires:
 - /Clientcide
 - /StyleWriter
 
-provides:
-- StickyWin
-- StickyWin.Stacker
+provides: [StickyWin, StickyWin.Stacker]
 ...
 */
 

@@ -42,6 +42,7 @@ sources: [
   Source/3rdParty/Autocompleter.JSONP.js,
   Source/3rdParty/Autocompleter.Local.js,
   Source/3rdParty/Autocompleter.Observer.js,
-  Source/3rdParty/Autocompleter.Remote.js
+  Source/3rdParty/Autocompleter.Remote.js,
+  Source/3rdParty/PostEditor.js,
 ]
 version: 3.0.0

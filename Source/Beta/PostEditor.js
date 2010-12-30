@@ -49,7 +49,7 @@ var PostEditor = new Class({
 		this.seKey = 0;
 		this.completion = null;
 		this.tabl = this.tab.length;
-		this.element.onkeypress = this.onKeyPress.bind(this);
+		this.element.addEvent('keydown', this.onKeyPress.bind(this));
 	},
 
 	changeSnippets: function(snippets){
@@ -118,8 +118,8 @@ var PostEditor = new Class({
 		if (this.filterByPairs(e)) return;
 		this.filterBySelect(e);
 		if (this.filterByTab(e)) return;
-		if ([13,9,8,46].contains(e.keyCode)) this.focus(false, true);
-		switch(e.keyCode){
+		if ([13,9,8,46].contains(e.code)) this.focus(false, true);
+		switch(e.code){
 			case 27:
 				this.completion = null;
 				this.autoTab = null; break;
@@ -129,7 +129,7 @@ var PostEditor = new Class({
 			case 8: this.onBackspace(e); break;
 			case 46: this.onDelete(e); break;
 		}
-		if ([13,9,8,46].contains(e.keyCode)) this.focus(true, false);
+		if ([13,9,8,46].contains(e.code)) this.focus(true, false);
 	},
 
 	filterByPairs: function(e){
@@ -194,13 +194,13 @@ var PostEditor = new Class({
 		if (this.autoTab){
 			var ss = this.ss();
 			var se = this.se();
-			var  key = this.ssKey;
+			var key = this.ssKey;
 			var end = this.seKey;
 			if (![key + 1,key,key - 1, end].contains(ss)){
 				this.completion = null;
 				this.autoTab = null;
 			}
-			if (this.autoTab && [38, 39].contains(e.keyCode) && ss == se){
+			if (this.autoTab && [38, 39].contains(e.code) && ss == se){
 				this.completion = null;
 				this.autoTab = null;
 			}

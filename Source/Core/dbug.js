@@ -101,7 +101,7 @@ var dbug = {
 	var fb = !!window.console || !!window.firebug;
 	var con = window.firebug ? window.firebug.d.console.cmd : window.console;
 	var debugMethods = ['debug','info','warn','error','assert','dir','dirxml'];
-	var otherMethods = ['trace','group','groupEnd','profile','profileEnd','count'];
+	var otherMethods = ['trace','group','groupCollapsed','groupEnd','profile','profileEnd','count'];
 	function set(methodList, defaultFunction) {
 		
 		var getLogger = function(method) {

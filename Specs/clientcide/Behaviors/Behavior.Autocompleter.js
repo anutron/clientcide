@@ -1,3 +1,12 @@
+/*
+---
+name: Behavior.Autocompleter Tests
+description: n/a
+requires: [Clientcide/Behavior.Autocompleter]
+provides: [Behavior.Autocompleter.Tests]
+...
+*/
+
 (function(){
 
 	var str = '<input data-filters="Autocomplete" data-autocomplete-tokens="[\'foo\', \'bar\', \'baz\']"/>';

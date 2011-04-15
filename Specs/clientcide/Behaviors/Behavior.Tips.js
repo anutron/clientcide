@@ -1,3 +1,12 @@
+/*
+---
+name: Behavior.Tips Tests
+description: n/a
+requires: [Clientcide/Behavior.Tips]
+provides: [Behavior.Tips.Tests]
+...
+*/
+
 (function(){
 
 	var pointy = '<a data-filters="PointyTip" rel="I\'m the caption." title="I\'m the title!" data-tip-direction="6">this link has a tip</a>';

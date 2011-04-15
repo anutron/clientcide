@@ -17,6 +17,9 @@ version: "3.0.0"
 sources: [
   Source/Core/Clientcide.js,
   Source/Core/dbug.js,
+  Source/Behaviors/Behavior.Autocompleter.js,
+  Source/Behaviors/Behavior.Tabs.js,
+  Source/Behaviors/Behavior.Tips.js,
   Source/Forms/Form.Validator.Tips.js,
   Source/Fx/Fx.Marquee.js,
   Source/Layout/Collapsible.js,

@@ -2,7 +2,7 @@
 ---
 name: Behavior.Tabs Tests
 description: n/a
-requires: [Clientcide/Behavior.Tabs]
+requires: [Clientcide/Behavior.Tabs, Behavior-Tests/Behavior.SpecsHelpers]
 provides: [Behavior.Tabs.Tests]
 ...
 */

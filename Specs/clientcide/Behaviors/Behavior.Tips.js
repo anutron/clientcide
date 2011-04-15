@@ -2,7 +2,7 @@
 ---
 name: Behavior.Tips Tests
 description: n/a
-requires: [Clientcide/Behavior.Tips]
+requires: [Clientcide/Behavior.Tips, Behavior-Tests/Behavior.SpecsHelpers]
 provides: [Behavior.Tips.Tests]
 ...
 */

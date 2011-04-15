@@ -9,6 +9,6 @@ copyright: "&copy; [Aaron Newton](http://clientcide.com)"
 authors: "[Aaron Newton](http://clientcide.com)"
 
 sources:
-  - "Behaviors/Behavior.Autocompleter.js"
-  - "Behaviors/Behavior.Tabs.js"
-  - "Behaviors/Behavior.Tips.js"
+  - "clientcide/Behaviors/Behavior.Autocompleter.js"
+  - "clientcide/Behaviors/Behavior.Tabs.js"
+  - "clientcide/Behaviors/Behavior.Tips.js"

@@ -2,7 +2,7 @@
 ---
 name: Behavior.Autocompleter Tests
 description: n/a
-requires: [Clientcide/Behavior.Autocompleter]
+requires: [Clientcide/Behavior.Autocompleter, Behavior-Tests/Behavior.SpecsHelpers]
 provides: [Behavior.Autocompleter.Tests]
 ...
 */

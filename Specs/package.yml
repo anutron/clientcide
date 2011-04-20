@@ -10,5 +10,6 @@ authors: "[Aaron Newton](http://clientcide.com)"
 
 sources:
   - "clientcide/Behaviors/Behavior.Autocompleter.js"
+  - "clientcide/Behaviors/Behavior.Collapsible.js"
   - "clientcide/Behaviors/Behavior.Tabs.js"
   - "clientcide/Behaviors/Behavior.Tips.js"

@@ -18,6 +18,7 @@ sources: [
   Source/Core/Clientcide.js,
   Source/Core/dbug.js,
   Source/Behaviors/Behavior.Autocompleter.js,
+  Source/Behaviors/Behavior.Collapsible.js,
   Source/Behaviors/Behavior.Tabs.js,
   Source/Behaviors/Behavior.Tips.js,
   Source/Forms/Form.Validator.Tips.js,

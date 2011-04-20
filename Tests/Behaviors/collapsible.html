@@ -1,0 +1,11 @@
+<script src="/depender/build?require=Clientcide/Behavior.Collapsible"></script>
+<a data-filters="Collapsible">click me and I close the red box</a>
+<div style="width: 100px; height: 100px; border: 1px solid #000; background: #c33;"></div>
+<hr style="margin: 10px 0;"/>
+<a data-filters="Collapsible" data-Collapsible-target="+ > div">click me and I close <i>only</i> the blue box</a>
+<div style="clear: both; height: 120px; padding: 10px; border: 1px solid #666;">
+	<div style="width: 100px; height: 100px; border: 1px solid #000; background: #33c;"></div>
+</div>
+<script>
+new Behavior().apply(document.body);
+</script>

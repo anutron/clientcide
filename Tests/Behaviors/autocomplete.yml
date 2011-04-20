@@ -1,4 +1,4 @@
 js-references:
   - "JFrame/Behavior.Autocomplete"
-  - "clientcide/Autocompleter.Local"
-  - "clientcide/Autocompleter.Remote"
+  - "Clientcide/Autocompleter.Local"
+  - "Clientcide/Autocompleter.Remote"

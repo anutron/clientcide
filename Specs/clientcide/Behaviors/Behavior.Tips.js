@@ -15,11 +15,9 @@ provides: [Behavior.Tips.Tests]
 		desc: 'Creates an instance of Tips.Pointy',
 		content: pointy,
 		returns: Tips.Pointy,
-		expectations: [
-			function(element, instance){
-				expect(instance.tip.pointy.options.direction).toBe(6);
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.tip.pointy.options.direction).toBe(6);
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'PointyTip',
@@ -27,7 +25,7 @@ provides: [Behavior.Tips.Tests]
 		content: pointy,
 		returns: Tips.Pointy,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 	var help = '<p class="jframe-inline" data-filters="HelpTip">I\'m some help text that gets turned into a help tip</p>';
@@ -36,11 +34,9 @@ provides: [Behavior.Tips.Tests]
 		desc: 'Creates an instance of Tips.Pointy (help)',
 		content: help,
 		returns: Tips.Pointy,
-		expectations: [
-			function(element, instance){
-				expect(instance.tip.pointy.options.direction).toBe(1);
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.tip.pointy.options.direction).toBe(1);
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'HelpTip',
@@ -48,7 +44,7 @@ provides: [Behavior.Tips.Tests]
 		content: help,
 		returns: Tips.Pointy,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 	var info = '<p class="jframe-inline" data-filters="InfoTip">I\'m some help text that gets turned into a help tip</p>';
@@ -57,11 +53,9 @@ provides: [Behavior.Tips.Tests]
 		desc: 'Creates an instance of Tips.Pointy (info)',
 		content: info,
 		returns: Tips.Pointy,
-		expectations: [
-			function(element, instance){
-				expect(instance.tip.pointy.options.direction).toBe(1);
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.tip.pointy.options.direction).toBe(1);
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'InfoTip',
@@ -69,7 +63,7 @@ provides: [Behavior.Tips.Tests]
 		content: info,
 		returns: Tips.Pointy,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 })();

@@ -15,11 +15,9 @@ provides: [Behavior.Autocompleter.Tests]
 		desc: 'Creates an instance of Autocomplete (local)',
 		content: str,
 		returns: Autocompleter.Local,
-		expectations: [
-			function(element, instance){
-				expect(instance.tokens).toEqual(['foo', 'bar', 'baz']);
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.tokens).toEqual(['foo', 'bar', 'baz']);
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'Autocomplete',
@@ -27,7 +25,7 @@ provides: [Behavior.Autocompleter.Tests]
 		content: str,
 		returns: Autocompleter.Local,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 	var remote = '<input data-filters="Autocomplete" data-autocomplete-url="/some/API/for/autocomplete"/>';
@@ -36,11 +34,9 @@ provides: [Behavior.Autocompleter.Tests]
 		desc: 'Creates an instance of Autocomplete (remote)',
 		content: remote,
 		returns: Autocompleter.Ajax.Json,
-		expectations: [
-			function(element, instance){
-				expect(instance.request).toBeDefined();
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.request).toBeDefined();
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'Autocomplete',
@@ -48,7 +44,7 @@ provides: [Behavior.Autocompleter.Tests]
 		content: remote,
 		returns: Autocompleter.Ajax.Json,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 

@@ -15,11 +15,9 @@ provides: [Behavior.Tabs.Tests]
 		desc: 'Creates an instance of TabSwapper',
 		content: str,
 		returns: TabSwapper,
-		expectations: [
-			function(element, instance){
-				expect(instance.tabs.length).toBe(3);
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.tabs.length).toBe(3);
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'Tabs',
@@ -27,7 +25,7 @@ provides: [Behavior.Tabs.Tests]
 		content: str,
 		returns: TabSwapper,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 

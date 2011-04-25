@@ -15,16 +15,14 @@ provides: [Behavior.Collapsible.Tests]
 		desc: 'Creates an instance of Collapsible',
 		content: str,
 		returns: Collapsible,
-		expectations: [
-			function(element, instance){
-				expect(instance.section.hasClass('theTarget')).toBe(true);
-				instance.toggle(instance.section);
-				waits(700);
-				runs(function(){
-					expect(instance.section.getStyle('display')).toBe('none');
-				});
-			}
-		]
+		expects: function(element, instance){
+			expect(instance.section.hasClass('theTarget')).toBe(true);
+			instance.toggle(instance.section);
+			waits(700);
+			runs(function(){
+				expect(instance.section.getStyle('display')).toBe('none');
+			});
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'Collapsible',
@@ -32,7 +30,7 @@ provides: [Behavior.Collapsible.Tests]
 		content: str,
 		returns: Collapsible,
 		multiplier: 10,
-		noSpecs: true
+		specs: false
 	});
 
 

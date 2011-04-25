@@ -99,7 +99,7 @@ Configuration.source = {
 			'mootools-more/Source/Utilities/Table',
 			'behavior/Source/Behavior',
 			'behavior/Source/Element.Data',
-			'behavior/Source/Behavior.API',
+			'behavior/Source/BehaviorAPI',
 			'../Source/Core/Clientcide',
 			'../Source/Core/dbug',
 			'../Source/UI/StyleWriter',

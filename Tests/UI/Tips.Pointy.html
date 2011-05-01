@@ -1,10 +1,22 @@
-<div id="pointy">
-<a href="#" title="A caption" rel="Tip body goes here">foo!</a> | 
-<a href="#" rel="Tip body goes here">foo!</a> |  
-<a href="#" title="A caption" rel="Tip body goes here">foo!</a>
-</div>
-<script src="/depender/build?require=Clientcide/Tips.Pointy"></script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tips.Pointy</title>
+		<script src="/depender/build?require=Clientcide/Tips.Pointy"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
+	</head>
+	<body>
 
-<script>
-	new Tips.Pointy($$('#pointy a'));
-</script>
+		<div id="pointy">
+			<a href="#" title="A caption" rel="Tip body goes here">foo!</a> | 
+			<a href="#" rel="Tip body goes here">foo!</a> |  
+			<a href="#" title="A caption" rel="Tip body goes here">foo!</a>
+		</div>
+
+		<script>
+			new Tips.Pointy($$('#pointy a'));
+		</script>
+	</body>
+</html>

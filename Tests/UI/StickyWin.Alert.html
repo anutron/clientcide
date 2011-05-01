@@ -1,8 +1,18 @@
-<script src="/depender/build?require=Clientcide/StickyWin.Alert"></script>
-
-<a id="make">Make a styled alert popup w/ an ok button</a>
-<script>
-$('make').addEvent('click', function(){
-	StickyWin.alert("Oh Noes!!!", "You've got 5 internets open!");
-});
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StickyWin.Alert</title>
+		<script src="/depender/build?require=Clientcide/StickyWin.Alert"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
+	</head>
+	<body>
+		<a id="make">Make a styled alert popup w/ an ok button</a>
+		<script>
+		$('make').addEvent('click', function(){
+			StickyWin.alert("Oh Noes!!!", "You've got 5 internets open!");
+		});
+		</script>
+	</body>
+</html>

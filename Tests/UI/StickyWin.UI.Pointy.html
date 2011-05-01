@@ -1,27 +1,37 @@
-<script src="/depender/build?require=Clientcide/StickyWin.UI.Pointy"></script>
-
-<a id="make">Make a some pointy popups</a>
-<script>
-$('make').addEvent('click', function(){
-	new StickyWin({
-		content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
-			direction: 11
-		})
-	});
-	new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
-		direction: 12,
-		theme: 'light'
-	}),
-		offset: {
-			y: 100
-		}
-	});
-	new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
-		direction: 1
-	}),
-		offset: {
-			y: 200
-		}
-	});
-});
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StickyWin.UI.Pointy</title>
+		<script src="/depender/build?require=Clientcide/StickyWin.UI.Pointy"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
+	</head>
+	<body>
+		<a id="make">Make a some pointy popups</a>
+		<script>
+		$('make').addEvent('click', function(){
+			new StickyWin({
+				content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
+					direction: 11
+				})
+			});
+			new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
+				direction: 12,
+				theme: 'light'
+			}),
+				offset: {
+					y: 100
+				}
+			});
+			new StickyWin({content: StickyWin.ui.pointy('This is the caption', 'This is the body. You can close me with the little "X" in the upper right corner', {
+				direction: 1
+			}),
+				offset: {
+					y: 200
+				}
+			});
+		});
+		</script>
+	</body>
+</html>

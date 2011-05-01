@@ -1,12 +1,22 @@
-<script src="/depender/build?require=Clientcide/StickyWin.Prompt"></script>
-
-<a id="make">Make a prompt that asks for some info</a>
-<script>
-$('make').addEvent('click', function(){
-	StickyWin.prompt('Prompt Test', 'Enter a message to alert:', function(val){
-		alert(val);
-	}, {
-		defaultValue: 'alert me!'
-	})
-});
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StickyWin.Prompt</title>
+		<script src="/depender/build?require=Clientcide/StickyWin.Prompt"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
+	</head>
+	<body>
+		<a id="make">Make a prompt that asks for some info</a>
+		<script>
+		$('make').addEvent('click', function(){
+			StickyWin.prompt('Prompt Test', 'Enter a message to alert:', function(val){
+				alert(val);
+			}, {
+				defaultValue: 'alert me!'
+			})
+		});
+		</script>
+	</body>
+</html>

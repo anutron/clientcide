@@ -1,16 +1,26 @@
-<script src="/depender/build?require=Clientcide/StickyWin.Confirm"></script>
-
-<a id="make">Make a styled confirm popup w/ ok and close buttons</a>
-<script>
-$('make').addEvent('click', function(){
-	StickyWin.confirm("Testing Confirmation", "Do you want to show the alert message?", function(){
-		alert('Alert!!!');
-	}, {
-		modalOptions: {
-			modalStyle: {
-				'background-color': '#600'
-			}
-		}
-	});
-});
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StickyWin.Confirm</title>
+		<script src="/depender/build?require=Clientcide/StickyWin.Confirm"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
+	</head>
+	<body>
+		<a id="make">Make a styled confirm popup w/ ok and close buttons</a>
+		<script>
+		$('make').addEvent('click', function(){
+			StickyWin.confirm("Testing Confirmation", "Do you want to show the alert message?", function(){
+				alert('Alert!!!');
+			}, {
+				modalOptions: {
+					modalStyle: {
+						'background-color': '#600'
+					}
+				}
+			});
+		});
+		</script>
+	</body>
+</html>

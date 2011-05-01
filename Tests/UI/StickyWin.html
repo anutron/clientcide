@@ -1,9 +1,19 @@
-<script src="/depender/build?require=Clientcide/StickyWin"></script>
-
-<a id="make">Make a simple popup</a>
-<script>
-body = "<div style=\"border: 1px solid black;background-color: #ccc; padding: 2px; width: 200px;\">Hi. I'm a stickyWin. You can <a href=\"javascript:void(0);\" class=\"closeSticky\">close me</a> if you want. Or you can <a href=\"javascript: void(0);\" class=\"pinSticky\">pin me in place</a>.</div>";
-$('make').addEvent('click', function(){
-	new StickyWin({content: body});
-});
-</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StickyWin</title>
+		<script src="/depender/build?require=Clientcide/StickyWin"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
+	</head>
+	<body>
+		<a id="make">Make a simple popup</a>
+		<script>
+			var body = "<div style=\"border: 1px solid black;background-color: #ccc; padding: 2px; width: 200px;\">Hi. I'm a stickyWin. You can <a href=\"javascript:void(0);\" class=\"closeSticky\">close me</a> if you want. Or you can <a href=\"javascript: void(0);\" class=\"pinSticky\">pin me in place</a>.</div>";
+			$('make').addEvent('click', function(){
+				new StickyWin({content: body});
+			});
+		</script>
+	</body>
+</html>

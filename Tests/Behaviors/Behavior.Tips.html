@@ -2,9 +2,13 @@
 <html>
 	<head>
 		<title>Tips</title>
+		<script src="/depender/build?require=Clientcide/Behavior.Tips"></script>
+		<script>
+			Clientcide.setAssetLocation('/asset/clientcide');
+		</script>
 	</head>
 	<body>
-		<div class="jframe_padded">
+		<div style="margin: 40px">
 			<ul>
 				<li><a data-filters="PointyTip" rel="I'm the caption." title="I'm the title!">this link has a tip</a></li>
 				<li><a data-filters="PointyTip" rel="I point down." title="I'm the title!" data-tip-direction="6">my tip points down</a></li>
@@ -15,14 +19,16 @@
 			<ul>
 				<li>
 					I am some text. Nothing special.
-					<p class="jframe-inline" data-filters="HelpTip">I'm some help text that gets turned into a help tip</p>
+					<p style="display: inline-block" data-filters="HelpTip">I'm some help text that gets turned into a help tip</p>
 				</li>
 				<li>
 					I am some text. Nothing special.
-					<p class="jframe-inline" data-filters="InfoTip">I'm some help text that gets turned into an info tip</p>
+					<p style="display: inline-block" data-filters="InfoTip">I'm some help text that gets turned into an info tip</p>
 				</li>
 			</ul>
-			
 		</div>
+		<script>
+			new Behavior().apply(document.body);
+		</script>
 	</body>
 </html>

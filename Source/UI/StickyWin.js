@@ -15,6 +15,7 @@ requires:
 - More/Element.Shortcuts
 - More/Element.Pin
 - More/IframeShim
+- More/Object.Extras
 - /Clientcide
 - /StyleWriter
 
@@ -157,13 +158,15 @@ var StickyWin = new Class({
 	position: function(options){
 		this.positioned = true;
 		this.setOptions(options);
-		this.win.position({
-			allowNegative: [this.options.allowNegative, this.options.relativeTo != document.body].pick(),
-			relativeTo: this.options.relativeTo,
-			position: this.options.position,
-			offset: this.options.offset,
-			edge: this.options.edge
-		});
+		this.win.position(
+			Object.cleanValues({
+				allowNegative: [this.options.allowNegative, this.options.relativeTo != document.body].pick(),
+				relativeTo: this.options.relativeTo,
+				position: this.options.position,
+				offset: this.options.offset,
+				edge: this.options.edge
+			})
+		);
 		if (this.shim) this.shim.position();
 		return this;
 	},

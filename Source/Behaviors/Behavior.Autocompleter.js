@@ -52,7 +52,7 @@ Behavior.addGlobalFilters({
 	*/
 
 	Autocomplete: function(element){
-		var options = $merge({
+		var options = Object.merge({
 			minLength: 1,
 			selectMode: 'type-ahead',
 			overflow: true,

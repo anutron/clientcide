@@ -6,6 +6,21 @@
 		<script>
 			Clientcide.setAssetLocation('/asset/clientcide');
 		</script>
+		<style>
+			[data-filters=HelpTip], [data-filters=InfoTip] {
+				background: url('/asset/clientcide/help.png');
+				display: inline-block;
+				height: 14px;
+				width: 14px;
+				text-indent: -200px;
+				overflow: hidden;
+				position: relative;
+				top: 2px;
+			}
+			[data-filters=InfoTip] {
+				background: url('/asset/clientcide/info.png');
+			}
+		</style>
 	</head>
 	<body>
 		<div style="margin: 40px">

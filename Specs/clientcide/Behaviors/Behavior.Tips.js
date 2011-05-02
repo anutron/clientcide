@@ -28,7 +28,7 @@ provides: [Behavior.Tips.Tests]
 		specs: false
 	});
 
-	var help = '<p class="jframe-inline" data-filters="HelpTip">I\'m some help text that gets turned into a help tip</p>';
+	var help = '<p data-filters="HelpTip">I\'m some help text that gets turned into a help tip</p>';
 	Behavior.addFilterTest({
 		filterName: 'HelpTip',
 		desc: 'Creates an instance of Tips.Pointy (help)',
@@ -47,7 +47,7 @@ provides: [Behavior.Tips.Tests]
 		specs: false
 	});
 
-	var info = '<p class="jframe-inline" data-filters="InfoTip">I\'m some help text that gets turned into a help tip</p>';
+	var info = '<p data-filters="InfoTip">I\'m some help text that gets turned into a help tip</p>';
 	Behavior.addFilterTest({
 		filterName: 'InfoTip',
 		desc: 'Creates an instance of Tips.Pointy (info)',

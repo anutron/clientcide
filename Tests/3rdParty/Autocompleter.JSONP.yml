@@ -1,0 +1,5 @@
+js-references:
+  - "Clientcide/Autocompleter"
+  - "Clientcide/Autocompleter.Base"
+  - "Clientcide/Autocompleter.Remote"
+  - "Clientcide/Autocompleter.JSONP"

@@ -1,0 +1,6 @@
+js-references:
+  - "Clientcide/StickyWin"
+  - "Clientcide/StickyWin.UI"
+  - "Clientcide/StickyWin.Alert"
+  - "Clientcide/StickyWin.Prompt"
+  - "Clientcide/StickyWin.Modal"

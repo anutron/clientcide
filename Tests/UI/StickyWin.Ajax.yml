@@ -1,0 +1,4 @@
+js-references:
+  - "Clientcide/StickyWin"
+  - "Clientcide/StickyWin.UI"
+  - "Clientcide/StickyWin.Ajax"

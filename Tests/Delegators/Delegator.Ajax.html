@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Delegator: Ajax Target</title>
+		<script src="/depender/build?require=Clientcide/Delegator.Ajax"></script>
+		<style>
+			ul {
+				border: 1px solid #000;
+				padding: 10px;
+				margin: 5px 0;
+			}
+			ul li {
+				margin-left: 10px;
+			}
+			p.par {
+				background: #ccc;
+				border: #999;
+				padding: 8px;
+			}
+			div#update {
+				border: 1px solid #000; 
+				padding: 10px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" media="screen" name="no name" charset="utf-8" href="/asset/more/spinner.css">
+	</head>
+	<body>
+		<a href="/echo/html/?html=<li>I'm a list item!</li>"
+			data-trigger="Ajax Stop"
+			data-ajax-options="
+				'action': 'injectBottom',
+				'target': '!body ul'
+			">Add to bottom of list.</a> |
+		<a href="/echo/html/?html=<li>I'm a list item!</li>"
+			data-trigger="Ajax"
+			data-ajax-options="
+				'action': 'injectTop',
+				'target': '!body ul'
+			">Add to top of list.</a> |
+		<a href="/echo/html/?html=<li>I'm a list item!</li>"
+			data-trigger="Ajax"
+			data-ajax-options="
+				'action': 'injectBefore',
+				'target': '!body ul li#foo'
+			">Before #foo</a> |
+		<a href="/echo/html/?html=<li>I'm a list item!</li>"
+			data-trigger="Ajax"
+			data-ajax-options="
+				'action': 'injectAfter',
+				'target': '!body ul li#foo'
+			">After #foo</a>
+		<ul>
+			<li id="foo">I have the id "foo"</li>
+		</ul>
+		
+		<hr/>
+		
+		<a href="/echo/html/?html=<p id='par' class='par'>I'm a <b>new</b> paragraph with the id 'par'.</p><p class='par'>And I'm another paragraph (without an id).</p>"
+			data-trigger="Ajax"
+			data-ajax-options="
+				'action': 'replace',
+				'target': '!body #par'
+			">Replace the paragraph below</a>
+			<p id="par" class='par'>I'm a simple paragraph with the id 'par'.</p>
+
+		<hr/>
+		<a href="/echo/html/?html=<p>I'm <b>different</b> stuff!</p><p>So am I!</p>"
+			data-trigger="Ajax"
+			data-ajax-options="
+				'action': 'update',
+				'target': '!body #update'
+			">Update the content of the div below.</a>
+		<div id="update">
+			<p>I'm a paragraph of some stuff</p>
+		</div>
+		<p style="font-size:smaller">The difference between the <em>Replace</em> and <em>Update</em> examples is that the <em>Replace</em> example replaces a specific DOM element with a response, while <em>Update</em> empties the target and replaces all its children with the response.<p>
+		
+		<script>
+			var d = new Delegator().attach(document.body);
+			d.addEvent('ammendDom', function(elements){
+				elements.highlight();
+			});
+		</script>
+	</body>
+</html>

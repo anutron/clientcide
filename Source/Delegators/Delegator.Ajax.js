@@ -46,18 +46,23 @@ script: Delegator.Ajax.js
 					var elements = requestTarget.getChildren().reverse();
 					switch(action){
 						case 'replace':
+							var container = target.getParent();
 							elements.injectAfter(target);
+							this.fireEvent('destroyDom', target);
 							target.destroy();
+							this.fireEvent('ammendDom', [container, elements]);
 							break;
 						case 'update':
+							this.fireEvent('destroyDom', target.getChildren());
 							target.empty();
 							elements.inject(target);
+							this.fireEvent('ammendDom', [target, elements]);
 							break;
 						default:
 							//injectTop, injectBottom, injectBefore, injectAfter
 							elements[action](target);
+							this.fireEvent('ammendDom', [target, elements]);
 					}
-					this.fireEvent('ammendDom', [elements]);
 				}.bind(this)
 			}).send();
 		}

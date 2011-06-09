@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Delegator: Ajax Target</title>
-		<script src="/depender/build?require=Clientcide/Delegator.Ajax"></script>
+		<script src="/depender/build?require=Clientcide/Delegator.Ajax,Clientcide/Behavior.Tips"></script>
 		<style>
 			ul {
 				border: 1px solid #000;
@@ -25,8 +25,9 @@
 		<link rel="stylesheet" type="text/css" media="screen" name="no name" charset="utf-8" href="/asset/more/spinner.css">
 	</head>
 	<body>
+		<h3>Basic Ajax functionality</h3>
 		<a href="/echo/html/?html=<li>I'm a list item!</li>"
-			data-trigger="Ajax Stop"
+			data-trigger="Ajax"
 			data-ajax-options="
 				'action': 'injectBottom',
 				'target': '!body ul'
@@ -75,9 +76,24 @@
 		</div>
 		<p style="font-size:smaller">The difference between the <em>Replace</em> and <em>Update</em> examples is that the <em>Replace</em> example replaces a specific DOM element with a response, while <em>Update</em> empties the target and replaces all its children with the response.<p>
 		
+		<hr/>
+		
+		<h3>Behavior Integration</h3>
+		
+		<a href="/echo/html/?html=<a data-filters='PointyTip' rel='The NEW caption.' title='The NEW title!' data-tip-direction='11'>this NEW link has a tip</a>"
+			data-trigger="Ajax Stop"
+			data-ajax-options="
+				'action':'replace',
+				'target':'!body #tip'
+			">Replace the tip element below.</a><br/>
+		<a id="tip" data-filters="PointyTip" rel="The caption." title="The title!" data-tip-direction="11">this link has a tip</a>
+		
 		<script>
-			var d = new Delegator().attach(document.body);
-			d.addEvent('ammendDom', function(elements){
+			var b = new Behavior().apply(document.body);
+			var d = new Delegator({
+				getBehavior: function(){ return b }
+			}).attach(document.body);
+			d.addEvent('ammendDom', function(target, elements){
 				elements.highlight();
 			});
 		</script>

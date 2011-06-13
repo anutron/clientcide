@@ -1,8 +1,8 @@
 /*
 ---
-script: Using postEditor you can tabulate without losing your focus and maintain the tabsize in line brakes. 
+description: Using postEditor you can tabulate without losing your focus and maintain the tabsize in line brakes. 
 
-description: Default snippets for PostEditor.
+name: PostEditor
 
 author: Daniel Mota aka IceBeat, <http://icebeat.bitacoras.com>
 

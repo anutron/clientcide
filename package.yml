@@ -21,7 +21,6 @@ sources: [
   Source/Behaviors/Behavior.Collapsible.js,
   Source/Behaviors/Behavior.Tabs.js,
   Source/Behaviors/Behavior.Tips.js,
-  Source/Delegators/Delegator.Ajax.js,
   Source/Forms/Form.Validator.Tips.js,
   Source/Fx/Fx.Marquee.js,
   Source/Layout/Collapsible.js,

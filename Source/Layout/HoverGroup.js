@@ -1,7 +1,7 @@
 /*
 ---
 
-name: HoverGroup.js
+name: HoverGroup
 
 description: Manages mousing in and out of multiple objects (think drop-down menus).
 

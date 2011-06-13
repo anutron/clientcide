@@ -1,6 +1,6 @@
 /*
 ---
-name: Tips.Pointy.js
+name: Tips.Pointy
 
 description: Defines Tips.Pointy, An extension to Tips that adds a pointy style to the tip.
 

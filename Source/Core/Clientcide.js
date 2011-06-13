@@ -1,7 +1,7 @@
 /*
 ---
 
-name: Clientcide.js
+name: Clientcide
 
 description: The Clientcide namespace.
 

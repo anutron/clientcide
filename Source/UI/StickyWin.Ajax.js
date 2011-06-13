@@ -1,7 +1,7 @@
 /*
 ---
 
-name: StickyWin.Ajaxjs
+name: StickyWin.Ajax
 
 dename: Adds ajax functionality to all the StickyWin classes.
 

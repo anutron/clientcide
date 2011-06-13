@@ -1,6 +1,6 @@
 /*
 ---
-name: StickyWin.PointyTip.js
+name: StickyWin.PointyTip
 
 description: Positions a pointy tip relative to the element you specify.
 

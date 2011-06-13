@@ -1,6 +1,6 @@
 /*
 ---
-name: Observer
+name: Autocompleter.Observer
 
 description: Observe formelements for changes
 

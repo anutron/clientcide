@@ -1,6 +1,6 @@
 /*
 ---
-name: StickyWin.Confirm.js
+name: StickyWin.Confirm
 
 description: Defines StickyWin.Conferm, a simple confirmation box with an ok and a close button.
 

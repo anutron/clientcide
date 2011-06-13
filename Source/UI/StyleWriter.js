@@ -1,6 +1,6 @@
 /*
 ---
-name: StyleWriter.js
+name: StyleWriter
 
 description: Provides a simple method for injecting a css style element into the DOM if it's not already present.
 

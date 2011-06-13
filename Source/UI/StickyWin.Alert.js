@@ -1,7 +1,7 @@
 /*
 ---
 
-name: StickyWin.Alert.js
+name: StickyWin.Alert
 
 description: Defines StickyWin.Alert, a simple little alert box with a close button.
 

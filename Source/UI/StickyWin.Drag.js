@@ -1,7 +1,7 @@
 /*
 ---
 
-name: StickyWin.Drag.js
+name: StickyWin.Drag
 
 description: Implements drag and resize functionaity into StickyWin.Fx. See StickyWin.Fx for the options.
 

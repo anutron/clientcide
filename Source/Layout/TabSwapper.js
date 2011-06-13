@@ -1,7 +1,7 @@
 /*
 ---
 
-name: TabSwapper.js
+name: TabSwapper
 
 description: Handles the scripting for a common UI layout; the tabbed box.
 

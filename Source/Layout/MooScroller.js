@@ -1,6 +1,6 @@
 /*
 ---
-name: MooScroller.js
+name: MooScroller
 
 description: Recreates the standard scrollbar behavior for elements with overflow but using DOM elements so that the scroll bar elements are completely styleable by css.
 

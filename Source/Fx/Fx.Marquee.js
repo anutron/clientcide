@@ -1,7 +1,7 @@
 /*
 ---
 
-name: Fx.Marquee.js
+name: Fx.Marquee
 
 description: Defines Fx.Marquee, a marquee class for animated notifications.
 

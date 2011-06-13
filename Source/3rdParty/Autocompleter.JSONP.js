@@ -1,6 +1,6 @@
 /*
 ---
-name: Autocompleter.JSONP.js
+name: Autocompleter.JSONP
 
 description: Implements Request.JSONP support for the Autocompleter class.
 

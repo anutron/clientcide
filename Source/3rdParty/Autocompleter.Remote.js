@@ -1,8 +1,10 @@
 /*
 ---
-script: Autocompleter.Remote
+name: Autocompleter.Remote
 
 version: 1.1.1
+
+description: Autocompleter extensions that enable requests for JSON/XHTML data for input suggestions.
 
 license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>

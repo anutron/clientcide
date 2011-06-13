@@ -1,7 +1,7 @@
 /*
 ---
 
-name: StickyWin.Prompt.js
+name: StickyWin.Prompt
 
 description: Defines StickyWin.Prompt, a little prompt box with an input as well as ok close buttons.
 

@@ -1,7 +1,7 @@
 /*
 ---
 
-name: dbug.js
+name: dbug
 
 description: A wrapper for Firebug console.* statements.
 

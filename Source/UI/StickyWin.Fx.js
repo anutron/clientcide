@@ -1,7 +1,7 @@
 /*
 ---
 
-name: StickyWin.Fx.js
+name: StickyWin.Fx
 
 description: Extends StickyWin to create popups that fade in and out.
 

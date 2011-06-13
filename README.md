@@ -15,12 +15,6 @@ Changes in 3.0
 =======
 * The following files are removed entirely:
   * 3rdParty/Lightbox.js
-  * 3rdParty/Autocompleter.js
-  * 3rdParty/Autocompleter.Remote.js
-  * 3rdParty/Autocompleter.Observer.js
-  * 3rdParty/Autocompleter.Clientcide.js
-  * 3rdParty/Autocompleter.JSONP.js
-  * 3rdParty/Autocompleter.Local.js
   * Layout/MenuSlider.js
   * Layout/SimpleCarousel.js
   * Layout/SimpleSlideShow.js

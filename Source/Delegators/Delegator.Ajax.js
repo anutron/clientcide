@@ -1,5 +1,6 @@
 /*
 ---
+name: Delegator.Ajax
 description: Provides functionality for links that load content into a target element via ajax.
 provides: [Delegator.Ajax]
 requires: [Behavior/Delegator, Core/Request.HTML, More/Spinner]

@@ -1,15 +1,8 @@
 /*
 ---
-description: Using postEditor you can tabulate without losing your focus and maintain the tabsize in line brakes. 
-
 name: PostEditor
 
-author: Daniel Mota aka IceBeat, <http://icebeat.bitacoras.com>
-
-credit:
-- Sergio Álvarez aka Xergio, <http://xergio.net>
-- Jordi Rivero aka Godsea, <http://godsea.dsland.org>
-- Aaron Newton, <http://www.clientcide.com>
+description: Using postEditor you can tabulate without losing your focus and maintain the tabsize in line brakes. 
 
 license: MIT-style license.
 
@@ -18,8 +11,7 @@ requires:
 - Core/Element.Style
 - Core/Element.Event
 
-provides:
-- PostEditor
+provides: PostEditor
 
 ...
 */

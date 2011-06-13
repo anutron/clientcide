@@ -1,7 +1,7 @@
 /*
 ---
 name: Behavior.Tips
-description: Attaches Tips.Pointy objects to elements with PointyTip in their data-filters property and turns elements with HelpTip or InfoTip in their data-filters property into elements which show a Tips.Pointy object which contains their content, on rollover.
+description: Attaches Tips.Pointy objects to elements with PointyTip in their data-behavior property and turns elements with HelpTip or InfoTip in their data-filters property into elements which show a Tips.Pointy object which contains their content, on rollover.
 provides: [Behavior.Tips]
 requires: [Behavior/Behavior, /Tips.Pointy]
 script: Behavior.Tips.js
@@ -11,10 +11,10 @@ script: Behavior.Tips.js
 (function() {
 
 var createLink = function(element) {
-	var isHelp = element.hasDataFilter('HelpTip');
+	var isHelp = element.hasBehavior('HelpTip');
 	var link = new Element('a', {
 		'class': element.get('class'),
-		'data-filters': (isHelp ? 'HelpTip' : 'InfoTip'),
+		'data-behavior': (isHelp ? 'HelpTip' : 'InfoTip'),
 		'html': isHelp ? '?' : 'i'
 	}).inject(element, 'after').store('tip:text', element.get('html'));
 	//see where that text is supposed to have its pointer and group them by point

@@ -9,7 +9,7 @@ provides: [Behavior.Collapsible.Tests]
 
 (function(){
 
-	var str = '<div data-filters="Collapsible"></div><div class="theTarget" style="width: 100px; height; 100px;"></div>';
+	var str = '<div data-behavior="Collapsible"></div><div class="theTarget" style="width: 100px; height; 100px;"></div>';
 	Behavior.addFilterTest({
 		filterName: 'Collapsible',
 		desc: 'Creates an instance of Collapsible',

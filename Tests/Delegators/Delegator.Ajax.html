@@ -80,13 +80,13 @@
 		
 		<h3>Behavior Integration</h3>
 		
-		<a href="/echo/html/?html=<a data-filters='PointyTip' rel='The NEW caption.' title='The NEW title!' data-tip-direction='11'>this NEW link has a tip</a>"
+		<a href="/echo/html/?html=<a data-behavior='PointyTip' rel='The NEW caption.' title='The NEW title!' data-tip-direction='11'>this NEW link has a tip</a>"
 			data-trigger="Ajax Stop"
 			data-ajax-options="
 				'action':'replace',
 				'target':'!body #tip'
 			">Replace the tip element below.</a><br/>
-		<a id="tip" data-filters="PointyTip" rel="The caption." title="The title!" data-tip-direction="11">this link has a tip</a>
+		<a id="tip" data-behavior="PointyTip" rel="The caption." title="The title!" data-tip-direction="11">this link has a tip</a>
 		
 		<script>
 			var b = new Behavior().apply(document.body);

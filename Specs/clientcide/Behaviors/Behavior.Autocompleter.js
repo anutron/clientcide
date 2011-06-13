@@ -9,7 +9,7 @@ provides: [Behavior.Autocompleter.Tests]
 
 (function(){
 
-	var str = '<input data-filters="Autocomplete" data-autocomplete-tokens="[\'foo\', \'bar\', \'baz\']"/>';
+	var str = '<input data-behavior="Autocomplete" data-autocomplete-tokens="[\'foo\', \'bar\', \'baz\']"/>';
 	Behavior.addFilterTest({
 		filterName: 'Autocomplete',
 		desc: 'Creates an instance of Autocomplete (local)',
@@ -28,7 +28,7 @@ provides: [Behavior.Autocompleter.Tests]
 		specs: false
 	});
 
-	var remote = '<input data-filters="Autocomplete" data-autocomplete-url="/some/API/for/autocomplete"/>';
+	var remote = '<input data-behavior="Autocomplete" data-autocomplete-url="/some/API/for/autocomplete"/>';
 	Behavior.addFilterTest({
 		filterName: 'Autocomplete',
 		desc: 'Creates an instance of Autocomplete (remote)',

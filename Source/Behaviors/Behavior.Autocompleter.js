@@ -16,12 +16,12 @@ Behavior.addGlobalFilters({
 		that either completes against a list of terms supplied as a property of the element (dtaa-autocomplete-tokens)
 		or fetches them from a server. In both cases, the tokens must be an array of values. Example:
 
-		<input data-filters="Autocomplete" data-autocomplete-tokens="['foo', 'bar', 'baz']"/>
+		<input data-behavior="Autocomplete" data-autocomplete-tokens="['foo', 'bar', 'baz']"/>
 
 		Alternately, you can specify a url to submit the current typed token to get back a list of valid values in the
 		same format (i.e. a JSON response; an array of strings). Example:
 
-		<input data-filters="Autocomplete" data-autocomplete-url="/some/API/for/autocomplete"/>
+		<input data-behavior="Autocomplete" data-autocomplete-url="/some/API/for/autocomplete"/>
 
 		When the values ar fetched from the server, the server is sent the current term (what the user is typing) as
 		a post variable "term" as well as the entire contents of the input as "value".

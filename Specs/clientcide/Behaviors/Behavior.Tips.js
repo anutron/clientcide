@@ -9,7 +9,7 @@ provides: [Behavior.Tips.Tests]
 
 (function(){
 
-	var pointy = '<a data-filters="PointyTip" rel="I\'m the caption." title="I\'m the title!" data-tip-direction="6">this link has a tip</a>';
+	var pointy = '<a data-behavior="PointyTip" rel="I\'m the caption." title="I\'m the title!" data-tip-direction="6">this link has a tip</a>';
 	Behavior.addFilterTest({
 		filterName: 'PointyTip',
 		desc: 'Creates an instance of Tips.Pointy',
@@ -28,7 +28,7 @@ provides: [Behavior.Tips.Tests]
 		specs: false
 	});
 
-	var help = '<p data-filters="HelpTip">I\'m some help text that gets turned into a help tip</p>';
+	var help = '<p data-behavior="HelpTip">I\'m some help text that gets turned into a help tip</p>';
 	Behavior.addFilterTest({
 		filterName: 'HelpTip',
 		desc: 'Creates an instance of Tips.Pointy (help)',
@@ -47,7 +47,7 @@ provides: [Behavior.Tips.Tests]
 		specs: false
 	});
 
-	var info = '<p data-filters="InfoTip">I\'m some help text that gets turned into a help tip</p>';
+	var info = '<p data-behavior="InfoTip">I\'m some help text that gets turned into a help tip</p>';
 	Behavior.addFilterTest({
 		filterName: 'InfoTip',
 		desc: 'Creates an instance of Tips.Pointy (info)',

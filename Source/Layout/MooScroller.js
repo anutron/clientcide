@@ -6,13 +6,7 @@ description: Recreates the standard scrollbar behavior for elements with overflo
 
 license: MIT-Style License
 
-requires:
-- Core/Class.Extras
-- Core/Element.Dimensions
-- Core/Element.Event
-- Core/Element.Style
-- Core/Slick.Finder
-- /Clientcide
+requires: [Core/Class.Extras, Core/Element.Dimensions, Core/Element.Event, Core/Element.Style, Core/Slick.Finder, Clientcide]
 
 provides: MooScroller
 

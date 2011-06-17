@@ -6,8 +6,7 @@ description: Adds Clientcide css assets to autocompleter automatically.
 
 license: MIT-Style License
 
-requires:
-- /Autocompleter.Base
+requires: [Autocompleter.Base]
 
 provides: Autocompleter.Clientcide
 ...

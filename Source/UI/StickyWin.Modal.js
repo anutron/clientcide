@@ -7,9 +7,7 @@ description: This script extends StickyWin and StickyWin.Fx classes to add Mask 
 
 license: MIT-Style License
 
-requires:
-- More/Mask
-- /StickyWin
+requires: [More/Mask, StickyWin]
 
 provides: StickyWin.Modal
 ...

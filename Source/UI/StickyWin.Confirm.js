@@ -6,8 +6,7 @@ description: Defines StickyWin.Conferm, a simple confirmation box with an ok and
 
 license: MIT-Style License
 
-requires:
-- /StickyWin.Alert
+requires: StickyWin.Alert
 
 provides: [StickyWin.Confirm, StickyWin.confirm]
 

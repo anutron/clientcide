@@ -6,11 +6,7 @@ description: Provides a simple method for injecting a css style element into the
 
 license: MIT-Style License
 
-requires:
-- Core/Class
-- Core/DomReady
-- Core/Element
-- /dbug
+requires: [Core/Class, Core/DomReady, Core/Element, dbug]
 
 provides: StyleWriter
 

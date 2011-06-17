@@ -6,9 +6,7 @@ description: Defines Tips.Pointy, An extension to Tips that adds a pointy style 
 
 license: MIT-Style License
 
-requires:
-- More/Tips
-- /StickyWin.PointyTip
+requires: [More/Tips, StickyWin.PointyTip]
 
 provides: Tips.Pointy
 

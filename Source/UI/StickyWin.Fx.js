@@ -7,10 +7,7 @@ description: Extends StickyWin to create popups that fade in and out.
 
 license: MIT-style license.
 
-requires:
-- More/Class.Refactor
-- Core/Fx.Tween
-- /StickyWin
+requires: [More/Class.Refactor, Core/Fx.Tween, StickyWin]
 
 provides: StickyWin.Fx
 

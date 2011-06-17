@@ -7,8 +7,7 @@ description: Defines StickyWin.Prompt, a little prompt box with an input as well
 
 license: MIT-Style License
 
-requires:
-- /StickyWin.Confirm
+requires: StickyWin.Confirm
 
 provides: [StickyWin.Prompt, StickyWin.prompt]
 

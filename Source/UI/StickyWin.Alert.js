@@ -7,9 +7,7 @@ description: Defines StickyWin.Alert, a simple little alert box with a close but
 
 license: MIT-Style License
 
-requires:
-- /StickyWin.Modal
-- /StickyWin.UI
+requires: [StickyWin.Modal, StickyWin.UI]
 
 provides: [StickyWin.Alert, StickyWin.Error, StickyWin.alert, StickyWin.error]
 

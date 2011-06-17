@@ -7,17 +7,18 @@ description: Creates a div within the page with the specified contents at the lo
 
 license: MIT-Style License
 
-requires:
-- Core/DomReady
-- Core/Slick.Finder
-- More/Element.Position
-- More/Class.Binds
-- More/Element.Shortcuts
-- More/Element.Pin
-- More/IframeShim
-- More/Object.Extras
-- /Clientcide
-- /StyleWriter
+requires: [
+  Core/DomReady,
+  Core/Slick.Finder,
+  More/Element.Position,
+  More/Class.Binds,
+  More/Element.Shortcuts,
+  More/Element.Pin,
+  More/IframeShim,
+  More/Object.Extras,
+  Clientcide,
+  StyleWriter
+]
 
 provides: [StickyWin, StickyWin.Stacker]
 ...

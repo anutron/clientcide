@@ -10,10 +10,7 @@ license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
-requires:
-- Core/Class.Extras
-- Core/Element.Event
-- Core/JSON
+requires: [Core/Class.Extras, Core/Element.Event, Core/JSON]
 
 provides: [Observer]
 

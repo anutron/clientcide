@@ -7,10 +7,7 @@ description: Implements drag and resize functionaity into StickyWin.Fx. See Stic
 
 license: MIT-Style License
 
-requires:
-- More/Class.Refactor
-- More/Drag.Move
-- /StickyWin
+requires: [More/Class.Refactor, More/Drag.Move, StickyWin]
 
 provides: StickyWin.Drag
 

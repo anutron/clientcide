@@ -6,9 +6,7 @@ description: Enables a dom element to, when clicked, hide or show (it toggles) a
 
 license: MIT-Style License
 
-requires:
-- Core/Element.Event
-- More/Fx.Reveal
+requires: [Core/Element.Event, More/Fx.Reveal]
 
 provides: Collapsible
 ...

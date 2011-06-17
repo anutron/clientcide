@@ -10,8 +10,7 @@ license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
-requires:
-- /Autocompleter.Base
+requires: [Autocompleter.Base]
 
 provides: [Autocompleter.Local]
 ...

@@ -6,9 +6,7 @@ description: Creates a Mootools Fx.Accordion that allows the user to open more t
 
 license: MIT-Style License
 
-requires:
-- Core/Element.Event
-- More/Fx.Reveal
+requires: [Core/Element.Event, More/Fx.Reveal]
 
 provides: MultipleOpenAccordion
 

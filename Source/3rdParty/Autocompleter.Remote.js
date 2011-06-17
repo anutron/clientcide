@@ -10,10 +10,7 @@ license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
-requires:
-- /Autocompleter.Base
-- Core/Request.HTML
-- Core/Request.JSON
+requires: [Autocompleter.Base, Core/Request.HTML, Core/Request.JSON]
 
 provides: [Autocompleter.Remote, Autocompleter.Ajax, Autocompleter.Ajax.Base, Autocompleter.Ajax.Json, Autocompleter.Ajax.Xhtml]
 

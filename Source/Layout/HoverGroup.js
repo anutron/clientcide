@@ -7,10 +7,7 @@ description: Manages mousing in and out of multiple objects (think drop-down men
 
 license: MIT-Style License
 
-requires:
-- Core/Class.Extras
-- Core/Element.Event
-- More/Class.Binds
+requires: [Core/Class.Extras, Core/Element.Event, More/Class.Binds]
 
 provides: HoverGroup
 

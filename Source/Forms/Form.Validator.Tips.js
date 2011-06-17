@@ -6,10 +6,7 @@ description: Form.Validator using StickyWin.PointyTip.
 
 license: MIT-Style License
 
-requires:
-- More/Form.Validator.Inline
-- /Clientcide
-- /StickyWin.PointyTip
+requires: [More/Form.Validator.Inline, Clientcide, StickyWin.PointyTip]
 
 provides: Form.Validator.Tips
 ...

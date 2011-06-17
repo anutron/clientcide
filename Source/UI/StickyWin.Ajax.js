@@ -7,10 +7,7 @@ dename: Adds ajax functionality to all the StickyWin classes.
 
 license: MIT-Style License
 
-requires:
-- Core/Request
-- /StickyWin
-- /StickyWin.UI
+requires: [Core/Request, StickyWin, StickyWin.UI]
 
 provides: [StickyWin.Ajax, StickyWin.Modal.Ajax]
 

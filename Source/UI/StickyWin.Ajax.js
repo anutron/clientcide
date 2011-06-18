@@ -3,7 +3,7 @@
 
 name: StickyWin.Ajax
 
-dename: Adds ajax functionality to all the StickyWin classes.
+description: Adds ajax functionality to all the StickyWin classes.
 
 license: MIT-Style License
 

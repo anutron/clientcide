@@ -124,13 +124,19 @@ var MooScroller = new Class({
 
 	attach: function(){
 		this.knob.addEvent('mousedown', this.bound.start);
-		if (this.options.scrollSteps) this.content.addEvent('mousewheel', this.bound.wheel);
+		if (this.options.scrollSteps) {
+			this.content.addEvent('mousewheel', this.bound.wheel);
+			this.track.addEvent('mousewheel', this.bound.wheel);
+		}
 		this.track.addEvent('mouseup', this.bound.page);
 	},
 
 	detach: function(){
 		this.knob.removeEvent('mousedown', this.bound.start);
-		if (this.options.scrollSteps) this.content.removeEvent('mousewheel', this.bound.wheel);
+		if (this.options.scrollSteps) {
+			this.content.removeEvent('mousewheel', this.bound.wheel);
+			this.track.removeEvent('mousewheel', this.bound.wheel);
+		}
 		this.track.removeEvent('mouseup', this.bound.page);
 		document.id(document.body).removeEvent('mouseup', this.clearScroll);
 	},

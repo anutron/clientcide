@@ -12,7 +12,7 @@ copyright: Author
 
 requires: [Core/Class.Extras, Core/Element.Event, Core/JSON]
 
-provides: [Observer]
+provides: [Autocompleter.Observer, Observer]
 
 ...
  */

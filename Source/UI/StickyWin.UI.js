@@ -1,6 +1,6 @@
  /*
 ---
-name: StickyWin.ui
+name: StickyWin.UI
 
 description: Creates an html holder for in-page popups using a default style.
 

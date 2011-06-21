@@ -1,6 +1,6 @@
 /*
 ---
-name: AutoCompleter.Clientcide
+name: Autocompleter.Clientcide
 
 description: Adds Clientcide css assets to autocompleter automatically.
 

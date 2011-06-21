@@ -14,7 +14,7 @@ copyright: Author
 
 requires: [Core/Fx.Tween, More/Element.Shortcuts, More/Element.Forms, More/IframeShim, Observer, Clientcide]
 
-provides: [Autocompleter.Base]
+provides: [Autocompleter, Autocompleter.Base]
 
 ...
 */

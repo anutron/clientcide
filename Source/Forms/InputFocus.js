@@ -10,7 +10,7 @@ requires:
 - Core/Class.Extras
 - Core/Element
 - More/Class.Occlude
-- More/Class.ToElement
+- /Class.ToElement
 
 provides:
 - InputFocus

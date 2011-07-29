@@ -11,7 +11,7 @@ author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
 requires:
-- /Autocompleter.base
+- /Autocompleter.Base
 
 provides:
 - Autocompleter.Local

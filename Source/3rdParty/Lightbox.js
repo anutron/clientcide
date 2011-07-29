@@ -15,14 +15,14 @@ requires:
 - Core/Fx.Tween
 - Core/Fx.Morph
 - Core/DomReady
-- More/Element.Dimensions
+- Core/Element.Dimensions
 - More/Class.Binds
 - More/Mask
 - /Clientcide
 
 provides:
 - Lightbox
-
+...
 */
 var Lightbox = new Class({
 	Implements: [Options, Events],

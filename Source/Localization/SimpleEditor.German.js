@@ -10,7 +10,7 @@ license: MIT-Style License
 authors: [Wassilios Meletiadis]
 
 requires:
-- More/MooTools.Lang
+- More/Locale
 
 
 provides:

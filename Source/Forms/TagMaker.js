@@ -19,7 +19,6 @@ requires:
 - More/HtmlTable
 - More/Drag
 - /StickyWin.UI
-- 
 
 provides:
 - TagMaker

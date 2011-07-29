@@ -1,4 +1,5 @@
 /*
+---
 script: Autocompleter.Remote
 
 version: 1.1.1
@@ -17,6 +18,7 @@ provides:
 - Autocompleter.Ajax.Base
 - Autocompleter.Ajax.Json
 - Autocompleter.Ajax.Hhtml
+- Autocompleter.Remote
 ...
  */
 

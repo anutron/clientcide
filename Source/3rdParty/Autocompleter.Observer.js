@@ -9,8 +9,7 @@ license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
-provides:
-- /Observer
+provides: [Autocompleter.Observer, Observer]
 
 requires:
 - Core/Class.Extras

@@ -17,8 +17,7 @@ requires:
 
 provides:
 - PopupDetail
-_ PopupDetailCollection
-
+- PopupDetailCollection
 ...
 */
 var PopupDetail = new Class({

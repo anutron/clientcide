@@ -7,7 +7,7 @@ description: SimpleEditor messages in French. Thanks Miquel Hudin.
 license: MIT-Style License
 
 requires:
-- More/MooTools.Lang
+- More/Locale
 
 provides:
 - SimpleEditor.French

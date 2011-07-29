@@ -8,7 +8,7 @@ description: SimpleEditor messages in Spanish. Thanks Marco Cervellin.
 license: MIT-Style License
 
 requires:
-- More/MooTools.Lang
+- More/Locale
 
 provides:
 - SimpleEditor.Italian

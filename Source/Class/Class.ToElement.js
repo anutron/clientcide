@@ -11,7 +11,7 @@ requires:
 - Core/Class
 
 provides:
-- Class.toElement
+- Class.ToElement
 
 ...
 */

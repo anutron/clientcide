@@ -8,7 +8,7 @@ descripion: SimpleEditor messages in Dutch. Thanks Lennart Pilon.
 license: MIT-Style License
 
 requires:
-- More/MooTools.Lang
+- More/Locale
 
 provides:
 - SimpleEditor.Dutch

@@ -1,4 +1,5 @@
 /*
+---
 script: ProductPicker.js
 
 description: Allows the user to pick a product from a data source.

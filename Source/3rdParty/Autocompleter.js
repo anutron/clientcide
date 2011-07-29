@@ -22,6 +22,7 @@ requires:
 
 provides:
 - Autocompleter.Base
+- Autocompleter
 - OverlayFix
 
 ...

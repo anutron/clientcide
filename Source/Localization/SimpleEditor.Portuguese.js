@@ -8,7 +8,7 @@ description: SimpleEditor messages in Portuguese. Thanks Miquel Hudin.
 license: MIT-Style License
 
 requires:
-- More/MooTools.Lang
+- More/Locale
 
 provides:
 - SimpleEditor.Portuguese

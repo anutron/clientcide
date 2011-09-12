@@ -60,7 +60,7 @@ var StickyWin = new Class({
 
 	css: '.SWclearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}'+
 		 '.SWclearfix {display: inline-table;} * html .SWclearfix {height: 1%;} .SWclearfix {display: block;}',
-	
+
 	initialize: function(options){
 		this.options.inject = this.options.inject || {
 			target: document.body,
@@ -87,8 +87,8 @@ var StickyWin = new Class({
 	toElement: function(){
 		return this.element;
 	},
-	attach: function(attach){
-		var method = attach != null && attach ? 'addEvents' : 'removeEvents';
+	attach: function(dettach){
+		var method = dettach ? 'removeEvents' : 'addEvents';
 		var events = {};
 		if (this.options.closeOnClickOut) events.click = this.esc;
 		if (this.options.closeOnEsc) events.keyup = this.esc;
@@ -139,7 +139,7 @@ var StickyWin = new Class({
 	destroyOthers: function() {
 		if (!this.options.allowMultipleByClass || !this.options.allowMultiple) {
 			$$('div.StickyWinInstance').each(function(sw) {
-				if (!this.options.allowMultiple || (!this.options.allowMultipleByClass && sw.hasClass(this.options.className))) 
+				if (!this.options.allowMultiple || (!this.options.allowMultipleByClass && sw.hasClass(this.options.className)))
 					sw.retrieve('StickyWin').destroy();
 			}, this);
 		}

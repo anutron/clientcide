@@ -3,7 +3,7 @@
 name: Behavior.StickyWin
 description: Behaviors for StickyWin instances.
 provides: [Behavior.StickyWin]
-requires: [Behavior/Behavior, /StickyWin, /StickyWin.Modal, /StickyWin.Fx, /StickyWin.Drag]
+requires: [Behavior/Behavior, /StickyWin, /StickyWin.Modal, /StickyWin.Fx, /StickyWin.Drag, More/Array.Extras]
 script: Behavior.Tabs.js
 
 ...
@@ -19,7 +19,23 @@ Behavior.addGlobalFilters({
 			draggable: false,
 			resizable: false
 		},
+		returns: StickyWin.Modal,
 		setup: function(element, api) {
+			var flex = element.getElement('.flex'),
+			    height = api.getAs(Number, 'height') || (window.getSize().y * .9);
+
+			if (flex){
+				element.measure(function(){
+					var tmp = new Element('span', { styles: { display: 'none' }}).replaces(flex),
+					    remainder = element.getSize().y;
+					var padding = ['padding-top', 'padding-bottom', 'margin-top', 'margin-bottom', 'border-top-width', 'border-bottom-width'].map(function(style){
+						return flex.getStyle(style).toInt();
+					}).sum();
+					flex.setStyle('max-height', height - remainder - padding);
+					flex.replaces(tmp);
+				});
+			}
+
 			var sw = new StickyWin.Modal(
 				Object.merge({
 						content: element

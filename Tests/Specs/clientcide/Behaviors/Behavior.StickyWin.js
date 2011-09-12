@@ -11,14 +11,14 @@ provides: [Behavior.StickyWin.Tests]
 
 	var str = '<div data-behavior="StickyWin.Modal">this is a modal popup</div>';
 	Behavior.addFilterTest({
-		filterName: 'Modal',
+		filterName: 'StickyWin.Modal',
 		desc: 'Creates an instance of StickyWin.Modal',
 		content: str,
 		returns: StickyWin.Modal
 	});
 	Behavior.addFilterTest({
-		filterName: 'Modal (10x)',
-		desc: 'Creates an instance of StickyWin.Modal',
+		filterName: 'StickyWin.Modal',
+		desc: 'Creates an instance of StickyWin.Modal (10x)',
 		content: str,
 		returns: StickyWin.Modal,
 		multiplier: 10,

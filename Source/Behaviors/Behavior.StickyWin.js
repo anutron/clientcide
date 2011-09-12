@@ -50,7 +50,9 @@ Behavior.addGlobalFilters({
 					)
 				)
 			);
-			api.onCleanup(sw.destroy.bind(sw));
+			api.onCleanup(function(){
+				sw.destroy();
+			});
 			return sw;
 		}
 	}

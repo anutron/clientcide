@@ -11,22 +11,39 @@ script: Behavior.Tabs.js
 
 Behavior.addGlobalFilters({
 
-	Tabs: function(element, api) {
-		var tabs = element.getElements(element.getData('tabs-selector') || '.tabs>li');
-		var sections = element.getElements(element.getData('sections-selector') || '.tab_sections>li');
-		if (tabs.length != sections.length || tabs.length == 0) {
-			api.error('warning; sections and sections are not of equal number. tabs: %o, sections: %o', tabs, sections);
-			return;
-		}
-		var ts = new TabSwapper({
-			tabs: tabs,
-			sections: sections,
+	Tabs: {
+		defaults: {
+			'tabs-selector': '.tabs>li',
+			'sections-selector': '.tab_sections>li',
 			smooth: true,
 			smoothSize: true,
 			rearrangeDOM: false
-		});
-		element.store('TabSwapper', ts);
-		return ts;
+		},
+		setup: function(element, api) {
+			var tabs = element.getElements(api.get('tabs-selector'));
+			var sections = element.getElements(api.get('sections-selector'));
+			if (tabs.length != sections.length || tabs.length == 0) {
+				api.fail('warning; sections and sections are not of equal number. tabs: %o, sections: %o', tabs, sections);
+			}
+			var ts = new TabSwapper(
+				Object.merge(
+					{
+						tabs: tabs,
+						sections: sections
+					},
+					Object.cleanValues(
+						api.getAs({
+							smooth: Boolean,
+							smoothSize: Boolean,
+							rearrangeDOM: Boolean,
+							selectedClass: String,
+							initPanel: Number
+						})
+					)
+			)
+			);
+			element.store('TabSwapper', ts);
+			return ts;
+		}
 	}
-
 });

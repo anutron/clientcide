@@ -12,7 +12,7 @@ provides: Clientcide
 ...
 */
 var Clientcide = {
-	version: '3.0.7',
+	version: '3.0.8',
 	assetLocation: "http://github.com/anutron/clientcide/raw/master/Assets",
 	setAssetLocation: function(baseHref) {
 		Clientcide.assetLocation = baseHref;

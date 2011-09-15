@@ -40,7 +40,7 @@ Behavior.addGlobalFilters({
 							initPanel: Number
 						})
 					)
-			)
+				)
 			);
 			element.store('TabSwapper', ts);
 			return ts;

@@ -42,6 +42,9 @@ Behavior.addGlobalFilters({
 					)
 				)
 			);
+			ts.addEvent('active', function(){
+				api.fireEvent('layout:display', sections[0].getParent());
+			});
 			element.store('TabSwapper', ts);
 			return ts;
 		}

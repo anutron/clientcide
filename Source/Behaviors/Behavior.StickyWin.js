@@ -67,7 +67,10 @@ Behavior.addGlobalFilters({
 				)
 			);
 			api.onCleanup(function(){
-				sw.destroy();
+				if (!sw.destroyed) sw.destroy();
+			});
+			sw.addEvent('destroy', function(){
+				api.cleanup(element);
 			});
 			return sw;
 		}

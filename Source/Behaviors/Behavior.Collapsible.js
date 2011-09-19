@@ -18,6 +18,9 @@ Behavior.addGlobalFilters({
 		setup: function(element, api) {
 			var target = element.getElement(api.get('target'));
 			var col = new Collapsible(element, target);
+			col.addEvent('reveal', function(){
+				api.fireEvent('layout:display', target);
+			});
 			api.onCleanup(col.detach.bind(col));
 			return col;
 		},

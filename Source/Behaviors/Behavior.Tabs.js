@@ -25,11 +25,16 @@ Behavior.addGlobalFilters({
 			if (tabs.length != sections.length || tabs.length == 0) {
 				api.fail('warning; sections and sections are not of equal number. tabs: %o, sections: %o', tabs, sections);
 			}
+			var getHash = function(){
+				return window.location.hash.substring(1, window.location.hash.length).parseQueryString();
+			};
+
 			var ts = new TabSwapper(
 				Object.merge(
 					{
 						tabs: tabs,
-						sections: sections
+						sections: sections,
+						initPanel: api.get('hash') ? getHash()[api.get('hash')] : null
 					},
 					Object.cleanValues(
 						api.getAs({
@@ -42,7 +47,12 @@ Behavior.addGlobalFilters({
 					)
 				)
 			);
-			ts.addEvent('active', function(){
+			ts.addEvent('active', function(index){
+				if (api.get('hash')) {
+					var hash = getHash();
+					hash[api.get('hash')] = index;
+					window.location.hash = Object.cleanValues(Object.toQueryString(hash));
+				}
 				api.fireEvent('layout:display', sections[0].getParent());
 			});
 			element.store('TabSwapper', ts);

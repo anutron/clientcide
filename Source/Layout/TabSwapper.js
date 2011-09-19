@@ -16,22 +16,22 @@ provides: TabSwapper
 var TabSwapper = new Class({
 	Implements: [Options, Events],
 	options: {
+		// initPanel: null,
+		// smooth: false,
+		// smoothSize: false,
+		// maxSize: null,
+		// onActive: function(){},
+		// onActiveAfterFx: function(){},
+		// onBackground: function(){}
+		// cookieName: null,
 		selectedClass: 'tabSelected',
 		mouseoverClass: 'tabOver',
 		deselectedClass: '',
 		rearrangeDOM: true,
-		initPanel: 0, 
-		smooth: false, 
-		smoothSize: false,
-		maxSize: null,
 		effectOptions: {
 			duration: 500
 		},
-		cookieName: null, 
 		cookieDays: 999
-//	onActive: function(){},
-//	onActiveAfterFx: function(){},
-//	onBackground: function(){}
 	},
 	tabs: [],
 	sections: [],
@@ -41,8 +41,10 @@ var TabSwapper = new Class({
 		this.setOptions(options);
 		var prev = this.setup();
 		if (prev) return prev;
-		if (this.options.cookieName && this.recall()) this.show(this.recall().toInt());
-		else this.show(this.options.initPanel);
+		if (this.options.initPanel != null) this.show(this.options.initPanel);
+		else if (this.options.cookieName && this.recall()) this.show(this.recall().toInt());
+		else this.show(0);
+
 	},
 	setup: function(){
 		var opt = this.options,
@@ -57,13 +59,13 @@ var TabSwapper = new Class({
 	addTab: function(tab, section, clicker, index){
 		tab = document.id(tab); clicker = document.id(clicker); section = document.id(section);
 		//if the tab is already in the interface, just move it
-		if (this.tabs.indexOf(tab) >= 0 && tab.retrieve('tabbered') 
+		if (this.tabs.indexOf(tab) >= 0 && tab.retrieve('tabbered')
 			 && this.tabs.indexOf(tab) != index && this.options.rearrangeDOM) {
 			this.moveTab(this.tabs.indexOf(tab), index);
 			return this;
 		}
 		//if the index isn't specified, put the tab at the end
-		if (index != null) index = this.tabs.length;
+		if (index == null) index = this.tabs.length;
 		//if this isn't the first item, and there's a tab
 		//already in the interface at the index 1 less than this
 		//insert this after that one
@@ -107,11 +109,11 @@ var TabSwapper = new Class({
 		var tab = this.tabs[from];
 		var clicker = tab.retrieve('clicker');
 		var section = tab.retrieve('section');
-		
+
 		var toTab = this.tabs[to];
 		var toClicker = toTab.retrieve('clicker');
 		var toSection = toTab.retrieve('section');
-		
+
 		this.tabs.erase(tab).splice(to, 0, tab);
 
 		tab.inject(toTab, 'before');
@@ -122,7 +124,7 @@ var TabSwapper = new Class({
 	show: function(i){
 		if (this.now == null) {
 			this.tabs.each(function(tab, idx){
-				if (i != idx) 
+				if (i != idx)
 					this.hideSection(idx);
 			}, this);
 		}
@@ -130,7 +132,7 @@ var TabSwapper = new Class({
 		return this;
 	},
 	save: function(index){
-		if (this.options.cookieName) 
+		if (this.options.cookieName)
 			Cookie.write(this.options.cookieName, index, {duration:this.options.cookieDays});
 		return this;
 	},
@@ -157,7 +159,7 @@ var TabSwapper = new Class({
 		if (!sect) return this;
 		var smoothOk = this.options.smooth && !Browser.ie;
 		if (this.now != idx) {
-			if (!tab.retrieve('tabFx')) 
+			if (!tab.retrieve('tabFx'))
 				tab.store('tabFx', new Fx.Morph(sect, this.options.effectOptions));
 			var overflow = sect.getStyle('overflow');
 			var start = {
@@ -174,7 +176,7 @@ var TabSwapper = new Class({
 			}
 			if (this.options.smoothSize) {
 				var size = sect.getDimensions().height;
-				if (this.options.maxSize != null && this.options.maxSize < size) 
+				if (this.options.maxSize != null && this.options.maxSize < size)
 					size = this.options.maxSize;
 				if (!effect) effect = {};
 				effect.height = size;

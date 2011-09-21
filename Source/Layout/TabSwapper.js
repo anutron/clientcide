@@ -184,15 +184,18 @@ var TabSwapper = new Class({
 			if (this.now != null) this.hideSection(this.now);
 			if (this.options.smoothSize && this.lastHeight) start.height = this.lastHeight;
 			sect.setStyles(start);
+			var finish = function(){
+				this.fireEvent('onActiveAfterFx', [idx, sect, tab]);
+				sect.setStyles({
+					height: this.options.maxSize == effect.height ? this.options.maxSize : "auto",
+					overflow: overflow
+				});
+				sect.getElements('input, textarea').setStyle('opacity', 1);
+			}.bind(this);
 			if (effect) {
-				tab.retrieve('tabFx').start(effect).chain(function(){
-					this.fireEvent('onActiveAfterFx', [idx, sect, tab]);
-					sect.setStyles({
-						height: this.options.maxSize == effect.height ? this.options.maxSize : "auto",
-						overflow: overflow
-					});
-					sect.getElements('input, textarea').setStyle('opacity', 1);
-				}.bind(this));
+				tab.retrieve('tabFx').start(effect).chain(finish);
+			} else {
+				finish();
 			}
 			this.now = idx;
 			this.fireEvent('onActive', [idx, sect, tab]);

@@ -217,7 +217,9 @@ Autocompleter.Base = new Class({
 			this.overflown = true;
 		};
 		this.choices.setStyles(styles);
-		this.fix.show();
+		if (this.fix){
+			this.fix.show();	
+		}		
 	},
 
 	hideChoices: function(clear) {
@@ -234,7 +236,9 @@ Autocompleter.Base = new Class({
 		this.observer.clear();
 		var hide = function(){
 			this.choices.setStyle('display', 'none');
-			this.fix.hide();
+			if (this.fix){
+				this.fix.hide();
+			}
 		}.bind(this);
 		if (this.fx) this.fx.start(0).chain(hide);
 		else hide();

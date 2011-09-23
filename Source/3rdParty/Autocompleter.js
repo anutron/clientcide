@@ -23,9 +23,9 @@ var Autocompleter = {};
 var OverlayFix = IframeShim;
 
 Autocompleter.Base = new Class({
-	
+
 	Implements: [Options, Events],
-	
+
 	options: {
 		minLength: 1,
 		markQuery: true,
@@ -38,11 +38,11 @@ Autocompleter.Base = new Class({
 		delay: 400,
 		observerOptions: {},
 		fxOptions: {},
-//		onSelection: $empty,
-//		onShow: $empty,
-//		onHide: $empty,
-//		onBlur: $empty,
-//		onFocus: $empty,
+//		onSelection: function(){},
+//		onShow: function(){},
+//		onHide: function(){},
+//		onBlur: function(){},
+//		onFocus: function(){},
 
 		autoSubmit: false,
 		overflow: false,
@@ -218,8 +218,8 @@ Autocompleter.Base = new Class({
 		};
 		this.choices.setStyles(styles);
 		if (this.fix){
-			this.fix.show();	
-		}		
+			this.fix.show();
+		}
 	},
 
 	hideChoices: function(clear) {

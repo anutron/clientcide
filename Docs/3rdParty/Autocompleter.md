@@ -48,7 +48,7 @@ This base class is extended by the the other Autocomplete classes. It accepts th
 * filterCase - (*boolean*) if *filter* is not defined (and therefore the filter used is the default one) this setting will, if *true*, filter results using a case sensitive regex; defaults to *false*
 * filterSubset - (*boolean*) if *filter* is not defined (and therefore the filter used is the default one) this setting will, if *true*, allow for matches anywhere in the suggestion, otherwise the user entry must match the beginning of the suggestion; defaults to *false*
 * forceSelect - (*boolean*) whether to hide the suggestion dropdown **only** if the user selects a suggestion item or enters a value that is an exact match from the suggestion items; defaults to *false*
-* selectMode - (*string*) Three options: 
+* selectMode - (*string*) Three options:
 	* *true* or *selection* - the user can type without the input value being highlighted or altered in any way. If they want to use a suggestion item, they must select it. Using the cursor keys the user can highlight a potential suggestion item and the input will be filled with the highlighted suggestion, while the portion of the suggestion that the user did not type will be selected so that they can continue typing if they wish. *This is the default.*
 	* *type-ahead* - as the user types the first suggestion item is selected and the 'missing' copy (the portion of the text the user has not yet typed) is selected. The user can use their cursor to move right and accept the suggestion or continue typing to refine the suggestion items.
 	* *pick* - the user can type without the input value being highlighted or altered in any way. If they want to use a suggestion item, they must select it using the cursor keys to move up and down the suggestion items which will change the input value appropriately. However, in this case the portion of the input value they did not type is **not** selected.
@@ -69,6 +69,7 @@ This base class is extended by the the other Autocomplete classes. It accepts th
 *	onHide - (*function*) This event is fired when the suggestions are hidden; it is passed the same two arguments as *onShow*.
 *	onBlur - (*function*) This event is fired when the input's blur event occurs; passed one argument: the input that the autocompleter is attached to.
 *	onFocus - (*function*) This event is fired when the input's focus event occurs; passed one argument: the input that the autocompleter is attached to.
+*	onChoiceConfirm - (*function*) This event is fired when the user confirms the selection either by pressing 'Enter' or by clicking on a suggestion; passed one argument: the selection that is confirmed.
 
 Autocompleter Method: destroy {#Autocompleter:destroy}
 ------------------------------------------------------

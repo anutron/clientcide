@@ -19,9 +19,9 @@ Autocompleter.JSONP = new Class({
 	options: {
 		postVar: 'query',
 		jsonpOptions: {},
-//		onRequest: $empty,
-//		onComplete: $empty,
-//		filterResponse: $empty
+//		onRequest: function(){},
+//		onComplete: function(){},
+//		filterResponse: function(){},
 		minLength: 1
 	},
 
@@ -39,7 +39,7 @@ Autocompleter.JSONP = new Class({
 		this.fireEvent('onRequest', [this.element, this.jsonp, data, this.queryValue]);
 		this.jsonp.send();
 	},
-	
+
 	queryResponse: function(response) {
 		this.parent();
 		var data = (this.options.filter)?this.options.filter.apply(this, [response]):response;

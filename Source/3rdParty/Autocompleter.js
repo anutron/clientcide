@@ -43,6 +43,7 @@ Autocompleter.Base = new Class({
 //		onHide: function(){},
 //		onBlur: function(){},
 //		onFocus: function(){},
+//		onChoiceConfirm: function(){},
 
 		autoSubmit: false,
 		overflow: false,
@@ -142,6 +143,7 @@ Autocompleter.Base = new Class({
 					if (this.element.value != this.opted) return true;
 					if (this.selected && this.visible) {
 						this.choiceSelect(this.selected);
+						this.fireEvent('choiceConfirm', this.selected);
 						return !!(this.options.autoSubmit);
 					}
 					break;
@@ -352,7 +354,11 @@ Autocompleter.Base = new Class({
 	addChoiceEvents: function(el) {
 		return el.addEvents({
 			'mouseover': this.choiceOver.bind(this, el),
-			'click': this.choiceSelect.bind(this, el)
+			'click': function(){
+				var result = this.choiceSelect(el);
+				this.fireEvent('choiceConfirm', this.selected);
+				return result;
+			}.bind(this)
 		});
 	}
 });

@@ -49,4 +49,3 @@ sources: [
   Source/3rdParty/Autocompleter.Observer.js,
   Source/3rdParty/Autocompleter.Remote.js
 ]
-version: 3.0.0

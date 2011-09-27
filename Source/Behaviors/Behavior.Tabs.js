@@ -3,7 +3,7 @@
 name: Behavior.Tabs
 description: Adds a tab interface (TabSwapper instance) for elements with .css-tab_ui. Matched with tab elements that are .tabs and sections that are .tab_sections.
 provides: [Behavior.Tabs]
-requires: [Behavior/Behavior, /TabSwapper]
+requires: [Behavior/Behavior, /TabSwapper, More/String.QueryString]
 script: Behavior.Tabs.js
 
 ...

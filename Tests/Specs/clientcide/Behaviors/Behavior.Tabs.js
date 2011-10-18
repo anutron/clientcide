@@ -15,7 +15,7 @@ provides: [Behavior.Tabs.Tests]
 		desc: 'Creates an instance of TabSwapper',
 		content: str,
 		returns: TabSwapper,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.tabs.length).toBe(3);
 		}
 	});

@@ -15,7 +15,7 @@ provides: [Behavior.Collapsible.Tests]
 		desc: 'Creates an instance of Collapsible',
 		content: str,
 		returns: Collapsible,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.section.hasClass('theTarget')).toBe(true);
 			instance.toggle(instance.section);
 			waits(700);

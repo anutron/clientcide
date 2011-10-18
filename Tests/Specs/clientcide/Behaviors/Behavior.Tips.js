@@ -15,7 +15,7 @@ provides: [Behavior.Tips.Tests]
 		desc: 'Creates an instance of Tips.Pointy',
 		content: pointy,
 		returns: Tips.Pointy,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.tip.pointy.options.direction).toBe(6);
 		}
 	});
@@ -34,7 +34,7 @@ provides: [Behavior.Tips.Tests]
 		desc: 'Creates an instance of Tips.Pointy (help)',
 		content: help,
 		returns: Tips.Pointy,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.tip.pointy.options.direction).toBe(1);
 		}
 	});
@@ -53,7 +53,7 @@ provides: [Behavior.Tips.Tests]
 		desc: 'Creates an instance of Tips.Pointy (info)',
 		content: info,
 		returns: Tips.Pointy,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.tip.pointy.options.direction).toBe(1);
 		}
 	});

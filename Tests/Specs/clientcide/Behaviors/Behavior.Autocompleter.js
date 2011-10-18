@@ -15,7 +15,7 @@ provides: [Behavior.Autocompleter.Tests]
 		desc: 'Creates an instance of Autocomplete (local)',
 		content: str,
 		returns: Autocompleter.Local,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.tokens).toEqual(['foo', 'bar', 'baz']);
 		}
 	});
@@ -34,7 +34,7 @@ provides: [Behavior.Autocompleter.Tests]
 		desc: 'Creates an instance of Autocomplete (remote)',
 		content: remote,
 		returns: Autocompleter.Ajax.Json,
-		expects: function(element, instance){
+		expect: function(element, instance){
 			expect(instance.request).toBeDefined();
 		}
 	});

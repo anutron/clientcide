@@ -14,7 +14,10 @@ provides: [Behavior.StickyWin.Tests]
 		filterName: 'StickyWin.Modal',
 		desc: 'Creates an instance of StickyWin.Modal',
 		content: str,
-		returns: StickyWin.Modal
+		returns: StickyWin.Modal,
+		expect: function(element, instance){
+			instance.destroy();
+		}
 	});
 	Behavior.addFilterTest({
 		filterName: 'StickyWin.Modal',

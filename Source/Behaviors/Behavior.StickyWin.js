@@ -36,36 +36,38 @@ Behavior.addGlobalFilters({
 				});
 			}
 
-			var sw = new StickyWin.Modal(
-				Object.merge({
-						content: element
-					},
-					Object.cleanValues(
-						api.getAs({
-							closeClassName: String,
-							pinClassName: String,
-							className: String,
-							edge: String,
-							position: String,
-							offset: Object,
-							relativeTo: String,
-							width: Number,
-							height: Number,
-							timeout: Number,
-							destroyOnClose: Boolean,
-							closeOnClickOut: Boolean,
-							closeOnEsc: Boolean,
-							//modal options
-							maskOptions: Object,
-							//draggable options
-							draggable: Boolean,
-							dragHandleSelector: String,
-							resizable: Boolean,
-							resizeHandleSelector: String
-						})
-					)
+			var options = Object.merge({
+					content: element
+				},
+				Object.cleanValues(
+					api.getAs({
+						closeClassName: String,
+						pinClassName: String,
+						className: String,
+						edge: String,
+						position: String,
+						offset: Object,
+						relativeTo: String,
+						width: Number,
+						height: Number,
+						timeout: Number,
+						destroyOnClose: Boolean,
+						closeOnClickOut: Boolean,
+						closeOnEsc: Boolean,
+						//modal options
+						maskOptions: Object,
+						//draggable options
+						draggable: Boolean,
+						dragHandleSelector: String,
+						resizable: Boolean,
+						resizeHandleSelector: String
+					})
 				)
 			);
+
+			if (options.mask) options.closeOnClickOut = false;
+
+			var sw = new StickyWin.Modal(options);
 			api.onCleanup(function(){
 				if (!sw.destroyed) sw.destroy();
 			});

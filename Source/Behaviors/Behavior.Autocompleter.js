@@ -36,8 +36,8 @@ Behavior.addGlobalFilters({
 
 	*/
 
-	Autocomplete: function(element){
-		var options = Object.merge({
+	Autocomplete: {
+		defaults: {
 			minLength: 1,
 			selectMode: 'type-ahead',
 			overflow: true,
@@ -46,21 +46,35 @@ Behavior.addGlobalFilters({
 			separator: ' ',
 			allowDupes: true,
 			postVar: 'term'
-		}, element.getJSONData('autocomplete-options'));
+		},
+		setup: function(element, api){
+			var options = Object.cleanValues(
+				api.getAs({
+					minLength: Number,
+					selectMode: String,
+					overflow: Boolean,
+					selectFirst: Boolean,
+					multiple: Boolean,
+					separator: String,
+					allowDupes: Boolean,
+					postVar: String
+				})
+			);
 
-		if (element.getData('autocomplete-url')) {
-			var aaj = new Autocompleter.Ajax.Json(element, element.getData('autocomplete-url'), options);
-			aaj.addEvent('request', function(el, req, data, value){
-				data['value'] = el.get('value');
-			});
-			return aaj;
-		} else {
-			var tokens = element.getJSONData('autocomplete-tokens');
-			if (!tokens) {
-				dbug.warn('Could not set up autocompleter; no local tokens found.');
-				return;
+			if (element.getData('autocomplete-url')) {
+				var aaj = new Autocompleter.Ajax.Json(element, element.getData('autocomplete-url'), options);
+				aaj.addEvent('request', function(el, req, data, value){
+					data['value'] = el.get('value');
+				});
+				return aaj;
+			} else {
+				var tokens = api.getAs(Array, 'tokens');
+				if (!tokens) {
+					dbug.warn('Could not set up autocompleter; no local tokens found.');
+					return;
+				}
+				return new Autocompleter.Local(element, tokens, options);
 			}
-			return new Autocompleter.Local(element, tokens, options);
 		}
 	}
 

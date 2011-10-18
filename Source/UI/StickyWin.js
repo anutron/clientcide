@@ -206,6 +206,7 @@ var StickyWin = new Class({
 	},
 	destroy: function(){
 		this.destroyed = true;
+		this.attach(true);
 		if (this.windowManager) this.windowManager.remove(this);
 		if (this.win) this.win.destroy();
 		if (this.options.useIframeShim && this.shim) this.shim.destroy();

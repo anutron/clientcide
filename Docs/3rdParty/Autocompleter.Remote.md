@@ -36,7 +36,7 @@ The base functionality for all Autocompleter.Ajax functionality.
 
 ### Notes
 
-The Autocompleter.Ajax.Base class is not used directly but by its inheritors (see 
+The Autocompleter.Ajax.Base class is not used directly but by its inheritors (see
 [Autocompleter.Ajax.Json][] and [Autocompleter.Ajax.Xhtml][]).
 
 Class: Autocompleter.Ajax.Json {#Autocompleter-Ajax:Json}

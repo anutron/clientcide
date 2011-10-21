@@ -17,8 +17,8 @@ provides: dbug
 var dbug = {
 	logged: [],
 	timers: {},
-	firebug: false, 
-	enabled: false, 
+	firebug: false,
+	enabled: false,
 	log: function() {
 		dbug.logged.push(arguments);
 	},
@@ -35,7 +35,7 @@ var dbug = {
 			dbug.log('%s: %s', name, end);
 		} else dbug.log('no such timer: %s', name);
 	},
-	enable: function(silent) { 
+	enable: function(silent) {
 		var con = window.firebug ? firebug.d.console.cmd : window.console;
 
 		if((!!window.console && !!window.console.warn) || window.firebug) {
@@ -62,7 +62,7 @@ var dbug = {
 			}
 		}
 	},
-	disable: function(){ 
+	disable: function(){
 		if(dbug.firebug) dbug.enabled = false;
 		dbug.log = dbug.nolog;
 		dbug.time = function(){};
@@ -102,13 +102,13 @@ var dbug = {
 	var debugMethods = ['debug','info','warn','error','assert','dir','dirxml'];
 	var otherMethods = ['trace','group','groupEnd','profile','profileEnd','count'];
 	function set(methodList, defaultFunction) {
-		
+
 		var getLogger = function(method) {
 			return function(){
 				con[method].apply(con, arguments);
 			};
 		};
-		
+
 		for(var i = 0; i < methodList.length; i++){
 			var method = methodList[i];
 			if (fb && con[method]) {

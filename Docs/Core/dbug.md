@@ -12,7 +12,7 @@ About dbug
 ----------
 dbug is a wrapper for the firebug console plugin for firefox. The syntax for logging is the same as documented at [http://getfirebug.com][].
 
-You can leave *dbug.log()* statements in your code and they will not be echoed out to the screen in any way. 
+You can leave *dbug.log()* statements in your code and they will not be echoed out to the screen in any way.
 
 Enabling dbug {#dbug:enable}
 ----------------------------
@@ -142,7 +142,7 @@ This is the entirety of the method:
 			var href=window.location.href;
 			baseurl=href.substring(href.substring(7,href.length).indexOf("/")+8,href.length);
 		}
-		if(window.location.href.indexOf("jsdebug=true")>0 || window.location.href.indexOf("jsdebugCookie=true")>0 || debugCookie == 'true'){ 
+		if(window.location.href.indexOf("jsdebug=true")>0 || window.location.href.indexOf("jsdebugCookie=true")>0 || debugCookie == 'true'){
 			if (libs) {
 				for(var i=0;i<libs.length;i++){
 					document.write("<scri"+"pt src=\""+baseurl+libs[i]+"\" type=\"text/javascript\"></sc"+"ript>");

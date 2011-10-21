@@ -29,7 +29,7 @@ Extends the [Autocompleter.Base][] class to add support for a pre-defined object
 		['Apple', 'Red'],
 		['Lemon', 'Yellow'],
 		['Grape', 'Purple']];
-	
+
 	new Autocompleter.Local($('myInput'), tokens, {
 		delay: 100,
 		//this is a custom filter because our object has a unique structure

@@ -75,7 +75,7 @@ Changes in 2.2.0
 
 Changes in 2.1.0
 =======
-* MultipleOpenAccordion 
+* MultipleOpenAccordion
 	- now only takes options
 	- openAll defaults to false
 * CiUI (iPhone code)
@@ -122,7 +122,7 @@ Changes in 2.1.0
 	- *StickyWin.Fx* is now just *StickyWin*.
 * MultipleOpenAccordion
 	- Now only takes an options argument; container argument is deprecated.
-	
+
 Breaking Changes in MooTools More 1.2.2.1
 =====================================
 * FormValidator

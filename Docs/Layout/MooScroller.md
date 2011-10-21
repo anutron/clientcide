@@ -34,7 +34,7 @@ Recreates the standard scrollbar behavior for elements with overflow but using D
 ### Options.scrollLinks
 * forward - (*mixed*) A string of the id for an Element or an Element reference that, when clicked, will scroll the area forward; defaults to *$('scrollForward')*; (if not found, nothing bad happens)
 * back - (*mixed*) A string of the id for an Element or an Element reference that, when clicked, will scroll the area back; defaults to *$('scrollBack')*; (if not found, nothing bad happens)
-	
+
 ### Events
 
 * onScroll - (*function*) callback to execute when the user scrolls; passed the number of steps scrolled (*integer*: positive for forward or negative for backward)

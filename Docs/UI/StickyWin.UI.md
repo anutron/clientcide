@@ -12,7 +12,7 @@ The container element returned when you call the static [StickyWin.ui][] method 
 		var ui = StickyWin.ui("A caption", "A message"); //same as new StickyWin.UI("A caption", "A message");
 		//ui is a DOM element
 		ui.retrieve('StickyWinUI'); //the instance of StickyWin.UI
-		
+
 StickyWin.UI method: setContent {#StickyWin-UI:setContent}
 ----------------------------------------------------------
 
@@ -62,7 +62,7 @@ Static Method: StickyWin.ui {#StickyWin-ui}
 ===========================================
 
 Creates an html holder for in-page [StickyWin][] popups using a default style. **This is not a class**; it is a stand-alone method. This is the intended use for this interface. You can use the class ([StickyWin.UI][] above) but there's really no need.
-	
+
 ### Tutorial/Demo
 
 * [Online Tutorial/Demo][]
@@ -124,16 +124,16 @@ After invocation you can retrieve the instance of [StickyWin.UI][] and set conte
 	  width: '400px',
 		buttons: [
 			{
-				text: 'close', 
+				text: 'close',
 				onClick: function(){alert('closed!')}
 			},
 			{
-				text: 'okey-dokey', 
+				text: 'okey-dokey',
 				onClick: function(){alert('ok!')},
 				properties: {'class': 'ok'} //don't close though
 			},
 			{
-				text: 'blah', 
+				text: 'blah',
 				onClick: function(){alert('blah!')},
 				properties: {
 					'class': 'closeSticky blah', //still closes
@@ -174,11 +174,11 @@ After invocation you can retrieve the instance of [StickyWin.UI][] and set conte
 
 ### Example
 
-	<style type="text/css" id="defaultStickyWinStyle" rel="..yourStyleSheetUrl.." /> 
+	<style type="text/css" id="defaultStickyWinStyle" rel="..yourStyleSheetUrl.." />
 	// OR
 	<style type="text/css" id="defaultStickyWinStyle">
 		/* Your styles */
-	</style> 
+	</style>
 
 [Notes]: #StickyWin-notes
 [StickyWin]: http://clientcide.com/docs/UI/StickyWin

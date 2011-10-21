@@ -50,7 +50,7 @@ Behavior.addGlobalFilters({
 		var help = element.hide();
 		var link = createLink(help);
 		//for each point, create a new instance of Tips.Pointy (clientcide plugin)
-		var tip = createTip(link.link, link.point); 
+		var tip = createTip(link.link, link.point);
 		//destroy the tips on cleanup
 		this.markForCleanup(element, function(){
 			tip.destroy();

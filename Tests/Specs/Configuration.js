@@ -10,12 +10,12 @@ Configuration.name = 'Clientcide';
 
 // Presets - combine the sets and the source to a preset to easily run a test
 Configuration.presets = {
-	
+
 	'clientcide': {
 		sets: ['clientcide'],
 		source: ['clientcide']
 	}
-	
+
 };
 
 // An object with default presets

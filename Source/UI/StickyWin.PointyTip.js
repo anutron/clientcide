@@ -54,7 +54,7 @@ StickyWin.PointyTip = new Class({
 			case "left": case 8: case 9: case 10:
 				return {
 					edge: {
-						x: 'left', 
+						x: 'left',
 						y: d==10?'top':d==8?'bottom':'center'
 					},
 					position: {x: 'right', y: 'center'},
@@ -66,7 +66,7 @@ StickyWin.PointyTip = new Class({
 			case "right": case 2:  case 3: case 4:
 				return {
 					edge: {
-						x: 'right', 
+						x: 'right',
 						y: (d==2?'top':d==4?'bottom':'center') + (offset.y || 0)
 					},
 					position: {x: 'left', y: 'center'},
@@ -77,9 +77,9 @@ StickyWin.PointyTip = new Class({
 				};
 			case "up": case 11: case 12: case 1:
 				return {
-					edge: { 
-						x: d==11?'left':d==1?'right':'center', 
-						y: 'top' 
+					edge: {
+						x: d==11?'left':d==1?'right':'center',
+						y: 'top'
 					},
 					position: {	x: 'center', y: 'bottom' },
 					offset: {
@@ -90,7 +90,7 @@ StickyWin.PointyTip = new Class({
 			case "down": case 5: case 6: case 7:
 				return {
 					edge: {
-						x: (d==7?'left':d==5?'right':'center') + (offset.x || 0), 
+						x: (d==7?'left':d==5?'right':'center') + (offset.x || 0),
 						y: 'bottom'
 					},
 					position: {x: 'center', y: 'top'},

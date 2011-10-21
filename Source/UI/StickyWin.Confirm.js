@@ -25,7 +25,7 @@ StickyWin.Confirm = new Class({
 				buttons: [
 					{text: 'Cancel'},
 					{
-						text: 'Ok', 
+						text: 'Ok',
 						onClick: callback || function(){
 							this.fireEvent('confirm');
 						}.bind(this)

@@ -76,7 +76,7 @@ StickyWin.UI.Pointy = new Class({
 			};
 			this.options.direction = map[this.options.direction];
 		}
-		
+
 		this.parent(args.caption, args.body, this.options);
 		if (this.id) document.id(this).set('id', "pointy_"+this.id);
 	},
@@ -126,7 +126,7 @@ StickyWin.UI.Pointy = new Class({
 	},
 	expose: function(){
 		if (document.id(this).getStyle('display') != 'none' &&
-		  document.body != document.id(this) && 
+		  document.body != document.id(this) &&
 		  document.id(document.body).contains(document.id(this))) return function(){};
 		document.id(this).setStyles({
 			visibility: 'hidden',
@@ -155,7 +155,7 @@ StickyWin.UI.Pointy = new Class({
 				pos = {
 					edge: {x: 'center', y: 'bottom'},
 					position: {
-						x: d==12?'center':d==1?'right':'left', 
+						x: d==12?'center':d==1?'right':'left',
 						y: 'top'
 					},
 					offset: {
@@ -168,7 +168,7 @@ StickyWin.UI.Pointy = new Class({
 				pos = {
 					edge: {x: 'left', y: 'center'},
 					position: {
-						x: 'right', 
+						x: 'right',
 						y: d==3?'center':d==2?'top':'bottom'
 					},
 					offset: {
@@ -181,7 +181,7 @@ StickyWin.UI.Pointy = new Class({
 				pos = {
 					edge: {x: 'center', y: 'top'},
 					position: {
-						x: d==6?'center':d==5?'right':'left', 
+						x: d==6?'center':d==5?'right':'left',
 						y: 'bottom'
 					},
 					offset: {
@@ -194,7 +194,7 @@ StickyWin.UI.Pointy = new Class({
 				pos = {
 					edge: {x: 'right', y: 'center'},
 					position: {
-						x: 'left', 
+						x: 'left',
 						y: d==9?'center':d==10?'top':'bottom'
 					},
 					offset: {

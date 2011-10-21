@@ -16,7 +16,7 @@ Static Method: StickyWin.UI.pointy {#StickyWin-UI-pointy}
 =========================================================
 
 Creates an html holder for in-page [StickyWin][] popups using a default style - this one using a pointer that can point in a specified direction. **This is not a class**; it is a stand-alone method. This is the intended use for this interface. You can use the class ([StickyWin.UI.Pointy][] above) but there's really no need.
-	
+
 ### Syntax
 
 	StickyWin.UI.pointy([caption, body, options]); //returns a DOM element

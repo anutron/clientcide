@@ -25,7 +25,7 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax]
 					method: 'get',
 					evalScripts: true
 				},
-				wrapWithUi: false, 
+				wrapWithUi: false,
 				caption: '',
 				uiOptions:{},
 				handleResponse: function(response){

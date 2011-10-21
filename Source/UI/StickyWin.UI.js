@@ -74,20 +74,20 @@ StickyWin.UI = new Class({
 		this.element = container;
 		this.element.store('StickyWinUI', this);
 		if (opt.cssClass) container.addClass(opt.cssClass);
-		
+
 
 		var bodyDiv = new Element('div').addClass('body');
 		this.body = bodyDiv;
-		
+
 		var top_ur = new Element('div').addClass('top_ur');
 		this.top_ur = top_ur;
 		this.top = new Element('div').addClass('top').adopt(
 				new Element('div').addClass('top_ul')
 			).adopt(top_ur);
 		container.adopt(this.top);
-		
+
 		if (opt.cornerHandle) new Element('div').addClass('dragHandle').inject(top_ur, 'top');
-		
+
 		//body
 		container.adopt(new Element('div').addClass('middle').adopt(bodyDiv));
 		//close buttons

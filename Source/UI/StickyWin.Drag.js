@@ -51,7 +51,7 @@ StickyWin = Class.refactor(StickyWin, {
 		}
 		this.win.makeDraggable(this.options.dragOptions);
 		if (toggled) this.toggleVisible(false);
-	}, 
+	},
 	makeResizable: function(){
 		var toggled = this.toggleVisible(true);
 		if (this.options.useIframeShim) {

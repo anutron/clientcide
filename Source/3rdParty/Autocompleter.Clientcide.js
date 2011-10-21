@@ -21,10 +21,10 @@ provides: Autocompleter.Clientcide
 			window.addEvent('domready', function(){
 				if (document.id('AutocompleterCss')) return;
 				new Element('link', {
-					rel: 'stylesheet', 
-					media: 'screen', 
-					type: 'text/css', 
-					href: (this.options.baseHref || Clientcide.assetLocation + '/autocompleter')+'/Autocompleter.css', 
+					rel: 'stylesheet',
+					media: 'screen',
+					type: 'text/css',
+					href: (this.options.baseHref || Clientcide.assetLocation + '/autocompleter')+'/Autocompleter.css',
 					id: 'AutocompleterCss'
 				}).inject(document.head);
 			}.bind(this));

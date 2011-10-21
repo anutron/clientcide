@@ -57,7 +57,7 @@ StickyWin.Alert = new Class({
 });
 
 StickyWin.Error = new Class({
-	Extends: StickyWin.Alert, 
+	Extends: StickyWin.Alert,
 	makeMessage: function(){
 		var message = this.parent();
 		new Element('img', {

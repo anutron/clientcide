@@ -29,12 +29,12 @@ Fx.Marquee = new Class({
 		onMessage: function(){} */
 	},
 	initialize: function(container, options){
-		container = document.id(container); 
-		var msg = this.options.currentMessage || (container.getChildren().length == 1)?container.getFirst():''; 
-		var wrapper = new Element('div', {	
+		container = document.id(container);
+		var msg = this.options.currentMessage || (container.getChildren().length == 1)?container.getFirst():'';
+		var wrapper = new Element('div', {
 				styles: { position: 'relative' },
 				'class':'fxMarqueeWrapper'
-			}).inject(container); 
+			}).inject(container);
 		this.parent(wrapper, options);
 		this.current = this.wrapMessage(msg);
 	},

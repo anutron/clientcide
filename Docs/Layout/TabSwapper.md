@@ -20,7 +20,7 @@ Handles the scripting for a common UI layout: the tabbed box. If you have a set 
 
 1. options - (*options*) a key/value set of options
 
-### Options	
+### Options
 * selectedClass - (*string*) the css class for the tab when it is selected; defaults to *'tabSelected'*
 * deselectedClass - (*string*) the class for the tab when it isn't selected; defaults to *empty string*
 * mouseoverClass - (*string*) the class for the tab when the user mouses over; defaults to *'tabOver'*
@@ -34,6 +34,7 @@ Handles the scripting for a common UI layout: the tabbed box. If you have a set 
 * cookieName - (*string*) if defined (it isn't by default), the browser will remember the user's previous tab selection using a cookie
 * cookieDays - (*integer*) how many days to remember the user's tab selection with the cookie; it's ignored if cookieName isn't set; defaults to *999*
 * effectOptions - (*object*) the options to pass on to the transition effect if the "smooth" option is set to *true*; defaults to *{duration: 500}*
+* preventDefault - (*boolean*) if `true` (the default), clicks to the tabs call `preventDefault` on tab clicks.
 
 ### Events
 
@@ -53,7 +54,7 @@ Handles the scripting for a common UI layout: the tabbed box. If you have a set 
 		<div>content 2</div>
 		<div>content 3</div>
 	</div>
-	
+
 	var myTabSwapper = new TabSwapper({
 		selectedClass: 'on',
 		deselectedClass: 'off',
@@ -72,7 +73,7 @@ Handles the scripting for a common UI layout: the tabbed box. If you have a set 
 * you don't have to specify a click selector; it'll just use the tab DOM elements if you don't give it the click selector
 * the click selector is NOT a subselector of the tabs; be sure to specify a full css selector for these
 * you can initialize the class without any tabs or sections and add them subsequently with [addTab][]
-			 
+
 TabSwapper Method: addTab {#TabSwapper:addTab}
 ----------------------------------------------
 

@@ -24,6 +24,7 @@ var TabSwapper = new Class({
 		// onActiveAfterFx: function(){},
 		// onBackground: function(){}
 		// cookieName: null,
+		preventDefault: true,
 		selectedClass: 'tabSelected',
 		mouseoverClass: 'tabOver',
 		deselectedClass: '',
@@ -86,7 +87,7 @@ var TabSwapper = new Class({
 		});
 
 		clicker.addEvent('click', function(e){
-			e.preventDefault();
+			if (this.options.preventDefault) e.preventDefault();
 			this.show(index);
 		}.bind(this));
 

@@ -17,7 +17,8 @@ Behavior.addGlobalFilters({
 			'sections-selector': '.tab_sections>li',
 			smooth: true,
 			smoothSize: true,
-			rearrangeDOM: false
+			rearrangeDOM: false,
+			preventDefault: true
 		},
 		setup: function(element, api) {
 			var tabs = element.getElements(api.get('tabs-selector'));
@@ -42,7 +43,8 @@ Behavior.addGlobalFilters({
 							smoothSize: Boolean,
 							rearrangeDOM: Boolean,
 							selectedClass: String,
-							initPanel: Number
+							initPanel: Number,
+							preventDefault: Boolean
 						})
 					)
 				)

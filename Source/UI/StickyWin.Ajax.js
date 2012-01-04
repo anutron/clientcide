@@ -7,9 +7,9 @@ description: Adds ajax functionality to all the StickyWin classes.
 
 license: MIT-Style License
 
-requires: [Core/Request, StickyWin, StickyWin.UI]
+requires: [Core/Request, StickyWin, StickyWin.UI, StickyWin.PointyTip]
 
-provides: [StickyWin.Ajax, StickyWin.Modal.Ajax]
+provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 
 ...
 */
@@ -60,6 +60,7 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax]
 			}
 		};
 	};
-	try {	StickyWin.Ajax = new Class(SWA(StickyWin)); } catch(e){}
-	try {	StickyWin.Modal.Ajax = new Class(SWA(StickyWin.Modal)); } catch(e){}
+	try { StickyWin.Ajax = new Class(SWA(StickyWin)); } catch(e){}
+	try { StickyWin.Modal.Ajax = new Class(SWA(StickyWin.Modal)); } catch(e){}
+	try { StickyWin.PointyTip.Ajax = new Class(SWA(StickyWin.PointyTip)); } catch(e){}
 })();

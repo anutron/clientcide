@@ -21,6 +21,7 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 				//onUpdate: function(){},
 				url: '',
 				showNow: false,
+				cacheRequest: false,
 				requestOptions: {
 					method: 'get',
 					evalScripts: true
@@ -28,7 +29,11 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 				wrapWithUi: false,
 				caption: '',
 				uiOptions:{},
+				cacheRequest: false,
 				handleResponse: function(response){
+					if(this.options.cacheRequest) {
+						this.element.store(this.Request.options.url, response);
+					}
 					var responseScript = "";
 					this.Request.response.text.stripScripts(function(script){	responseScript += script; });
 					if (this.options.wrapWithUi) response = StickyWin.ui(this.options.caption, response, this.options.uiOptions);
@@ -55,8 +60,18 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 					this.options.handleResponse.bind(this));
 			},
 			update: function(url, options){
-				this.Request.setOptions(options).send({url: url||this.options.url});
-				return this;
+				this.Request.options.url = url || options.url;
+				var cachedResponse;
+				if(this.options.cacheRequest) {
+					cachedResponse = this.element.retrieve(url);
+				}
+				if(!cachedResponse) {
+					this.Request.setOptions(options).send({url: url||this.options.url});
+					return this;
+				} else {
+					this.Request.fireEvent('onSuccess', cachedResponse);
+					return this;
+				}
 			}
 		};
 	};

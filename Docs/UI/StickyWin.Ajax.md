@@ -18,10 +18,11 @@ Each class here is identical to its extended form with the additional options li
 ### Options
 
 * url - (*string*) the default url for the instance to hit for its content.
-* requestOptions - (*object*) options passed to the ajax Request; defaults to *{method:'get'}*.
-* wrapWithUi - (*boolean*) *true*: wraps the response in [StickyWin.UI][]; *false*: does not; defaults to *false*.
+* requestOptions - (*object*) options passed to the ajax Request; defaults to `{method:'get'}`.
+* cacheRequest - (*boolean*) if `true` the content for each instance is only fetched once (useful for tips and whatnot); defaults to `false`.
+* wrapWithUi - (*boolean*) `true`: wraps the response in [StickyWin.UI][]; `false`: does not; defaults to `false`.
 * caption - (*string*) if wrapping with [StickyWin.UI][], this caption will be used; defaults to an *empty string*.
-* uiOptions - (*object*) if wrapping with [StickyWin.UI][], these options will be passed along as the options to [StickyWin.UI][]; defaults to *{}* (empty object)
+* uiOptions - (*object*) if wrapping with [StickyWin.UI][], these options will be passed along as the options to [StickyWin.UI][]; defaults to `{}` (empty object)
 * handleResponse - (*function*) handles the response from the server. By default it will wrap the response html with [StickyWin.UI][] if that option is enabled (which it isn't by default), then calls [StickyWin:setContent][] and then [StickyWin:show][]. This method is meant to be replaced with custom handlers if you want a different behavior (which is why it's an option).
 
 StickyWin.Ajax Method: update {#StickyWin-Ajax:update}

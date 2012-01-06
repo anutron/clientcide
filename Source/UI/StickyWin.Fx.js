@@ -13,7 +13,7 @@ provides: StickyWin.Fx
 
 ...
 */
-if (!Browser.Engine.trident){
+if (!Browser.ie){
 	StickyWin = Class.refactor(StickyWin, {
 		options: {
 			//fadeTransition: 'sine:in:out',

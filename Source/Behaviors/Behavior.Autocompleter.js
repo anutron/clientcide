@@ -3,7 +3,7 @@
 name: Behavior.Autocompleter
 description: Adds support for Autocompletion on form inputs.
 provides: [Behavior.Autocomplete, Behavior.Autocompleter]
-requires: [Behavior/Behavior, /Autocompleter.Local, /Autocompleter.Remote]
+requires: [Behavior/Behavior, /Autocompleter.Local, /Autocompleter.Remote, More/Object.Extras]
 script: Behavior.Autocomplete.js
 
 ...

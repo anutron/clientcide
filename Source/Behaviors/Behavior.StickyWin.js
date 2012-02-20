@@ -3,7 +3,7 @@
 name: Behavior.StickyWin
 description: Behaviors for StickyWin instances.
 provides: [Behavior.StickyWin]
-requires: [Behavior/Behavior, /StickyWin, /StickyWin.Modal, /StickyWin.Fx, /StickyWin.Drag, More/Array.Extras]
+requires: [Behavior/Behavior, /StickyWin, /StickyWin.Modal, /StickyWin.Fx, /StickyWin.Drag, More/Array.Extras, More/Object.Extras]
 script: Behavior.Tabs.js
 
 ...

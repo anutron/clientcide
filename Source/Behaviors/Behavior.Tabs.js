@@ -3,7 +3,7 @@
 name: Behavior.Tabs
 description: Adds a tab interface (TabSwapper instance) for elements with .css-tab_ui. Matched with tab elements that are .tabs and sections that are .tab_sections.
 provides: [Behavior.Tabs]
-requires: [Behavior/Behavior, /TabSwapper, More/String.QueryString]
+requires: [Behavior/Behavior, /TabSwapper, More/String.QueryString, More/Object.Extras]
 script: Behavior.Tabs.js
 
 ...
@@ -24,7 +24,7 @@ Behavior.addGlobalFilters({
 			var tabs = element.getElements(api.get('tabs-selector'));
 			var sections = element.getElements(api.get('sections-selector'));
 			if (tabs.length != sections.length || tabs.length == 0) {
-				api.fail('warning; sections and sections are not of equal number. tabs: %o, sections: %o', tabs, sections);
+				api.fail('warning; sections and sections are not of equal number. tabs: ' + tabs.length + ', sections: ' + sections.length);
 			}
 			var getHash = function(){
 				return window.location.hash.substring(1, window.location.hash.length).parseQueryString();

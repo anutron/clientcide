@@ -37,7 +37,7 @@ Sends a request for new content.
 ### Arguments
 
 1. url - (*string*, optional) the url to request new content from; defaults to the url specified in the options.
-2. options - (*object*, optional) new options information to apply to the Request object before sending (useful if you want to use the *data* option in Request)
+2. options - (*object*, optional) new options information to apply to the Request object before sending (useful if you want to use the *data* option in Request). **NOTE** If you specify options, the `cacheRequest` option in the constructor is ignored; the Request will fetch new data even if caching is enabled.
 
 ### Returns
 

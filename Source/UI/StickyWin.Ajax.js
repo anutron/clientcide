@@ -60,18 +60,18 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 					this.options.handleResponse.bind(this));
 			},
 			update: function(url, options){
-				this.Request.options.url = url || options.url;
-				var cachedResponse;
-				if(this.options.cacheRequest) {
-					cachedResponse = this.element.retrieve(url);
+				if(this.options.cacheRequest){
+					if(!options) {
+						var cachedResponse = this.element.retrieve(url)
+						if(cachedResponse) {
+							this.Request.options.url = url;
+							this.Request.fireEvent('onSuccess', cachedResponse);
+							return this;
+						}
+					}
 				}
-				if(!cachedResponse) {
-					this.Request.setOptions(options).send({url: url||this.options.url});
-					return this;
-				} else {
-					this.Request.fireEvent('onSuccess', cachedResponse);
-					return this;
-				}
+				this.Request.setOptions(options).send({url: url||this.options.url});
+				return this;
 			}
 		};
 	};

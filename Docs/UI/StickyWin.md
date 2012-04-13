@@ -35,7 +35,7 @@ Creates a div within the page with the specified contents at the location relati
 * height - (*integer*, optional) height for the wrapper div for your popup
 * timeout - (*integer*, optional) timeout interval to hide the popup after a specified time
 * allowMultiple - (*boolean*, optional) allow multiple instance of StickyWin on the page; defaults to *true*
-* allowMultipleByClass - (*boolean*, optional) allow multiple popups that share the same className as specified in the className option; defaults to *false*
+* allowMultipleByClass - (*boolean*, optional) allow multiple popups that share the same className as specified in the className option; defaults to *true*
 * showNow - (*boolean*, optional) display the popup on instantiation; defaults to *true*
 * useIframeShim - (*boolean*, optional) use an [IframeShim][] to mask content below the element; defaults to *true*
 * iframeShimSelector - (*string*) the css selector to find the element within your popup under which the [IframeShim][] should be placed to obscure select lists and the like (see [IframeShim][])

@@ -63,8 +63,8 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 				if(this.options.cacheRequest){
 					if(!options) {
 						var cachedResponse = this.element.retrieve(url)
+						this.Request.options.url = url||this.options.url;
 						if(cachedResponse) {
-							this.Request.options.url = url;
 							this.Request.fireEvent('onSuccess', cachedResponse);
 							return this;
 						}

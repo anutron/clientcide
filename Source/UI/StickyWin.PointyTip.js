@@ -59,7 +59,7 @@ StickyWin.PointyTip = new Class({
 					},
 					position: {x: 'right', y: 'center'},
 					offset: {
-						x: s + (offset.x || 0),
+						x: s/2 + (offset.x || 0),
 						y: offset.y || 0
 					}
 				};
@@ -71,7 +71,7 @@ StickyWin.PointyTip = new Class({
 					},
 					position: {x: 'left', y: 'center'},
 					offset: {
-						x: -s + (offset.x || 0),
+						x: -s/2 + (offset.x || 0),
 						y: offset.y || 0
 					}
 				};
@@ -83,7 +83,7 @@ StickyWin.PointyTip = new Class({
 					},
 					position: {	x: 'center', y: 'bottom' },
 					offset: {
-						y: s + (offset.y || 0),
+						y: s/2 + (offset.y || 0),
 						x: (d==11?-s:d==1?s:0) + (offset.x || 0)
 					}
 				};
@@ -95,7 +95,7 @@ StickyWin.PointyTip = new Class({
 					},
 					position: {x: 'center', y: 'top'},
 					offset: {
-						y: -s + (offset.y || 0),
+						y: -s/2 + (offset.y || 0),
 						x: (d==7?-s:d==5?s:0) + (offset.x || 0)
 					}
 				};

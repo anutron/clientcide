@@ -129,7 +129,7 @@ StickyWin.UI = new Class({
 		if (!caption) return this.destroyCaption();
 		var opt = this.options;
 		this.h1 = new Element('h1').addClass('caption');
-		if (opt.width) this.h1.setStyle('width', (opt.width-(opt.cornerHandle?55:40)-(opt.closeButton?10:0)));
+		if (opt.width) this.h1.setStyle('width', (opt.width.toInt()-(opt.cornerHandle?55:40)-(opt.closeButton?10:0)));
 		this.setCaption(caption);
 		this.top_ur.adopt(this.h1);
 		if (!this.options.cornerHandle) this.h1.addClass('dragHandle');

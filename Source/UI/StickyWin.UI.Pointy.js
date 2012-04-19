@@ -92,7 +92,7 @@ StickyWin.UI.Pointy = new Class({
 
 		var w = opt.divotSize;
 		var h = w;
-		var left = (opt.width - opt.divotSize)/2;
+		var left = (opt.width.toInt() - opt.divotSize)/2;
 		var orient = function(){
 			switch(opt.direction) {
 				case 12: case 1: case 11:
@@ -221,7 +221,7 @@ StickyWin.UI.Pointy = new Class({
 	},
 	makeCaption: function(caption){
 		this.parent(caption);
-		if (this.options.width && this.h1) this.h1.setStyle('width', (this.options.width-(this.options.closeButton?25:15)));
+		if (this.options.width && this.h1) this.h1.setStyle('width', (this.options.width.toInt()-(this.options.closeButton?25:15)));
 	}
 });
 

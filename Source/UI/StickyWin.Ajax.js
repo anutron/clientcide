@@ -21,7 +21,6 @@ provides: [StickyWin.Ajax, StickyWin.Modal.Ajax, StickyWin.PointyTip.Ajax]
 				//onUpdate: function(){},
 				url: '',
 				showNow: false,
-				cacheRequest: false,
 				requestOptions: {
 					method: 'get',
 					evalScripts: true

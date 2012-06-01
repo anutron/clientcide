@@ -20,7 +20,7 @@ StickyWin.Modal = new Class({
 		modalize: true,
 		maskOptions: {
 			style: {
-				'background-color':'#333',
+				backgroundColor:'#333',
 				opacity:0.8
 			}
 		},

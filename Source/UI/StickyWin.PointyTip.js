@@ -99,7 +99,7 @@ StickyWin.PointyTip = new Class({
 						x: (d==7?-s:d==5?s:0) + (offset.x || 0)
 					}
 				};
-		};
+		}
 	},
 	setContent: function() {
 		var args = this.getArgs(arguments);

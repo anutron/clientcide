@@ -92,7 +92,6 @@ StickyWin.UI.Pointy = new Class({
 
 		var w = opt.divotSize;
 		var h = w;
-		var left = (opt.width.toInt() - opt.divotSize)/2;
 		var orient = function(){
 			switch(opt.direction) {
 				case 12: case 1: case 11:
@@ -113,7 +112,7 @@ StickyWin.UI.Pointy = new Class({
 						width: w/2,
 						backgroundPosition: '100%'
 					};
-			};
+			}
 		};
 		this.pointer = new Element('div', {
 			styles: Object.append({
@@ -203,7 +202,7 @@ StickyWin.UI.Pointy = new Class({
 					}
 				};
 				break;
-		};
+		}
 		var putItBack = this.expose();
 		this.pointer.position(Object.append({
 			relativeTo: this.pointyWrapper,

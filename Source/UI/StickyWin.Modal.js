@@ -31,9 +31,8 @@ StickyWin.Modal = new Class({
 	initialize: function(options) {
 		this.options.maskTarget = this.options.maskTarget || document.body;
 		this.setOptions(options);
-		this.mask = new Mask(this.options.maskTarget, this.options.maskOptions).addEvent('click', function() {
-			if (this.options.hideOnClick) this.hide();
-		}.bind(this));
+		this.mask = new Mask(this.options.maskTarget, this.options.maskOptions);
+		if (this.options.hideOnClick) this.mask.addEvent('click', this.hide);
 		this.parent(options);
 	},
 

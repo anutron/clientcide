@@ -127,10 +127,12 @@ var StickyWin = new Class({
 		this.win.show();
 	},
 	hide: function(suppressEvent){
-		if (typeOf(suppressEvent) == "event" || !suppressEvent) this.fireEvent('close');
-		this.hideWin();
-		if (this.options.useIframeShim) this.hideIframeShim();
-		this.visible = false;
+		if (this.visible) {
+			if (typeOf(suppressEvent) == "event" || !suppressEvent) this.fireEvent('close');
+			this.hideWin();
+			if (this.options.useIframeShim) this.hideIframeShim();
+			this.visible = false;
+		}
 		return this;
 	},
 	hideWin: function(){

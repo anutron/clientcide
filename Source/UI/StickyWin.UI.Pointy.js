@@ -213,7 +213,7 @@ StickyWin.UI.Pointy = new Class({
 	setContent: function(a1, a2){
 		this.parent(a1, a2);
 		this.top[this.h1?'removeClass':'addClass']('noCaption');
-		if (Browser.ie) document.id(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
+		if (Browser.ie6) document.id(this).getElements('.bottom_ll, .bottom_lr').setStyle('font-size', 1); //IE6 bullshit
 		if (this.options.closeButton) this.body.setStyle('margin-right', 6);
 		this.positionPointer();
 		return this;

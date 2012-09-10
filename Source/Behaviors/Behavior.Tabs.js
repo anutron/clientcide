@@ -39,6 +39,7 @@ Behavior.addGlobalFilters({
 					},
 					Object.cleanValues(
 						api.getAs({
+							cookieName: String,
 							smooth: Boolean,
 							smoothSize: Boolean,
 							rearrangeDOM: Boolean,

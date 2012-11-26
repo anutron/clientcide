@@ -21,7 +21,7 @@ var StyleWriter = new Class({
 				var style = new Element('style', {id: id||''}).inject($$('head')[0]);
 				if (Browser.ie) style.styleSheet.cssText = css;
 				else style.set('text', css);
-			}catch(e){dbug.log('error: %s',e);}
+			}catch(e){if (window.dbug) dbug.log('error: %s',e);}
 		}.bind(this));
 	}
 });

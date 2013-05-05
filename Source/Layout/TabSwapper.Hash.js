@@ -7,7 +7,7 @@ description: Stores tab selection in the window.hash
 
 license: MIT-Style License
 
-requires: [/TabSwapper, More/String.QueryString, More/Object.Extras]
+requires: [/TabSwapper, More/String.QueryString, More/Object.Extras, /Element.Events.hashchange]
 
 provides: TabSwapper.Hash
 
@@ -30,6 +30,7 @@ TabSwapper.Hash = new Class({
       hash = this.options.hash;
       delete options.hash;
       delete this.options.hash;
+      options.preventDefault = true;
     }
     this.parent(options);
     if (hash){
@@ -46,7 +47,7 @@ TabSwapper.Hash = new Class({
   // shows a section based on the window location hash value
   showByHash: function(){
     var i = this.getIndexByHash();
-    if (i !== null) this.show(i);
+    if (i || i===0) this.show(i);
     return this;
   },
   // gets the index to show based on an elementID
@@ -65,7 +66,7 @@ TabSwapper.Hash = new Class({
     var hash = getHash();
     if (!hash) return this;
     var value = hash[this.options.hash];
-    if (isNaN(value.toInt())){
+    if (value && isNaN(value.toInt())){
       var i = this.getIndexById(value);
       if (i !== null) value = i;
       else return null;
@@ -81,7 +82,7 @@ TabSwapper.Hash = new Class({
   show: function(i){
     this.parent.apply(this, arguments);
     if (this.options.hash) {
-      var hash = getHash();
+      var hash = getHash() || {};
       hash[this.options.hash] = this.tabs[i].get('id') || this.sections[i].get('id') || i;
       window.location.hash = Object.cleanValues(Object.toQueryString(hash));
     }

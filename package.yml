@@ -29,6 +29,7 @@ sources: [
   Source/Layout/MooScroller.js,
   Source/Layout/MultipleOpenAccordion.js,
   Source/Layout/TabSwapper.js,
+  Source/Layout/TabSwapper.Hash.js,
   Source/UI/StickyWin.js,
   Source/UI/StickyWin.Ajax.js,
   Source/UI/StickyWin.Alert.js,

@@ -3,7 +3,7 @@
 name: Behavior.Tabs
 description: Adds a tab interface (TabSwapper instance) for elements with .css-tab_ui. Matched with tab elements that are .tabs and sections that are .tab_sections.
 provides: [Behavior.Tabs]
-requires: [Behavior/Behavior, /TabSwapper, More/String.QueryString, More/Object.Extras]
+requires: [Behavior/Behavior, /TabSwapper.Hash]
 script: Behavior.Tabs.js
 
 ...
@@ -26,19 +26,17 @@ Behavior.addGlobalFilters({
 			if (tabs.length != sections.length || tabs.length == 0) {
 				api.fail('warning; sections and sections are not of equal number. tabs: ' + tabs.length + ', sections: ' + sections.length);
 			}
-			var getHash = function(){
-				return window.location.hash.substring(1, window.location.hash.length).parseQueryString();
-			};
 
-			var ts = new TabSwapper(
+			var ts = new TabSwapper.Hash(
 				Object.merge(
 					{
 						tabs: tabs,
-						sections: sections,
-						initPanel: api.get('hash') ? getHash()[api.get('hash')] : null
+						sections: sections
 					},
 					Object.cleanValues(
 						api.getAs({
+							initPanel: Number,
+							hash: String,
 							cookieName: String,
 							smooth: Boolean,
 							smoothSize: Boolean,
@@ -51,14 +49,13 @@ Behavior.addGlobalFilters({
 				)
 			);
 			ts.addEvent('active', function(index){
-				if (api.get('hash')) {
-					var hash = getHash();
-					hash[api.get('hash')] = index;
-					window.location.hash = Object.cleanValues(Object.toQueryString(hash));
-				}
 				api.fireEvent('layout:display', sections[0].getParent());
 			});
 			element.store('TabSwapper', ts);
+			api.onCleanup(function(){
+				ts.destroy();
+				element.eliminate('TabSwapper');
+			});
 			return ts;
 		}
 	}

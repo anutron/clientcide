@@ -26,8 +26,8 @@ TabSwapper.Hash = new Class({
   initialize: function(options){
     this.setOptions(options);
     // delete the hash option on startup so that the call to show(0) doesn't change the location hash
-    if (this.options.hash){
-      hash = this.options.hash;
+    hash = this.options.hash;
+    if (hash){
       delete options.hash;
       delete this.options.hash;
       options.preventDefault = true;

@@ -89,7 +89,9 @@ TabSwapper.Hash = new Class({
   },
   destroy: function(){
     window.removeEvent('hashchange', this.bound.showByHash);
-    this.tabs.removeEvents();
+    this.tabs.each(function(el){
+      el.removeEvents();
+    });
     this.tabs = null;
     this.sections = null;
   }

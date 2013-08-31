@@ -1,5 +1,7 @@
 /*
 ---
+name: MooHashChange
+
 description: Added the onhashchange event
 
 license: MIT-style
@@ -9,7 +11,7 @@ authors:
 - Greggory Hernandez
 
 requires:
-- core/1.2.4: '*'
+- Core/Element.Event
 
 provides: [Element.Events.hashchange]
 

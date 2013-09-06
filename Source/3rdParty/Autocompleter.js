@@ -12,7 +12,7 @@ author: Harald Kirschner <mail [at] digitarald.de>
 
 copyright: Author
 
-requires: [Core/Fx.Tween, More/Element.Shortcuts, More/Element.Forms, More/IframeShim, Observer, Clientcide]
+requires: [Core/Fx.Tween, More/Element.Shortcuts, More/Element.Forms, More/Element.Position, More/IframeShim, Observer, Clientcide]
 
 provides: [Autocompleter, Autocompleter.Base]
 
@@ -197,10 +197,11 @@ Autocompleter.Base = new Class({
 		this.selected = this.selectedValue = null;
 		if (this.fix) {
 			var pos = this.element.getCoordinates(this.relative), width = this.options.width || 'auto';
-			this.choices.setStyles({
-				'left': pos.left,
-				'top': pos.bottom,
-				'width': (width === true || width == 'inherit') ? pos.width : width
+			this.choices.setStyle('width', (width === true || width == 'inherit') ? pos.width : width);
+			this.choices.position({
+				relativeTo: this.element,
+				edge: "topLeft",
+				position: "bottomLeft"
 			});
 		}
 		if (!first) return;

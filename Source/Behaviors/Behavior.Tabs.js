@@ -53,15 +53,15 @@ Behavior.addGlobalFilters({
 			});
 
 			// get the element to delegate clicks to - defaults to the container
-			var target = element;
-			if (api.get('delegationTarget')) target = element.getElement(api.get('delegationTarget'));
-			if (!target) api.fail('Could not find delegation target for tabs');
+			var delegationTarget = element;
+			if (api.get('delegationTarget')) delegationTarget = element.getElement(api.get('delegationTarget'));
+			if (!delegationTarget) api.fail('Could not find delegation target for tabs');
 
 			// delegate watching click events for any element with an #href
-			target.addEvent('click:relay([href^=#])', function(event, link){
+			delegationTarget.addEvent('click:relay([href^=#])', function(event, link){
 				if (link.get('href') == "#") return;
 				// attempt to find the target for the link within the page
-				var target = element.getElement(link.get('href'));
+				var target = delegationTarget.getElement(link.get('href'));
 				// if the target IS a tab, do nothing; valid targets are *sections*
 				if (ts.tabs.contains(target)) return;
 				// if no target was found at all, warn

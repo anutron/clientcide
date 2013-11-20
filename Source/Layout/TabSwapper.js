@@ -40,6 +40,8 @@ var TabSwapper = new Class({
 	sectionFx: [],
 	initialize: function(options){
 		this.setOptions(options);
+		if (this.options.selectedClass) this.options.selectedClass = this.options.selectedClass.trim();
+		if (this.options.deselectedClass) this.options.deselectedClass = this.options.deselectedClass.trim();
 		var prev = this.setup();
 		if (prev) return prev;
 		if (this.options.initPanel != null) this.show(this.options.initPanel);
@@ -148,7 +150,8 @@ var TabSwapper = new Class({
 		if (sect.getStyle('display') != 'none') {
 			this.lastHeight = sect.getSize().y;
 			sect.setStyle('display', 'none');
-			tab.swapClass(this.options.selectedClass, this.options.deselectedClass);
+			if (this.options.selectedClass) tab.removeClass(this.options.selectedClass);
+			if (this.options.deselectedClass) tab.addClass(this.options.deselectedClass);
 			this.fireEvent('onBackground', [idx, sect, tab]);
 		}
 		return this;
@@ -201,7 +204,8 @@ var TabSwapper = new Class({
 			this.now = idx;
 			this.fireEvent('onActive', [idx, sect, tab]);
 		}
-		tab.swapClass(this.options.deselectedClass, this.options.selectedClass);
+		if (this.options.selectedClass) tab.addClass(this.options.selectedClass);
+		if (this.options.deselectedClass) tab.removeClass(this.options.deselectedClass);
 		return this;
 	}
 });

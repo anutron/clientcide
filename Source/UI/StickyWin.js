@@ -211,7 +211,6 @@ var StickyWin = new Class({
 		if (this.windowManager) this.windowManager.remove(this);
 		if (this.win) this.win.destroy();
 		if (this.options.useIframeShim && this.shim) this.shim.destroy();
-		if (document.id('modalOverlay')) document.id('modalOverlay').destroy();
 		this.fireEvent('destroy');
 	}
 });

@@ -178,7 +178,6 @@ var StickyWin = new Class({
 			dbug.log('you must include element.pin.js!');
 			return this;
 		}
-		this.pinned = pin != null && pin;
 		this.win.pin(pin);
 		return this;
 	},
@@ -186,7 +185,7 @@ var StickyWin = new Class({
 		return this.pin(false);
 	},
 	togglepin: function(){
-		return this.pin(!this.pinned);
+		return this.pin(!this.win.retrieve('pin:_pinned'));
 	},
 	makeIframeShim: function(){
 		if (!this.shim){

@@ -54,7 +54,7 @@ StickyWin.UI.Pointy = new Class({
 		Object.append(this.options, this.options.themes[this.options.theme]);
 		this.options.baseHref = this.options.baseHref || Clientcide.assetLocation + '/PointyTip/';
 		this.options.divot = this.options.divot.substitute(this.options, /\\?\{%([^}]+)%\}/g);
-		if (Browser.ie) this.options.divot = this.options.divot.replace(/png/g, 'gif');
+		if (Browser.ie6) this.options.divot = this.options.divot.replace(/png/g, 'gif');
 		this.options.css = this.options.css.substitute(this.options, /\\?\{%([^}]+)%\}/g);
 		if (args.options && args.options.theme) {
 			while (!this.id) {

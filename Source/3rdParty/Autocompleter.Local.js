@@ -10,27 +10,10 @@ license: MIT-style license
 author: Harald Kirschner <mail [at] digitarald.de>
 copyright: Author
 
-requires: [Autocompleter.Base]
+requires: [Behavior-UI/Autocompleter.Local]
 
 provides: [Autocompleter.Local]
 ...
  */
-Autocompleter.Local = new Class({
 
-	Extends: Autocompleter.Base,
-
-	options: {
-		minLength: 0,
-		delay: 200
-	},
-
-	initialize: function(element, tokens, options) {
-		this.parent(element, options);
-		this.tokens = tokens;
-	},
-
-	query: function() {
-		this.update(this.filter());
-	}
-
-});
+ try { console.log('Clientcide/Autocompleter.Local is deprecated; see https://github.com/Behavior-UI/behavior-ui'); } catch (e){}
